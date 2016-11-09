@@ -1,0 +1,9 @@
+[submodule "tools"]
+	path = tools
+	url = git@github.com:INN/deploy-tools.git
+[submodule "wp-content/themes/largo"]
+	path = wp-content/themes/largo
+	url = git@github.com:INN/Largo.git
+[submodule "wp-content/plugins/client-hosting-manager"]
+	path = wp-content/plugins/client-hosting-manager
+	url = git@github.com:INN/client-hosting-manager.git

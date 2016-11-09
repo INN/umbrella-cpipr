@@ -1,0 +1,11 @@
+{
+  "name": "catalystchicago",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-less": "~0.12.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "load-grunt-tasks": "~1.0.0",
+    "grunt-contrib-cssmin": "~0.11.0"
+  }
+}
