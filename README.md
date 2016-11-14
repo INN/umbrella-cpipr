@@ -25,13 +25,16 @@ After reviewing the options and creating the new install, partake in the followi
 
 1. `cd` to the directory `cpipr/` in your VVV setup
 2. `git clone git@github.com:INN/umbrella-cpipr.git`
-3. Copy the contents of the new directory `umbrella-cpipr/` into `htdocs/`, including all hidden files whose names start with `.` periods.
+3. `cd umbrella-cpipr`
+4. `git submodule update --init` to pull down all of the submodules you need (including, crucially, the tools repo)
+5. `cd ..`
+6. Copy the contents of the new directory `umbrella-cpipr/` into `htdocs/`, including all hidden files whose names start with `.` periods.
 	- the easy way to do this is: `rsync -rv umbrella-cpipr/ htdocs`
-4. `cd htdocs` to move to the folder where the umbrella now lives
-5. `git submodule update --init` to pull down all of the submodules you need (including, crucially, the tools repo)
-6. `workon fabric`
-7. `fab production wp.fetch_sql_dump` (or download via FTP if this doesn't work)
-8. `fab vagrant.reload_db:mysql.sql`
-9. Search and replace 'cpipr.wpengine.com' --> 'cpipr.dev' in the db (options for doing this are covered in the [largo umbrella setup instructions](https://github.com/INN/docs/blob/master/projects/largo/umbrella-setup.md)
-10. Optionally, you may want to pull down recent uploads so you have images, etc. to work with locally.
-11. Visit cpipr.dev in your browser and you should see the site!
+	- afterwards, you may want to `rm -rf umbrella-cpipr` to save disk space
+7. `cd htdocs` to move to the folder where the umbrella now lives
+8. `workon fabric`
+9. `fab production wp.fetch_sql_dump` (or download via FTP if this doesn't work)
+10. `fab vagrant.reload_db:mysql.sql`
+11. Search and replace 'cpipr.wpengine.com' --> 'cpipr.dev' in the db (options for doing this are covered in the [largo umbrella setup instructions](https://github.com/INN/docs/blob/master/projects/largo/umbrella-setup.md)
+12. Optionally, you may want to pull down recent uploads so you have images, etc. to work with locally.
+13. Visit cpipr.dev in your browser and you should see the site!
