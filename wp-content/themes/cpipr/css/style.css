@@ -153,6 +153,9 @@
 #sidebar .widget {
   padding: 24px 0;
 }
+#largo-donate-widget-3 .btn-primary {
+  background-color: #bd261d;
+}
 .before-footer-wrapper {
   background-color: #fff;
   border-top: 1px solid #ccc;
