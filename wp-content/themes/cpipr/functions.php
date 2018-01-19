@@ -47,18 +47,25 @@ add_filter( 'wpmu_signup_user_notification', '__return_false' );
 
 
 // spanish date format is different, we should fix this in Largo at some point
-function largo_time( $echo = true ) {
-	$time_difference = current_time('timestamp') - get_the_time('U');
+// https://github.com/INN/largo/issues/1480
+function largo_time( $echo = true, $post = null ) {
+	$post = get_post( $post );
+	$the_time = get_the_time( 'U', $post );
+	$time_difference = current_time( 'timestamp' ) - $the_time;
 
-	if ( $time_difference < 86400 )
-		$output = sprintf( __('<span class="time-ago">%s ago</span>', 'largo' ),
-			human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) )
+	if ( $time_difference < 86400 ) {
+		$output = sprintf(
+			// translators: %s is a number of hours as related by human_time_diff().
+			__( '<span class="time-ago">%s ago</span>', 'largo' ),
+			human_time_diff( $the_time, current_time( 'timestamp' ) )
 		);
-	else
-		$output = get_the_date( 'j \d\e F Y' );
+	} else {
+		$output = get_the_date( 'j \d\e F Y', $post->ID );
+	}
 
-	if ( $echo )
+	if ( $echo ) {
 		echo $output;
+	}
 	return $output;
 }
 
