@@ -109,3 +109,6 @@ function en_version_url_meta_box_display() {
 	<?php
 }
 largo_register_meta_input( 'en_version_url', 'sanitize_text_field' );
+
+// Loading localization from child theme (we should consider commiting the fix on the largo theme)
+load_theme_textdomain('largo', get_stylesheet_directory() . '/lang');
