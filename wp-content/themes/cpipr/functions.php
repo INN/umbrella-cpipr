@@ -11,6 +11,18 @@ if ( ! defined( 'INN_HOSTED' ) ) {
         define( 'INN_HOSTED', true );
 }
 
+/**
+ * LARGO_DEBUG defines whether or not to use minified assets
+ *
+ * Largo by default uses minified CSS and JavaScript files.
+ * set LARGO_DEBUG to TRUE to use unminified JavaScript files
+ * and unminified CSS files with sourcemaps to our LESS files.
+ *
+ * @since 0.5
+ */
+if ( ! defined( 'LARGO_DEBUG' ) )
+	define( 'LARGO_DEBUG', TRUE );
+
 //use the Largo metabox API
 require_once( get_template_directory() . '/largo-apis.php' );
 
@@ -69,7 +81,6 @@ function largo_time( $echo = true, $post = null ) {
 	return $output;
 }
 
-
 //add a meta box for a subtitle on posts
 largo_add_meta_box(
 	'subtitle',
@@ -112,3 +123,48 @@ largo_register_meta_input( 'en_version_url', 'sanitize_text_field' );
 
 // Loading localization from child theme (we should consider commiting the fix on the largo theme)
 load_theme_textdomain('largo', get_stylesheet_directory() . '/lang');
+
+function widget_autores_init() {
+	register_sidebar( array(
+		'name'          => __( 'Biografia autores', 'twentyseventeen' ),
+		'id'            => 'sidebar-4',
+		'description'   => __( 'Add widgets here.', 'twentyseventeen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'widget_autores_init' );
+
+function widget_historias_init() {
+	register_sidebar( array(
+		'name'          => __( 'Historias relacionadas', 'twentyseventeen' ),
+		'id'            => 'sidebar-5',
+		'description'   => __( 'Add widgets here.', 'twentyseventeen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'widget_historias_init' );
+
+
+/*
+ * Load up all of the other goodies from the /inc directory
+ */
+$includes = array();
+
+/*
+ * This functionality is probably not for everyone so we'll make it easy to turn it on or off
+ */
+
+$includes[] = '/inc/wp-taxonomy-landing/taxonomy-landing.php'; // adds taxonomy landing plugin
+
+/*
+ * Perform load
+ */
+foreach ( $includes as $include ) {
+	require_once( get_stylesheet_directory() . $include );
+}
