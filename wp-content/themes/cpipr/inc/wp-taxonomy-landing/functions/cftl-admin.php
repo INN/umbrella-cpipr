@@ -548,7 +548,7 @@ function cftl_tax_landing_save_layout($post_id) {
 	}
 
 	if ( ! isset( $_POST['post_type'] )
-		|| $_POST['post_type'] != 'cftl-tax-landing') {
+		|| $_POST['post_type'] != 'Series') {
 		return;
 	}
 

@@ -4,9 +4,10 @@
   margin-top: 40px;
   padding-top: 48px;
   @media (max-width: 640px) {
-	display: none;
+    display: none;
   }
 }
+
 #before-footer {
   overflow: hidden;
   aside {
@@ -15,8 +16,48 @@
     width: 15%;
     min-height: 100px;
     img {
-	  width: 100%;
-	  max-height: 100px;
+      width: 100%;
+      max-height: 100px;
+    }
+  }
+}
+
+.footer-bg {
+  background: #000;
+}
+
+footer {
+  h1.logo-main {
+    margin: 0;
+    float: none;
+    margin-bottom: 20px;
+    a {
+      width: 150px;
+      height: 60px;
+    }
+  }
+  #boilerplate {
+    p {
+      font-size: 1rem;
+      font-family: 'Roboto', sans-serif;
+      line-height: 2rem;
+      color: #fff;
+    }
+    li {
+      list-style: none;
+      font-size: 1.4rem;
+      font-family: 'Roboto condensed italic', sans-serif;
+      line-height: 1.6rem;
+      padding-bottom: 15px;
+      text-transform: uppercase;
+      a:hover,
+      a:visited,
+      a:active {
+        color: #fff;
+      }
+      .caret {
+        display: none;
+      }
     }
   }
 }
