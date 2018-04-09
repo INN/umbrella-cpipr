@@ -8,7 +8,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto|Roboto+Condensed" rel="stylesheet">
 <?php
 	/**
 	 * The template for displaying the header
