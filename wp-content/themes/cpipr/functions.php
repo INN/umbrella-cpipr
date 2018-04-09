@@ -149,4 +149,26 @@ foreach ( $includes as $include ) {
 	require_once( get_stylesheet_directory() . $include );
 }
 
+/**
+ * Counter Hamburger menu
+ */
+function cpipr_counter_hamburger_menu() {
+	echo "
+				<script>
+				jQuery(document).ready(function($) {
+					counterHamburguer = false;
+
+					$('#menu-btn').click(function () {
+							if(counterHamburguer == false){
+									$('#menu-header').slideDown('slow');
+									counterHamburguer = true;
+							}else{
+									$('#menu-header').slideUp('slow');
+									counterHamburguer = false;
+							}
+					});
+				});
+				</script>";
+}
+add_action( 'wp_footer', 'cpipr_counter_hamburger_menu' );
 
