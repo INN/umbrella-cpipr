@@ -24,6 +24,17 @@ if ( ! defined( 'INN_HOSTED' ) ) {
 //use the Largo metabox API
 require_once( get_template_directory() . '/largo-apis.php' );
 
+/**
+ * Includes
+ */
+$includes = array(
+	'/inc/tax-landing-customizations.php',
+);
+// Perform load
+foreach ( $includes as $include ) {
+	require_once( get_stylesheet_directory() . $include );
+}
+
 //child theme text domain
 add_action( 'after_setup_theme', 'cpipr_theme_setup' );
 function cpipr_theme_setup() {
@@ -135,18 +146,6 @@ function widget_autores_init() {
 	) );
 }
 add_action( 'widgets_init', 'widget_autores_init' );
-
-/**
- * Includes
- */
-$includes = array(
-	'/inc/wp-taxonomy-landing/taxonomy-landing.php',		
-	// '/inc/cpipr_byline_class.php', 
-);
-// Perform load
-foreach ( $includes as $include ) {
-	require_once( get_stylesheet_directory() . $include );
-}
 
 /**
  * Counter Hamburger menu
