@@ -66,7 +66,7 @@
 			 */
 			do_action( 'largo_before_global_nav' );
 
-			//get_template_part( 'partials/nav', 'global' );
+			get_template_part( 'partials/nav', 'global' );
 
 			/**
 			 * Fires after the Largo global navigation content.
