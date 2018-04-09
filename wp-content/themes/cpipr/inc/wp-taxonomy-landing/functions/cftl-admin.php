@@ -227,6 +227,16 @@ function cftl_tax_landing_add_extras_box() {
 		'default'
 	);
 
+	//add the 'abstract' box
+	add_meta_box(
+		'cftl_tax_landing_abstract',
+		__('Abstract', 'largo'),
+		'cftl_tax_landing_abstract',
+		'cftl-tax-landing',
+		'normal',
+		'default'
+	);
+
 	//remove various Largo meta boxes we don't need
 	$boxen = array('tagsdiv-post_tag', 'wpbdm-categorydiv', 'tagsdiv-wpbdm-tags', 'prominencediv', 'categorydiv', 'pageparentdiv', 'tagsdiv-media-sources', 'tagsdiv-argo-link-tags');
 	foreach ($boxen as $box_name) {
@@ -517,6 +527,43 @@ function cftl_tax_landing_footer ( $post ) {
 <?php
 }
 
+function cftl_tax_landing_abstract ( $post ) {
+	wp_nonce_field( plugin_basename(__FILE__), 'cftl_tax_landing_abstract' );
+	$fields = ($post->post_title) ? get_post_custom( $post->ID ) : cftl_field_defaults();
+	?>
+	
+	<div class="form-field">
+		<h4>abstract</h4>
+		<div>
+		<?php wp_editor( $fields['abstract'][0], 'abstract', array(
+			'wpautop' => false,
+			'textarea_rows' => 5,
+			'teeny' => true,
+		)); ?>
+		</div>
+	</div>
+<?php
+}
+
+function cftl_tax_landing_save_abstract($post_id) {
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+	if ( ! isset( $_POST['post_type'] )
+		|| $_POST['post_type'] != 'cftl-tax-landing') {
+		return;
+	}
+	if ( ! current_user_can( 'edit_post', $post_id ) ) {
+		return;
+	}
+	// Checks for input and sanitizes/saves if needed
+	if( isset( $_POST[ 'abstract' ] ) ) {
+		update_post_meta( $post_id, 'abstract', wp_filter_post_kses( $_POST[ 'abstract' ] ) );
+	}
+}
+
+add_action('save_post', 'cftl_tax_landing_save_abstract');
+
 function cftl_field_defaults( ) {
 	return array(
 		'header_enabled' => array(1),
@@ -672,7 +719,7 @@ add_action( 'admin_enqueue_scripts', 'cftl_admin_scripts');
 
 
 /**
- * Helper function for loading in posts for custom post manager
+ * Helper function for loading in posts for custom post
  */
 function cftl_load_posts( $series_id ) {
 	global $wpdb;

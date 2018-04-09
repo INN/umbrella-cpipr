@@ -1527,19 +1527,13 @@ blockquote p {
 }
 .item-special .container-text p {
   color: #fff;
-  font-size: 6.9rem;
+  font-size: 5rem;
   font-family: 'GT america compressed black', sans-serif;
   text-transform: uppercase;
-  line-height: 7rem;
+  line-height: 5rem;
   text-align: center;
   padding-top: 9px;
   margin-bottom: 0;
-}
-@media (max-width: 1115px) {
-  .item-special .container-text p {
-    font-size: 5rem;
-    line-height: 5rem;
-  }
 }
 @media (max-width: 755px) {
   .item-special .container-text p {
@@ -1550,10 +1544,6 @@ blockquote p {
 @media (max-width: 575px) {
   .wrapper-special .container-special > .col-xs-6 {
     width: 100%;
-  }
-  .item-special .container-text p {
-    font-size: 6rem;
-    line-height: 6rem;
   }
 }
 @media (max-width: 530px) {
@@ -1575,16 +1565,8 @@ blockquote p {
   .wrapper-special .wrapper-buttons.wrapper-buttons-special {
     display: block;
   }
-  .item-special .container-text p {
-    font-size: 4rem;
-    line-height: 4rem;
-  }
   .item-special {
     height: 135px;
-  }
-  .item-special .container-text p {
-    font-size: 4rem;
-    line-height: 4rem;
   }
 }
 @media (max-width: 370px) {

@@ -75,7 +75,20 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 		<div class="container-fluid mobile-full-width">
 			<div class="row-fluid">
 				<div class="span10 offset2 mobile-no-offset">
-					<?php largo_byline(true)?>
+					<span class="by-author">
+						<span class="by">por</span> 
+							<span class="author vcard" itemprop="author">
+								<?php
+									$authors = get_coauthors();
+									foreach($authors as $author) {
+										$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
+										$avatar = coauthors_get_avatar( $author, 128 );
+										$name =  $author->display_name;
+										echo $avatar . '<a class="url fn n" href="' . $archive_link . '" rel="author">' . $name . '</a><span class="and">y</span>';
+									}
+								?>
+						</span>
+					</span>
 					<div class="social-media-list">
 						<?php largo_post_social_links();?>
 					</div>
@@ -91,13 +104,14 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 					<h3 class="title-post">Abstract</h3>
 				</div>
 				<div class="span7 mobile-no-offset">
-				<p>Una decena de periodistas caribeños liderados por el Centro de Periodismo Investigativo (CPI) de Puerto Rico investigaron durante casi un año los efectos del cambio climático en sus países. Justo cuando comenzaban a escribir sus historias, llegaron los huracanes Irma y María, que devastaron varios de los territorios.
-					<p>Por años se había dicho que las islas caribeñas figuran entre las más vulnerables del mundo ante el cambio climático, pero en 2017 este pronóstico se convirtió en una dura realidad para millones de habitantes de los países antillanos. Efectos concretos del cambio climático como el aumento en el nivel del mar y en las lluvias, así como huracanes de mayor intensidad, y la erosión costera, son ya una realidad que está causando estragos en el Caribe, perjudicando la vida social y económica de las islas. Los devastadores huracanes de 2017, Irma y María, exacerbaron los problemas en las islas más afectadas dejando al descubierto la fragilidad de sus infraestructuras y la negligencia de gobiernos que no tomaron medidas para proteger a sus poblaciones. Estos eventos causaron sobre $175,000 millones en daños y pérdidas en Puerto Rico, BVI, USVI, Dominica, Antigua y Barbuda, y San Martín. Además provocaron la salida de más de 275,000 de sus ciudadanos por razones económicas y de seguridad.</p>
-					<p>El grupo de periodistas, que fueron entrenados por el CPI en el manejo de bases de datos y en aspectos técnicos y científicos del cambio climático, trabajaron antes, durante y luego de los huracanes para reconducir algunas de sus investigaciones. Las historias no tratan sobre los pronósticos y amenazas de lo que pasará, sino de la cruda realidad que está viviendo la gente de estos países.</p>
-					<p>Como parte de su investigación, el grupo enfrentó la falta de datos sobre buena parte de las islas en los bancos internacionales de información sobre el tema. Ante esta realidad, elaboraron indicadores uniformes sobre legislación y políticas públicas, así como los impactos de las principales problemáticas ambientales vinculadas al cambio climático.</p>
-					<p>Los periodistas participantes del proyecto son Freeman Rogers de The BVI Beacon, Islas Vírgenes Británicas, Mariela Mejía de Diario Libre, República Dominicana, Mary Triny Zea de La Prensa, Panamá, Patrick Saint-Pré de Le Nouvelliste, Haití, y de Puerto Rico Emmanuel Estrada López de Diálogo Digital, e Istra Pacheco, Maricelis Rivera Santos, Eliván Martínez Mercado y Omaya Sosa Pascual, del CPI.</p>
-					<p>Casi dos meses antes de que inicie una temporada de huracanes que se proyecta muy activa para el Caribe, el grupo presenta sus hallazgos. El proyecto transfronterizo es pionero en su tipo: hecho sobre temas caribeños, liderado por periodistas caribeños, escrito y editado por periodistas del Caribe que están en el campo, tienen el contexto y las fuentes.</p>
-					<p>Las investigaciones fueron posibles en parte con el apoyo de Ford Foundation, Para la Naturaleza, Miranda Foundation, Fundación Angel Ramos y Open Society Foundations.</p>
+				<?php
+					// Retrieves the stored value from the database
+					$meta_value = get_post_meta( $post->ID, 'abstract', true );
+					// Checks and displays the retrieved value
+					if( !empty( $meta_value ) ) {
+							echo $meta_value; 
+					}
+					?>
 				</div>
 				<div class="span3">
 					<a href="<?php echo esc_url(home_url()); ?>/donaciones/">

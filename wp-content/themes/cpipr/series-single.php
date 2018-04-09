@@ -89,7 +89,20 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 		<div class="container-fluid mobile-full-width">
 			<div class="row-fluid">
 				<div class="span8 offset2 mobile-no-offset">
-					<?php largo_byline(true)?>
+				<span class="by-author">
+						<span class="by">por</span> 
+							<span class="author vcard" itemprop="author">
+								<?php
+									$authors = get_coauthors();
+									foreach($authors as $author) {
+										$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
+										$avatar = coauthors_get_avatar( $author, 128 );
+										$name =  $author->display_name;
+										echo $avatar . '<a class="url fn n" href="' . $archive_link . '" rel="author">' . $name . '</a><span class="and">y</span>';
+									}
+								?>
+						</span>
+					</span>
 					<div class="social-media-list">
 						<?php largo_post_social_links();?>
 					</div>
@@ -123,33 +136,46 @@ $next_post = getNextPost($post, $series_map);
 if (!empty($next_post)):
     $heroImageNext = wp_get_attachment_image_src(get_post_thumbnail_id($next_post->ID), 'full');
     ?>
-						<div class="hero-main">
-							<div class="wrapper-image" style="background: url('<?php echo $heroImageNext['0']; ?>') no-repeat center/cover;">
-								<div class="container-fluid">
-									<div class="row-fluid">
-										<div class="span2">
-											<h3 class="title-post">Siguiente en la serie</h3>
-										</div>
-										<div class="span8 mobile-no-offset">
-											<div class="wrapper-post-serie">
-												<h2>
-													<a href="<?php echo get_permalink($next_post->ID); ?>"><?php echo $next_post->post_title; ?></a>
-												</h2>
-												<p class="date-text"><?php the_time('j F, Y')?> | Por:  <?php largo_byline(true)?></p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					<?php endif;?>
+        <div class="hero-main">
+          <div class="wrapper-image" style="background: url('<?php echo $heroImageNext['0']; ?>') no-repeat center/cover;">
+            <div class="container-fluid">
+              <div class="row-fluid">
+                <div class="span2">
+                  <h3 class="title-post">Siguiente en la serie</h3>
+                </div>
+                <div class="span8 mobile-no-offset">
+                  <div class="wrapper-post-serie">
+                    <h2>
+                      <a href="<?php echo get_permalink($next_post->ID); ?>"><?php echo $next_post->post_title; ?></a>
+                    </h2>
+                    <p class="date-text"><?php the_time('j F, Y')?></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endif;?>
 		</div>
 	</div>
 	<div class="social-media-main">
 		<div class="container-fluid mobile-full-width">
 			<div class="row-fluid">
 				<div class="span8 offset2 mobile-no-offset">
-					<?php largo_byline(true)?>
+        <span class="by-author">
+						<span class="by">por</span> 
+							<span class="author vcard" itemprop="author">
+								<?php
+									$authors = get_coauthors();
+									foreach($authors as $author) {
+										$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
+										$avatar = coauthors_get_avatar( $author, 128 );
+										$name =  $author->display_name;
+										echo $avatar . '<a class="url fn n" href="' . $archive_link . '" rel="author">' . $name . '</a><span class="and">y</span>';
+									}
+								?>
+						</span>
+					</span>
 					<div class="social-media-list">
 						<?php largo_post_social_links();?>
 					</div>

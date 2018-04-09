@@ -137,34 +137,16 @@ function widget_autores_init() {
 }
 add_action( 'widgets_init', 'widget_autores_init' );
 
-function widget_historias_init() {
-	register_sidebar( array(
-		'name'          => __( 'Historias relacionadas', 'twentyseventeen' ),
-		'id'            => 'sidebar-5',
-		'description'   => __( 'Add widgets here.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'widget_historias_init' );
-
-
-/*
- * Load up all of the other goodies from the /inc directory
+/**
+ * Includes
  */
-$includes = array();
-
-/*
- * This functionality is probably not for everyone so we'll make it easy to turn it on or off
- */
-
-$includes[] = '/inc/wp-taxonomy-landing/taxonomy-landing.php'; // adds taxonomy landing plugin
-
-/*
- * Perform load
- */
+$includes = array(
+	'/inc/wp-taxonomy-landing/taxonomy-landing.php',		
+	// '/inc/cpipr_byline_class.php', 
+);
+// Perform load
 foreach ( $includes as $include ) {
 	require_once( get_stylesheet_directory() . $include );
 }
+
+

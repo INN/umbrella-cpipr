@@ -28,7 +28,7 @@ if ( is_author() ) {
 		<div class="wrapper-title">
 			<?php 
 			if ( largo_has_avatar( $author_obj->user_email ) ) {
-				echo get_avatar( $author_obj->ID, 96, '', $author_obj->display_name );
+				echo get_avatar( $author_obj->ID, 300, '', $author_obj->display_name );
 			} elseif ( $author_obj->type == 'guest-author' && get_the_post_thumbnail( $author_obj->ID ) ) {
 				$photo = get_the_post_thumbnail( $author_obj->ID, array( 96,96 ) );
 				$photo = str_replace( 'attachment-96x96 wp-post-image', 'avatar avatar-96 photo', $photo );
