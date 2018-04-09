@@ -130,7 +130,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 					if( !empty( $abstract_video ) ) {
 						echo  '<div class="row-fluid wrapper-video">
 											<div class="span2">
-												<h3 class="title-post">Videos</h3>
+												<h3 class="title-post">Video</h3>
 											</div>
 											<div class="span10">
 												<iframe class="iframe-youtube" width="560" height="315" src="https://www.youtube.com/embed/' . $abstract_video . '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
