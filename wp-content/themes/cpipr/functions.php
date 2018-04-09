@@ -43,6 +43,7 @@ function cpipr_styles() {
 
 	wp_dequeue_style( 'largo-child-styles' );
 	wp_enqueue_style( 'cpipr-styles', get_stylesheet_directory_uri().'/css/style' . $suffix . '.css' );
+	wp_dequeue_script( 'largo-navigation' );
 }
 add_action( 'wp_enqueue_scripts', 'cpipr_styles', 20 );
 

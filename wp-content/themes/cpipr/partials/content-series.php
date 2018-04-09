@@ -31,8 +31,6 @@ $entry_classes = 'entry-content';
 
 $show_top_tag = largo_has_categories_or_tags();
 
-$authors = get_coauthors();
-
 if ( $featured ) {
 	$entry_classes .= ' span10 with-hero';
 	$show_thumbnail = FALSE;
@@ -60,11 +58,17 @@ if ( $featured ) {
 			
 				<?php
 				if ( $show_byline ) { 
-					foreach($authors as $author) {
-						$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
-						$avatar = coauthors_get_avatar( $author, 128 );
-						$name =  $author->display_name;
-						echo '<div class="series-author"><a href="' . $archive_link . '" style="display:flex;width: 7em;"><div class="series-author--avatar">' . $avatar . '</div><p style="line-height: 1.25em;">' . $name  . '</p></a></div>';
+					if ( function_exists( 'get_coauthors' ) ) {
+						$authors = get_coauthors();
+						foreach($authors as $author) {
+							$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
+							$avatar = coauthors_get_avatar( $author, 128 );
+							$name =  $author->display_name;
+							echo '<div class="series-author"><a href="' . $archive_link . '" style="display:flex;width: 7em;"><div class="series-author--avatar">' . $avatar . '</div><p style="line-height: 1.25em;">' . $name  . '</p></a></div>';
+						}
+					} else {
+						$authors = array();
+						error_log( 'This theme depends upon Co-Authors Plus!' );
 					}
 				?>
 				<?php }?>

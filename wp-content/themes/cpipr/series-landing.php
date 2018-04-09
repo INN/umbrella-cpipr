@@ -84,12 +84,17 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 						<span class="by">por</span> 
 							<span class="author vcard" itemprop="author">
 								<?php
-									$authors = get_coauthors();
-									foreach($authors as $author) {
-										$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
-										$avatar = coauthors_get_avatar( $author, 128 );
-										$name =  $author->display_name;
-										echo $avatar . '<a class="url fn n" href="' . $archive_link . '" rel="author">' . $name . '</a><span class="and">y</span>';
+									if ( function_exists( 'get_coauthors' ) ) {
+										$authors = get_coauthors();
+										foreach($authors as $author) {
+											$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
+											$avatar = coauthors_get_avatar( $author, 128 );
+											$name =  $author->display_name;
+											echo $avatar . '<a class="url fn n" href="' . $archive_link . '" rel="author">' . $name . '</a><span class="and">y</span>';
+										}
+									} else {
+										$authors = array();
+										error_log( 'This theme depends upon Co-Authors Plus!' );
 									}
 								?>
 						</span>
