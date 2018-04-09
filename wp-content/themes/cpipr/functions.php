@@ -20,8 +20,6 @@ if ( ! defined( 'INN_HOSTED' ) ) {
  *
  * @since 0.5
  */
-if ( ! defined( 'LARGO_DEBUG' ) )
-	define( 'LARGO_DEBUG', FALSE );
 
 //use the Largo metabox API
 require_once( get_template_directory() . '/largo-apis.php' );
