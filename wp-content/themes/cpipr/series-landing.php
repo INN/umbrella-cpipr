@@ -46,9 +46,14 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 <?php if ($opt['header_enabled']): ?>
 	<div class="hero-main">
 		<div class="wrapper-image" style="background: url('<?php echo $heroImage['0']; ?>') no-repeat center/cover;">
-			<video autoplay muted loop id="videoHero" class="video-hero">
-			  	<source src="<?php bloginfo('stylesheet_directory');?>/images/CP-CG-C4.mov" type="video/mp4">
-			</video>
+				<?php
+					$hero_video = get_post_meta( $post->ID, 'hero_video', true );
+					if( !empty( $hero_video ) ) {
+							echo '<video autoplay muted loop id="videoHero" class="video-hero">
+												<source src="' . $hero_video . '" type="video/mp4">
+										</video>';
+					}
+				?>
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span8 offset2 mobile-no-offset">
@@ -105,11 +110,9 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 				</div>
 				<div class="span7 mobile-no-offset">
 				<?php
-					// Retrieves the stored value from the database
-					$meta_value = get_post_meta( $post->ID, 'abstract', true );
-					// Checks and displays the retrieved value
-					if( !empty( $meta_value ) ) {
-							echo $meta_value; 
+					$abstract_body = get_post_meta( $post->ID, 'abstract_body', true );
+					if( !empty( $abstract_body ) ) {
+							echo $abstract_body; 
 					}
 					?>
 				</div>
@@ -122,6 +125,20 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 					</a>
 				</div>
 			</div>
+			<?php
+				$abstract_video = get_post_meta( $post->ID, 'abstract_video', true );
+					if( !empty( $abstract_video ) ) {
+						echo  '<div class="row-fluid wrapper-video">
+											<div class="span2">
+												<h3 class="title-post">Videos</h3>
+											</div>
+											<div class="span10">
+												<iframe class="iframe-youtube" width="560" height="315" src="https://www.youtube.com/embed/' . $abstract_video . '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+												<!-- <p class="text-information">Noel Zamot durante su participación en el Puerto Rico Investment Summit 2018.</p> -->
+											</div>
+										</div>';
+					}
+				?>
 		</div>
 	</div>
 	<div class="wrapper-main-gray">

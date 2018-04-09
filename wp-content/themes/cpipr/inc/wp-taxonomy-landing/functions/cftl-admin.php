@@ -535,11 +535,23 @@ function cftl_tax_landing_abstract ( $post ) {
 	<div class="form-field">
 		<h4>abstract</h4>
 		<div>
-		<?php wp_editor( $fields['abstract'][0], 'abstract', array(
-			'wpautop' => false,
-			'textarea_rows' => 5,
-			'teeny' => true,
-		)); ?>
+			<?php wp_editor( $fields['abstract_body'][0], 'abstract_body', array(
+				'wpautop' => false,
+				'textarea_rows' => 5,
+				'teeny' => true,
+			)); ?>
+		</div>
+	</div>
+	<div class="form-field">
+	<h4>abstract video youtube id</h4>
+		<div>
+			<input type="text" name="abstract_video" id="video" value="<?php if ( isset ( $fields['abstract_video'] ) ) echo $fields['abstract_video'][0]; ?>" />
+		</div>
+	</div>
+	<div class="form-field">
+	<h4>hero background video url</h4>
+		<div>
+			<input type="text" name="hero_video" id="video" value="<?php if ( isset ( $fields['hero_video'] ) ) echo $fields['hero_video'][0]; ?>" />
 		</div>
 	</div>
 <?php
@@ -556,9 +568,35 @@ function cftl_tax_landing_save_abstract($post_id) {
 	if ( ! current_user_can( 'edit_post', $post_id ) ) {
 		return;
 	}
-	// Checks for input and sanitizes/saves if needed
-	if( isset( $_POST[ 'abstract' ] ) ) {
-		update_post_meta( $post_id, 'abstract', wp_filter_post_kses( $_POST[ 'abstract' ] ) );
+
+	$abstract_fields = array(
+		'abstract_video'          => 'sanitize_text_field',
+		'abstract_body'           => 'wp_filter_post_kses',
+		'hero_video'							=> 'esc_url',
+	);
+
+	foreach ($abstract_fields as $field_name => $sanitize ) {
+
+		switch ( $sanitize ) {
+			case 'bool':
+				$safe_value = ! empty( $_POST[ $field_name ] ) ? true : false;
+				break;
+
+			case 'sanitize_show':
+
+				$safe_value = array();
+				foreach( array( 'image', 'excerpt', 'byline', 'tags' ) as $key ) {
+					$safe_value[ $key ] = ! empty( $_POST[ $field_name ][ $key ] ) ? true : false;
+				}
+				break;
+
+			default:
+				$safe_value = ! empty( $_POST[ $field_name ] ) ? call_user_func( $sanitize, $_POST[ $field_name ] ) : '';
+				break;
+
+		}
+
+		update_post_meta( $post_id, $field_name, $safe_value );
 	}
 }
 
