@@ -11,16 +11,6 @@ if ( ! defined( 'INN_HOSTED' ) ) {
         define( 'INN_HOSTED', true );
 }
 
-/**
- * LARGO_DEBUG defines whether or not to use minified assets
- *
- * Largo by default uses minified CSS and JavaScript files.
- * set LARGO_DEBUG to TRUE to use unminified JavaScript files
- * and unminified CSS files with sourcemaps to our LESS files.
- *
- * @since 0.5
- */
-
 //use the Largo metabox API
 require_once( get_template_directory() . '/largo-apis.php' );
 
