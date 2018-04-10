@@ -119,7 +119,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 					if( !empty( $abstract_body ) ) {
 							echo $abstract_body; 
 					}
-					?>
+				?>
 				</div>
 				<div class="span3">
 					<a href="<?php echo esc_url(home_url()); ?>/donaciones/">
@@ -159,85 +159,80 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 						<?php global $wp_query, $post;
 
 						// Make sure we're actually a series page, and pull posts accordingly
-						if (isset($wp_query->query_vars['term'])
-								&& isset($wp_query->query_vars['taxonomy'])
-								&& 'series' == $wp_query->query_vars['taxonomy']) {
+						if (
+							isset(  $wp_query->query_vars['term'] )
+							&& isset($wp_query->query_vars['taxonomy'])
+							&& 'series' == $wp_query->query_vars['taxonomy']
+						) {
 
-								$series = $wp_query->query_vars['term'];
+							$series = $wp_query->query_vars['term'];
 
-								//default query args: by date, descending
-								$args = array(
-										'p' => '',
-										'post_type' => 'post',
-										'taxonomy' => 'series',
-										'term' => $series,
-										'order' => 'DESC',
-										'posts_per_page' => $opt['per_page'],
-								);
+							//default query args: by date, descending
+							$args = array(
+								'p' => '',
+								'post_type' => 'post',
+								'taxonomy' => 'series',
+								'term' => $series,
+								'order' => 'DESC',
+								'posts_per_page' => $opt['per_page'],
+							);
 
-								//stores original 'paged' value in 'pageholder'
-								global $cftl_previous;
-								if (isset($cftl_previous['pageholder']) && $cftl_previous['pageholder'] > 1) {
-										$args['paged'] = $cftl_previous['pageholder'];
-										global $paged;
-										$paged = $args['paged'];
-								}
+							//stores original 'paged' value in 'pageholder'
+							global $cftl_previous;
+							if ( isset( $cftl_previous['pageholder'] ) && $cftl_previous['pageholder'] > 1 ) {
+									$args['paged'] = $cftl_previous['pageholder'];
+									global $paged;
+									$paged = $args['paged'];
+							}
 
-								//change args as needed
-								//these unusual WP_Query args are handled by filters defined in cftl-series-order.php
-								switch ($opt['post_order']) {
-										case 'ASC':
-												$args['orderby'] = 'ASC';
-												break;
-										case 'custom':
-												$args['orderby'] = 'series_custom';
-												break;
-										case 'featured, DESC':
-										case 'featured, ASC':
-												$args['orderby'] = $opt['post_order'];
-												break;
-								}
+							//change args as needed
+							//these unusual WP_Query args are handled by filters defined in cftl-series-order.php
+							switch ($opt['post_order']) {
+								case 'ASC':
+									$args['orderby'] = 'ASC';
+									break;
+								case 'custom':
+									$args['orderby'] = 'series_custom';
+									break;
+								case 'featured, DESC':
+								case 'featured, ASC':
+									$args['orderby'] = $opt['post_order'];
+									break;
+							}
 
-								$series_query = new WP_Query($args);
-								$counter = 1;
-								while ($series_query->have_posts()): $series_query->the_post();
-										if (($counter % 2) == 0) {
-												get_template_part('partials/content', 'series');
-												do_action('largo_loop_after_post_x', $counter, $context = 'archive');
-												echo '</div>';
-										} else {
-												echo '<div class="container-items">';
-												get_template_part('partials/content', 'series');
-												do_action('largo_loop_after_post_x', $counter, $context = 'archive');
-										}
+							$series_query = new WP_Query($args);
+							$counter = 1;
+							while ($series_query->have_posts()) {
+								$series_query->the_post();
+								get_template_part('partials/content', 'series');
+								do_action('largo_loop_after_post_x', $counter, $context = 'archive');
+								$counter++;
+							}
 
-										$counter++;
-								endwhile;
-								if (($counter % 2) == 0) {
-										echo '</div>';
-								}
+							wp_reset_postdata();
 
-								wp_reset_postdata();
-
-								// Enqueue the LMP data
-								$posts_term = of_get_option('posts_term_plural');
-								largo_render_template('partials/load-more-posts', array(
-										'nav_id' => 'nav-below',
-										'the_query' => $series_query,
-										'posts_term' => ($posts_term) ? $posts_term : 'Posts',
-								));
-								}?>
+							// Enqueue the LMP data
+							$posts_term = of_get_option('posts_term_plural');
+							largo_render_template('partials/load-more-posts', array(
+								'nav_id' => 'nav-below',
+								'the_query' => $series_query,
+								'posts_term' => ($posts_term) ? $posts_term : 'Posts',
+							));
+						} // end series posts loop
+						?>
 					</div>
 				</div>
 			</div>
 		</div>
-		<?php if ($opt['cftl_layout'] != 'one-column'):
-    if (!empty($opt['right_region']) && $opt['right_region'] !== 'none') {
-        $right_rail = $opt['right_region'];
-    } else {
-        $right_rail = 'single';
-    }
-		endif;?>
+		<?php
+			if ( $opt['cftl_layout'] !== 'one-column' ) {
+				if (!empty($opt['right_region']) && $opt['right_region'] !== 'none') {
+					$right_rail = $opt['right_region'];
+				} else {
+					$right_rail = 'single';
+				}
+			}
+		?>
 	</div>
 	<div class="wrapper-main-black">
 		<div class="container-fluid">
