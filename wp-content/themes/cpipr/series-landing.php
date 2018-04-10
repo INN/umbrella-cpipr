@@ -111,7 +111,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
-					<h3 class="title-post">Abstract</h3>
+					<h3 class="title-post">Resumen</h3>
 				</div>
 				<div class="span7 mobile-no-offset">
 				<?php
