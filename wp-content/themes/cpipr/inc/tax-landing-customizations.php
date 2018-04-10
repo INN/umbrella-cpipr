@@ -8,22 +8,23 @@
 /**
  * Add the "Abstract" meta box to the taxonomy landing page
  */
+
 function cpipr_tax_landing_metaboxes() {
-	largo_add_meta_box(
+	add_meta_box(
 		'cftl_tax_landing_abstract',
-		__('Abstract', 'largo'),
-		'cftl_tax_landing_abstract',
+		__('Abstract', 'cpipr'),
+		'cftl_tax_landing_abstract_callback',
 		'cftl-tax-landing',
 		'normal',
 		'default'
 	);
 }
-add_action( 'add_meta_boxes', 'cftl_tax_landing_add_extras_box', 99 ); //do this late so we can remove other meta boxes
+add_action( 'add_meta_boxes', 'cpipr_tax_landing_metaboxes', 99 ); //do this late so we can remove other meta boxes
 
 /**
  * The "Abstracts" meta box
  */
-function cftl_tax_landing_abstract ( $post ) {
+function cftl_tax_landing_abstract_callback ( $post ) {
 	global $post;
 	$values = get_post_custom( $post->ID );
 	wp_nonce_field( 'largo_meta_box_nonce', 'meta_box_nonce' );
