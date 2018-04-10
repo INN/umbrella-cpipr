@@ -49,7 +49,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 				<?php
 					$hero_video = get_post_meta( $post->ID, 'hero_video', true );
 					if( !empty( $hero_video ) ) {
-							echo '<video autoplay muted loop id="videoHero" class="video-hero">
+							echo '<video autoplay playsinline muted loop id="videoHero" class="video-hero">
 												<source src="' . $hero_video . '" type="video/mp4">
 										</video>';
 					}
