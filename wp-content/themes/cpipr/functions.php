@@ -28,8 +28,11 @@ foreach ( $includes as $include ) {
 //child theme text domain
 add_action( 'after_setup_theme', 'cpipr_theme_setup' );
 function cpipr_theme_setup() {
-    load_child_theme_textdomain( 'cpipr', get_stylesheet_directory() . '/lang' );
+	load_child_theme_textdomain( 'cpipr', get_stylesheet_directory() . '/lang' );
 }
+// Loading localization from child theme (we should consider commiting the fix on the largo theme)
+load_theme_textdomain('largo', get_stylesheet_directory() . '/lang');
+
 
 //load typekit
 add_action( 'wp_head', 'cpipr_typekit' );
@@ -39,6 +42,7 @@ function cpipr_typekit() { ?>
 <?php
 }
 
+// Load child theme stylesheet
 function cpipr_styles() {
 	$suffix = (LARGO_DEBUG)? '' : '.min';
 
@@ -51,8 +55,8 @@ add_action( 'wp_enqueue_scripts', 'cpipr_styles', 20 );
 
 //allow admins to add users without requiring email confirmation
 function auto_activate_users($user, $user_email, $key, $meta){
-  wpmu_activate_signup($key);
-  return false;
+	wpmu_activate_signup($key);
+	return false;
 }
 add_filter( 'wpmu_signup_user_notification', 'auto_activate_users', 10, 4);
 add_filter( 'wpmu_signup_user_notification', '__return_false' );
@@ -121,9 +125,9 @@ function en_version_url_meta_box_display() {
 }
 largo_register_meta_input( 'en_version_url', 'sanitize_text_field' );
 
-// Loading localization from child theme (we should consider commiting the fix on the largo theme)
-load_theme_textdomain('largo', get_stylesheet_directory() . '/lang');
-
+/**
+ * Authors/Autores widget sidebar, used on the template series-landing.php
+ */
 function widget_autores_init() {
 	register_sidebar( array(
 		'name'          => __( 'Biografia autores', 'twentyseventeen' ),
@@ -139,24 +143,27 @@ add_action( 'widgets_init', 'widget_autores_init' );
 
 /**
  * Counter Hamburger menu
+ *
+ * For the sake of making things easy to escape, this function uses heredoc: https://secure.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc
  */
 function cpipr_counter_hamburger_menu() {
-	echo "
-				<script>
-				jQuery(document).ready(function($) {
-					counterHamburguer = false;
+	echo <<<DOC
+<script>
+jQuery(document).ready(function($) {
+	counterHamburguer = false;
 
-					$('#menu-btn').click(function () {
-							if(counterHamburguer == false){
-									$('#menu-header').slideDown('slow');
-									counterHamburguer = true;
-							}else{
-									$('#menu-header').slideUp('slow');
-									counterHamburguer = false;
-							}
-					});
-				});
-				</script>";
+	$('#menu-btn').click(function () {
+		if(counterHamburguer == false){
+			$('#menu-header').slideDown('slow');
+			counterHamburguer = true;
+		}else{
+			$('#menu-header').slideUp('slow');
+			counterHamburguer = false;
+		}
+	});
+});
+</script>
+DOC;
 }
 add_action( 'wp_footer', 'cpipr_counter_hamburger_menu' );
 
