@@ -1,0 +1,210 @@
+.social-media-main {
+  background: #000;
+  padding: 35px 15px 35px;
+  .by,.edit-link,.entry-date,.sep {
+    display: none;
+  }
+  .author.vcard {
+    img{
+      height: 75px;
+      border-radius: 50%;
+      width: 75px;
+      float: left;
+    }
+    a{
+      color: #fff;
+      text-transform: uppercase;
+      font-family: 'Roboto condensed bold italic', sans-serif;
+      display: block;
+      float: left;
+      max-width: 200px;
+      margin-left: 20px;
+      margin-top: 0;
+    }
+  }
+  .col-md-8 {
+    float: none;
+    margin: 0 auto;
+  }
+  .secondary-logo {
+    width: 247px;
+    float: left;
+  }
+  .social-media-list {
+    padding: 14px 0;
+    float: right;
+    margin: 0;
+    span,span:hover {
+      background: transparent;
+      padding: 0 5px;
+    }
+    span {
+      :last-child {
+        padding-right: 0;
+      }
+      a {
+        background: #fff;
+        height: 42px;
+        width: 42px;
+        padding: 0;
+        border-radius: 50px;
+        i {
+          color: #000;
+          font-size: 2rem;
+          padding: 10px 0 0;
+          display: block;
+          margin: 0;
+          text-align: center;
+          &:before {
+            margin-right: 0;
+          }
+        }
+        > span {
+          display: none;
+        }
+      }
+    }
+  }
+  .post-social {
+    margin-bottom: 0;
+  }
+  .by-author{
+    display: flex;
+    width: calc(~"100% - 265px");
+    float: left;
+    justify-content: flex-start;
+    .author.vcard{
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .twitter{
+      display: none;
+    }
+  }
+}
+
+.post-social > span {
+  min-width: 25px;
+  margin: 0;
+}
+@media (max-width: 896px) {
+  .social-media-main .col-md-8 {
+    padding: 0;
+  }
+  .social-media-main ul {
+    padding: 9px 0;
+  }
+  .social-media-main ul li {
+    padding: 0 5px;
+  }
+  .social-media-main ul li a img {
+    width: 24px;
+  }
+  .social-media-main .social-media-list span,
+  .social-media-main .social-media-list span:hover {
+    padding: 0 3px;
+    margin: 0;
+  }
+  .social-media-main .social-media-list span a {
+    height: 30px;
+    width: 30px;
+  }
+  .social-media-main .social-media-list span a i {
+    font-size: 1.5rem;
+    padding: .1em 0 0;
+  }
+  .social-media-main .by-author {
+    width: calc(~"100% - 185px");
+  }
+  .social-media-main .col-md-8 {
+    padding: 0;
+  }
+}
+@media (max-width: 810px){
+  .social-media-main .by-author{
+    width: 100%;
+    float: none;
+  }
+  .social-media-main .social-media-list{
+    float: none;
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 630px) {
+  .social-media-main {
+    padding: 20px 15px;
+  }
+  .social-media-main .secondary-logo {
+    width: 200px;
+  }
+  .social-media-main ul {
+    padding: 15px 0;
+  }
+  .social-media-main ul li {
+    padding: 0 5px;
+  }
+  .social-media-main ul li a img {
+    width: 30px;
+  }
+  .social-media-main .author.vcard img{
+    width: 58px;
+    height: 58px;
+  }
+}
+
+@media (max-width: 530px) {
+  .social-media-main {
+    padding: 15px;
+  }
+  .social-media-main .secondary-logo {
+    width: 137px;
+  }
+  .social-media-main ul {
+    padding: 9px 0;
+  }
+  .social-media-main ul li {
+    padding: 0 5px;
+  }
+  .social-media-main ul li a img {
+    width: 24px;
+  }
+  .social-media-main .social-media-list span,
+  .social-media-main .social-media-list span:hover {
+    padding: 0 3px;
+    margin: 0;
+  }
+  .social-media-main .social-media-list span a {
+    height: 30px;
+    width: 30px;
+  }
+  .social-media-main .social-media-list span a i {
+    font-size: 1.5rem;
+    padding: .1em 0 0;
+  }
+}
+
+@media (max-width: 440px) {
+  .social-media-main .author.vcard img{
+    width: 40px;
+    height: 40px;
+  }
+  .social-media-main .author.vcard a{
+    margin-left: 10px;
+    max-width: calc(~"50% - 50px");
+  }
+}
+
+@media (max-width: 370px) {
+  .social-media-main .secondary-logo {
+    width: 120px;
+  }
+  .social-media-main ul {
+    padding: 7px 0;
+  }
+  .social-media-main ul li a img {
+    width: 22px;
+  }
+}
