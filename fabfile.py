@@ -25,10 +25,11 @@ def production():
     """
     env.settings    = 'production'
     env.hosts       = [ os.environ[ 'CPIPR_PRODUCTION_SFTP_HOST' ], ]   # ssh host for production.
-    env.user        = os.environ[ 'CPIPR_PRODUCTION_SFTP_USER' ]        # ssh user for production.
-    env.password    = os.environ[ 'CPIPR_PRODUCTION_SFTP_PASSWORD' ]    # ssh password for production.
-    env.domain      = 'cpipr.wpengine.com'
-    env.port        = '2222'
+    env.path        = os.environ[ 'CPIPR_PRODUCTION_SFTP_PATH' ]
+    env.user        = os.environ[ 'FLYWHEEL_SFTP_USER' ]        # ssh user for production.
+    env.password    = os.environ[ 'FLYWHEEL_SFTP_PASS' ]    # ssh password for production.
+    env.domain      = 'periodismoinvestigativo.com'
+    env.port        = '22'
 
 @task
 def staging():
@@ -37,10 +38,11 @@ def staging():
     """
     env.settings    = 'staging'
     env.hosts       = [ os.environ[ 'CPIPR_STAGING_SFTP_HOST' ], ]   # ssh host for production.
-    env.user        = os.environ[ 'CPIPR_STAGING_SFTP_USER' ]		# ssh user for production.
-    env.password    = os.environ[ 'CPIPR_STAGING_SFTP_PASSWORD' ]    # ssh password for production.
-    env.domain      = 'cpipr.staging.wpengine.com'
-    env.port        = '2222'
+    env.path        = os.environ[ 'CPIPR_STAGING_SFTP_PATH' ]
+    env.user        = os.environ[ 'FLYWHEEL_SFTP_USER' ]        # ssh user for production.
+    env.password    = os.environ[ 'FLYWHEEL_SFTP_PASS' ]    # ssh password for production.
+    env.domain      = ''
+    env.port        = '22'
 
 try:
     from local_fabfile import  *
