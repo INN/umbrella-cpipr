@@ -1,0 +1,138 @@
+.hero-main {
+  margin-top: -18px;
+  .wrapper-image {
+    height: 630px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    video {
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+    }
+    .container-fluid {
+      position: relative;
+      z-index: 3;
+    }
+  }
+  h2 {
+    font-family: 'GT america compressed black', sans-serif;
+    font-size: 11.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 10rem;
+  }
+  .wrapper-text {
+    padding: 30px 0;
+    background: #45c47b;
+    .text--big {
+      margin-bottom: 0;
+    }
+    .by-author .by,
+    .author.vcard .twitter,
+    .author.vcard img,
+    .date-text .entry-date,
+    .date-text .sep {
+      display: none;
+    }
+    .url {
+      color: #000;
+    }
+  }
+}
+
+#single-title {
+  font-size: 7rem;
+  line-height: 7rem;
+}
+
+@media (max-width: 1160px) {
+  .hero-main .wrapper-image video {
+    width: 150%;
+    left: -25%;
+  }
+}
+
+@media (max-width: 896px) {
+  .hero-main {
+    .wrapper-image {
+      height: 320px;
+      padding-top: 100px;
+      h2 {
+        font-size: 8rem;
+        margin-top: 0;
+        line-height: 8rem;
+      }
+      video {
+        width: 200%;
+        left: -50%;
+      }
+    }
+    .wrapper-text {
+      padding: 20px 0;
+      .text--big {
+        margin-bottom: 20px;
+      }
+      h2,
+      h2 a {
+        font-size: 5rem;
+        line-height: 6rem;
+        margin-top: 65px;
+      }
+    }
+    .col-md-8 {
+      padding: 0 15px;
+    }
+  }
+}
+
+@media (max-width: 630px) {
+  .hero-main {
+    .wrapper-image {
+      height: 350px;
+      padding-top: 170px;
+      h2 {
+        font-size: 5rem !important;
+      }
+    }
+    .wrapper-text {
+      padding: 15px 0 10px;
+      h2,
+      h2 a {
+        font-size: 4rem !important;
+        line-height: 4.5rem;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 530px) {
+  .hero-main {
+    .wrapper-image {
+      height: 195px;
+      padding-top: 185px;
+      h2 {
+        line-height: 4.75rem !important;
+      }
+    }
+    .wrapper-text .text--big {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .hero-main .wrapper-image h2 {
+    font-size: 4rem !important;
+    line-height: 3.75rem !important;
+  }
+}
+
+@media (max-width: 370px) {
+  .hero-main .wrapper-image video {
+    width: 250%;
+    left: -75%;
+  }
+}
