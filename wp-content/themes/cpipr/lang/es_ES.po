@@ -3,24 +3,21 @@ msgstr ""
 "Project-Id-Version: Project Largo - Base Theme v0.5.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-01 13:19-0400\n"
-"PO-Revision-Date: 2016-02-29 20:44:14+0000\n"
+"PO-Revision-Date: 2018-04-11 08:12-0400\n"
 "Last-Translator: Eric Flores <eric@dashway.com>\n"
 "Language-Team: Institute for Nonprofit News <largo@inn.org>\n"
-"Language: \n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.5.7\n"
-"X-Poedit-Language: \n"
-"X-Poedit-Country: \n"
+"X-Generator: Poedit 2.0.6\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
-"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Basepath: ../\n"
-"X-Poedit-Bookmarks: \n"
-"X-Poedit-SearchPath-0: .\n"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:21
 msgid "Or check out some of our recent stories"
@@ -1390,12 +1387,18 @@ msgstr "Series"
 msgid "New Series Name"
 msgstr ""
 
+# #-#-#-#-#  catalog.po (Project Largo - Base Theme v0.5.4)  #-#-#-#-#
 # @ default
 # @ largo
 #: inc/taxonomies.php:177 inc/widgets/largo-series-posts.php:102
-#: inc/widgets/largo-taxonomy-list.php:32
+#: inc/widgets/largo-taxonomy-list.php:32 series-landing.php:60
+#, fuzzy
 msgid "Series"
-msgstr "Series"
+msgstr ""
+"#-#-#-#-#  catalog.po (Project Largo - Base Theme v0.5.4)  #-#-#-#-#\n"
+"Series\n"
+"#-#-#-#-#  catalog.po (Project Largo - Base Theme v0.5.4)  #-#-#-#-#\n"
+"Serie Especial"
 
 # @ largo
 #: inc/term-icons.php:79 inc/term-icons.php:102
@@ -2731,9 +2734,8 @@ msgstr "Guardar y Cerrar"
 # @ default
 # @ largo
 #: inc/wp-taxonomy-landing/functions/cftl-admin.php:616
-#, fuzzy
 msgid "Series "
-msgstr "Series"
+msgstr "Serie"
 
 # @ largo
 #: inc/wp-taxonomy-landing/functions/cftl-admin.php:704
@@ -4519,6 +4521,36 @@ msgid "%s result"
 msgid_plural "%s results"
 msgstr[0] ""
 msgstr[1] ""
+
+#: series-landing.php:114
+msgid "Abstract"
+msgstr "Resumen"
+
+#: series-landing.php:153
+msgid "This Series"
+msgstr "Historias en la serie"
+
+#: series-landing.php:239
+msgid "Series Authors"
+msgstr "Autores en la serie"
+
+#: series-landing.php:262
+msgid "Other Series"
+msgstr "Series especiales"
+
+#: series-single.php:149
+msgid "Next in Series"
+msgstr "Próximo en la serie"
+
+#: series-landing.php:127
+#: series-single.php:129
+msgid "If you want to make investigations like this possible"
+msgstr "Para hacer que investigaciones como esta sigan siendo posibles"
+
+#: series-landing.php:128
+#: series-landing.php:130
+msgid "Donate now"
+msgstr "Dona ahora"
 
 # @ largo
 #~ msgid "Saved Links"

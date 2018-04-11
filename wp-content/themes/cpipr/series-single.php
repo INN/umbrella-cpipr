@@ -66,7 +66,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span8 offset2 mobile-no-offset">
-						<p class="text--important">Serie especial</p>
+						<p class="text--important"><?php _e('Series', 'largo'); ?></p>
 						<h2 id="single-title">
 							<?php the_title();?>
 						</h2>
@@ -146,7 +146,7 @@ if (!empty($next_post)):
             <div class="container-fluid">
               <div class="row-fluid">
                 <div class="span2">
-                  <h3 class="title-post">Siguiente en la serie</h3>
+                  <h3 class="title-post"><?php _e('Next in Series', 'largo'); ?></h3>
                 </div>
                 <div class="span8 mobile-no-offset">
                   <div class="wrapper-post-serie">

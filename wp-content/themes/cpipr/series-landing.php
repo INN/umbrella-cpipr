@@ -57,7 +57,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span8 offset2 mobile-no-offset">
-						<p class="text--important">Serie especial</p>
+						<p class="text--important"><?php _e('Series', 'largo'); ?></p>
 						<h2>
 							<?php the_title();?>
 						</h2>
@@ -111,7 +111,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
-					<h3 class="title-post">Resumen</h3>
+					<h3 class="title-post"><?php _e('Abstract', 'largo'); ?></h3>
 				</div>
 				<div class="span7 mobile-no-offset">
 				<?php
@@ -150,9 +150,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
-					<h3 class="title-post">
-						Historias en la serie
-					</h3>
+					<h3 class="title-post"><?php _e('This Series', 'largo'); ?></h3>
 				</div>
 				<div class="span10 mobile-no-offset">
 					<div class="row-fluid">
@@ -238,7 +236,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
-					<h3 class="title-post">Autores en la serie</h3>
+					<h3 class="title-post"><?php _e('Series Authors', 'largo'); ?></h3>
 				</div>
 				<div class="span7">
 					<?php dynamic_sidebar('sidebar-4');?>
@@ -261,7 +259,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
-					<h3 class="title-post">Series especiales</h3>
+					<h3 class="title-post"><?php _e('Other Series', 'largo'); ?></h3>
 				</div>
 				<div class="span10">
 					<div class="row-fluid container-special">
