@@ -4552,6 +4552,10 @@ msgstr "Para hacer que investigaciones como esta sigan siendo posibles"
 msgid "Donate now"
 msgstr "Dona ahora"
 
+#: partials/content-series.php:83
+msgid "Read More"
+msgstr "Leer más"
+
 # @ largo
 #~ msgid "Saved Links"
 #~ msgstr "Enlaces guardados"

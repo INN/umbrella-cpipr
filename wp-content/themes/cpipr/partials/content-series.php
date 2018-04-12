@@ -80,7 +80,7 @@ if ( $featured ) {
 	</div>
 
 	<div class="wrapper-buttons">
-		<a href="<?php echo get_permalink(); ?>" class="btn-black">Leer más</a>
+		<a href="<?php echo get_permalink(); ?>" class="btn-black"><?php _e('Read More', 'largo'); ?></a>
 
 		<div class="social-media-list">
 			<?php largo_post_social_links(); ?>

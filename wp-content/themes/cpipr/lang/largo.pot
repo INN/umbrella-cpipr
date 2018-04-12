@@ -3647,3 +3647,7 @@ msgstr ""
 #: series-landing.php:130
 msgid "Donate Now"
 msgstr ""
+
+#: partials/content-series.php:83
+msgid "Read More"
+msgstr ""
