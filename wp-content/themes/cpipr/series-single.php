@@ -78,7 +78,9 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span8 offset2 mobile-no-offset text--big">
-						<?php echo apply_filters('the_content', $post->post_excerpt); ?>
+						<?php if ( $subtitle = get_post_meta( $post->ID, 'subtitle', true ) ) : ?>
+							<p><?php echo $subtitle ?></p>
+						<?php endif; ?>
 						<p class="date-text"><?php the_time('j F, Y')?></p>
 					</div>
 				</div>
