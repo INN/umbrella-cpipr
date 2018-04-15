@@ -152,7 +152,7 @@ if( !empty( $abstract_body ) ) {
 					<h3 class="title-post"><?php _e('This Series', 'largo'); ?></h3>
 				</div>
 				<div class="span10 mobile-no-offset">
-					<div class="row-fluid">
+					<div class="boxes-columns">
 						<?php global $wp_query, $post;
 
 						// Make sure we're actually a series page, and pull posts accordingly
@@ -171,7 +171,7 @@ if( !empty( $abstract_body ) ) {
 								'taxonomy' => 'series',
 								'term' => $series,
 								'order' => 'DESC',
-								'posts_per_page' => $opt['per_page'],
+								'posts_per_page' => -1,
 							);
 
 							//stores original 'paged' value in 'pageholder'

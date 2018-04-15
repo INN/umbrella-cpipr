@@ -38,7 +38,7 @@ if ( $featured ) {
 
 ?>
 
-<div class="span6 mobile-no-offset item-article" id="post-<?php the_ID(); ?>">
+<div class="mobile-no-offset item-article" id="post-<?php the_ID(); ?>">
 	<a href="<?php echo get_permalink(); ?>">
 		<div class="wrapper-image">
 			<?php if ( $show_thumbnail ) {

@@ -668,6 +668,7 @@ h3.title-post {
   max-width: 200px;
   margin-left: 20px;
   margin-top: 0;
+  line-height: 1.9rem;
 }
 .social-media-main .col-md-8 {
   float: none;
@@ -1036,13 +1037,20 @@ blockquote p {
     padding-top: 0px;
   }
 }
+.boxes-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
 .wrapper-main-gray {
   background: #f0f0f0;
   padding: 50px 0;
 }
 .wrapper-main-gray .item-article {
   background: #fff;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 485px;
 }
 .wrapper-main-gray .item-article:nth-child( odd ) {
   margin-left: 0;
@@ -1132,8 +1140,9 @@ blockquote p {
   background: #000;
   width: calc(100% - 40px);
   padding: 20px 20px;
-  display: inline-block;
+  display: flex;
   justify-content: flex-start;
+  flex-flow: row wrap;
 }
 .wrapper-main-gray .wrapper-information .series-author {
   display: block;
