@@ -50,12 +50,10 @@ if ($series_query->have_posts()) {
     // no posts found
 }
 
-function getNextPost($post, $series_map)
-{
-    $current_id = array_search($post->ID, $series_map);
-    if ($current_id < count($series_map)) {
-        return get_post($series_map[$current_id + 1]);
-    }
+$current_post_position = array_search($post->ID, $series_map);
+
+if (($current_post_position + 1) < count($series_map)) {
+	$next_post = get_post($series_map[$current_post_position + 1]);
 }
 
 $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5);
@@ -136,19 +134,22 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 			</div>
 		</div>
 	</div>
+<?php
+if (!empty($next_post)):
+	$heroImageNext = wp_get_attachment_image_src(get_post_thumbnail_id($next_post->ID), 'full');
+	$next_position = array_search($next_post->ID, $series_map);
+?>
 	<div class="wrapper-main-next post-prev" id="wrapper-posts">
 		<div class="wrapper-hero">
-			<?php
-$next_post = getNextPost($post, $series_map);
-if (!empty($next_post)):
-    $heroImageNext = wp_get_attachment_image_src(get_post_thumbnail_id($next_post->ID), 'full');
-    ?>
         <div class="hero-main">
           <div class="wrapper-image" style="background: url('<?php echo $heroImageNext['0']; ?>') no-repeat center/cover;">
             <div class="container-fluid">
               <div class="row-fluid">
                 <div class="span2">
-                  <h3 class="title-post"><?php _e('Next in Series', 'largo'); ?></h3>
+									<div class="section-title">
+										<h3><?php _e('Next in Series', 'largo'); ?></h3>
+										<?php echo '<h3>' . ($next_position + 1) . ' / ' . count($series_map) . '</h3>'; ?>
+									</div>
                 </div>
                 <div class="span8 mobile-no-offset">
                   <div class="wrapper-post-serie">
@@ -158,23 +159,22 @@ if (!empty($next_post)):
                     <p class="date-text"><?php the_time('j F, Y')?></p>
                   </div>
                 </div>
-              </div>
+							</div>	
             </div>
           </div>
         </div>
-      <?php endif;?>
 		</div>
 	</div>
 	<div class="social-media-main">
 		<div class="container-fluid mobile-full-width">
 			<div class="row-fluid">
-				<div class="span8 offset2 mobile-no-offset">
+				<div class="span10 offset2 mobile-no-offset">
         <span class="by-author">
 						<span class="by">por</span> 
 							<span class="author vcard" itemprop="author">
 								<?php
 									if ( function_exists( 'get_coauthors' ) ) {
-										$authors = get_coauthors();
+										$authors = get_coauthors($next_post->ID);
 										foreach($authors as $author) {
 											$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
 											$avatar = coauthors_get_avatar( $author, 128 );
@@ -195,6 +195,7 @@ if (!empty($next_post)):
 			</div>
 		</div>
 	</div>
+	<?php endif;?>
 	<div class="wrapper-mobile-orange">
 		<div class="container-fluid">
 			<div class="wrapper-content">

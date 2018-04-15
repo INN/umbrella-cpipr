@@ -1558,10 +1558,22 @@ blockquote p {
   width: 50%;
   float: left;
 }
-.wrapper-main-next .hero-main h3 {
+.wrapper-main-next .hero-main .section-title {
   color: #fff;
   border-top: 15px solid #fff;
-  margin-top: 30px;
+  padding-top: 12px;
+  margin-top: 9px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.wrapper-main-next .hero-main .section-title h3 {
+  font-family: 'Roboto condensed bold italic', sans-serif;
+  text-transform: uppercase;
+  font-size: 2.7rem;
+  max-width: 5em;
+  margin-bottom: .5em;
+  line-height: 1em;
 }
 .wrapper-main-next .hero-main h2,
 .wrapper-main-next .hero-main h2 a {
@@ -1616,25 +1628,6 @@ blockquote p {
 }
 .wrapper-main-next.post-next .wrapper-hero {
   left: -100%;
-}
-.arrow-posts {
-  position: absolute;
-  top: 50%;
-  margin-top: -26px;
-  z-index: 10;
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  opacity: 0.99;
-}
-.arrow-posts .arrow-left {
-  left: 115px;
-}
-.arrow-posts.arrow-right {
-  right: 115px;
 }
 @media (max-width: 1230px) {
   .wrapper-main-next .hero-main h2,
@@ -1697,6 +1690,26 @@ blockquote p {
     font-size: 2.8rem !important;
     line-height: 3rem;
     margin-bottom: 0;
+  }
+  .wrapper-main-next .hero-main .section-title {
+    border-top: 0px;
+    padding-top: 0px;
+    margin-top: 9px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .wrapper-main-next .hero-main .section-title h3 {
+    font-family: 'Roboto condensed bold italic', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    max-width: 5em;
+    margin-bottom: .5em;
+    line-height: 1em;
+  }
+  .wrapper-image .wrapper-post-serie .date-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 .before-footer-wrapper {
