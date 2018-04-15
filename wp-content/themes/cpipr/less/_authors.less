@@ -2,7 +2,7 @@
   background: #000;
   padding: 50px 0;
   .item-author {
-    padding: 55px 0 45px;
+    padding: 10px 0 45px;
   }
   h2 {
     font-family: 'Roboto condensed bold italic', sans-serif;
@@ -15,9 +15,9 @@
     border-top: 15px solid #fff;
   }
   .wrapper-title {
-    display: inline-block;
-    width: 100%;
-    padding: 9px 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     img {
       width: 117px;
       float: left;
@@ -31,7 +31,6 @@
     float: right;
     margin: 25px 0 0;
     max-width: 175px;
-    padding-top: 20px !important;
     li {
       list-style: none;
       float: left;
@@ -142,6 +141,11 @@
   .wrapper-main-black {
     padding: 20px 0 15px;
     border-top: 16px solid #fff;
+    h3 {
+      max-width: 100%;
+      font-size: 2.5em;
+      padding-top: 0px;
+    }
   }
   .wrapper-main-black .wrapper-post .item-author p {
     font-size: 1.1rem;
@@ -162,9 +166,7 @@
     font-size: 1.1rem;
     padding: 6px 15px;
   }
-  .wrapper-main-black .wrapper-title {
-    padding-bottom: 24px;
-  }
+  
   .wrapper-main-black .item-author {
     padding: 20px 0 30px;
   }

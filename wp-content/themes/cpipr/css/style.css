@@ -633,8 +633,8 @@ h3.title-post {
 }
 @media (max-width: 440px) {
   .hero-main .wrapper-image h2 {
-    font-size: 4rem !important;
-    line-height: 3.75rem !important;
+    font-size: 2.75rem !important;
+    line-height: 2.75rem !important;
   }
 }
 @media (max-width: 370px) {
@@ -1025,6 +1025,7 @@ blockquote p {
   }
   h3.title-post {
     margin: 0 0 15px;
+    max-width: 100%;
   }
   .row.wrapper-video {
     margin: 0 -20px;
@@ -1265,7 +1266,7 @@ blockquote p {
   padding: 50px 0;
 }
 .wrapper-main-black .item-author {
-  padding: 55px 0 45px;
+  padding: 10px 0 45px;
 }
 .wrapper-main-black h2 {
   font-family: 'Roboto condensed bold italic', sans-serif;
@@ -1278,9 +1279,9 @@ blockquote p {
   border-top: 15px solid #fff;
 }
 .wrapper-main-black .wrapper-title {
-  display: inline-block;
-  width: 100%;
-  padding: 9px 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .wrapper-main-black .wrapper-title img {
   width: 117px;
@@ -1294,7 +1295,6 @@ blockquote p {
   float: right;
   margin: 25px 0 0;
   max-width: 175px;
-  padding-top: 20px !important;
 }
 .wrapper-main-black .social-media-list li {
   list-style: none;
@@ -1400,6 +1400,11 @@ blockquote p {
     padding: 20px 0 15px;
     border-top: 16px solid #fff;
   }
+  .wrapper-main-black h3 {
+    max-width: 100%;
+    font-size: 2.5em;
+    padding-top: 0px;
+  }
   .wrapper-main-black .wrapper-post .item-author p {
     font-size: 1.1rem;
     line-height: 2rem;
@@ -1418,9 +1423,6 @@ blockquote p {
   .wrapper-main-black .btn-white {
     font-size: 1.1rem;
     padding: 6px 15px;
-  }
-  .wrapper-main-black .wrapper-title {
-    padding-bottom: 24px;
   }
   .wrapper-main-black .item-author {
     padding: 20px 0 30px;
@@ -1534,6 +1536,9 @@ blockquote p {
 @media (max-width: 575px) {
   .wrapper-special .container-special > .col-xs-6 {
     width: 100%;
+  }
+  .wrapper-post-serie {
+    padding: 0px;
   }
 }
 @media (max-width: 530px) {
@@ -1704,7 +1709,7 @@ blockquote p {
   .wrapper-main-next .hero-main h2,
   .wrapper-main-next .hero-main h2 a {
     font-size: 2.8rem !important;
-    line-height: 3rem;
+    line-height: 2.8rem !important;
     margin-bottom: 0;
   }
   .wrapper-main-next .hero-main .section-title {
