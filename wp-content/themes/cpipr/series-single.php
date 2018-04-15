@@ -90,7 +90,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 	<div class="social-media-main">
 		<div class="container-fluid mobile-full-width">
 			<div class="row-fluid">
-				<div class="span8 offset2 mobile-no-offset">
+				<div class="span10 offset2 mobile-no-offset">
 				<span class="by-author">
 						<span class="by">por</span> 
 							<span class="author vcard" itemprop="author">
