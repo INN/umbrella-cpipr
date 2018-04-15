@@ -1042,7 +1042,7 @@ blockquote p {
 }
 .wrapper-main-gray .item-article {
   background: #fff;
-  margin-bottom: 35px;
+  margin-bottom: 10px;
 }
 .wrapper-main-gray .item-article:nth-child( odd ) {
   margin-left: 0;
@@ -1124,6 +1124,10 @@ blockquote p {
 .wrapper-main-gray .wrapper-image .date-text {
   font-size: 1.1rem;
 }
+.wrapper-main-gray .wrapper-image .title-article h2 {
+  font-size: 2.5rem;
+  letter-spacing: .05rem;
+}
 .wrapper-main-gray .wrapper-information {
   background: #000;
   width: calc(100% - 40px);
@@ -1135,6 +1139,7 @@ blockquote p {
   display: block;
   float: left;
   width: 50%;
+  margin: 3px 0px;
 }
 .wrapper-main-gray .wrapper-information .series-author a {
   margin-right: 15px;
@@ -1202,7 +1207,7 @@ blockquote p {
     font-size: 1.1rem;
   }
   .wrapper-main-gray .wrapper-information {
-    padding: 15px 20px;
+    padding: 5px 20px;
   }
   .wrapper-main-gray .wrapper-information img {
     width: 40px;
@@ -1227,10 +1232,12 @@ blockquote p {
 @media (max-width: 380px) {
   .wrapper-main-gray .wrapper-information p {
     font-size: 1rem;
+    margin-top: 0px;
   }
   .wrapper-main-gray .wrapper-information .series-author {
     width: calc(50% - 10px);
-    padding-right: 10px;
+    padding-right: 5px;
+    margin: 0;
   }
   .wrapper-main-gray .wrapper-information img {
     margin-right: 5px;
