@@ -106,7 +106,10 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 			</div>
 		</div>
 	</div>
-<?php endif;?>
+<?php endif;
+$abstract_body = get_post_meta( $post->ID, 'abstract_body', true );
+if( !empty( $abstract_body ) ) {
+?>
 	<div class="wrapper-main-white">
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
@@ -114,12 +117,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 					<h3 class="title-post"><?php _e('Abstract', 'largo'); ?></h3>
 				</div>
 				<div class="span7 mobile-no-offset">
-				<?php
-					$abstract_body = get_post_meta( $post->ID, 'abstract_body', true );
-					if( !empty( $abstract_body ) ) {
-							echo $abstract_body; 
-					}
-				?>
+				<?php echo $abstract_body; ?>
 				</div>
 				<div class="span3">
 					<a href="<?php echo esc_url(home_url()); ?>/donaciones/">
@@ -146,6 +144,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 				?>
 		</div>
 	</div>
+	<?php } ?>
 	<div class="wrapper-main-gray">
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
