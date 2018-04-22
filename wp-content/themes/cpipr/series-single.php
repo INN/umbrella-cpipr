@@ -141,35 +141,35 @@ if (!empty($next_post)):
 ?>
 	<div class="wrapper-main-next post-prev" id="wrapper-posts">
 		<div class="wrapper-hero">
-        <div class="hero-main">
-          <div class="wrapper-image" style="background: url('<?php echo $heroImageNext['0']; ?>') no-repeat center/cover;">
-            <div class="container-fluid">
-              <div class="row-fluid">
-                <div class="span2">
-									<div class="section-title">
-										<h3><?php _e('Next in Series', 'largo'); ?></h3>
-										<?php echo '<h3>' . ($next_position + 1) . ' / ' . count($series_map) . '</h3>'; ?>
-									</div>
-                </div>
-                <div class="span8 mobile-no-offset">
-                  <div class="wrapper-post-serie">
-                    <h2>
-                      <a href="<?php echo get_permalink($next_post->ID); ?>"><?php echo $next_post->post_title; ?></a>
-                    </h2>
-                    <p class="date-text"><?php the_time('j F, Y')?></p>
-                  </div>
-                </div>
-							</div>	
-            </div>
-          </div>
-        </div>
+			<div class="hero-main">
+				<div class="wrapper-image" style="background: url('<?php echo $heroImageNext['0']; ?>') no-repeat center/cover;">
+					<div class="container-fluid">
+						<div class="row-fluid">
+							<div class="span2">
+								<div class="section-title">
+									<h3><?php _e('Next in Series', 'largo'); ?></h3>
+									<?php echo '<h3>' . ($next_position + 1) . ' / ' . count($series_map) . '</h3>'; ?>
+								</div>
+							</div>
+							<div class="span8 mobile-no-offset">
+								<div class="wrapper-post-serie">
+									<h2>
+										<a href="<?php echo get_permalink($next_post->ID); ?>"><?php echo $next_post->post_title; ?></a>
+									</h2>
+									<p class="date-text"><?php the_time('j F, Y')?></p>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="social-media-main">
 		<div class="container-fluid mobile-full-width">
 			<div class="row-fluid">
 				<div class="span10 offset2 mobile-no-offset">
-        <span class="by-author">
+					<span class="by-author">
 						<span class="by">por</span> 
 							<span class="author vcard" itemprop="author">
 								<?php
@@ -195,7 +195,7 @@ if (!empty($next_post)):
 			</div>
 		</div>
 	</div>
-	<?php endif;?>
+<?php endif;?>
 	<div class="wrapper-mobile-orange">
 		<div class="container-fluid">
 			<div class="wrapper-content">

@@ -171,7 +171,7 @@ if( !empty( $abstract_body ) ) {
 								'taxonomy' => 'series',
 								'term' => $series,
 								'order' => 'DESC',
-								'posts_per_page' => -1,
+								'posts_per_page' => $opt['per_page'],
 							);
 
 							//stores original 'paged' value in 'pageholder'
