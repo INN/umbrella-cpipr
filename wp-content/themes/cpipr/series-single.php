@@ -1,7 +1,6 @@
 <?php
 /**
- * Single Post Template: Series custom layout (Calentamiento)
- * Template Name: Series Single Post
+ * Template Name: Series single
  * Template Post Type: post
  * Description: Shows the post with formatting for custom layout display?
  */
