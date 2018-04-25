@@ -3616,3 +3616,38 @@ msgid "%s result"
 msgid_plural "%s results"
 msgstr[0] ""
 msgstr[1] ""
+
+
+#: series-landing.php:114
+msgid "Abstract"
+msgstr ""
+
+#: series-landing.php:153
+msgid "This Series"
+msgstr ""
+
+#: series-landing.php:239
+msgid "Series Authors"
+msgstr ""
+
+#: series-landing.php:262
+msgid "Other Series"
+msgstr ""
+
+#: series-single.php:149
+msgid "Next in Series"
+msgstr ""
+
+#: series-landing.php:127
+#: series-single.php:129
+msgid "If you want to make investigations like this possible"
+msgstr ""
+
+#: series-landing.php:128
+#: series-landing.php:130
+msgid "Donate Now"
+msgstr ""
+
+#: partials/content-series.php:83
+msgid "Read More"
+msgstr ""

@@ -211,6 +211,14 @@
 #site-header img {
   margin: 0;
 }
+.global-nav-bg {
+  max-width: calc(100% - 30px);
+  margin: 0 auto;
+  background-color: #000;
+}
+#header-search {
+  margin-top: 2px;
+}
 .donate-btn .icon-heart {
   display: none;
 }
@@ -459,7 +467,6 @@ body {
 }
 p {
   font-family: 'Merriweather light', sans-serif;
-  line-height: 3.5rem;
 }
 #page {
   width: 100%;
@@ -634,8 +641,8 @@ h3.title-post {
 }
 @media (max-width: 440px) {
   .hero-main .wrapper-image h2 {
-    font-size: 4rem !important;
-    line-height: 3.75rem !important;
+    font-size: 2.75rem !important;
+    line-height: 2.75rem !important;
   }
 }
 @media (max-width: 370px) {
@@ -669,6 +676,7 @@ h3.title-post {
   max-width: 200px;
   margin-left: 20px;
   margin-top: 0;
+  line-height: 1.9rem;
 }
 .social-media-main .col-md-8 {
   float: none;
@@ -1025,6 +1033,7 @@ blockquote p {
   }
   h3.title-post {
     margin: 0 0 15px;
+    max-width: 100%;
   }
   .row.wrapper-video {
     margin: 0 -20px;
@@ -1037,13 +1046,20 @@ blockquote p {
     padding-top: 0px;
   }
 }
+.boxes-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
 .wrapper-main-gray {
   background: #f0f0f0;
   padding: 50px 0;
 }
 .wrapper-main-gray .item-article {
   background: #fff;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 485px;
 }
 .wrapper-main-gray .item-article:nth-child( odd ) {
   margin-left: 0;
@@ -1125,17 +1141,23 @@ blockquote p {
 .wrapper-main-gray .wrapper-image .date-text {
   font-size: 1.1rem;
 }
+.wrapper-main-gray .wrapper-image .title-article h2 {
+  font-size: 2.5rem;
+  letter-spacing: .05rem;
+}
 .wrapper-main-gray .wrapper-information {
   background: #000;
   width: calc(100% - 40px);
   padding: 20px 20px;
-  display: inline-block;
+  display: flex;
   justify-content: flex-start;
+  flex-flow: row wrap;
 }
 .wrapper-main-gray .wrapper-information .series-author {
   display: block;
   float: left;
   width: 50%;
+  margin: 3px 0px;
 }
 .wrapper-main-gray .wrapper-information .series-author a {
   margin-right: 15px;
@@ -1203,7 +1225,7 @@ blockquote p {
     font-size: 1.1rem;
   }
   .wrapper-main-gray .wrapper-information {
-    padding: 15px 20px;
+    padding: 5px 20px;
   }
   .wrapper-main-gray .wrapper-information img {
     width: 40px;
@@ -1228,10 +1250,12 @@ blockquote p {
 @media (max-width: 380px) {
   .wrapper-main-gray .wrapper-information p {
     font-size: 1rem;
+    margin-top: 0px;
   }
   .wrapper-main-gray .wrapper-information .series-author {
     width: calc(50% - 10px);
-    padding-right: 10px;
+    padding-right: 5px;
+    margin: 0;
   }
   .wrapper-main-gray .wrapper-information img {
     margin-right: 5px;
@@ -1245,62 +1269,79 @@ blockquote p {
     font-size: 2.5rem;
   }
 }
-.wrapper-main-black {
-  background: #000;
-  padding: 50px 0;
+.item-author {
+  padding: 10px 0 45px;
 }
-.wrapper-main-black .item-author {
-  padding: 55px 0 45px;
+.item-author p {
+  margin-bottom: 20px;
 }
-.wrapper-main-black h2 {
+.item-author h2 {
   font-family: 'Roboto condensed bold italic', sans-serif;
-  color: #fff;
+  color: #000;
   font-size: 3.6rem;
   text-transform: uppercase;
+  line-height: 3.0rem;
+  max-width: 3em;
 }
-.wrapper-main-black h3.title-post {
+.item-author .btn-white {
+  font-family: 'Roboto condensed bold italic', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  text-transform: uppercase;
+  background: #000;
   color: #fff;
-  border-top: 15px solid #fff;
+  border-radius: 50px;
+  padding: 10px 35px;
 }
-.wrapper-main-black .wrapper-title {
-  display: inline-block;
-  width: 100%;
-  padding: 9px 0 32px;
+.item-author .btn-white:hover,
+.item-author .btn-white:active,
+.item-author .btn-white:visited {
+  color: #fff;
+  text-decoration: none;
 }
-.wrapper-main-black .wrapper-title img {
+.item-author .container-title {
+  padding-top: 12px;
+  flex-grow: 1;
+}
+.item-author .wrapper-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.item-author .wrapper-title img {
   width: 117px;
   float: left;
   margin-right: 25px;
   border-radius: 50%;
   border: none;
 }
-.wrapper-main-black .social-media-list {
+.item-author .social-media-list {
   padding: 0;
   float: right;
   margin: 25px 0 0;
   max-width: 175px;
-  padding-top: 20px !important;
 }
-.wrapper-main-black .social-media-list li {
+.item-author .social-media-list li {
   list-style: none;
   float: left;
   padding: 0 4px;
 }
-.wrapper-main-black .social-media-list li:last-child {
+.item-author .social-media-list li:last-child {
   padding-right: 0;
 }
-.wrapper-main-black .social-media-list li a {
+.item-author .social-media-list li a {
   background: #fff;
   height: 49px;
   width: 49px;
   padding: 0;
   border-radius: 50px;
 }
-.wrapper-main-black .social-media-list li a img {
+.item-author .social-media-list li a img {
   width: 50px;
   margin: 0;
 }
-.wrapper-main-black .social-media-list li a i {
+.item-author .social-media-list li a i {
   color: #000;
   font-size: 2.3rem;
   padding: 11px 0 0;
@@ -1308,15 +1349,20 @@ blockquote p {
   margin: 0;
   text-align: center;
 }
-.wrapper-main-black .social-media-list li a i:before {
+.item-author .social-media-list li a i:before {
   margin-right: 0;
   font-size: 2.3rem;
 }
-.wrapper-main-black .item-author .container-title {
-  width: calc(100% - 332px);
-  float: left;
-  display: block;
-  padding-top: 12px;
+.wrapper-main-black {
+  background: #000;
+  padding: 50px 0;
+}
+.wrapper-main-black h2 {
+  color: #fff;
+}
+.wrapper-main-black h3.title-post {
+  color: #fff;
+  border-top: 15px solid #fff;
 }
 .wrapper-main-black .wrapper-post p {
   font-family: 'Roboto', sans-serif;
@@ -1340,7 +1386,7 @@ blockquote p {
   color: #000;
   text-decoration: none;
 }
-.wrapper-main-black .author-box ul.social-links {
+.author-box ul.social-links {
   display: none;
 }
 @media (max-width: 991px) {
@@ -1385,6 +1431,11 @@ blockquote p {
     padding: 20px 0 15px;
     border-top: 16px solid #fff;
   }
+  .wrapper-main-black h3 {
+    max-width: 100%;
+    font-size: 2.5em;
+    padding-top: 0px;
+  }
   .wrapper-main-black .wrapper-post .item-author p {
     font-size: 1.1rem;
     line-height: 2rem;
@@ -1403,9 +1454,6 @@ blockquote p {
   .wrapper-main-black .btn-white {
     font-size: 1.1rem;
     padding: 6px 15px;
-  }
-  .wrapper-main-black .wrapper-title {
-    padding-bottom: 24px;
   }
   .wrapper-main-black .item-author {
     padding: 20px 0 30px;
@@ -1520,6 +1568,9 @@ blockquote p {
   .wrapper-special .container-special > .col-xs-6 {
     width: 100%;
   }
+  .wrapper-post-serie {
+    padding: 0px;
+  }
 }
 @media (max-width: 530px) {
   .wrapper-special .title-post {
@@ -1559,10 +1610,22 @@ blockquote p {
   width: 50%;
   float: left;
 }
-.wrapper-main-next .hero-main h3 {
+.wrapper-main-next .hero-main .section-title {
   color: #fff;
   border-top: 15px solid #fff;
-  margin-top: 30px;
+  padding-top: 12px;
+  margin-top: 9px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.wrapper-main-next .hero-main .section-title h3 {
+  font-family: 'Roboto condensed bold italic', sans-serif;
+  text-transform: uppercase;
+  font-size: 2.7rem;
+  max-width: 5em;
+  margin-bottom: .5em;
+  line-height: 1em;
 }
 .wrapper-main-next .hero-main h2,
 .wrapper-main-next .hero-main h2 a {
@@ -1617,25 +1680,6 @@ blockquote p {
 }
 .wrapper-main-next.post-next .wrapper-hero {
   left: -100%;
-}
-.arrow-posts {
-  position: absolute;
-  top: 50%;
-  margin-top: -26px;
-  z-index: 10;
-  cursor: pointer;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-  opacity: 0.99;
-}
-.arrow-posts .arrow-left {
-  left: 115px;
-}
-.arrow-posts.arrow-right {
-  right: 115px;
 }
 @media (max-width: 1230px) {
   .wrapper-main-next .hero-main h2,
@@ -1696,8 +1740,28 @@ blockquote p {
   .wrapper-main-next .hero-main h2,
   .wrapper-main-next .hero-main h2 a {
     font-size: 2.8rem !important;
-    line-height: 3rem;
+    line-height: 2.8rem !important;
     margin-bottom: 0;
+  }
+  .wrapper-main-next .hero-main .section-title {
+    border-top: 0px;
+    padding-top: 0px;
+    margin-top: 9px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .wrapper-main-next .hero-main .section-title h3 {
+    font-family: 'Roboto condensed bold italic', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.7rem;
+    max-width: 5em;
+    margin-bottom: .5em;
+    line-height: 1em;
+  }
+  .wrapper-image .wrapper-post-serie .date-text {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 .before-footer-wrapper {

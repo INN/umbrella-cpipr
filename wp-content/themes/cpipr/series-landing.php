@@ -49,7 +49,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 				<?php
 					$hero_video = get_post_meta( $post->ID, 'hero_video', true );
 					if( !empty( $hero_video ) ) {
-							echo '<video autoplay muted loop id="videoHero" class="video-hero">
+							echo '<video autoplay playsinline muted loop id="videoHero" class="video-hero">
 												<source src="' . $hero_video . '" type="video/mp4">
 										</video>';
 					}
@@ -57,7 +57,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span8 offset2 mobile-no-offset">
-						<p class="text--important">Serie especial</p>
+						<p class="text--important"><?php _e('Series', 'largo'); ?></p>
 						<h2>
 							<?php the_title();?>
 						</h2>
@@ -106,20 +106,18 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 			</div>
 		</div>
 	</div>
-<?php endif;?>
+<?php endif;
+$abstract_body = get_post_meta( $post->ID, 'abstract_body', true );
+if( !empty( $abstract_body ) ) {
+?>
 	<div class="wrapper-main-white">
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
-					<h3 class="title-post">Resumen</h3>
+					<h3 class="title-post"><?php _e('Abstract', 'largo'); ?></h3>
 				</div>
 				<div class="span7 mobile-no-offset">
-				<?php
-					$abstract_body = get_post_meta( $post->ID, 'abstract_body', true );
-					if( !empty( $abstract_body ) ) {
-							echo $abstract_body; 
-					}
-				?>
+				<?php echo $abstract_body; ?>
 				</div>
 				<div class="span3">
 					<a href="<?php echo esc_url(home_url()); ?>/donaciones/">
@@ -146,16 +144,15 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 				?>
 		</div>
 	</div>
+	<?php } ?>
 	<div class="wrapper-main-gray">
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
-					<h3 class="title-post">
-						Historias en la serie
-					</h3>
+					<h3 class="title-post"><?php _e('This Series', 'largo'); ?></h3>
 				</div>
 				<div class="span10 mobile-no-offset">
-					<div class="row-fluid">
+					<div class="boxes-columns">
 						<?php global $wp_query, $post;
 
 						// Make sure we're actually a series page, and pull posts accordingly
@@ -238,7 +235,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
-					<h3 class="title-post">Autores en la serie</h3>
+					<h3 class="title-post"><?php _e('Series Authors', 'largo'); ?></h3>
 				</div>
 				<div class="span7">
 					<?php dynamic_sidebar('sidebar-4');?>
@@ -261,7 +258,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
-					<h3 class="title-post">Series especiales</h3>
+					<h3 class="title-post"><?php _e('Other Series', 'largo'); ?></h3>
 				</div>
 				<div class="span10">
 					<div class="row-fluid container-special">
