@@ -81,48 +81,60 @@
 		}
 	?>
 
-	<div id="page" class="hfeed clearfix">
+	<?php 
+		
+		get_template_part( 'partials/nav', 'sticky' ); 
+		
+		if ( of_get_option( 'leaderboard_enabled' ) == TRUE ) {
+			get_template_part( 'partials/header-ad-zone' );
+		}
 
-		<?php 
-			
-			get_template_part( 'partials/nav', 'sticky' ); 
-			
-			if ( of_get_option( 'leaderboard_enabled' ) == TRUE ) {
-				get_template_part( 'partials/header-ad-zone' );
-			}
+		/**
+		 * Fires before the Largo header content.
+		 *
+		 * @since 0.4
+		 */
+		do_action( 'largo_before_header' );
 
-			/**
-			 * Fires before the Largo header content.
-			 *
-			 * @since 0.4
-			 */
-			do_action( 'largo_before_header' );
+		//get_template_part( 'partials/largo-header' );
 
-			//get_template_part( 'partials/largo-header' );
+		/**
+		 * Fires after the Largo header content.
+		 *
+		 * @since 0.4
+		 */
+		do_action( 'largo_after_header' );
 
-			/**
-			 * Fires after the Largo header content.
-			 *
-			 * @since 0.4
-			 */
-			do_action( 'largo_after_header' );
-	
-			get_template_part( 'partials/nav', 'main' );
+		get_template_part( 'partials/nav', 'main' );
 
-			if ( SHOW_SECONDARY_NAV === TRUE ) {
-				get_template_part( 'partials/nav', 'secondary' );
-			}
+		if ( SHOW_SECONDARY_NAV === TRUE ) {
+			get_template_part( 'partials/nav', 'secondary' );
+		}
 
-			get_template_part('partials/homepage-alert'); 
+		get_template_part('partials/homepage-alert'); 
 
-			/**
-			 * Fires after the Largo navigation content.
-			 *
-			 * @since 0.4
-			*/
-			do_action( 'largo_after_nav' );
+		/**
+		 * Fires after the Largo navigation content.
+		 *
+		 * @since 0.4
+		*/
+		do_action( 'largo_after_nav' );
 
-		?>
+	?>
+
+	<?php
+		/**
+		 * Here comes the main slideshow news
+		 *
+		*/
+		do_action( 'cpipr_before_main_slideshow' );
+
+		get_template_part('partials/homepage-slider');
+		
+		do_action( 'cpipr_after_main_slideshow' );
+	?>
+
+	<div class="page-wrapper">
 
 		<div id="main" class="row-fluid clearfix">
 

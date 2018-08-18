@@ -1,0 +1,54 @@
+.post-entry {
+	.post-categories {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		> li {
+			display: inline-block;
+			margin-bottom: 12px;
+		}
+		> li > a {
+			display: inline-block;
+			padding: 0 4px;
+			font-family: @headings-font-family;
+			font-weight: @headings-font-weight;
+			font-size: 16px;
+			text-transform: uppercase;
+			line-height: 20px;
+			color: #000;
+			background-color: #ef5125;
+		}
+		> li > a:hover,
+		> li > a:focus, {
+			text-decoration: none;
+			background-color: #ec4718;
+		}
+	}
+	.post-image {
+		margin: 0;
+	}
+	.post-title {
+		font-family: @headings-font-family;
+		font-weight: @headings-font-weight;
+		font-size: 28px;
+		margin-bottom: 12px;
+		text-transform: uppercase;
+	}
+	.post-excerpt {
+		font-size: 16px;
+		p {
+			font-size: inherit;
+		}
+	}
+	.post-byline {
+		font-family: @font-family-secondary;
+		font-weight: 400;
+		font-size: 14px;
+		margin-bottom: 24px;
+
+		.by-author .author {
+			font-weight: @headings-font-weight;
+		}
+	}
+}

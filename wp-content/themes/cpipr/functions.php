@@ -18,7 +18,7 @@ require_once( get_template_directory() . '/largo-apis.php' );
  * Includes
  */
 $includes = array(
-	'/inc/tax-landing-customizations.php',
+	'/inc/tax-landing-customizations.php'
 );
 // Perform load
 foreach ( $includes as $include ) {
@@ -167,3 +167,38 @@ DOC;
 }
 add_action( 'wp_footer', 'cpipr_counter_hamburger_menu' );
 
+
+/**
+ * Enqueue Owl Carousel CSS & JS for Main Slideshow.
+ */
+if ( ! function_exists( 'cpipr_owl_carousel_enqueue' ) ) {
+	function cpipr_owl_carousel_enqueue() {
+		//$suffix = (LARGO_DEBUG)? '' : '.min';
+		$suffix = '';
+		$version = largo_version();
+
+		wp_enqueue_style(
+			'owl-carousel',
+			get_stylesheet_directory_uri() . '/lib/owl/css/owl.carousel'. $suffix . '.css',
+			array(), $version
+		);
+		wp_enqueue_style(
+			'owl-carousel-theme',
+			get_stylesheet_directory_uri() . '/lib/owl/css/owl.theme.default'. $suffix . '.css',
+			array(), $version
+		);
+
+		wp_enqueue_script(
+			'owl-carousel',
+			get_stylesheet_directory_uri() . '/lib/owl/js/owl.carousel'. $suffix . '.js',
+			array('jquery'), $version, false
+		);
+
+		wp_enqueue_script(
+			'main-slideshow',
+			get_stylesheet_directory_uri() . '/js/main-slideshow' . $suffix . '.js',
+			array('owl-carousel'), $version, false
+		);
+	}
+	add_action( 'wp_enqueue_scripts', 'cpipr_owl_carousel_enqueue');
+}

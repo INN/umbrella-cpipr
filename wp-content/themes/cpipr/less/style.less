@@ -71,10 +71,12 @@ body {
 }
 
 p {
-  font-family: 'Merriweather light', sans-serif;
+  font-family: @font-family-base;
+  font-weight: @base-font-weight;
 }
 
-#page {
+#page,
+.page-wrapper {
   width: 100%;
   max-width: calc(~"100% - 30px");
   padding: 0 15px;
@@ -147,10 +149,12 @@ h3.title-post {
   display:none;
 }
 
+@import "_button.less";
 @import "_hero.less";
 @import "_social.less";
 @import "_body.less";
 @import "_post-blocks.less";
+@import "_post.less";
 @import "_authors.less";
 @import "_more-series.less";
 @import "_more-posts.less";
@@ -254,7 +258,8 @@ h3.title-post {
 }
 
 @media (max-width: 530px) {
-  #page {
+  #page,
+  .page-wrapper {
     max-width: 100%;
     padding: 0;
   }
@@ -300,4 +305,44 @@ h3.title-post {
     font-size: 1.1rem;
     line-height: 1rem;
   }
+}
+
+/* Main Slideshow */
+#main-slideshow-container {
+  background: #000;
+  color: #fff;
+  margin-bottom: 30px;
+
+  .post-title a,
+  .post-byline a {
+    color: #fff;
+  }
+  .post-title a:hover,
+  .post-title a:focus,
+  .post-byline a:hover,
+  .post-byline a:focus {
+    color: #d45f34
+  }
+  .post-body {
+    padding: 10px 0;
+  }
+}
+.main-slideshow-wrapper {
+  padding: 0 54px;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Typography */
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
 }
