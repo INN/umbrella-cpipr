@@ -16,12 +16,44 @@
 .donate-btn .icon-heart {
   display: none;
 }
+.donate-btn {
+  background-color: #ef5125;
+  border-radius: 50px;
+  display: inline-block;
+  font-size: 13px;
+  font-family: @font-family-secondary-condensed;
+  font-style: italic;
+  padding: 0;
+  line-height: normal;
+  text-transform: uppercase;
+
+  a {
+    display: inline-block;    
+    padding: 6px 14px;
+  }
+}
+.donate-btn:hover,
+.donate-btn:focus {
+  background-color: #ef5125;
+}
+.donate-btn a:hover,
+.donate-btn a:focus {
+  color: #000;
+}
 
 header {
   &.header-cpi {
     width: 100%;
     background: #000;
+
+    .form-search input[type=text] {
+      width: 170px;
+    }
+    .header-search-wrapper {
+      padding: 30px 0;
+    }
   }
+    
   nav {
     width: 100%;
     ul {
@@ -90,7 +122,7 @@ h1{
     display: block;
     width: 245px;
     margin: 0 auto;
-    padding: 38px 0;
+    padding: 30px 0;
     a {
       text-indent: -9999%;
       display: block;

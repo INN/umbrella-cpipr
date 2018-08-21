@@ -189,6 +189,12 @@
 }
 @font-face {
   font-family: 'Roboto Condensed';
+  src: url('../fonts/robotocondensed-italic-webfont.woff2') format('woff2'), url('../fonts/robotocondensed-italic-webfont.woff') format('woff'), url('../fonts/robotocondensed-italic-webfont.ttf') format('truetype'), url('../fonts/robotocondensed-italic-webfont.svg') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto Condensed';
   src: url('../fonts/robotocondensed-bold-webfont.woff2') format('woff2'), url('../fonts/robotocondensed-bold-webfont.woff') format('woff'), url('../fonts/robotocondensed-bold-webfont.ttf') format('truetype'), url('../fonts/robotocondensed-bold-webfont.svg') format('svg');
   font-weight: 700;
   font-style: normal;
@@ -251,9 +257,38 @@
 .donate-btn .icon-heart {
   display: none;
 }
+.donate-btn {
+  background-color: #ef5125;
+  border-radius: 50px;
+  display: inline-block;
+  font-size: 13px;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  padding: 0;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.donate-btn a {
+  display: inline-block;
+  padding: 6px 14px;
+}
+.donate-btn:hover,
+.donate-btn:focus {
+  background-color: #ef5125;
+}
+.donate-btn a:hover,
+.donate-btn a:focus {
+  color: #000;
+}
 header.header-cpi {
   width: 100%;
   background: #000;
+}
+header.header-cpi .form-search input[type=text] {
+  width: 170px;
+}
+header.header-cpi .header-search-wrapper {
+  padding: 30px 0;
 }
 header nav {
   width: 100%;
@@ -315,7 +350,7 @@ h1.logo-main {
   display: block;
   width: 245px;
   margin: 0 auto;
-  padding: 38px 0;
+  padding: 30px 0;
 }
 h1.logo-main a {
   text-indent: -9999%;
@@ -949,6 +984,35 @@ h3.title-post {
 .social-media-list.social-media-list-white .post-social > span:focus {
   background: #ef5125;
   color: #000;
+}
+.social-media-icon-list {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.social-media-icon-list > li {
+  display: inline;
+  margin-right: 10px;
+}
+.social-media-icon-list > li > a {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+  height: 30px;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  width: 30px;
+}
+.social-media-icon-list.social-media-icon-list-white > li > a {
+  background-color: #fff;
+  color: #000;
+}
+.social-media-icon-list.social-media-icon-list-white > li > a:hover,
+.social-media-icon-list.social-media-icon-list-white > li > a:focus {
+  color: #ef5125;
 }
 h3.title-post {
   font-family: 'Roboto condensed bold italic', sans-serif;
@@ -2129,6 +2193,22 @@ footer #boilerplate li .caret {
 /* Forms */
 .form-group {
   margin-bottom: 15px;
+}
+.form-search {
+  margin-bottom: 20px;
+}
+.form-search .input-append input[type=text] {
+  height: 20px;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 20px;
+}
+.form-search .input-append button {
+  background: #ef5125 url(../images/search-icon.png) center center no-repeat;
+  border-color: #ef5125;
+  line-height: 30px;
+  height: 30px;
 }
 /* Typography */
 .text-left {

@@ -60,25 +60,25 @@
 	?>
 
 	<?php
-		if ( SHOW_GLOBAL_NAV === TRUE ) {
+		//if ( SHOW_GLOBAL_NAV === TRUE ) {
 
 			/**
 			 * Fires before the Largo global navigation content.
 			 *
 			 * @since 0.4
 			 */
-			do_action( 'largo_before_global_nav' );
+			//do_action( 'largo_before_global_nav' );
 
-			get_template_part( 'partials/nav', 'global' );
+			//get_template_part( 'partials/nav', 'global' );
 
 			/**
 			 * Fires after the Largo global navigation content.
 			 *
 			 * @since 0.4
 			 */
-			do_action( 'largo_after_global_nav' );
+			//do_action( 'largo_after_global_nav' );
 
-		}
+		//}
 	?>
 
 	<?php 
