@@ -6,17 +6,17 @@
 
 		> li {
 			display: inline-block;
-			margin-bottom: 12px;
+			margin-bottom: 6px;
 		}
 		> li > a {
 			display: inline-block;
 			padding: 0 4px;
 			font-family: @headings-font-family;
 			font-weight: @headings-font-weight;
-			font-size: 16px;
+			font-size: 12px;
 			text-transform: uppercase;
-			line-height: 20px;
-			color: #000;
+			line-height: 16px;
+			color: #fff;
 			background-color: #ef5125;
 		}
 		> li > a:hover,
@@ -27,16 +27,18 @@
 	}
 	.post-image {
 		margin: 0;
-	}
+	}	
 	.post-title {
 		font-family: @headings-font-family;
 		font-weight: @headings-font-weight;
-		font-size: 28px;
+		font-size: 21px;
+		line-height: 25px;
 		margin-bottom: 12px;
 		text-transform: uppercase;
 	}
 	.post-excerpt {
-		font-size: 16px;
+		font-size: @font-size-base;
+		line-height: @line-height-base;
 		p {
 			font-size: inherit;
 		}
@@ -44,11 +46,70 @@
 	.post-byline {
 		font-family: @font-family-secondary;
 		font-weight: 400;
-		font-size: 14px;
-		margin-bottom: 24px;
-
-		.by-author .author {
+		font-size: 13px;
+		line-height: 16px;
+		margin-bottom: 16px;
+		.by-author .author,
+		.entry-date {
 			font-weight: @headings-font-weight;
 		}
+	}
+	.post-title a,
+	.post-byline a {
+		color: #000;
+	}
+}
+.post-entry.post-entry-black {
+	.post-categories > li > a {
+		background-color: #000;
+		color: #fff;
+	}
+	.post-categories > li > a:hover,
+	.post-categories > li > a:focus {
+		color: #ef5125;
+	}
+}
+.post-entry.post-entry-white {
+	color: #fff;
+	.post-title a,
+	.post-byline a {
+		color: #fff;
+	}
+	.post-categories > li > a {
+		background-color: #fff;
+		color: #c32527;
+	}
+	.post-categories > li > a:hover,
+	.post-categories > li > a:focus {
+		color: #000;
+	}
+}
+
+.owl-post-slide.post-entry {
+	.post-categories > li {
+		margin-bottom: 12px;
+	}
+	.post-categories > li > a {
+		font-size: 16px;
+		line-height: 20px;
+		color: #000;
+	}
+	.post-title {
+		font-size: 28px;
+		line-height: 34px;
+		a {
+			color: #fff;
+		}
+	}
+	.post-excerpt {
+		font-size: 16px;
+	}
+	.post-byline {
+		font-size: 14px;
+		margin-bottom: 24px;
+	}
+	.post-title a,
+	.post-byline a {
+		color: #fff;
 	}
 }

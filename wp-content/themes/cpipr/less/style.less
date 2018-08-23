@@ -155,6 +155,7 @@ h3.title-post {
 @import "_body.less";
 @import "_post-blocks.less";
 @import "_post.less";
+@import "_series.less";
 @import "_authors.less";
 @import "_more-series.less";
 @import "_more-posts.less";
@@ -312,23 +313,25 @@ h3.title-post {
   background: #000;
   color: #fff;
   margin-bottom: 30px;
-
-  .post-title a,
-  .post-byline a {
-    color: #fff;
-  }
-  .post-title a:hover,
-  .post-title a:focus,
-  .post-byline a:hover,
-  .post-byline a:focus {
-    color: #d45f34
-  }
   .post-body {
     padding: 10px 0;
   }
 }
 .main-slideshow-wrapper {
   padding: 0 54px;
+}
+
+/* Backgrounds */
+.bg-gray {
+  background-color: #d0d1d3;
+}
+.bg-red {
+  background-color: #c32527;
+}
+
+.section-wrapper {
+  padding-bottom: 20px;
+  padding-top: 70px;
 }
 
 /* Forms */
@@ -365,4 +368,74 @@ h3.title-post {
 }
 .text-center {
   text-align: center;
+}
+
+/* Utils */
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+/* Section blocks */
+.section-block {
+  border-top: 16px solid #000;
+  padding-top: 12px;
+  margin-bottom: 20px;
+  h3 {
+    font-family: @font-family-sans-serif-condensed;
+    font-weight: @headings-font-weight;
+    font-style: italic;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+  p {
+    font-family: @font-family-base;
+    font-weight: @base-font-weight;
+    font-size: @font-size-base;
+    line-height: @line-height-base;
+    margin-bottom: 10px;
+  }
+  a {
+    color: #000;
+    font-family: @font-family-sans-serif-condensed;
+    font-weight: @headings-font-weight;
+    font-size: 14px;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+  }
+  a:hover,
+  a:focus {
+    color: #ef5125;
+  }
+}
+.section-block-white {
+  border-top-color: #fff;
+  h3 ,
+  h3 span,
+  p, 
+  a {
+    color: #fff;
+  }
+  a:hover,
+  a:focus {
+    color: #000;
+  }
+}
+
+/* Override */
+.stories article {
+  border-bottom: none;
+  margin-bottom: 20px;
 }

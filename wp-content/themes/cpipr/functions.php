@@ -11,6 +11,15 @@ if ( ! defined( 'INN_HOSTED' ) ) {
         define( 'INN_HOSTED', true );
 }
 
+/**
+ * Register custome homepage layout
+ */
+function register_custom_homepage_layout() {
+	include_once __DIR__ . '/homepages/layouts/CustomLayout.php';
+    register_homepage_layout('CustomLayout');
+}
+add_action('init', 'register_custom_homepage_layout', 0);
+
 //use the Largo metabox API
 require_once( get_template_directory() . '/largo-apis.php' );
 

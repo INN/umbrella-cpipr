@@ -134,9 +134,13 @@
 		do_action( 'cpipr_after_main_slideshow' );
 	?>
 
-	<div class="page-wrapper">
+	<?php
+		$home_template = largo_get_active_homepage_layout();
+		$container_class = is_front_page() && $home_template == 'CustomLayout' ? '' : 'container-fluid';
+	?> 
+	<div class="<?php echo $container_class ?>">
 
-		<div id="main" class="row-fluid clearfix">
+		<div id="main" class="<?php echo $container_class == 'container-fluid' ? 'row-fluid' : ''; ?> clearfix">
 
 		<?php
 
