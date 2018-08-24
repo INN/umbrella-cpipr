@@ -116,7 +116,62 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 						</div>
 					</div>
 					<div class="span9">
-						<h2>News here</h2>
+						<div class="row-fluid">
+						<?php
+							$cpiNews = largo_get_featured_posts( array(
+								'tax_query' => array(
+									array(
+										'taxonomy' 	=> 'prominence',
+										'field' 	=> 'slug',
+										'terms' 	=> 'top-story'
+									)
+								),
+								'posts_per_page' => 4
+							) );
+							if ( $cpiNews->have_posts() ) {
+						?>
+						<?php 
+							$odd = 0;
+							while ( $cpiNews->have_posts() ) { $cpiNews->the_post(); $shown_ids[] = get_the_ID();
+						?>
+						<?php if ($odd && $odd % 2 == 0) : ?>
+								</div>
+							<div class="row-fluid">
+						<?php endif; ?>
+						<div class="span6">
+							<article class="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+								<div class="entry-content entry-content-cpipr">
+									<?php
+										if ( largo_has_categories_or_tags() ) {
+											largo_maybe_top_term();
+										}
+
+										if ( has_post_thumbnail() ) {
+											echo '<div class="has-thumbnail '.$hero_class.'"><a href="' . get_permalink() . '">' . get_the_post_thumbnail() . '</a></div>';
+										}
+									?>
+									<h2 class="entry-title">
+										<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __( 'Permalink to', 'largo' ) . ' ' ) )?>" rel="bookmark"><?php the_title(); ?></a>
+									</h2>
+
+									<h5 class="byline"><?php largo_byline(); ?></h5>
+
+									<?php largo_excerpt();?>
+
+									<div class="form-group pull-left">
+										<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
+									</div>
+									<div class="social-media-list social-media-list-icons social-media-list-black text-right">
+										<?php largo_post_social_links(); ?>
+									</div>
+								</div>
+							</article>
+						</div>
+						<?php $odd++; } ?>
+						<?php } else { ?>
+							<h5>No entries found.</h5>
+						<?php } ?>
+						</div>
 					</div>
 				</div>
 			</div>

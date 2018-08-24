@@ -1681,6 +1681,45 @@ blockquote p {
 .post-entry.post-entry-white .post-categories > li > a:focus {
   color: #000;
 }
+.entry-content.entry-content-cpipr .post-category-link {
+  background-color: #f9a61b;
+  color: #fff;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 1px 4px;
+}
+.entry-content.entry-content-cpipr .post-category-link a {
+  color: inherit;
+}
+.entry-content.entry-content-cpipr h2.entry-title {
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.entry-content.entry-content-cpipr .byline {
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 14px;
+  margin-bottom: 18px;
+}
+.entry-content.entry-content-cpipr .byline .by-author .author,
+.entry-content.entry-content-cpipr .byline .entry-date {
+  font-weight: 700;
+}
+.entry-content.entry-content-cpipr p {
+  font-size: 14px;
+  line-height: 1.42857143;
+}
+.entry-content.entry-content-cpipr .btn-black {
+  color: #fff;
+  font-size: 13px;
+  margin-top: 5px;
+}
 .owl-post-slide.post-entry .post-categories > li {
   margin-bottom: 12px;
 }
