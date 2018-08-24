@@ -574,7 +574,7 @@ h1.logo-main a {
   color: #ef5125;
 }
 #sidebar .widget {
-  padding: 24px 0;
+  padding: 0;
 }
 .widget.largo-donate .btn-primary {
   background-color: #bd261d;
@@ -2250,6 +2250,56 @@ blockquote p {
     line-height: 1.5rem;
   }
 }
+#mc_embed_signup.mc_embed_signup_cpipr {
+  background-color: #f9a61b;
+  padding: 10px 10px 5px 10px;
+}
+#mc_embed_signup.mc_embed_signup_cpipr h3 {
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 36px;
+  padding: 0;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+#mc_embed_signup.mc_embed_signup_cpipr form {
+  padding: 0;
+}
+#mc_embed_signup.mc_embed_signup_cpipr input.email {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-color: #f9a61b;
+  border: none;
+  border-bottom: 3px solid #000;
+  color: #000;
+  margin-bottom: 14px;
+  width: 100%;
+}
+#mc_embed_signup.mc_embed_signup_cpipr input.button {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  background: #000;
+  color: #f9a61b;
+  text-transform: uppercase;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.2;
+  padding: 4px 20px;
+  display: inline-block;
+  width: auto;
+}
+#mc_embed_signup.mc_embed_signup_cpipr input.button:hover,
+#mc_embed_signup.mc_embed_signup_cpipr input.button:focus {
+  background: #000;
+  color: #ef5125;
+}
 .before-footer-wrapper {
   background-color: #fff;
   border-top: 1px solid #ccc;
@@ -2564,4 +2614,7 @@ footer #boilerplate li .caret {
 .stories article {
   border-bottom: none;
   margin-bottom: 20px;
+}
+::placeholder {
+  color: #000;
 }
