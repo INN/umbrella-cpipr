@@ -468,25 +468,184 @@ h1.logo-main a {
   }
 }
 .widgettitle,
-.widget.rev .widgettitle,
 .stories h3.widgettitle {
   background-color: #d45f34;
   color: #fff;
   padding: 5px 10px;
 }
 .widgettitle a,
-.widget.rev .widgettitle a,
 .stories h3.widgettitle a {
   color: #fff;
 }
-.widget.rev {
-  background-color: #333;
+#sidebar .widget.largo-recent-posts {
+  padding: 10px 15px 5px 15px;
+}
+.widget.largo-recent-posts .widgettitle {
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 36px;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.widget.largo-recent-posts .widgettitle a {
+  color: inherit;
+  text-transform: uppercase;
+}
+.widget.largo-recent-posts h5 {
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+.widget.largo-recent-posts h5 a {
+  color: inherit;
+}
+.widget.largo-recent-posts .byline {
+  display: block;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 14px;
+}
+.widget.largo-recent-posts .byline a {
+  color: #000;
+}
+.widget.largo-recent-posts .byline .author,
+.widget.largo-recent-posts .byline .entry-date,
+.widget.largo-recent-posts .byline .edit-link {
+  font-weight: 700;
+}
+.widget.largo-recent-posts p {
+  font-family: Merriweather, "Times New Roman", Times, serif;
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 12px;
+}
+.widget.largo-recent-posts .morelink {
+  margin-bottom: 12px;
+}
+.widget.largo-recent-posts .morelink a {
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  display: inline-block;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.2;
+  padding: 4px 20px;
+  text-transform: uppercase;
+}
+.widget.default.largo-recent-posts {
+  background-color: #ef5024;
+}
+.widget.default.largo-recent-posts .widgettitle {
+  background-color: #ef5024;
+  color: #000;
+}
+.widget.default.largo-recent-posts h5 {
+  color: #000;
+}
+.widget.rev.largo-recent-posts {
+  background-color: #000;
+}
+.widget.rev.largo-recent-posts .widgettitle {
+  background-color: #000;
+  color: #fff;
+}
+.widget.no-bg.largo-recent-posts {
+  background-color: #d0d1d3;
+}
+.widget.no-bg.largo-recent-posts .widgettitle {
+  background-color: #d0d1d3;
+  color: #000;
+}
+.widget.no-bg.largo-recent-posts .morelink a {
+  background: #000;
+  color: #fff;
+}
+.widget.no-bg.largo-recent-posts .morelink a:hover,
+.widget.no-bg.largo-recent-posts .morelink a:focus {
+  background: #000;
+  color: #ef5125;
 }
 #sidebar .widget {
   padding: 24px 0;
 }
 .widget.largo-donate .btn-primary {
   background-color: #bd261d;
+}
+/* Access info widget */
+.access-info-card .access-info-img-top {
+  position: relative;
+}
+.access-info-card .access-info-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.access-info-card .access-info-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #000;
+  color: #fff;
+  line-height: 14px;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 1px 4px;
+  text-transform: uppercase;
+}
+.access-info-card .access-info-title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px;
+}
+.access-info-card .access-info-title a {
+  color: #fff;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  font-style: italic;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+.access-info-card .access-info-body {
+  background-color: #ef5023;
+  padding: 15px;
+}
+.access-info-card .access-info-list {
+  border-left: 3px solid #000;
+  padding: 5px 0 10px 15px;
+}
+.access-info-card .access-info-list > li {
+  margin-bottom: 0;
+}
+.access-info-card .access-info-list > li + li {
+  margin-top: 20px;
+}
+.access-info-card .access-info-list > li > a {
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+}
+.access-info-card .access-info-list > li > a:hover,
+.access-info-card .access-info-list > li > a:focus {
+  color: #000;
 }
 /*
  * Styles specifically for single-article pages
