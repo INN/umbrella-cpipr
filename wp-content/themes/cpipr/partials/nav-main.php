@@ -52,53 +52,56 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 			</div>
 		</div>
 	</div>
-	<div class="menu-header-wrapper">
-		<div class="container-fluid">
-			<nav class="menu-header" id="menu-header">
-				<ul>
-					<?php
-					/*
-					 * Before Main Nav List Items
-					 *
-					 * Use add_action( 'largo_before_main_nav_list_items', 'function_to_add');
-					 *
-					 * @link https://codex.wordpress.org/Function_Reference/add_action
-					 * @since 0.5.5
-					 	 */
-					do_action( 'largo_before_main_nav_list_items' );
-					
-					/*
-					 * Generate the Main Navigation shown mainly on homepages
-					 *
-					 * A Bootstrap Navbar is generated from a walker.
-					 *
-					 * @see inc/nav-menus.php
-					 */
-					$args = array(
-						'theme_location' => 'main-nav',
-						'depth' => 0,
-						'container' => false,
-						'items_wrap' => '%3$s',
-						'menu_class' => 'nav',
-						'walker' => new Bootstrap_Walker_Nav_Menu()
-					);
-					largo_nav_menu( $args );
-					
-					/*
-					 * After Main Nav List Items
-					 *
-					 * Use add_action( 'largo_after_main_nav_list_items', 'function_to_add');
-					 *
-					 * @link https://codex.wordpress.org/Function_Reference/add_action
-					 * @since 0.5.5
-					 	 */
-					do_action( 'largo_after_main_nav_list_items' );
-					?>
-				</ul>
-			</nav>
 
-			<div class="hamburguer-menu" id="menu-btn">
-				<span></span>
+
+	<!-- The new menú -->
+
+	<div class="navbar navbar-cpipr navbar-static-top">
+		<div class="container-fluid">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cpipr-menu">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+
+			<div id="cpipr-menu" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<?php
+						$args = array(
+							'theme_location' => 'global-nav',
+							'depth' => 1,
+							'container' => false,
+							'items_wrap' => '%3$s',
+							'walker' => new Bootstrap_Walker_Nav_Menu()
+						);
+						largo_nav_menu( $args );
+					?>
+
+					<li class="dropdown megamenu">
+						<a href="#" class="dropdown-toggle dropdown-toggle-cpipr" data-toggle="dropdown" aria-expanded="false"></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<div class="container-fluid">
+									<ul class="nav nav-justified">
+										<?php
+											$args = array(
+												'theme_location' => 'main-nav',
+												'depth' => 2,
+												'container' => false,
+												'items_wrap' => '%3$s',
+												'menu_class' => 'nav'
+											);
+											largo_nav_menu( $args );
+										?>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

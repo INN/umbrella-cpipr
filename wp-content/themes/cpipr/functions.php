@@ -208,6 +208,24 @@ if ( ! function_exists( 'cpipr_owl_carousel_enqueue' ) ) {
 			get_stylesheet_directory_uri() . '/js/main-slideshow' . $suffix . '.js',
 			array('owl-carousel'), $version, false
 		);
+
+		wp_enqueue_script(
+			'bootstrap-transition',
+			get_stylesheet_directory_uri() . '/lib/bootstrap/js/transition' . $suffix . '.js',
+			array('jquery'), $version, false
+		);
+
+		wp_enqueue_script(
+			'bootstrap-collapse',
+			get_stylesheet_directory_uri() . '/lib/bootstrap/js/collapse' . $suffix . '.js',
+			array('jquery'), $version, false
+		);
+
+		wp_enqueue_script(
+			'bootstrap-dropdown',
+			get_stylesheet_directory_uri() . '/lib/bootstrap/js/dropdown' . $suffix . '.js',
+			array('jquery'), $version, false
+		);
 	}
 	add_action( 'wp_enqueue_scripts', 'cpipr_owl_carousel_enqueue');
 }
