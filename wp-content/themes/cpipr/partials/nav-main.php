@@ -13,46 +13,47 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 ?>
 
 <header class="header-cpi">
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span3">
-				<h1 class="logo-main">
-					<a href="/">
-						Centro de periodismo investigativo
-					</a>
-				</h1>
-			</div>
-			<div class="span6"></div>
-			<div class="span3">
-				<!-- <ul class="">
-					<li class="active"><a href="#">Español</a></li>
-					<li><a href="#">English</a></li>
-				</ul> -->
-				<div class="header-search-wrapper">
-					<form class="form-search text-right" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<div class="input-append">
-							<input type="text" class="input-medium" placeholder="<?php _e('Search', 'largo'); ?>" name="s"><button class="btn" type="submit">&nbsp;</button>
-						</div>
-					</form>
+	<div class="top-header">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span3">
+					<h1 class="logo-main">
+						<a href="/">
+							Centro de periodismo investigativo
+						</a>
+					</h1>
+				</div>
+				<div class="span6"></div>
+				<div class="span3">
+					<!-- <ul class="">
+						<li class="active"><a href="#">Español</a></li>
+						<li><a href="#">English</a></li>
+					</ul> -->
+					<div class="header-search-wrapper">
+						<form class="form-search text-right" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<div class="input-append">
+								<input type="text" class="input-medium" placeholder="<?php _e('Search', 'largo'); ?>" name="s"><button class="btn" type="submit">&nbsp;</button>
+							</div>
+						</form>
 
-					<div class="text-right">
-					<?php
-						/* Check to display Social Media Icons */
-						if ( of_get_option( 'show_header_social') ) { ?>
-						<ul class="social-media-icon-list social-media-icon-list-white">
-							<?php largo_social_links(); ?>
-						</ul>
-					<?php }
-						/* Check to display Donate Button */
-						if ( of_get_option( 'show_donate_button') )
-							largo_donate_button();
-					?>	
+						<div class="text-right">
+						<?php
+							/* Check to display Social Media Icons */
+							if ( of_get_option( 'show_header_social') ) { ?>
+							<ul class="social-media-icon-list social-media-icon-list-white">
+								<?php largo_social_links(); ?>
+							</ul>
+						<?php }
+							/* Check to display Donate Button */
+							if ( of_get_option( 'show_donate_button') )
+								largo_donate_button();
+						?>	
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 	<!-- The new menú -->
 
@@ -60,7 +61,7 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 		<div class="container-fluid">
 
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cpipr-menu">
+				<button id="cpipr-menu-btn" type="button" class="navbar-toggle" data-target="#cpipr-menu">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -81,7 +82,7 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 					?>
 
 					<li class="dropdown megamenu">
-						<a href="#" class="dropdown-toggle dropdown-toggle-cpipr" data-toggle="dropdown" aria-expanded="false"></a>
+						<a href="#" class="dropdown-toggle dropdown-toggle-cpipr" data-toggle="dropdown" aria-expanded="false"><span>MORE</span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li>
 								<div class="container-fluid">

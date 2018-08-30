@@ -210,6 +210,12 @@ if ( ! function_exists( 'cpipr_owl_carousel_enqueue' ) ) {
 		);
 
 		wp_enqueue_script(
+			'cpipr-navigation',
+			get_stylesheet_directory_uri() . '/js/navigation' . $suffix . '.js',
+			array('jquery'), $version, false
+		);
+
+		wp_enqueue_script(
 			'bootstrap-transition',
 			get_stylesheet_directory_uri() . '/lib/bootstrap/js/transition' . $suffix . '.js',
 			array('jquery'), $version, false

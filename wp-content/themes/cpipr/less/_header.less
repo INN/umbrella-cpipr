@@ -47,6 +47,9 @@ header {
     padding-bottom: 20px;
   }
 }
+.top-header {
+  padding: 20px 0;
+}
 
 .entry-header {
   background: transparent;
@@ -638,8 +641,6 @@ fieldset[disabled] .navbar-cpipr .btn-link:focus {
 
 .dropdown-menu > li {
   display: table-cell;
-  height: 50px;
-  line-height: 50px;
   vertical-align: top;
   width: 1%;
 }
@@ -647,6 +648,7 @@ fieldset[disabled] .navbar-cpipr .btn-link:focus {
 @media screen and (max-width: 767px) {
   .dropdown-menu > li {
     display: block;
+    width: auto;
   }
 }
 
@@ -688,17 +690,35 @@ fieldset[disabled] .navbar-cpipr .btn-link:focus {
   background-color: transparent;
 }
 
-.navbar-cpipr li.dropdown.megamenu {
-  float: right;
-}
-
-.dropdown-toggle-cpipr {
-  background: url(../images/icon-horizontal-lines.png) center center no-repeat;
-  display: inline-block;
-  height: 24px;
-  width: 24px
-}
-
 .navbar-cpipr li.dropdown.open .dropdown-toggle-cpipr {
   background: url(../images/icon-close.png) center center no-repeat;
+}
+
+@media (min-width: 768px) {
+  .dropdown-toggle-cpipr {
+    background: url(../images/icon-horizontal-lines.png) center center no-repeat;
+    display: inline-block;
+    height: 24px;
+    width: 24px
+  }
+  .navbar-cpipr li.dropdown.megamenu {
+    float: right;
+  } 
+  .navbar-cpipr li.dropdown.megamenu .dropdown-toggle span {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-cpipr li.dropdown.open .dropdown-toggle-cpipr {
+    background: none;
+  }
+  .navbar-cpipr .dropdown-menu .sub-menu {
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+  .dropdown-menu li:hover .sub-menu, .dropdown-menu li:hover .sub-sub-menu {
+    display: block;
+    visibility: initial;
+  }
 }

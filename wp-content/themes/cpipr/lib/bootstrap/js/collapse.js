@@ -179,17 +179,17 @@
     })
   }
 
-  var old = $.fn.collapse
+  var old = $.fn.collapsecpipr
 
-  $.fn.collapse             = Plugin
-  $.fn.collapse.Constructor = Collapse
+  $.fn.collapsecpipr             = Plugin
+  $.fn.collapsecpipr.Constructor = Collapse
 
 
   // COLLAPSE NO CONFLICT
   // ====================
 
-  $.fn.collapse.noConflict = function () {
-    $.fn.collapse = old
+  $.fn.collapsecpipr.noConflict = function () {
+    $.fn.collapsecpipr = old
     return this
   }
 
