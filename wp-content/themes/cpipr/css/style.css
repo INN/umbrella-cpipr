@@ -296,18 +296,9 @@ header.header-cpi {
 .entry-header {
   background: transparent;
 }
-h1.logo-main {
-  display: block;
+.logo-main {
+  display: inline-block;
   width: 245px;
-  margin: 0 auto;
-  padding: 30px 0;
-}
-h1.logo-main a {
-  text-indent: -9999%;
-  display: block;
-  width: 245px;
-  height: 92px;
-  background: url(../images/mainLogo.png) no-repeat center / 100%;
 }
 /* Override Largo navigation */
 .navbar {
@@ -423,9 +414,7 @@ tbody.collapse.in {
 }
 .navbar {
   position: relative;
-  min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid transparent;
 }
 @media (min-width: 768px) {
   .navbar {
@@ -861,8 +850,19 @@ fieldset[disabled] .navbar-cpipr .btn-link:focus {
     width: 1%;
   }
 }
+/* Navbar Toggle */
+#cpipr-menu-btn.navbar-toggle {
+  margin-top: 18px;
+}
+#cpipr-menu-btn.navbar-toggle .icon-bar {
+  background: #fff;
+  height: 4px;
+  margin-bottom: 6px;
+  width: 30px;
+}
 /* Navigation */
-.nav > li.dropdown.open {
+.nav > li.dropdown.open,
+.nav > li.dropdown.megamenu {
   position: static;
 }
 .nav > li.dropdown.open .dropdown-menu {
@@ -887,7 +887,7 @@ fieldset[disabled] .navbar-cpipr .btn-link:focus {
   padding-bottom: 20px;
   padding-top: 10px;
 }
-.navbar-cpipr .nav > li.dropdown.open .dropdown-menu {
+.navbar-cpipr .nav > li.dropdown .dropdown-menu {
   background-color: #d0d1d3;
   border-color: #d0d1d3;
 }
@@ -931,10 +931,20 @@ fieldset[disabled] .navbar-cpipr .btn-link:focus {
   .navbar-cpipr li.dropdown.megamenu .dropdown-toggle span {
     display: none;
   }
+  .navbar {
+    min-height: 50px;
+  }
 }
 @media (max-width: 768px) {
-  .navbar-cpipr li.dropdown.open .dropdown-toggle-cpipr {
-    background: none;
+  .navbar-cpipr li.dropdown .dropdown-toggle-cpipr {
+    display: none;
+  }
+  .navbar-cpipr li.dropdown .dropdown-menu {
+    display: table;
+    border-radius: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
   }
   .navbar-cpipr .dropdown-menu .sub-menu {
     min-height: auto;
@@ -3252,4 +3262,211 @@ footer #boilerplate li .caret {
 }
 ::placeholder {
   color: #000;
+}
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none !important;
+}
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block !important;
+  }
+  table.visible-xs {
+    display: table !important;
+  }
+  tr.visible-xs {
+    display: table-row !important;
+  }
+  th.visible-xs,
+  td.visible-xs {
+    display: table-cell !important;
+  }
+}
+@media (max-width: 767px) {
+  .visible-xs-block {
+    display: block !important;
+  }
+}
+@media (max-width: 767px) {
+  .visible-xs-inline {
+    display: inline !important;
+  }
+}
+@media (max-width: 767px) {
+  .visible-xs-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm {
+    display: block !important;
+  }
+  table.visible-sm {
+    display: table !important;
+  }
+  tr.visible-sm {
+    display: table-row !important;
+  }
+  th.visible-sm,
+  td.visible-sm {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-block {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .visible-sm-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md {
+    display: block !important;
+  }
+  table.visible-md {
+    display: table !important;
+  }
+  tr.visible-md {
+    display: table-row !important;
+  }
+  th.visible-md,
+  td.visible-md {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md-block {
+    display: block !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .visible-md-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (min-width: 1200px) {
+  .visible-lg {
+    display: block !important;
+  }
+  table.visible-lg {
+    display: table !important;
+  }
+  tr.visible-lg {
+    display: table-row !important;
+  }
+  th.visible-lg,
+  td.visible-lg {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 1200px) {
+  .visible-lg-block {
+    display: block !important;
+  }
+}
+@media (min-width: 1200px) {
+  .visible-lg-inline {
+    display: inline !important;
+  }
+}
+@media (min-width: 1200px) {
+  .visible-lg-inline-block {
+    display: inline-block !important;
+  }
+}
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+.visible-print {
+  display: none !important;
+}
+@media print {
+  .visible-print {
+    display: block !important;
+  }
+  table.visible-print {
+    display: table !important;
+  }
+  tr.visible-print {
+    display: table-row !important;
+  }
+  th.visible-print,
+  td.visible-print {
+    display: table-cell !important;
+  }
+}
+.visible-print-block {
+  display: none !important;
+}
+@media print {
+  .visible-print-block {
+    display: block !important;
+  }
+}
+.visible-print-inline {
+  display: none !important;
+}
+@media print {
+  .visible-print-inline {
+    display: inline !important;
+  }
+}
+.visible-print-inline-block {
+  display: none !important;
+}
+@media print {
+  .visible-print-inline-block {
+    display: inline-block !important;
+  }
+}
+@media print {
+  .hidden-print {
+    display: none !important;
+  }
 }

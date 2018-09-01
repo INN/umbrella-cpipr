@@ -17,14 +17,17 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div class="span3">
-					<h1 class="logo-main">
-						<a href="/">
-							Centro de periodismo investigativo
-						</a>
-					</h1>
+					<a href="/" class="logo-main">
+						<img src="<?php echo get_stylesheet_directory_uri(). '/images/mainLogo.png' ?>" class="img-responsive"/>
+					</a>
+					<button id="cpipr-menu-btn" type="button" class="navbar-toggle" data-target="#cpipr-menu">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
 				</div>
-				<div class="span6"></div>
-				<div class="span3">
+				<div class="span6 hidden-xs"></div>
+				<div class="span3 hidden-xs">
 					<!-- <ul class="">
 						<li class="active"><a href="#">Español</a></li>
 						<li><a href="#">English</a></li>
@@ -59,15 +62,6 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 
 	<div class="navbar navbar-cpipr navbar-static-top">
 		<div class="container-fluid">
-
-			<div class="navbar-header">
-				<button id="cpipr-menu-btn" type="button" class="navbar-toggle" data-target="#cpipr-menu">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-			</div>
-
 			<div id="cpipr-menu" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<?php
@@ -82,7 +76,7 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 					?>
 
 					<li class="dropdown megamenu">
-						<a href="#" class="dropdown-toggle dropdown-toggle-cpipr" data-toggle="dropdown" aria-expanded="false"><span>MORE</span></a>
+						<a href="#" class="dropdown-toggle dropdown-toggle-cpipr" data-toggle="dropdown" aria-expanded="false"></a>
 						<ul class="dropdown-menu" role="menu">
 							<li>
 								<div class="container-fluid">
