@@ -944,6 +944,12 @@ fieldset[disabled] .navbar-cpipr .btn-link:focus {
   .navbar {
     min-height: 50px;
   }
+  #cpipr-menu > .navbar-nav > li > a {
+    padding: 15px 28px 15px 0;
+  }
+  #cpipr-menu > .navbar-nav > li + li > a {
+    padding-left: 28px;
+  }
 }
 @media (max-width: 768px) {
   .navbar-cpipr li.dropdown .dropdown-toggle-cpipr {
@@ -1260,6 +1266,9 @@ a,
 a:hover,
 .home .entry-content a:hover {
   color: #d45f34;
+}
+#main {
+  margin: 18px 0 0 0;
 }
 #main .LegacyThreeColumn .top-story h2 {
   font-size: 32px;
@@ -3144,10 +3153,6 @@ footer #boilerplate li .caret {
   .page-wrapper {
     max-width: 100%;
     padding: 0;
-  }
-  #main #content {
-    padding: 0 15px;
-    width: 100%;
   }
   .mobile-full-width {
     width: 100% !important;
