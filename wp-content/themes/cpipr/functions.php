@@ -151,6 +151,22 @@ function widget_autores_init() {
 add_action( 'widgets_init', 'widget_autores_init' );
 
 /**
+ * Register top header advertisement widget area
+ */
+function widget_top_header_advertisement_init() {
+	register_sidebar( array(
+		'name'          => __( 'Advertisement Top Header', 'twentyseventeen' ),
+		'id'            => 'advertisement-top-header',
+		'description'   => __( 'Add widgets here.', 'twentyseventeen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'widget_top_header_advertisement_init' );
+
+/**
  * Counter Hamburger menu
  *
  * For the sake of making things easy to escape, this function uses heredoc: https://secure.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc

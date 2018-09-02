@@ -294,7 +294,6 @@
 }
 header.header-cpi {
   background-color: #000;
-  padding-bottom: 20px;
 }
 .top-header {
   padding: 20px 0;
@@ -305,6 +304,7 @@ header.header-cpi {
 .logo-main {
   display: inline-block;
   margin-top: 14px;
+  margin-bottom: 20px;
   width: 245px;
 }
 /* Override Largo navigation */
