@@ -28,18 +28,22 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 				</div>
 				<div class="span6 hidden-xs"></div>
 				<div class="span3 hidden-xs">
-					<!-- <ul class="">
-						<li class="active"><a href="#">Español</a></li>
-						<li><a href="#">English</a></li>
-					</ul> -->
 					<div class="header-search-wrapper">
-						<form class="form-search text-right" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<ul class="lang-switcher">
+							<li class="active">
+								<a href="#">Español</a>
+							</li>
+							<li>
+								<a href="#">English</a>
+							</li>
+						</ul>
+						<form class="form-search" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 							<div class="input-append">
 								<input type="text" class="input-medium" placeholder="<?php _e('Search', 'largo'); ?>" name="s"><button class="btn" type="submit">&nbsp;</button>
 							</div>
 						</form>
 
-						<div class="text-right">
+						<div>
 						<?php
 							/* Check to display Social Media Icons */
 							if ( of_get_option( 'show_header_social') ) { ?>
