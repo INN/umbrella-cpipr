@@ -83,8 +83,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							//default query args: by date, descending
 							$args = array(
 								'p' => '',
-								'post_type' => 'post',
-								'taxonomy' => 'series',
+								'post_type' => 'cftl-tax-landing',
 								'order' => 'DESC',
 								'posts_per_page' => 6
 							);
@@ -97,9 +96,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							<?php endif; ?>
 							<div class="span6">
 								<a href="<?php the_permalink();?>" class="series-item">
-									<div class="image">
-										<?php the_post_thumbnail();?>
-									</div>
+									<div class="image" style="background-image: url('<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : 'https://dummyimage.com/600x400/ccc/ccc.jpg'; ?>')"></div>
 									<div class="overlay"><p><?php the_title();?></p></div>
 								</a>
 							</div>

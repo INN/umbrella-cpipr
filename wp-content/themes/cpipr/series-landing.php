@@ -75,32 +75,33 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="social-media-main">
-		<div class="container-fluid mobile-full-width">
-			<div class="row-fluid">
-				<div class="span10 offset2 mobile-no-offset">
-					<span class="by-author">
-						<span class="by">por</span> 
-							<span class="author vcard" itemprop="author">
-								<?php
-									if ( function_exists( 'get_coauthors' ) ) {
-										$authors = get_coauthors();
-										foreach($authors as $author) {
-											$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
-											$avatar = coauthors_get_avatar( $author, 128 );
-											$name =  $author->display_name;
-											echo $avatar . '<a class="url fn n" href="' . $archive_link . '" rel="author">' . $name . '</a><span class="and">y</span>';
+
+		<div class="social-media-main">
+			<div class="container-fluid mobile-full-width">
+				<div class="row-fluid">
+					<div class="span10 offset2 mobile-no-offset">
+						<span class="by-author">
+							<span class="by">por</span> 
+								<span class="author vcard" itemprop="author">
+									<?php
+										if ( function_exists( 'get_coauthors' ) ) {
+											$authors = get_coauthors();
+											foreach($authors as $author) {
+												$archive_link = get_author_posts_url( $author->ID, $author->user_nicename );
+												$avatar = coauthors_get_avatar( $author, 128 );
+												$name =  $author->display_name;
+												echo $avatar . '<a class="url fn n" href="' . $archive_link . '" rel="author">' . $name . '</a><span class="and">y</span>';
+											}
+										} else {
+											$authors = array();
+											error_log( 'This theme depends upon Co-Authors Plus!' );
 										}
-									} else {
-										$authors = array();
-										error_log( 'This theme depends upon Co-Authors Plus!' );
-									}
-								?>
+									?>
+							</span>
 						</span>
-					</span>
-					<div class="social-media-list">
-						<?php largo_post_social_links();?>
+						<div class="social-media-list">
+							<?php largo_post_social_links();?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -261,7 +262,7 @@ if( !empty( $abstract_body ) ) {
 					<h3 class="title-post"><?php _e('Other Series', 'largo'); ?></h3>
 				</div>
 				<div class="span10">
-					<div class="row-fluid container-special">
+					<div class="row-fluid">
 						<?php $other_series = $wp_query->query_vars['post_type'];
 						//default query args: by date, descending
 						$args = array(
@@ -272,18 +273,19 @@ if( !empty( $abstract_body ) ) {
 								'post__not_in' => array($post->ID),
 						);
 						$other_series_query = new WP_Query($args);
+						$odd = 0;
 						while ($other_series_query->have_posts()): $other_series_query->the_post();?>
-						<div class="span6">
-							<a href="<?php the_permalink();?>" class="item-special">
-							<div style="position:relative;background: #000;">	<?php the_post_thumbnail();?>
-									<div class="overlay">
-										<div class="container-text">
-											<p><?php the_title();?></p>
-										</div>
-									</div>
+						<?php if ($odd && $odd % 2 == 0) : ?>
 								</div>
+							<div class="row-fluid">
+						<?php endif; ?>
+						<div class="span6">
+							<a href="<?php the_permalink();?>" class="series-item">
+								<div class="image" style="background-image: url('<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : 'https://dummyimage.com/600x400/ccc/ccc.jpg'; ?>')"></div>
+								<div class="overlay"><p><?php the_title();?></p></div>
 							</a>
 						</div>
+						<?php $odd++; ?>
 					<?php endwhile;?>
 					</div>
 				</div>

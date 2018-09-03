@@ -34,12 +34,13 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 				</div>
 				<div class="span3 hidden-xs">
 					<div class="header-search-wrapper">
+						<?php $category_title = strtoupper(single_cat_title( '', false )); ?>
 						<ul class="lang-switcher">
-							<li class="active">
-								<a href="#">Español</a>
+							<li class="<?php echo $category_title != 'ENGLISH' ? 'active':''?>">
+								<a href="/">Español</a>
 							</li>
-							<li>
-								<a href="#">English</a>
+							<li class="<?php echo $category_title == 'ENGLISH' ? 'active':''?>">
+								<a href="/category/english">English</a>
 							</li>
 						</ul>
 						<form class="form-search" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
