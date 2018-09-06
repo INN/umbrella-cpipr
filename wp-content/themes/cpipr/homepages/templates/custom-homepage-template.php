@@ -17,7 +17,6 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block">
 							<h3>Lo más reciente</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsam odit aspernatur maiores sapiente dolorum tempora ipsum, quod aliquid sit officia harum, unde vero.</p>
 							<a href="#">Ver más historias</a>
 						</div>
 					</div>
@@ -36,23 +35,27 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							if ( $topstory->have_posts() ) {
 						?>
 						<?php while ( $topstory->have_posts() ) { $topstory->the_post(); $shown_ids[] = get_the_ID(); ?>
-							<article class="post-entry">
+							<article class="post-entry post-entry-fixed">
 								<div class="row-fluid">
 									<?php if (has_post_thumbnail()): ?>
 									<div class="span6">
 										<figure class="post-image">
-											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'featured-square-medium' ); ?></a>
 										</figure>
 									</div>
 									<?php endif;?>
 									<div class="<?php echo has_post_thumbnail() ? 'span6' : 'span12'?>">
-										<div class="post-body">
+										<div class="post-body bottom-gradient white-gradient">
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
+											<?php if (has_excerpt()): ?>
 											<div class="post-excerpt">
 												<?php the_excerpt(); ?>	
 											</div>
+											<?php endif; ?>
+										</div>
+										<div class="clearfix">
 											<div class="form-group pull-left">
 												<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
 											</div>
@@ -73,7 +76,6 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block">
 							<h3>Series</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores minima, molestias tempora alias. Maiores repellendus, odio est cum eius modi dignissimos.</p>
 							<a href="#">Ver más series</a>
 						</div>
 					</div>
@@ -108,7 +110,6 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block">
 							<h3>Noticias CPI</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iste itaque eligendi harum quisquam saepe, delectus rerum quasi optio alias adipisci aspernatur.</p>
 							<a href="#">Ver más noticias</a>
 						</div>
 					</div>
@@ -136,8 +137,8 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							<div class="row-fluid">
 						<?php endif; ?>
 						<div class="span6">
-							<article class="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
-								<div class="entry-content entry-content-cpipr">
+							<article class="news-entry-cpipr post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+								<div class="entry-content entry-content-cpipr entry-content-fixed bottom-gradient white-gradient">
 									<?php
 										if ( largo_has_categories_or_tags() ) {
 											largo_maybe_top_term();
@@ -153,8 +154,9 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 
 									<h5 class="byline"><?php largo_byline(); ?></h5>
 
-									<?php largo_excerpt();?>
-
+									<?php if (has_excerpt()) largo_excerpt(); ?>	
+								</div>
+								<div class="clearfix">
 									<div class="form-group pull-left">
 										<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
 									</div>
@@ -202,7 +204,6 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block">
 							<h3>Opinión <span>De la libreta del periodista</span></h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem qui saepe quisquam laboriosam voluptates dolore doloremque.</p>
 							<a href="#">Ver más opinión</a>
 						</div>
 					</div>
@@ -221,26 +222,28 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							if ( $opinion_post->have_posts() ) {
 						?>
 						<?php while ( $opinion_post->have_posts() ) { $opinion_post->the_post(); $shown_ids[] = get_the_ID(); ?>
-							<article class="post-entry post-entry-black">
+							<article class="post-entry post-entry-fixed post-entry-black">
 								<div class="row-fluid">
 									<?php if (has_post_thumbnail()): ?>
 									<div class="span6">
 										<figure class="post-image">
-											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'featured-square-medium' ); ?></a>
 										</figure>
 									</div>
 									<?php endif;?>
 									<div class="<?php echo has_post_thumbnail() ? 'span6' : 'span12'?>">
-										<div class="post-body">
+										<div class="post-body bottom-gradient gray-gradient">
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
+											<?php if (has_excerpt()): ?>
 											<div class="post-excerpt">
 												<?php the_excerpt(); ?>	
 											</div>
-											<div class="form-group">
-												<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
-											</div>
+											<?php endif; ?>
+										</div>
+										<div class="form-group">
+											<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
 										</div>
 									</div>
 								</div>
@@ -264,7 +267,6 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block section-block-white">
 							<h3>Instituto de formación periodística</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus quasi minus voluptatem culpa porro assumenda quisquam, veniam reprehenderit.</p>
 							<a href="#">Ver más</a>
 						</div>
 					</div>
@@ -283,26 +285,28 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							if ( $ifp_post->have_posts() ) {
 						?>
 						<?php while ( $ifp_post->have_posts() ) { $ifp_post->the_post(); $shown_ids[] = get_the_ID(); ?>
-							<article class="post-entry post-entry-white">
+							<article class="post-entry post-entry-fixed post-entry-white">
 								<div class="row-fluid">
 									<?php if (has_post_thumbnail()): ?>
 									<div class="span6">
 										<figure class="post-image">
-											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'large' ); ?></a>
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'featured-square-medium' ); ?></a>
 										</figure>
 									</div>
 									<?php endif;?>
 									<div class="<?php echo has_post_thumbnail() ? 'span6' : 'span12'?>">
-										<div class="post-body">
+										<div class="post-body bottom-gradient red-gradient">
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
+											<?php if (has_excerpt()): ?>
 											<div class="post-excerpt">
 												<?php the_excerpt(); ?>	
 											</div>
-											<div class="form-group">
-												<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
-											</div>
+											<?php endif; ?>
+										</div>
+										<div class="form-group">
+											<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
 										</div>
 									</div>
 								</div>

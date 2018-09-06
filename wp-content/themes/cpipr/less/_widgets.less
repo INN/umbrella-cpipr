@@ -10,7 +10,22 @@
 
 #sidebar .widget.largo-recent-posts {
 	padding: 10px 15px 5px 15px;
-} 
+}
+ 
+#sidebar .widget {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+	#sidebar .widget-area {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	#sidebar .widget,
+	#sidebar .widget.largo-recent-posts {
+		padding: 10px 15px 5px;
+	}
+}
 
 .widget.largo-recent-posts {
 	.widgettitle {		
@@ -109,10 +124,6 @@
 		background: #000;
 		color: #ef5125;
 	}
-}
-
-#sidebar .widget {
-  padding: 0;
 }
 
 .widget.largo-donate .btn-primary {

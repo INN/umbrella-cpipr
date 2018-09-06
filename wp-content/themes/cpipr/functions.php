@@ -251,3 +251,12 @@ if ( ! function_exists( 'cpipr_owl_carousel_enqueue' ) ) {
 	}
 	add_action( 'wp_enqueue_scripts', 'cpipr_owl_carousel_enqueue');
 }
+
+
+/**
+ * Register image and media sizes associated with the theme
+ */
+function cpipr_image_size_setup () {
+	add_image_size( 'featured-square-medium', 400, 400, true );
+}
+add_action( 'after_setup_theme', 'cpipr_image_size_setup', 11 );

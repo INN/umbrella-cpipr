@@ -47,7 +47,7 @@ if ( is_front_page() ) {
 										<div class="row-fluid">
 											<div class="span4">
 												<div class="form-group">
-													<a href="<?php the_permalink() ?>" class="btn btn-round btn-white"><?php _e('Read More', 'largo'); ?></a>	
+													<a href="<?php the_permalink() ?>" class="btn btn-round btn-white"><?php _e('Read More', 'cpipr'); ?></a>	
 												</div>
 											</div>
 											<div class="span8">
