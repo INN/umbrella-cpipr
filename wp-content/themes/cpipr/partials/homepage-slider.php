@@ -42,7 +42,7 @@ if ( is_front_page() ) {
 										<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 										<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
 										<div class="post-excerpt">
-											<?php the_excerpt(); ?>	
+											<?php if (has_excerpt()) the_excerpt(); ?>	
 										</div>
 										<div class="row-fluid">
 											<div class="span4">
