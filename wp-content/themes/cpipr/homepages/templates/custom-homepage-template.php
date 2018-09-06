@@ -5,7 +5,7 @@
  * Sidebars: Homepage Left Rail (An optional widget area that, when enabled, appears to the left of the main content area on the homepage)
  */
 
-global $largo, $shown_ids, $tags;
+global $largo, $home_post_ids, $tags;
 $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') ? 'top-story span12' : 'top-story span8';
 ?>
 
@@ -27,14 +27,15 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 									array(
 										'taxonomy' 	=> 'prominence',
 										'field' 	=> 'slug',
-										'terms' 	=> 'top-story'
+										'terms' 	=> array('homepage-featured')
 									)
 								),
-								'posts_per_page' => 4
+								'posts_per_page' => 4,
+								'post__not_in'   => $home_post_ids
 							) );
 							if ( $topstory->have_posts() ) {
 						?>
-						<?php while ( $topstory->have_posts() ) { $topstory->the_post(); $shown_ids[] = get_the_ID(); ?>
+						<?php while ( $topstory->have_posts() ) { $topstory->the_post(); $home_post_ids[] = get_the_ID(); ?>
 							<article class="post-entry post-entry-fixed">
 								<div class="row-fluid">
 									<?php if (has_post_thumbnail()): ?>
@@ -119,18 +120,19 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							$cpiNews = largo_get_featured_posts( array(
 								'tax_query' => array(
 									array(
-										'taxonomy' 	=> 'prominence',
+										'taxonomy' 	=> 'category',
 										'field' 	=> 'slug',
-										'terms' 	=> 'top-story'
+										'terms' 	=> 'reportajes'
 									)
 								),
-								'posts_per_page' => 4
+								'posts_per_page' => 4,
+								'post__not_in'   => $home_post_ids
 							) );
 							if ( $cpiNews->have_posts() ) {
 						?>
 						<?php 
 							$odd = 0;
-							while ( $cpiNews->have_posts() ) { $cpiNews->the_post(); $shown_ids[] = get_the_ID();
+							while ( $cpiNews->have_posts() ) { $cpiNews->the_post(); $home_post_ids[] = get_the_ID();
 						?>
 						<?php if ($odd && $odd % 2 == 0) : ?>
 								</div>
@@ -212,16 +214,17 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							$opinion_post = largo_get_featured_posts( array(
 								'tax_query' => array(
 									array(
-										'taxonomy' 	=> 'prominence',
+										'taxonomy' 	=> 'category',
 										'field' 	=> 'slug',
-										'terms' 	=> 'top-story'
+										'terms' 	=> 'de-la-libreta-del-periodista'
 									)
 								),
-								'posts_per_page' => 2
+								'posts_per_page' => 2,
+								'post__not_in'   => $home_post_ids
 							) );
 							if ( $opinion_post->have_posts() ) {
 						?>
-						<?php while ( $opinion_post->have_posts() ) { $opinion_post->the_post(); $shown_ids[] = get_the_ID(); ?>
+						<?php while ( $opinion_post->have_posts() ) { $opinion_post->the_post(); $home_post_ids[] = get_the_ID(); ?>
 							<article class="post-entry post-entry-fixed post-entry-black">
 								<div class="row-fluid">
 									<?php if (has_post_thumbnail()): ?>
@@ -275,16 +278,17 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							$ifp_post = largo_get_featured_posts( array(
 								'tax_query' => array(
 									array(
-										'taxonomy' 	=> 'prominence',
+										'taxonomy' 	=> 'category',
 										'field' 	=> 'slug',
-										'terms' 	=> 'top-story'
+										'terms' 	=> 'instituto-de-formacion-periodistica'
 									)
 								),
-								'posts_per_page' => 2
+								'posts_per_page' => 2,
+								'post__not_in'   => $home_post_ids
 							) );
 							if ( $ifp_post->have_posts() ) {
 						?>
-						<?php while ( $ifp_post->have_posts() ) { $ifp_post->the_post(); $shown_ids[] = get_the_ID(); ?>
+						<?php while ( $ifp_post->have_posts() ) { $ifp_post->the_post(); $home_post_ids[] = get_the_ID(); ?>
 							<article class="post-entry post-entry-fixed post-entry-white">
 								<div class="row-fluid">
 									<?php if (has_post_thumbnail()): ?>

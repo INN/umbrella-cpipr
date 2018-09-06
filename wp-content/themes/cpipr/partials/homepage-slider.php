@@ -8,6 +8,7 @@
  * @package Largo
  * @link http://largo.readthedocs.io/users/themeoptions.html#navigation
  */
+global $home_post_ids;
 
 if ( is_front_page() ) {
 ?>
@@ -17,18 +18,19 @@ if ( is_front_page() ) {
 			<div id="main-slideshow" class="owl-carousel owl-theme">
 				<?php
 					// Mostrar todos los posts.
+					$home_post_ids = [];
 					$featured_posts_query = largo_get_featured_posts(
 						array(
 							'tax_query' => array(
 								array(
 									'taxonomy' 	=> 'prominence',
 									'field' 	=> 'slug',
-									'terms' 	=> array('homepage-featured', 'prominence')
+									'terms' 	=> array('top-story')
 								)
 							)
 						)
 					);
-					while($featured_posts_query->have_posts()){ $featured_posts_query->the_post(); ?>
+					while($featured_posts_query->have_posts()){ $featured_posts_query->the_post(); $home_post_ids[] = get_the_ID(); ?>
 						<div class="owl-post-slide post-entry">
 							<div class="row-fluid">
 								<div class="span7">
