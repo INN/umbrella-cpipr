@@ -2248,6 +2248,9 @@ blockquote p {
 .white-gradient:after {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), to(#ffffff));
 }
+.black-gradient:after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(#000000));
+}
 .red-gradient:after {
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(190, 40, 34, 0.1)), to(#be2822));
 }
@@ -2363,6 +2366,9 @@ blockquote p {
 .owl-post-slide.post-entry .post-title a,
 .owl-post-slide.post-entry .post-byline a {
   color: #fff;
+}
+.owl-post-slide.post-entry.post-entry-fixed .post-body {
+  height: 410px;
 }
 /* Post media credits */
 body.normal.single-post .hero p.wp-caption-text {
@@ -3142,6 +3148,7 @@ footer #boilerplate li .caret {
   display: inline-block;
   font-size: 13px;
   padding-right: 4px;
+  margin-bottom: 5px;
 }
 #cpi-footer .menu li + li {
   border-left: 3px solid #fff;
