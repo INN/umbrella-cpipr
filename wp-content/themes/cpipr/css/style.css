@@ -2231,6 +2231,9 @@ blockquote p {
 .post-entry .post-byline a {
   color: #000;
 }
+.post-entry .post-social {
+  margin-bottom: 0px;
+}
 .post-entry.post-entry-fixed .post-body {
   height: 284px;
   margin-bottom: 10px;
@@ -2341,6 +2344,9 @@ blockquote p {
 .stories .news-entry-cpipr .post-social {
   margin-bottom: 15px;
 }
+.owl-post-slide.post-entry {
+  padding-top: 20px;
+}
 .owl-post-slide.post-entry .post-categories > li {
   margin-bottom: 12px;
 }
@@ -2390,6 +2396,11 @@ body.normal.single-post .hero p.wp-media-credit {
 }
 .hero p.wp-caption-text {
   padding-bottom: 0;
+}
+@media (max-width: 768px) {
+  .post-entry .post-social {
+    margin-bottom: 15px;
+  }
 }
 .series-item {
   display: block;
@@ -3316,6 +3327,9 @@ footer #boilerplate li .caret {
   }
   #main-slideshow-container .post-body {
     padding: 25px 20px;
+  }
+  #main-slideshow-container .read-more-and-social {
+    padding: 0 20px;
   }
   .owl-nav {
     display: none;

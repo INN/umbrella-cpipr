@@ -44,18 +44,20 @@ if ( is_front_page() ) {
 										<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 										<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
 										<div class="post-excerpt">
-											<?php if (has_excerpt()) the_excerpt(); ?>	
+											<?php largo_excerpt(); ?>
 										</div>
 									</article>
-									<div class="row-fluid">
-										<div class="span4">
-											<div class="form-group">
-												<a href="<?php the_permalink() ?>" class="btn btn-round btn-white"><?php _e('Read More', 'cpipr'); ?></a>	
+									<div class="read-more-and-social">
+										<div class="row-fluid">
+											<div class="span4">
+												<div class="form-group">
+													<a href="<?php the_permalink() ?>" class="btn btn-round btn-white"><?php _e('Read More', 'cpipr'); ?></a>	
+												</div>
 											</div>
-										</div>
-										<div class="span8">
-											<div class="social-media-list social-media-list-icons social-media-list-white text-right">
-												<?php largo_post_social_links(); ?>
+											<div class="span8">
+												<div class="social-media-list social-media-list-icons social-media-list-white text-right">
+													<?php largo_post_social_links(); ?>
+												</div>
 											</div>
 										</div>
 									</div>

@@ -24,6 +24,13 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 						<?php
 							$topstory = largo_get_featured_posts( array(
 								'tax_query' => array(
+									'relation' => 'AND',
+									array(
+										'taxonomy' 	=> 'category',
+										'field' 	=> 'slug',
+										'terms' 	=> array('english'),
+										'operator'  => 'NOT IN'
+									),
 									array(
 										'taxonomy' 	=> 'prominence',
 										'field' 	=> 'slug',
@@ -50,11 +57,9 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
-											<?php if (has_excerpt()): ?>
 											<div class="post-excerpt">
-												<?php the_excerpt(); ?>	
+												<?php largo_excerpt(); ?>
 											</div>
-											<?php endif; ?>
 										</div>
 										<div class="clearfix">
 											<div class="form-group pull-left">
@@ -119,6 +124,13 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 						<?php
 							$cpiNews = largo_get_featured_posts( array(
 								'tax_query' => array(
+									'relation' => 'AND',
+									array(
+										'taxonomy' 	=> 'category',
+										'field' 	=> 'slug',
+										'terms' 	=> array('english'),
+										'operator'  => 'NOT IN'
+									),
 									array(
 										'taxonomy' 	=> 'category',
 										'field' 	=> 'slug',
@@ -156,7 +168,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 
 									<h5 class="byline"><?php largo_byline(); ?></h5>
 
-									<?php if (has_excerpt()) largo_excerpt(); ?>	
+									<?php largo_excerpt(); ?>	
 								</div>
 								<div class="clearfix">
 									<div class="form-group pull-left">
@@ -213,6 +225,13 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 						<?php
 							$opinion_post = largo_get_featured_posts( array(
 								'tax_query' => array(
+									'relation' => 'AND',
+									array(
+										'taxonomy' 	=> 'category',
+										'field' 	=> 'slug',
+										'terms' 	=> array('english'),
+										'operator'  => 'NOT IN'
+									),
 									array(
 										'taxonomy' 	=> 'category',
 										'field' 	=> 'slug',
@@ -239,11 +258,9 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
-											<?php if (has_excerpt()): ?>
 											<div class="post-excerpt">
-												<?php the_excerpt(); ?>	
+												<?php largo_excerpt(); ?>
 											</div>
-											<?php endif; ?>
 										</div>
 										<div class="form-group">
 											<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
@@ -277,6 +294,13 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 						<?php
 							$ifp_post = largo_get_featured_posts( array(
 								'tax_query' => array(
+									'relation' => 'AND',
+									array(
+										'taxonomy' 	=> 'category',
+										'field' 	=> 'slug',
+										'terms' 	=> array('english'),
+										'operator'  => 'NOT IN'
+									),
 									array(
 										'taxonomy' 	=> 'category',
 										'field' 	=> 'slug',
@@ -303,11 +327,9 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
-											<?php if (has_excerpt()): ?>
 											<div class="post-excerpt">
-												<?php the_excerpt(); ?>	
-											</div>
-											<?php endif; ?>
+												<?php largo_excerpt(); ?>
+											</div>											
 										</div>
 										<div class="form-group">
 											<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	

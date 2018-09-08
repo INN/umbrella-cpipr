@@ -61,6 +61,9 @@
 	.post-byline a {
 		color: #000;
 	}
+	.post-social {
+		margin-bottom: 0px;
+	}
 }
 .post-entry.post-entry-fixed {
 	.post-body {
@@ -184,6 +187,7 @@
 	
 
 .owl-post-slide.post-entry {
+	padding-top: 20px;
 	.post-categories > li {
 		margin-bottom: 12px;
 	}
@@ -238,4 +242,10 @@ body.normal.single-post .hero p.wp-media-credit {
 }
 .hero p.wp-caption-text {
 	padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+	.post-entry .post-social {
+		margin-bottom: 15px;
+	}
 }
