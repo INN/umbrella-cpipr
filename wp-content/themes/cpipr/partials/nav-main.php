@@ -27,10 +27,12 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 					</button>
 				</div>
 				<div class="span6 hidden-xs">
-					<!-- Advertisement widget area -->
-					<?php if ( is_active_sidebar( 'advertisement-top-header' ) ) : ?>
-					    <?php dynamic_sidebar( 'advertisement-top-header' ); ?>
-					<?php endif; ?>
+					<div class="adv-top-header">
+						<!-- Advertisement widget area -->
+						<?php if ( is_active_sidebar( 'advertisement-top-header' ) ) : ?>
+						    <?php dynamic_sidebar( 'advertisement-top-header' ); ?>
+						<?php endif; ?>
+					</div>
 				</div>
 				<div class="span3 hidden-xs">
 					<div class="header-search-wrapper">
