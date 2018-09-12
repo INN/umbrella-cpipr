@@ -134,7 +134,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 									array(
 										'taxonomy' 	=> 'category',
 										'field' 	=> 'slug',
-										'terms' 	=> 'reportajes'
+										'terms' 	=> 'trayectoria'
 									)
 								),
 								'posts_per_page' => 8,
