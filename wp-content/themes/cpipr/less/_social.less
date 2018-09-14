@@ -209,3 +209,87 @@
     width: 22px;
   }
 }
+
+.social-media-list.social-media-list-icons {
+  .post-social > span {
+    border-radius: 50%;
+    margin: 0 3px;
+    width: 28px;
+    height: 28px;
+  }
+  .post-social > span > a {
+    padding: 0;
+  }
+  .post-social > span > a > i {
+    font-size: 12px;
+    margin: 0;
+  }
+  .post-social > span > a > [class*="icon-"]:before {
+    margin: 0;
+  }
+  .post-social > span > a > span {
+    display: none;
+  }
+  .post-social > span:hover,
+  .post-social > span:focus {
+    opacity: 0.8;
+  }
+}
+
+.social-media-list.social-media-list-black {
+  .post-social > span {
+    background: #000;
+    
+  }
+  .post-social > span > a {
+    color: #fff;
+  }
+}
+
+.social-media-list.social-media-list-white {
+  .post-social > span {
+    background: #fff;
+  }
+  .post-social > span > a {
+    color: #000;
+  }
+  .post-social > span:hover,
+  .post-social > span:focus {
+    background: #ef5125;
+    color: #000;
+  }
+}
+
+.social-media-icon-list {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+
+  > li {
+    display: inline;
+    margin-right: 10px;
+  }
+  > li > a {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    display: inline-block;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+  }
+}
+
+.social-media-icon-list.social-media-icon-list-white {
+  > li > a {
+    background-color: #fff;
+    color: #000;
+  }
+  > li > a:hover,
+  > li > a:focus {
+    color: #ef5125;
+  }
+}

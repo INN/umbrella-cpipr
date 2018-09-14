@@ -1,41 +1,69 @@
-<div id="boilerplate">
-	<div class="row-fluid clearfix">
-		<div class="span8">
-			<h1 class="logo-main">
-				<a href="/">
-					Centro de periodismo investigativo
-				</a>
-			</h1>
+<div class="footer-bg">
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span2">
+				<a href="/"><img src="<?php echo get_stylesheet_directory_uri() . '/images/footer-logo.png' ?>"/></a>
+			</div>
+			<div class="span8">
+				<div class="media">
+					<div class="media-left">
+						<h5>SOBRE EL CPI</h5>
+					</div>
+					<div class="media-body">
+						<p>El CPI reconoce que el requisito fundamental para una verdadera democracia es que la ciudadanía esté bien informada y que existan entidades independientes con la capacidad de fiscalizar los poderes que accionan en la sociedad, sean públicos o privados.</p>
 
-			<div class="footer-bottom clearfix">
+						<?php $args = array(
+							'theme_location' => 'footer-bottom',
+							'depth' => 1,
+							'container' => false
+						);
+						largo_nav_menu( $args );?>
+					</div>
+				</div>
 
-				<!-- If you enjoy this theme and use it on a production site we would appreciate it if you would leave the credit in place. Thanks :) -->
-				<p class="footer-credit"><?php largo_copyright_message(); ?></p>
-				<?php do_action('largo_after_footer_copyright'); ?>
-				<?php largo_nav_menu(
-					array(
-						'theme_location' => 'footer-bottom',
-						'container' => false,
-						'depth' => 1
-					) );
-				?>
+				<div class="media">
+					<div class="media-left">
+						<h5>CONTÁCTENOS</h5>
+					</div>
+					<div class="media-body">
+						<p>Si tiene una solicitud de investigación, queja, aclaración, 'orejita', prueba, inquietud, u observación sobre alguna información publicada por el Centro de Periodismo Investigativo, escriba al correo electrónico info@periodismoinvestigativo.com.</p>
+
+						<p class="no-margin-bottom">
+							<strong>Teléfono:</strong> 787-751-1912 ext. 3022<br/>
+							<strong>Email:</strong> info@periodismoinvestigativo.com<br/>
+							<strong>Facebook:</strong> Centro de Periodismo Invetigativo<br/>
+							<strong>Twitter:</strong> @cpipr<br/>
+							<strong>Direción postal:</strong> P.O. Box 6834 San Juan PR 00914-6834
+						</p>
+					</div>
+				</div>
+
+				<div class="media last-media">
+					<div class="media-left">
+						<h5>DONACIONES</h5>
+					</div>
+					<div class="media-body">
+						<p>Los donativos que recibe el Centro de Periodismo Investigativo están exentos de contribuciones en Puerto Rico y Estados Unidos.</p>
+					</div>
+				</div>
+
+				<div class="media">
+					<div class="media-left">
+						<h5>&nbsp;</h5>
+					</div>
+					<div class="media-body no-border">
+						<?php largo_donate_button(); ?>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<div class="span1"></div>
-
-		<div class="span3 right">
-			<?php $args = array(
-				'theme_location' => 'main-nav',
-				'depth' => 0,
-				'container' => false,
-				'items_wrap' => '%3$s',
-				'menu_class' => 'nav',
-				'walker' => new Bootstrap_Walker_Nav_Menu()
-			);
-			largo_nav_menu( $args );?>
-		</div>
+		<p class="back-to-top visuallyhidden"><a href="#top"><?php _e('Back to top', 'largo'); ?> &uarr;</a></p>
 	</div>
+</div>
 
-	<p class="back-to-top visuallyhidden"><a href="#top"><?php _e('Back to top', 'largo'); ?> &uarr;</a></p>
+<div class="footer-copyright">
+	<div class="container-fluid">
+		<p class="copyright"><?php largo_copyright_message(); ?></p>
+	</div>
 </div>

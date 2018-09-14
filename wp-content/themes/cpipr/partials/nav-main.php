@@ -13,58 +13,103 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 ?>
 
 <header class="header-cpi">
-	<div class="container-fluid">
-		<h1 class="logo-main">
-			<a href="/">
-				Centro de periodismo investigativo
-			</a>
-		</h1>
+	<div class="top-header">
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span3">
+					<a href="/" class="logo-main">
+						<img src="<?php echo get_stylesheet_directory_uri(). '/images/mainLogo.png' ?>" class="img-responsive"/>
+					</a>
+					<button id="cpipr-menu-btn" type="button" class="navbar-toggle" data-target="#cpipr-menu">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="span6 hidden-xs">
+					<div class="adv-top-header">
+						<!-- Advertisement widget area -->
+						<?php if ( is_active_sidebar( 'advertisement-top-header' ) ) : ?>
+						    <?php dynamic_sidebar( 'advertisement-top-header' ); ?>
+						<?php endif; ?>
+					</div>
+				</div>
+				<div class="span3 hidden-xs">
+					<div class="header-search-wrapper">
+						<?php $category_title = strtoupper(single_cat_title( '', false )); ?>
+						<ul class="lang-switcher">
+							<li class="<?php echo $category_title != 'ENGLISH' ? 'active':''?>">
+								<a href="/">Español</a>
+							</li>
+							<li class="<?php echo $category_title == 'ENGLISH' ? 'active':''?>">
+								<a href="/category/english">English</a>
+							</li>
+						</ul>
+						<form class="form-search" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+							<div class="input-append">
+								<input type="text" class="input-medium" placeholder="<?php _e('Search', 'largo'); ?>" name="s"><button class="btn" type="submit">&nbsp;</button>
+							</div>
+						</form>
 
-		<nav class="menu-header" id="menu-header">
-			<ul>
-				<?php
-				/*
-				 * Before Main Nav List Items
-				 *
-				 * Use add_action( 'largo_before_main_nav_list_items', 'function_to_add');
-				 *
-				 * @link https://codex.wordpress.org/Function_Reference/add_action
-				 * @since 0.5.5
- 			 	 */
-				do_action( 'largo_before_main_nav_list_items' );
-				
-				/*
-				 * Generate the Main Navigation shown mainly on homepages
-				 *
-				 * A Bootstrap Navbar is generated from a walker.
-				 *
-				 * @see inc/nav-menus.php
-				 */
-				$args = array(
-					'theme_location' => 'main-nav',
-					'depth' => 0,
-					'container' => false,
-					'items_wrap' => '%3$s',
-					'menu_class' => 'nav',
-					'walker' => new Bootstrap_Walker_Nav_Menu()
-				);
-				largo_nav_menu( $args );
-				
-				/*
-				 * After Main Nav List Items
-				 *
-				 * Use add_action( 'largo_after_main_nav_list_items', 'function_to_add');
-				 *
-				 * @link https://codex.wordpress.org/Function_Reference/add_action
-				 * @since 0.5.5
- 			 	 */
-				do_action( 'largo_after_main_nav_list_items' );
-				?>
-			</ul>
-		</nav>
+						<div>
+						<?php
+							/* Check to display Social Media Icons */
+							if ( of_get_option( 'show_header_social') ) { ?>
+							<ul class="social-media-icon-list social-media-icon-list-white">
+								<?php largo_social_links(); ?>
+							</ul>
+						<?php }
+							/* Check to display Donate Button */
+							if ( of_get_option( 'show_donate_button') )
+								largo_donate_button();
+						?>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-		<div class="hamburguer-menu" id="menu-btn">
-			<span></span>
+	<!-- The new menú -->
+
+	<div class="navbar navbar-cpipr navbar-static-top">
+		<div class="container-fluid">
+			<div id="cpipr-menu" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<?php
+						$args = array(
+							'theme_location' => 'global-nav',
+							'depth' => 1,
+							'container' => false,
+							'items_wrap' => '%3$s',
+							'walker' => new Bootstrap_Walker_Nav_Menu()
+						);
+						largo_nav_menu( $args );
+					?>
+
+					<li class="dropdown megamenu">
+						<a href="#" class="dropdown-toggle dropdown-toggle-cpipr" data-toggle="dropdown" aria-expanded="false"></a>
+						<ul class="dropdown-menu" role="menu">
+							<li>
+								<div class="container-fluid">
+									<ul class="nav nav-justified">
+										<?php
+											$args = array(
+												'theme_location' => 'main-nav',
+												'depth' => 2,
+												'container' => false,
+												'items_wrap' => '%3$s',
+												'menu_class' => 'nav'
+											);
+											largo_nav_menu( $args );
+										?>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </header>

@@ -1,5 +1,23 @@
 @orange: #D45F34;
 @dk-orange: #BB522C;
+@dark-base: #000;
+@light-base: #fff;
+
+@font-family-serif: Merriweather, "Times New Roman", Times, serif;
+@font-family-sans-serif: Roboto, Helvetica, Arial, sans-serif;
+@font-family-sans-serif-condensed: "Roboto Condensed", Helvetica, Arial, sans-serif;
+
+@font-family-base: @font-family-serif;
+@font-family-secondary: @font-family-sans-serif;
+@font-family-secondary-condensed: @font-family-sans-serif-condensed;
+@font-family-third: "GT America Compressed", Helvetica, Arial, sans-serif;
+
+@font-size-base: 14px;
+@line-height-base: 1.428571429;
+
+@base-font-weight: 300;
+@headings-font-family: @font-family-secondary-condensed;
+@headings-font-weight: 700;
 
 @font-face {
   font-family: 'GT america compressed black';
@@ -8,11 +26,55 @@
   font-style: normal;
 }
 @font-face {
+  font-family: 'GT America Compressed';
+  src: url('../fonts/gt-america-compressed-regular.woff2') format('woff2'), url('../fonts/gt-america-compressed-regular.woff') format('woff'), url('../fonts/gt-america-compressed-regular.ttf') format('truetype'), url('../fonts/gt-america-compressed-regular.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GT America Compressed';
+  src: url('../fonts/gt-america-compressed-black-webfont.woff2') format('woff2'), url('../fonts/gt-america-compressed-black-webfont.woff') format('woff'), url('../fonts/gt-america-compressed-black-webfont.ttf') format('truetype'), url('../fonts/gt-america-compressed-black-webfont.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Roboto';
   src: url('../fonts/roboto-regular-webfont.woff2') format('woff2'), url('../fonts/roboto-regular-webfont.woff') format('woff'), url('../fonts/roboto-regular-webfont.ttf') format('truetype'), url('../fonts/roboto-regular-webfont.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/roboto-bold-webfont.woff2') format('woff2'), url('../fonts/roboto-bold-webfont.woff') format('woff'), url('../fonts/roboto-bold-webfont.ttf') format('truetype'), url('../fonts/roboto-bold-webfont.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/robotocondensed-regular-webfont.woff2') format('woff2'), url('../fonts/robotocondensed-regular-webfont.woff') format('woff'), url('../fonts/robotocondensed-regular-webfont.ttf') format('truetype'), url('../fonts/robotocondensed-regular-webfont.svg') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/robotocondensed-italic-webfont.woff2') format('woff2'), url('../fonts/robotocondensed-italic-webfont.woff') format('woff'), url('../fonts/robotocondensed-italic-webfont.ttf') format('truetype'), url('../fonts/robotocondensed-italic-webfont.svg') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/robotocondensed-bold-webfont.woff2') format('woff2'), url('../fonts/robotocondensed-bold-webfont.woff') format('woff'), url('../fonts/robotocondensed-bold-webfont.ttf') format('truetype'), url('../fonts/robotocondensed-bold-webfont.svg') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  src: url('../fonts/robotocondensed-bolditalic-webfont.woff2') format('woff2'), url('../fonts/robotocondensed-bolditalic-webfont.woff') format('woff'), url('../fonts/robotocondensed-bolditalic-webfont.ttf') format('truetype'), url('../fonts/robotocondensed-bolditalic-webfont.svg') format('svg');
+  font-weight: 700;
+  font-style: italic;
+}
+
 @font-face {
   font-family: 'Roboto condensed bold';
   src: url('../fonts/robotocondensed-bold-webfont.woff2') format('woff2'), url('../fonts/robotocondensed-bold-webfont.woff') format('woff'), url('../fonts/robotocondensed-bold-webfont.ttf') format('truetype'), url('../fonts/robotocondensed-bold-webfont.svg') format('svg');
@@ -35,6 +97,12 @@
   font-family: 'Roboto condensed';
   src: url('../fonts/robotocondensed-regular-webfont.woff2') format('woff2'), url('../fonts/robotocondensed-regular-webfont.woff') format('woff'), url('../fonts/robotocondensed-regular-webfont.ttf') format('truetype'), url('../fonts/robotocondensed-regular-webfont.svg') format('svg');
   font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Merriweather';
+  src: url('../fonts/merriweather-light-webfont.woff2') format('woff2'), url('../fonts/merriweather-light-webfont.woff') format('woff'), url('../fonts/merriweather-light-webfont.ttf') format('truetype'), url('../fonts/merriweather-light-webfont.svg') format('svg');
+  font-weight: 300;
   font-style: normal;
 }
 @font-face {

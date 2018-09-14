@@ -11,6 +11,15 @@ if ( ! defined( 'INN_HOSTED' ) ) {
         define( 'INN_HOSTED', true );
 }
 
+/**
+ * Register custome homepage layout
+ */
+function register_custom_homepage_layout() {
+	include_once __DIR__ . '/homepages/layouts/CustomLayout.php';
+    register_homepage_layout('CustomLayout');
+}
+add_action('init', 'register_custom_homepage_layout', 0);
+
 //use the Largo metabox API
 require_once( get_template_directory() . '/largo-apis.php' );
 
@@ -18,7 +27,7 @@ require_once( get_template_directory() . '/largo-apis.php' );
  * Includes
  */
 $includes = array(
-	'/inc/tax-landing-customizations.php',
+	'/inc/tax-landing-customizations.php'
 );
 // Perform load
 foreach ( $includes as $include ) {
@@ -147,6 +156,22 @@ function widget_autores_init() {
 add_action( 'widgets_init', 'widget_autores_init' );
 
 /**
+ * Register top header advertisement widget area
+ */
+function widget_top_header_advertisement_init() {
+	register_sidebar( array(
+		'name'          => __( 'Advertisement Top Header', 'twentyseventeen' ),
+		'id'            => 'advertisement-top-header',
+		'description'   => __( 'Add widgets here.', 'twentyseventeen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+}
+add_action( 'widgets_init', 'widget_top_header_advertisement_init' );
+
+/**
  * Counter Hamburger menu
  *
  * For the sake of making things easy to escape, this function uses heredoc: https://secure.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc
@@ -172,3 +197,71 @@ DOC;
 }
 add_action( 'wp_footer', 'cpipr_counter_hamburger_menu' );
 
+
+/**
+ * Enqueue Owl Carousel CSS & JS for Main Slideshow.
+ */
+if ( ! function_exists( 'cpipr_owl_carousel_enqueue' ) ) {
+	function cpipr_owl_carousel_enqueue() {
+		//$suffix = (LARGO_DEBUG)? '' : '.min';
+		$suffix = '';
+		$version = largo_version();
+
+		wp_enqueue_style(
+			'owl-carousel',
+			get_stylesheet_directory_uri() . '/lib/owl/css/owl.carousel'. $suffix . '.css',
+			array(), $version
+		);
+		wp_enqueue_style(
+			'owl-carousel-theme',
+			get_stylesheet_directory_uri() . '/lib/owl/css/owl.theme.default'. $suffix . '.css',
+			array(), $version
+		);
+
+		wp_enqueue_script(
+			'owl-carousel',
+			get_stylesheet_directory_uri() . '/lib/owl/js/owl.carousel'. $suffix . '.js',
+			array('jquery'), $version, false
+		);
+
+		wp_enqueue_script(
+			'main-slideshow',
+			get_stylesheet_directory_uri() . '/js/main-slideshow' . $suffix . '.js',
+			array('owl-carousel'), $version, false
+		);
+
+		wp_enqueue_script(
+			'cpipr-navigation',
+			get_stylesheet_directory_uri() . '/js/navigation' . $suffix . '.js',
+			array('jquery'), $version, false
+		);
+
+		wp_enqueue_script(
+			'bootstrap-transition',
+			get_stylesheet_directory_uri() . '/lib/bootstrap/js/transition' . $suffix . '.js',
+			array('jquery'), $version, false
+		);
+
+		wp_enqueue_script(
+			'bootstrap-collapse',
+			get_stylesheet_directory_uri() . '/lib/bootstrap/js/collapse' . $suffix . '.js',
+			array('jquery'), $version, false
+		);
+
+		wp_enqueue_script(
+			'bootstrap-dropdown',
+			get_stylesheet_directory_uri() . '/lib/bootstrap/js/dropdown' . $suffix . '.js',
+			array('jquery'), $version, false
+		);
+	}
+	add_action( 'wp_enqueue_scripts', 'cpipr_owl_carousel_enqueue');
+}
+
+
+/**
+ * Register image and media sizes associated with the theme
+ */
+function cpipr_image_size_setup () {
+	add_image_size( 'featured-square-medium', 400, 400, true );
+}
+add_action( 'after_setup_theme', 'cpipr_image_size_setup', 11 );

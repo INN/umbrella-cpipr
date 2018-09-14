@@ -24,6 +24,8 @@
 
 .footer-bg {
   background: #000;
+  padding-bottom: 20px;
+  padding-top: 80px;
 }
 
 footer {
@@ -38,9 +40,6 @@ footer {
   }
   #boilerplate {
     p {
-      font-size: 1rem;
-      font-family: 'Roboto', sans-serif;
-      line-height: 2rem;
       color: #fff;
     }
     li {
@@ -59,5 +58,88 @@ footer {
         display: none;
       }
     }
+  }
+}
+
+#cpi-footer {
+  color: #fff;
+  .media-left {
+    min-width: 94px;
+    padding-right: 25px;
+    text-align: right;
+  }
+
+  h5 {
+    font-family: @font-family-secondary-condensed;
+    font-weight: @headings-font-weight;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 16px;
+    text-transform: uppercase;
+  }
+
+  p {
+    color: #fff;
+    font-family: @font-family-base;
+    font-weight: @base-font-weight;
+    font-size: 12px;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+
+  .media {
+    margin-bottom: 30px;
+  }
+  .media.last-media {
+    margin-bottom: 10px;
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .media-body {
+    border-left: 3px solid #fff;
+    padding: 0 15px;
+  }
+  .media-body.no-border {
+    border-left: none;
+  }
+  .no-margin-bottom {
+    margin-bottom: 0px;
+  }
+
+  .footer-copyright {
+    background-color: #fff;
+    padding: 20px 0;
+  }
+
+  .copyright {
+    color: #000;
+    font-family: @font-family-secondary;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+  }
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .menu > li {
+    display: inline-block;
+    font-size: 13px;
+    padding-right: 4px;
+    margin-bottom: 5px;
+  }
+  .menu li + li {
+    border-left: 3px solid #fff;
+    padding-left: 7px;
+  }
+  .menu > li > a {
+    color: #fff;
+    font-family: @font-family-secondary-condensed;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
   }
 }
