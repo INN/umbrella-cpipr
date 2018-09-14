@@ -6,7 +6,7 @@
  */
 
 global $largo, $home_post_ids, $tags;
-$topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') ? 'top-story span12' : 'top-story span8';
+$topstory_classes = (largo_get_active_homepage_layout() === 'LegacyThreeColumn') ? 'top-story span12' : 'top-story span8';
 ?>
 
 <div>
@@ -63,7 +63,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 										</div>
 										<div class="clearfix">
 											<div class="form-group pull-left">
-												<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
+												<a href="<?php the_permalink(); ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>
 											</div>
 											<div class="social-media-list social-media-list-icons social-media-list-black text-right">
 												<?php largo_post_social_links(); ?>
@@ -98,9 +98,9 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							$series_query = new WP_Query($args);
 							$odd = 0;
 							while ($series_query->have_posts()) { $series_query->the_post();?>
-							<?php if ($odd && $odd % 2 == 0) : ?>
+							<?php if ($odd && $odd % 2 === 0) : ?>
 									</div>
-    							<div class="row-fluid">
+								<div class="row-fluid">
 							<?php endif; ?>
 							<div class="span6">
 								<a href="<?php the_permalink();?>" class="series-item">
@@ -142,11 +142,11 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 							) );
 							if ( $cpiNews->have_posts() ) {
 						?>
-						<?php 
+						<?php
 							$odd = 0;
 							while ( $cpiNews->have_posts() ) { $cpiNews->the_post(); $home_post_ids[] = get_the_ID();
 						?>
-						<?php if ($odd && $odd % 2 == 0) : ?>
+						<?php if ($odd && $odd % 2 === 0) : ?>
 								</div>
 							<div class="row-fluid">
 						<?php endif; ?>
@@ -168,11 +168,11 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 
 									<h5 class="byline"><?php largo_byline(); ?></h5>
 
-									<?php largo_excerpt(); ?>	
+									<?php largo_excerpt(); ?>
 								</div>
 								<div class="clearfix">
 									<div class="form-group pull-left">
-										<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
+										<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>
 									</div>
 									<div class="social-media-list social-media-list-icons social-media-list-black text-right">
 										<?php largo_post_social_links(); ?>
@@ -263,7 +263,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 											</div>
 										</div>
 										<div class="form-group">
-											<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
+											<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>
 										</div>
 									</div>
 								</div>
@@ -322,17 +322,17 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 										</figure>
 									</div>
 									<?php endif;?>
-									<div class="<?php echo has_post_thumbnail() ? 'span6' : 'span12'?>">
+									<div class="<?php echo has_post_thumbnail() ? 'span6' : 'span12'; ?>">
 										<div class="post-body bottom-gradient red-gradient">
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
 											<div class="post-excerpt">
 												<?php largo_excerpt(); ?>
-											</div>											
+											</div>
 										</div>
 										<div class="form-group">
-											<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>	
+											<a href="<?php the_permalink() ?>" class="btn btn-round btn-black"><?php _e('Read More', 'largo'); ?></a>
 										</div>
 									</div>
 								</div>
