@@ -17,7 +17,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block">
 							<h3>Lo más reciente</h3>
-							<a href="#">Ver más historias</a>
+							<a href="/category/actualidad/">Ver más historias</a>
 						</div>
 					</div>
 					<div class="span9">
@@ -82,7 +82,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block">
 							<h3>Series</h3>
-							<a href="#">Ver más series</a>
+							<a href="/series/">Ver más series</a>
 						</div>
 					</div>
 					<div class="span9">
@@ -116,7 +116,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block">
 							<h3>Noticias CPI</h3>
-							<a href="#">Ver más noticias</a>
+							<a href="/category/trayectoria/">Ver más noticias</a>
 						</div>
 					</div>
 					<div class="span9">
@@ -218,7 +218,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block">
 							<h3>Opinión <span>De la libreta del periodista</span></h3>
-							<a href="#">Ver más opinión</a>
+							<a href="/category/de-la-libreta-del-periodista/">Ver más opinión</a>
 						</div>
 					</div>
 					<div class="span9">
@@ -287,7 +287,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 					<div class="span3">
 						<div class="section-block section-block-white">
 							<h3>Instituto de formación periodística</h3>
-							<a href="#">Ver más</a>
+							<a href="/category/instituto-de-formacion-periodistica/">Ver más</a>
 						</div>
 					</div>
 					<div class="span9">
