@@ -1042,9 +1042,13 @@ fieldset[disabled] .navbar-cpipr .btn-link:focus {
     margin-left: -20px;
     margin-right: -20px;
   }
-  #sidebar .widget,
-  #sidebar .widget.largo-recent-posts {
-    padding: 10px 15px 5px;
+  #sidebar .widget {
+    padding: 0;
+    margin-bottom: 0;
+  }
+  #sidebar .widget.widget_sp_image img {
+    margin: 0;
+    padding: 0;
   }
 }
 .widget.largo-recent-posts .widgettitle {
@@ -2206,7 +2210,7 @@ blockquote p {
   position: relative;
 }
 .post-entry .post-image {
-  margin: 0;
+  margin: 0 0 10px 0;
 }
 .post-entry .post-title {
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
@@ -2383,7 +2387,7 @@ blockquote p {
 .owl-post-slide.post-entry.post-entry-fixed .post-body {
   height: 410px;
 }
-/* Post media credits */
+/* Post Hero media credits */
 body.normal.single-post .hero p.wp-caption-text {
   margin-bottom: 0px;
 }
@@ -2403,6 +2407,15 @@ body.normal.single-post .hero p.wp-media-credit {
 }
 .hero p.wp-caption-text {
   padding-bottom: 0;
+}
+/* Standard media credits */
+.wp-caption p.wp-media-credit,
+.wp-caption p.wp-caption-text {
+  color: #000;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
 }
 @media (max-width: 768px) {
   .post-entry .post-social {
@@ -3010,9 +3023,7 @@ body.normal.single-post .hero p.wp-media-credit {
 }
 @media (max-width: 768px) {
   #mc_embed_signup.mc_embed_signup_cpipr {
-    padding: 10px 20px 5px 20px;
-    margin-left: -15px;
-    margin-right: -15px;
+    padding: 30px 20px 26px 20px;
   }
 }
 .media,
@@ -3468,6 +3479,8 @@ footer #boilerplate li .caret {
 @media (max-width: 768px) {
   .section-block {
     text-align: center;
+    margin-left: -20px;
+    margin-right: -20px;
   }
 }
 /* Override */

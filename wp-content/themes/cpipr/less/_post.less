@@ -30,7 +30,7 @@
 		position: relative;
 	}
 	.post-image {
-		margin: 0;
+		margin: 0 0 10px 0;
 	}	
 	.post-title {
 		font-family: @headings-font-family;
@@ -223,7 +223,7 @@
 	}
 }
 
-/* Post media credits */
+/* Post Hero media credits */
 body.normal.single-post .hero p.wp-caption-text {
 	margin-bottom: 0px;
 }
@@ -243,6 +243,18 @@ body.normal.single-post .hero p.wp-media-credit {
 }
 .hero p.wp-caption-text {
 	padding-bottom: 0;
+}
+
+/* Standard media credits */
+.wp-caption {
+	p.wp-media-credit,
+	p.wp-caption-text {
+		color: #000;
+		font-family: @font-family-secondary-condensed;
+		font-size: 16px;
+		line-height: 24px;
+		text-align: left;
+	}
 }
 
 @media (max-width: 768px) {
