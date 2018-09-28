@@ -37,7 +37,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 										'terms' 	=> array('homepage-featured')
 									)
 								),
-								'posts_per_page' => 4,
+								'posts_per_page' => 6,
 								'post__not_in'   => $home_post_ids
 							) );
 							if ( $topstory->have_posts() ) {
@@ -137,7 +137,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 										'terms' 	=> 'trayectoria'
 									)
 								),
-								'posts_per_page' => 8,
+								'posts_per_page' => 4,
 								'post__not_in'   => $home_post_ids
 							) );
 							if ( $cpiNews->have_posts() ) {
@@ -166,7 +166,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 										<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute( array( 'before' => __( 'Permalink to', 'largo' ) . ' ' ) )?>" rel="bookmark"><?php the_title(); ?></a>
 									</h2>
 
-									<h5 class="byline"><?php largo_byline(); ?></h5>
+									<!--<h5 class="byline"><?php largo_byline(); ?></h5>-->
 
 									<?php largo_excerpt(); ?>	
 								</div>
@@ -238,6 +238,7 @@ $topstory_classes = (largo_get_active_homepage_layout() == 'LegacyThreeColumn') 
 										'terms' 	=> 'de-la-libreta-del-periodista'
 									)
 								),
+								'offset' => '1',
 								'posts_per_page' => 2,
 								'post__not_in'   => $home_post_ids
 							) );
