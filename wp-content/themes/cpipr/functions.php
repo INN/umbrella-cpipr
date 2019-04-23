@@ -265,3 +265,32 @@ function cpipr_image_size_setup () {
 	add_image_size( 'featured-square-medium', 400, 400, true );
 }
 add_action( 'after_setup_theme', 'cpipr_image_size_setup', 11 );
+
+/**
+ * Function to hook into 'body_class' filter and add specific
+ * 'series-post-slug' class to body when page template 
+ * 'series-landing.php' is being used.
+ */
+function add_series_class_to_series_landing_body( $classes ){
+
+	// make sure the current template is 'series-landing.php'
+	if( is_page_template('series-landing.php') ){
+
+		// grab our post data and slug
+		global $post;
+		$post_slug = $post->post_name;
+
+		// create new index in $classes arr and add our new 'series-post-slug' class
+		$classes[] = 'series-'.$post_slug;
+
+	}
+
+	// return $classes arr, regardless if we updated it or not
+	return $classes;
+
+}
+
+/**
+ * Filter that will fire our add_series_class_to_series_landing_body function
+ */
+add_filter( 'body_class', 'add_series_class_to_series_landing_body' );
