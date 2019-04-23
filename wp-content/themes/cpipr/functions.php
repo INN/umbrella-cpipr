@@ -271,17 +271,23 @@ add_action( 'after_setup_theme', 'cpipr_image_size_setup', 11 );
  * 'series-post-slug' class to body when page template 
  * 'series-landing.php' is being used.
  */
-function add_series_class_to_series_landing_body( $classes ){
+function add_series_slug_class_to_series_body( $classes ){
 
 	// make sure the current template is 'series-landing.php'
-	if( is_page_template('series-landing.php') ){
+	// or 'series-single.php'
+	if( is_page_template('series-landing.php') || is_page_template('series-single.php') ){
 
 		// grab our post data and slug
 		global $post;
-		$post_slug = $post->post_name;
+
+		// grab 'series' taxonomy from post
+		$post_terms = array_shift(get_the_terms($post, 'series'));
+		
+		// get the slug of the series this post is in
+		$series_slug = $post_terms->slug;
 
 		// create new index in $classes arr and add our new 'series-post-slug' class
-		$classes[] = 'series-'.$post_slug;
+		$classes[] = 'series-'.$series_slug;
 
 	}
 
@@ -293,4 +299,4 @@ function add_series_class_to_series_landing_body( $classes ){
 /**
  * Filter that will fire our add_series_class_to_series_landing_body function
  */
-add_filter( 'body_class', 'add_series_class_to_series_landing_body' );
+add_filter( 'body_class', 'add_series_slug_class_to_series_body' );
