@@ -2480,6 +2480,12 @@ body.normal.single-post .hero p.wp-media-credit {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
+.series-drying-caribbean .text--important,
+.series-se-seca-el-caribe .text--important,
+.series-drying-caribbean .hero-main .wrapper-text,
+.series-se-seca-el-caribe .hero-main .wrapper-text {
+  background: #a0531b;
+}
 .item-author {
   padding: 10px 0 45px;
 }
