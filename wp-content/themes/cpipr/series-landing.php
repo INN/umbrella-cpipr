@@ -43,6 +43,10 @@ if ('cftl-tax-landing' == $post->post_type) {
 $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5);
 ?>
 <?php $heroImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');?>
+<?php
+	$hero_text_color = get_post_meta( $post->ID, 'hero_text_color', true );
+	$hero_background_color = get_post_meta( $post->ID, 'hero_background_color', true );
+?>
 <?php if ($opt['header_enabled']): ?>
 	<div class="hero-main">
 		<div class="wrapper-image" style="background: url('<?php echo $heroImage['0']; ?>') no-repeat center/cover;">
@@ -57,7 +61,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span8 offset2 mobile-no-offset">
-						<p class="text--important"><?php _e('Series', 'largo'); ?></p>
+						<p class="text--important" style="<?php echo $hero_text_color ? 'color:' . $hero_text_color . ';' : ''; echo $hero_background_color ? 'background-color: ' . $hero_background_color . ';' : ''; ?>" ><?php _e('Series', 'largo'); ?></p>
 						<h2>
 							<?php the_title();?>
 						</h2>
@@ -65,7 +69,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 				</div>
 			</div>
 		</div>
-		<div class="wrapper-text">
+		<div class="wrapper-text" style="<?php echo $hero_text_color ? 'color:' . $hero_text_color . ';' : ''; echo $hero_background_color ? 'background-color: ' . $hero_background_color . ';' : ''; ?>">
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span8 offset2 mobile-no-offset text--big">
