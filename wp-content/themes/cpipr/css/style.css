@@ -2492,7 +2492,7 @@ body.normal.single-post .hero p.wp-media-credit {
   font-size: 3.6rem;
   text-transform: uppercase;
   line-height: 3.0rem;
-  max-width: 7em;
+  max-width: 3em;
 }
 .item-author .btn-white {
   font-family: 'Roboto condensed bold italic', sans-serif;
@@ -3176,6 +3176,22 @@ footer #boilerplate li .caret {
 #cpi-footer .footer-copyright {
   background-color: #fff;
   padding: 20px 0;
+}
+#cpi-footer .social-links {
+  background-color: #fff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  color: #000;
+  display: inline-block;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 30px;
+}
+#cpi-footer .social-links + .social-links {
+  margin-left: 10px;
 }
 #cpi-footer .copyright {
   color: #000;
