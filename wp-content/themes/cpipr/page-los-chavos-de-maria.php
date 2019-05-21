@@ -46,6 +46,13 @@
             wp_enqueue_script( 'comment-reply' );
             wp_head();
         ?>
+
+        <!-- JsMaps -->
+        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/css/jsmaps.css' ?>">
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/js/jsmaps-libs.js' ?>" type="text/javascript"></script>
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/js/jsmaps-panzoom.js' ?>"></script>
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/js/jsmaps.min.js' ?>" type="text/javascript"></script>
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/maps/puertoRico.js' ?>" type="text/javascript"></script>
     </head>
 
     <body <?php body_class(); ?>>
@@ -106,29 +113,44 @@
         </div>
 
         <!-- Emergency response embed -->
-        <div></div>
+        <!-- <div>
+            <iframe src="https://embed.kumu.io/1ef45532e322f0bc09ef906a778c662f#dummy-personajes" width="940" height="600" frameborder="0"></iframe>
+        </div> -->
 
         <!-- Mapa de la recuepracion section -->
-        <div>
-            <div>
-                <img src=""/>
-                MAPA DE LA RECUPERACIÓN
+        <div class="lcdm-section lcdm-section-map">
+            <div class="lcdm-section-title">
+                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-mapa-recperacion.png' ?>"/>
+                <div>MAPA DE LA RECUPERACIÓN</div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+                        <div id="jsmap-puertorico" class="jsmaps-wrapper"></div>
+                        <br/>
+                        <br/>
+                        <p class="text-center">
+                            <a href="<?php echo get_permalink( get_page_by_path( 'los-chavos-de-maria-mapas-de-la-recuperacion' ) ) ?>" class="btn btn-white-blue">VER MÁS</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Infografias section -->
-        <div>
-            <div>
-                <img src=""/>
-                INFOGRÁFICAS
+        <div class="lcdm-section">
+            <div class="lcdm-section-title">
+                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-infografias.png' ?>"/>
+                <div>INFOGRÁFICAS</div>
             </div>
         </div>
 
         <!-- Video slider -->
-        <div>
-            <div>
-                <img src=""/>
-                VIDEOS
+        <div class="lcdm-section">
+            <div class="lcdm-section-title">
+                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-videos.png' ?>"/>
+                <div>VIDEOS</div>
             </div>
             <div class="owl-carousel-1 owl-theme">
                 <div class="item">
@@ -151,34 +173,87 @@
         </div>
 
         <!-- Ingegration Documentos section -->
-        <div>
-            <div>
-                <img src=""/>
+        <div class="lcdm-section lcdm-section-documentos">
+            <div class="lcdm-section-title">
+                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-historias.png' ?>"/>
                 DOCUMENTOS
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span2"></div>
+                    <div class="span8">
+                        <div id="DC-search-projectid-43264-los-chavos-de-mar-a" class="DC-embed DC-embed-search DC-search-container"></div>
+                        <script src="//assets.documentcloud.org/embed/loader.js"></script>
+                        <script>
+                          dc.embed.load('https://www.documentcloud.org/search/embed/', {
+                            q: "projectid: 43264-los-chavos-de-mar-a ",
+                            container: "#DC-search-projectid-43264-los-chavos-de-mar-a",
+                            title: "",
+                            order: "created_at",
+                            per_page: 8,
+                            search_bar: true,
+                            organization: 2426
+                          });
+                        </script>
+                        <noscript>
+                          <a href="https://www.documentcloud.org/public/search/projectid%3A%2043264-los-chavos-de-mar-a%20">View/search document collection</a>
+                        </noscript>
+                        <br/>
+                        <p class="text-center">
+                            <a href="<?php echo get_permalink( get_page_by_path( 'los-chavos-de-maria-documentos' ) ) ?>" class="btn btn-white-blue">VER MÁS</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Glosario section -->
-        <div>
-            <div>
-                <img src=""/>
-                GLOSARIO
+        <div class="lcdm-section lcdm-section-glosario">
+            <div class="lcdm-section-title">
+                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-glosario.png' ?>"/>
+                <div>GLOSARIO</div>
             </div>
-            <div class="container">
-                <a href="#" class="btn">VER TODOS</a>
-                <p>TÉRMINOS DEL DÍA</p>
-                <div class="owl-carousel-1">
-                    <div class="item">
-                        <div class="row-fluid">
-                            <div class="span6">
-                                <h2>ASISTENCIA FEDERAL</h2>
-                            </div>
-                            <div class="span6">
-                                <p>La asistencia federal es un programa, servicio o actividad federal que ayuda directamente a organizaciones, individuos o gobiernos estatales, locales, tribales. Los sectores incluyen educación, salud, seguridad pública y bienestar público, por nombrar algunos. La asistencia financiera se distribuye de muchas formas, incluidas subvenciones, préstamos, pagos directos o seguros.</p>
+            <div class="container-fluid">
+                <div class="text-right">
+                    <a href="<?php echo get_post_type_archive_link( 'glossary' ); ?>" class="btn btn-white-blue">VER TODOS</a>    
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <div class="owl-glossary-carousel">
+                    <div id="glossary-carousel" class="owl-carousel owl-theme">
+                        <?php
+                            $args = array(
+                                'post_type' => 'glossary',
+                                'order' => 'DESC',
+                                'posts_per_page' => 5,
+                            );
+                            $chavos_category = get_category_by_slug('los-chavos-de-maria');
+                            $chavos_query = new WP_Query($args);
+                            while ($chavos_query->have_posts()) {
+                                $chavos_query->the_post();
+                        ?>
+                        <div class="owl-glossary-item">
+                            <div class="row-fluid">
+                                <div class="span6">
+                                    <h2 class="glossary-title"><?php the_title(); ?></h2>
+                                </div>
+                                <div class="span6">
+                                    <div class="glossary-description">
+                                        <?php the_content(); ?>    
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <?php } wp_reset_postdata();?>
                     </div>
-                </div>
+                    <div class="owl-carousel owl-loaded owl-theme owl-default-controls text-right">
+                        <div class="owl-controls">
+                            <div class="owl-nav"></div>
+                            <div class="owl-dots"></div>
+                        </div>
+                    </div>
+                </div>                    
             </div>
         </div>
 
@@ -214,24 +289,112 @@
 
         <script type="text/javascript">
             (function ($) {
-              $(document).ready(function () {
-                $('#top-hero-carousel').owlCarousel({
-                  autoplay: false,
-                  loop: true,
-                  items: 1,
-                  nav: true,
-                  dots: true,
-                  mergeControls: true,
-                  autoHeight: true,
-                  navContainer: '.owl-hero-controls .owl-nav',
-                  dotsContainer: '.owl-hero-controls .owl-dots',
-                  navText: [
-                    '<span aria-label="' + 'Previous' + '"></span>',
-                    '<span aria-label="' + 'Next' + '"></span>'
-                  ],
+                $(document).ready(function () {
+                    $('#top-hero-carousel').owlCarousel({
+                        autoplay: false,
+                        loop: true,
+                        items: 1,
+                        nav: true,
+                        dots: true,
+                        mergeControls: true,
+                        autoHeight: true,
+                        navContainer: '.owl-hero-controls .owl-nav',
+                        dotsContainer: '.owl-hero-controls .owl-dots',
+                        navText: [
+                            '<span aria-label="' + 'Previous' + '"></span>',
+                            '<span aria-label="' + 'Next' + '"></span>'
+                        ],
+                    });
                 });
-              });
+            })(jQuery);
+        </script>
 
+        <script type="text/javascript">
+            (function ($) {
+                $(document).ready(function () {
+                    function buildContractRow(row) {
+                        var template =
+                            '<tr>' +
+                                '<td>' + row.agencia + '</td>' +
+                                '<td>' + row.fecha + '</td>' +
+                                '<td>' + row.fuente + '</td>' +
+                                '<td>' + row.uso_fondos + '</td>' +
+                                '<td>' + row.total_separado + '</td>' +
+                                '<td>' + row.total_desembolsado + '</td>' +
+                            '</tr>';
+                        return template;
+                    }
+
+                    function buildContractsHeader() {
+                        var template = '<thead>' +
+                            '<tr>' +
+                                '<th>Agencia</th>' +
+                                '<th>Fecha</th>' +
+                                '<th>Fuente</th>' +
+                                '<th>Uso de Fondos</th>' +
+                                '<th>Total Separado</th>' +
+                                '<th>Total Desembolsado</th>' +
+                            '</tr>'
+                        '</thead>';
+                        return template;
+                    }
+
+                    function buildContractsTable (data) {
+                        var template = '<div class="table-responsive"><table>';
+                        template += buildContractsHeader();
+
+                        for (var i=0; i < data.length; i++) {
+                            var row = buildContractRow(data[i]);
+                            template += row;
+                        }
+
+                        template += '</table></div>';
+
+                        return template;
+                    }
+
+                    $('#jsmap-puertorico').JSMaps({
+                        map: 'puertoRico',
+                        onStateClick: function (data) {
+                            /* data = { name: '', text: '' } */
+                            var url = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+                            $.ajax({
+                                beforeSend: function (qXHR) {
+                                    $('#jsmap-puertorico .jsmaps-text').html('Cargando...');
+                                },
+                                type: 'get',
+                                url: url + '?action=pr_cities_contracts&city=' + data.name,
+                                success: function (response) {
+                                    var content = data.text;
+                                    content += buildContractsTable(response.data);
+                                    $('#jsmap-puertorico .jsmaps-text').html(content);
+                                }
+                            });
+                        }
+                    });
+                });
+            })(jQuery);
+        </script>
+
+        <script type="text/javascript">
+            (function ($) {
+                $(document).ready(function () {
+                    $('#glossary-carousel').owlCarousel({
+                        autoplay: false,
+                        loop: true,
+                        items: 1,
+                        nav: true,
+                        dots: true,
+                        mergeControls: true,
+                        autoHeight: true,
+                        navContainer: '.owl-default-controls .owl-nav',
+                        dotsContainer: '.owl-default-controls .owl-dots',
+                        navText: [
+                            '<span aria-label="' + 'Previous' + '"></span>',
+                            '<span aria-label="' + 'Next' + '"></span>'
+                        ],
+                    });
+                });
             })(jQuery);
         </script>
     </body>

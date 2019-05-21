@@ -262,3 +262,41 @@ function cpipr_image_size_setup () {
 	add_image_size( 'featured-square-medium', 400, 400, true );
 }
 add_action( 'after_setup_theme', 'cpipr_image_size_setup', 11 );
+
+
+//------------------------------------- Add Ajax Actions ---------------------------------------
+// Ensures you can call the functions via AJAX when you want to use them.
+// The .nopriv. part indicates that I want to make this function available for non logged-in users
+// --------------------------------------------------------------------------------------------
+
+
+/* Ajax action to get contracts from a puerto rico city */
+add_action('wp_ajax_nopriv_pr_cities_contracts', 'ajax_pr_cities_contracts');
+add_action('wp_ajax_pr_cities_contracts', 'ajax_pr_cities_contracts');
+
+function ajax_pr_cities_contracts () {
+	$municipio1 = array(
+		'municipio' => 'Adjuntas',
+		'fuente' => 'FEMA',
+		'categoria' => 'Recogido de escombros',
+		'agencia' => 'X',
+		'uso_fondos' => 'contratación de compañia privada',
+		'total_separado' => '$286,500',
+		'total_desembolsado' => '$286,500',
+		'total_pareo_fondos' => '$0',
+		'fecha' => '13/05/2019'
+	);
+	$municipio2 = array(
+		'municipio' => 'Adjuntas',
+		'fuente' => 'FEMA',
+		'categoria' => 'Medidas de protección en emergencias',
+		'agencia' => 'X',
+		'uso_fondos' => 'Ubicación de mallas metálicas',
+		'total_separado' => '$671,861',
+		'total_desembolsado' => '$671,861',
+		'total_pareo_fondos' => '$0',
+		'fecha' => '13/05/2019'
+	);
+	wp_send_json( array('data' => [ $municipio1, $municipio2 ] ) );
+}
+

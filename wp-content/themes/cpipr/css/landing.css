@@ -146,11 +146,121 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 }
+.owl-hero-carousel .owl-nav button.owl-prev {
+	background-image: url('../images/los-chavos-de-maria/dark-left-arrow.png');
+}
+.owl-hero-carousel .owl-nav button.owl-next {
+	background-image: url('../images/los-chavos-de-maria/dark-right-arrow.png');
+}
 .owl-hero-carousel .owl-dots .owl-dot span {
 	background: #ffffff;
 }
 .owl-hero-carousel .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
 	background: #5170b0;
+}
+
+/* Owl default controls */
+.owl-default-controls {
+	position: relative;
+}
+.owl-default-controls .owl-controls {
+	display: inline-block;
+	padding: 0 70px;
+	position: relative;
+}
+.owl-default-controls .owl-controls .owl-dots {
+	display: inline-block;
+}
+.owl-default-controls .owl-dots .owl-dot span {
+	width: 20px;
+	height: 20px;
+	margin: 5px 7px;
+    display: block;
+    -webkit-backface-visibility: visible;
+    transition: opacity 200ms ease;
+    border-radius: 30px;
+}
+.owl-default-controls .owl-nav [class*='owl-'] {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	top: -10px;
+	margin-top: 0;
+}
+.owl-default-controls .owl-nav button.owl-prev {
+	left: 0;
+}
+.owl-default-controls .owl-nav button.owl-next {
+	right: 0;
+}
+
+/* Theme default controls */
+.owl-default-controls .owl-nav button.owl-prev {
+	background-image: url('../images/los-chavos-de-maria/dark-left-arrow.png');
+}
+.owl-default-controls .owl-nav button.owl-next {
+	background-image: url('../images/los-chavos-de-maria/dark-right-arrow.png');
+}
+
+/* Glossary carousel */
+.owl-glossary-carousel {
+	border-top: 1px solid #fff;
+}
+.owl-glossary-carousel .owl-carousel {
+	margin-bottom: 40px;
+}
+.owl-glossary-carousel .glossary-title,
+.owl-glossary-carousel .glossary-description {
+	padding-top: 20px;
+}
+.owl-glossary-carousel .glossary-title {
+	padding-right: 40px;
+}
+.owl-glossary-carousel .glossary-description {
+	border-left: 1px solid #fff;
+	overflow: auto;
+	padding-left: 40px;
+}
+/* Theme glossary carousel */
+.owl-glossary-carousel .glossary-title {
+	font-family: "GT America", Helvetica, Arial, sans-serif;
+	font-size: 64px;
+	text-transform: uppercase;
+	font-style: italic;
+	font-weight: bold;
+}
+.owl-glossary-carousel .glossary-description,
+.owl-glossary-carousel .glossary-description p {
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-size: 22px;
+	line-height: 24px;
+}
+.owl-glossary-carousel .owl-dots .owl-dot span {
+	background: #ffffff;
+}
+.owl-glossary-carousel .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+	background: #5170b0;
+}
+
+/* Hero page title */
+.lcdm-hero-page-title {
+	padding-bottom: 80px;
+	padding-top: 100px;
+}
+
+/* Hero page title theme */
+.lcdm-hero-page-title {
+	background-image: url('../images/los-chavos-de-maria/hero.jpg');
+	background-size: cover;
+}
+.lcdm-hero-page-title h1 {
+	color: #fff;
+	line-height: 104px;
+	font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+.lcdm-hero-page-title img {
+	float: left;
+	margin-right: 20px;
 }
 
 /* Twitter live feed */
@@ -200,12 +310,44 @@
 .lcdm-section {
 	padding-bottom: 60px;
 	padding-top: 60px;
+	position: relative;
+}
+.lcdm-section-title {
+	left: 0;
+	padding: 20px;
+	position: absolute;
+	top: 0;
+	text-align: center;
+	width: 130px;
+	z-index: 10;
+}
+.lcdm-section-title > img {
+	margin-bottom: 10px;
 }
 
 /* Sections theme */
+.lcdm-section-title {
+	background-color: #000;
+	color: #fff;
+	font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 20px;
+}
 .lcdm-section-twitter {
 	background-color: #5170b0;
 	color: #fff;
+}
+
+.lcdm-section-map,
+.lcdm-section-glosario {
+	background-color: #2b2d2d;
+	color: #fff;
+}
+.lcdm-section-documentos {
+	background-color: #fff;
+	padding-bottom: 100px;
+	padding-top: 100px;
 }
 
 /* Theme buttons */
@@ -216,6 +358,43 @@
 .btn-white-blue {
 	background-color: #fff;
 	color: #5170b0;
+}
+/* jsmaps */
+.jsmaps-wrapper {
+	clear: both;
+}
+.jsmaps-select {
+	float: right;
+	height: 40px;
+}
+/* Theme jsmaps */
+.jsmaps-select select {
+	font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+	font-style: italic;
+	text-transform: uppercase;
+}
+.jsmaps-select {
+	background-color: #5170b0;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;
+}
+.jsmaps-wrapper .jsmaps-tooltip {
+	color: #000;
+}
+.jsmaps-text h1 {
+	border-bottom: 1px solid #fff;
+	color: #5170b0;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-size: 34px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+.jsmaps-text p {
+	color: #fff;
+	font-family: "Karla", Helvetica, Arial, sans-serif;
+	font-size: 16px;
 }
 
 
