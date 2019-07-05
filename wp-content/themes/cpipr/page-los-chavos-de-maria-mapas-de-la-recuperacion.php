@@ -56,14 +56,22 @@
     </head>
 
     <body <?php body_class(); ?>>
+        <?php $lcdm_active_menu = 'mapas_de_la_recuperacion'; ?>
         <?php get_template_part('partials/los-chavos-de-maria/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
 
 
         <!-- Hero Page Title  -->
-        <div class="lcdm-hero-page-title">
-            <div class="container-fluid">
-                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-mapa-recperacion.png' ?>"/>
-                <h1>MAPA DE LA RECUPERACIÓN</h1>
+        <div class="lcdm-hero-page-title-wrapper">
+            <div class="lcdm-hero-page-title-overlay">
+                <div class="lcdm-hero-page-title-media">
+                    <div class="lcdm-hero-page-title-icon">
+                        <i class="lcdm-icon lcdm-icon-mapa"></i>
+                    </div>
+                    <div class="lcdm-hero-page-title">
+                        <h1>MAPA DE LA<br/>RECUPERACIÓN</h1>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -74,6 +82,7 @@
                     <div class="span1"></div>
                     <div class="span10">
                         <div id="jsmap-puertorico" class="jsmaps-wrapper"></div>
+                        <div id="jsmap-description" class="jsmaps-table-wrapper"></div>
                     </div>
                 </div>
             </div>
@@ -132,17 +141,21 @@
                     $.ajax({
                         beforeSend: function (qXHR) {
                             $('#jsmap-puertorico .jsmaps-text').html('Cargando...');
+                            $('#jsmap-description').html('');
                         },
                         type: 'get',
                         url: url + '?action=pr_cities_contracts&city=' + data.name,
                         success: function (response) {
                             var content = data.text;
-                            content += buildContractsTable(response.data);
+                            var table = buildContractsTable(response.data);
                             $('#jsmap-puertorico .jsmaps-text').html(content);
+                            $('#jsmap-description').html(table);
                         }
                     });
                 }
               });
+
+              $('#jsmap-puertorico').trigger('stateClick', 'San Juan');
 
             })(jQuery);
         </script>

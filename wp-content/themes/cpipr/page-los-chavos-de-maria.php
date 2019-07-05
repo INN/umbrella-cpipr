@@ -47,6 +47,10 @@
             wp_head();
         ?>
 
+        <!-- Fancybox -->
+        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/lib/fancybox/dist/jquery.fancybox.css' ?>">
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/fancybox/dist/jquery.fancybox.min.js' ?>" type="text/javascript"></script>
+
         <!-- JsMaps -->
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/css/jsmaps.css' ?>">
         <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/js/jsmaps-libs.js' ?>" type="text/javascript"></script>
@@ -75,6 +79,7 @@
                             ),
                             'order' => 'DESC',
                             'posts_per_page' => 5,
+                            'post_status' => 'publish'
                         );
                         $chavos_category = get_category_by_slug('los-chavos-de-maria');
                         $chavos_query = new WP_Query($args);
@@ -91,7 +96,7 @@
                                         </div>
                                         <div class="span6">
                                             <div class="owl-hero-links">
-                                                <a href="<?php echo get_category_link($chavos_category) ?>" class="btn btn-white-blue"><?php _e('View All', 'cpipr'); ?></a>
+                                                <a href="<?php echo get_term_link('los-chavos-de-maria', 'series'); ?>" class="btn btn-white-blue">Ver más</a>
                                             </div>
                                         </div>
                                     </div>
@@ -101,10 +106,10 @@
                     </div>
                     <?php } wp_reset_postdata();?>
                 </div>
-                <div class="owl-carousel owl-loaded owl-theme owl-hero-controls text-right">
+                <div id="main-hero-controls" class="owl-carousel owl-loaded owl-theme owl-hero-controls">
                     <div class="container-fluid">
                         <div class="owl-controls">
-                            <div class="owl-nav"></div>
+                            <div class="owl-nav owl-nav-lcdm"></div>
                             <div class="owl-dots"></div>
                         </div>
                     </div>
@@ -112,60 +117,132 @@
             </div>
         </div>
 
+        <?php $lcdm_navbar_theme = 'dark'; ?>
+        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
+
         <!-- Emergency response embed -->
-        <!-- <div>
+        <div>
             <iframe src="https://embed.kumu.io/1ef45532e322f0bc09ef906a778c662f#dummy-personajes" width="940" height="600" frameborder="0"></iframe>
-        </div> -->
+        </div>
 
         <!-- Mapa de la recuepracion section -->
         <div class="lcdm-section lcdm-section-map">
             <div class="lcdm-section-title">
-                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-mapa-recperacion.png' ?>"/>
-                <div>MAPA DE LA RECUPERACIÓN</div>
+                <i class="lcdm-icon lcdm-icon-mapa"></i>
+                <div>MAPA DE LA<br/>RECUPERACIÓN</div>
             </div>
             <div class="container-fluid">
                 <div class="row-fluid">
-                    <div class="span1"></div>
-                    <div class="span10">
+                    <div class="span2"></div>
+                    <div class="span8">
                         <div id="jsmap-puertorico" class="jsmaps-wrapper"></div>
-                        <br/>
-                        <br/>
-                        <p class="text-center">
-                            <a href="<?php echo get_permalink( get_page_by_path( 'los-chavos-de-maria-mapas-de-la-recuperacion' ) ) ?>" class="btn btn-white-blue">VER MÁS</a>
-                        </p>
+                        <div id="jsmap-description" class="jsmaps-table-wrapper"></div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Infografias section -->
-        <div class="lcdm-section">
+        <div class="lcdm-section lcdm-section-graficas">
             <div class="lcdm-section-title">
-                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-infografias.png' ?>"/>
-                <div>INFOGRÁFICAS</div>
+                <i class="lcdm-icon lcdm-icon-graficas"></i>
+                <div>GRÁFICAS</div>
+            </div>
+
+            <div class="container-fluid">
+                <br/>
+                <br/>
+                <br/>
+                <div class="owl-hero-carousel">
+                    <div id="inphographic-hero-carousel" class="owl-carousel owl-theme">
+                        <?php
+                            $args = array(
+                                'post_type' => 'cpipr_inphographic',
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'post_tag',
+                                        'field'    => 'slug',
+                                        'terms'    => 'featured',
+                                    )
+                                ),
+                                'order' => 'DESC',
+                                'posts_per_page' => 5,
+                                'post_status' => 'publish'
+                            );
+                            $cpipr_inphographic_link = get_post_type_archive_link('cpipr_inphographic');
+                            $chavos_query = new WP_Query($args);
+                            while ($chavos_query->have_posts()) {
+                                $chavos_query->the_post();
+                        ?>
+                        <div class="owl-hero-item">
+                            <?php echo the_post_thumbnail('full') ?>
+                        </div>
+                        <?php } wp_reset_postdata();?>
+                    </div>
+                </div>
+                <div id="inphographic-controls" class="owl-carousel owl-loaded owl-theme owl-theme-blue owl-default-controls owl-inline-controls">
+                    <div class="owl-controls">
+                        <div class="owl-nav owl-nav-lcdm"></div>
+                        <div class="owl-dots"></div>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo $cpipr_inphographic_link ?>" class="btn btn-blue">Ver más</a>
+                </div>
             </div>
         </div>
 
         <!-- Video slider -->
-        <div class="lcdm-section">
+        <div class="lcdm-section lcdm-section-videos">
             <div class="lcdm-section-title">
-                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-videos.png' ?>"/>
+                <i class="lcdm-icon lcdm-icon-videos"></i>
                 <div>VIDEOS</div>
             </div>
-            <div class="owl-carousel-1 owl-theme">
-                <div class="item">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                      <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen=""></iframe>
-                    </div>
-                    <div>
-                        <div class="row-fluid">
-                            <div class="span6">
-                                <h2>
-                                    Proceso de trabajo de la investigación 'Los Muertos de María'
-                                    <small>27 de febrero, 2019</small>
-                                </h2>
+
+            <div class="owl-hero-carousel">
+                <div id="video-hero-carousel" class="owl-carousel owl-theme">
+                    <?php
+                        $args = array(
+                            'post_type' => 'cpipr_video',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'post_tag',
+                                    'field'    => 'slug',
+                                    'terms'    => 'featured',
+                                )
+                            ),
+                            'order' => 'DESC',
+                            'posts_per_page' => 5,
+                        );
+                        $cpipr_video_link = get_post_type_archive_link('cpipr_video');
+                        $chavos_query = new WP_Query($args);
+                        while ($chavos_query->have_posts()) {
+                            $chavos_query->the_post();
+                    ?>
+                    <div class="owl-hero-item" style="background-image: url('<?php echo the_post_thumbnail_url('full') ?>')">
+                        <div class="owl-hero-caption">
+                            <div class="container-fluid">
+                                <div class="owl-hero-post owl-hero-video-post">
+                                    <a data-fancybox href="<?php echo get_the_excerpt(); ?>" class="owl-play-icon"></a>
+                                    <div class="row-fluid">
+                                        <div class="span6">
+                                            <h2 class="owl-hero-post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
+                                        </div>
+                                        <div class="span6">
+                                            <div class="owl-hero-links">
+                                                <a href="<?php echo $cpipr_video_link ?>" class="btn btn-white-blue">Ver más</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    <?php } wp_reset_postdata();?>
+                </div>
+                <div id="video-hero-controls" class="owl-carousel owl-loaded owl-theme owl-hero-controls">
+                    <div class="container-fluid">
+                        <div class="owl-controls">
+                            <div class="owl-nav owl-nav-lcdm"></div>
+                            <div class="owl-dots"></div>
                         </div>
                     </div>
                 </div>
@@ -175,33 +252,29 @@
         <!-- Ingegration Documentos section -->
         <div class="lcdm-section lcdm-section-documentos">
             <div class="lcdm-section-title">
-                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-historias.png' ?>"/>
-                DOCUMENTOS
+                <i class="lcdm-icon lcdm-icon-documentos"></i>
+                <div>DOCUMENTOS</div>                
             </div>
             <div class="container-fluid">
                 <div class="row-fluid">
                     <div class="span2"></div>
                     <div class="span8">
-                        <div id="DC-search-projectid-43264-los-chavos-de-mar-a" class="DC-embed DC-embed-search DC-search-container"></div>
+                        <div id="DC-search-projectid-43548-pruebas-para-los-chavos-de-mar-a" class="DC-embed DC-embed-search DC-search-container"></div>
                         <script src="//assets.documentcloud.org/embed/loader.js"></script>
                         <script>
-                          dc.embed.load('https://www.documentcloud.org/search/embed/', {
-                            q: "projectid: 43264-los-chavos-de-mar-a ",
-                            container: "#DC-search-projectid-43264-los-chavos-de-mar-a",
+                            dc.embed.load('https://www.documentcloud.org/search/embed/', {
+                            q: "projectid: 43548-pruebas-para-los-chavos-de-mar-a ",
+                            container: "#DC-search-projectid-43548-pruebas-para-los-chavos-de-mar-a",
                             title: "",
                             order: "created_at",
                             per_page: 8,
                             search_bar: true,
                             organization: 2426
-                          });
+                            });
                         </script>
                         <noscript>
-                          <a href="https://www.documentcloud.org/public/search/projectid%3A%2043264-los-chavos-de-mar-a%20">View/search document collection</a>
+                            <a href="https://www.documentcloud.org/public/search/projectid%3A%2043548-pruebas-para-los-chavos-de-mar-a%20">View/search document collection</a>
                         </noscript>
-                        <br/>
-                        <p class="text-center">
-                            <a href="<?php echo get_permalink( get_page_by_path( 'los-chavos-de-maria-documentos' ) ) ?>" class="btn btn-white-blue">VER MÁS</a>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -210,13 +283,11 @@
         <!-- Glosario section -->
         <div class="lcdm-section lcdm-section-glosario">
             <div class="lcdm-section-title">
-                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-glosario.png' ?>"/>
+                <i class="lcdm-icon lcdm-icon-glosario"></i>
                 <div>GLOSARIO</div>
             </div>
             <div class="container-fluid">
-                <div class="text-right">
-                    <a href="<?php echo get_post_type_archive_link( 'glossary' ); ?>" class="btn btn-white-blue">VER TODOS</a>    
-                </div>
+                <br/>
                 <br/>
                 <br/>
                 <br/>
@@ -247,11 +318,12 @@
                         </div>
                         <?php } wp_reset_postdata();?>
                     </div>
-                    <div class="owl-carousel owl-loaded owl-theme owl-default-controls text-right">
+                    <div id="glossary-controls" class="owl-carousel owl-loaded owl-theme owl-theme-white owl-default-controls owl-inline-controls">
                         <div class="owl-controls">
-                            <div class="owl-nav"></div>
+                            <div class="owl-nav owl-nav-lcdm"></div>
                             <div class="owl-dots"></div>
                         </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_post_type_archive_link( 'glossary' ); ?>" class="btn btn-white-blue">VER TODOS</a>    
                     </div>
                 </div>                    
             </div>
@@ -298,11 +370,11 @@
                         dots: true,
                         mergeControls: true,
                         autoHeight: true,
-                        navContainer: '.owl-hero-controls .owl-nav',
-                        dotsContainer: '.owl-hero-controls .owl-dots',
+                        navContainer: '#main-hero-controls .owl-nav',
+                        dotsContainer: '#main-hero-controls .owl-dots',
                         navText: [
-                            '<span aria-label="' + 'Previous' + '"></span>',
-                            '<span aria-label="' + 'Next' + '"></span>'
+                            '<span class="lcdm-icon lcdm-icon-arrow-left" aria-label="' + 'Previous' + '"></span>',
+                            '<span class="lcdm-icon lcdm-icon-arrow-right" aria-label="' + 'Next' + '"></span>'
                         ],
                     });
                 });
@@ -342,12 +414,13 @@
                     function buildContractsTable (data) {
                         var template = '<div class="table-responsive"><table>';
                         template += buildContractsHeader();
+                        template += '<tbody>';
 
                         for (var i=0; i < data.length; i++) {
                             var row = buildContractRow(data[i]);
                             template += row;
                         }
-
+                        template += '</tbody>';
                         template += '</table></div>';
 
                         return template;
@@ -361,16 +434,64 @@
                             $.ajax({
                                 beforeSend: function (qXHR) {
                                     $('#jsmap-puertorico .jsmaps-text').html('Cargando...');
+                                    $('#jsmap-description').html('');
                                 },
                                 type: 'get',
                                 url: url + '?action=pr_cities_contracts&city=' + data.name,
                                 success: function (response) {
                                     var content = data.text;
-                                    content += buildContractsTable(response.data);
+                                    var table = buildContractsTable(response.data);
                                     $('#jsmap-puertorico .jsmaps-text').html(content);
+                                    $('#jsmap-description').html(table);
                                 }
                             });
                         }
+                    });
+
+                    $('#jsmap-puertorico').trigger('stateClick', 'San Juan');
+                });
+            })(jQuery);
+        </script>
+
+        <script type="text/javascript">
+            (function ($) {
+                $(document).ready(function () {
+                    $('#inphographic-hero-carousel').owlCarousel({
+                        autoplay: false,
+                        loop: true,
+                        items: 1,
+                        nav: true,
+                        dots: true,
+                        mergeControls: true,
+                        autoHeight: true,
+                        navContainer: '#inphographic-controls .owl-nav',
+                        dotsContainer: '#inphographic-controls .owl-dots',
+                        navText: [
+                            '<span class="lcdm-icon lcdm-icon-arrow-left" aria-label="' + 'Previous' + '"></span>',
+                            '<span class="lcdm-icon lcdm-icon-arrow-right" aria-label="' + 'Next' + '"></span>'
+                        ],
+                    });
+                });
+            })(jQuery);
+        </script>
+
+        <script type="text/javascript">
+            (function ($) {
+                $(document).ready(function () {
+                    $('#video-hero-carousel').owlCarousel({
+                        autoplay: false,
+                        loop: true,
+                        items: 1,
+                        nav: true,
+                        dots: true,
+                        mergeControls: true,
+                        autoHeight: true,
+                        navContainer: '#video-hero-controls .owl-nav',
+                        dotsContainer: '#video-hero-controls .owl-dots',
+                        navText: [
+                            '<span class="lcdm-icon lcdm-icon-arrow-left" aria-label="' + 'Previous' + '"></span>',
+                            '<span class="lcdm-icon lcdm-icon-arrow-right" aria-label="' + 'Next' + '"></span>'
+                        ],
                     });
                 });
             })(jQuery);
@@ -387,11 +508,11 @@
                         dots: true,
                         mergeControls: true,
                         autoHeight: true,
-                        navContainer: '.owl-default-controls .owl-nav',
-                        dotsContainer: '.owl-default-controls .owl-dots',
+                        navContainer: '#glossary-controls .owl-nav',
+                        dotsContainer: '#glossary-controls .owl-dots',
                         navText: [
-                            '<span aria-label="' + 'Previous' + '"></span>',
-                            '<span aria-label="' + 'Next' + '"></span>'
+                            '<span class="lcdm-icon lcdm-icon-arrow-left" aria-label="' + 'Previous' + '"></span>',
+                            '<span class="lcdm-icon lcdm-icon-arrow-right" aria-label="' + 'Next' + '"></span>'
                         ],
                     });
                 });

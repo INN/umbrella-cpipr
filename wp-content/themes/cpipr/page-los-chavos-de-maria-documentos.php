@@ -49,14 +49,22 @@
     </head>
 
     <body <?php body_class(); ?>>
+        <?php $lcdm_active_menu = 'documentos'; ?>
         <?php get_template_part('partials/los-chavos-de-maria/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
 
 
         <!-- Hero Page Title  -->
-        <div class="lcdm-hero-page-title">
-            <div class="container-fluid">
-                <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/icon-historias.png' ?>"/>
-                <h1>DOCUMENTOS</h1>
+        <div class="lcdm-hero-page-title-wrapper">
+            <div class="lcdm-hero-page-title-overlay">
+                <div class="lcdm-hero-page-title-media">
+                    <div class="lcdm-hero-page-title-icon">
+                        <i class="lcdm-icon lcdm-icon-documentos"></i>
+                    </div>
+                    <div class="lcdm-hero-page-title">
+                        <h1>DOCUMENTOS</h1>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -66,21 +74,21 @@
                 <div class="row-fluid">
                     <div class="span2"></div>
                     <div class="span8">
-                        <div id="DC-search-projectid-43264-los-chavos-de-mar-a" class="DC-embed DC-embed-search DC-search-container"></div>
+                        <div id="DC-search-projectid-43548-pruebas-para-los-chavos-de-mar-a" class="DC-embed DC-embed-search DC-search-container"></div>
                         <script src="//assets.documentcloud.org/embed/loader.js"></script>
                         <script>
-                          dc.embed.load('https://www.documentcloud.org/search/embed/', {
-                            q: "projectid: 43264-los-chavos-de-mar-a ",
-                            container: "#DC-search-projectid-43264-los-chavos-de-mar-a",
+                            dc.embed.load('https://www.documentcloud.org/search/embed/', {
+                            q: "projectid: 43548-pruebas-para-los-chavos-de-mar-a ",
+                            container: "#DC-search-projectid-43548-pruebas-para-los-chavos-de-mar-a",
                             title: "",
                             order: "created_at",
                             per_page: 8,
                             search_bar: true,
                             organization: 2426
-                          });
+                            });
                         </script>
                         <noscript>
-                          <a href="https://www.documentcloud.org/public/search/projectid%3A%2043264-los-chavos-de-mar-a%20">View/search document collection</a>
+                            <a href="https://www.documentcloud.org/public/search/projectid%3A%2043548-pruebas-para-los-chavos-de-mar-a%20">View/search document collection</a>
                         </noscript>
                     </div>
                 </div>
