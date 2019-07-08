@@ -53,8 +53,8 @@
                         <input type="text" class="input-medium search-query">
                         <button type="submit" class="btn"><i class="icon-search"></i></button>
                     </form>
-                    <a href="#" class="btn btn-lang active">Español</a>
-                    <a href="#" class="btn btn-lang">English</a>
+                    <a href="<?php echo get_permalink( get_page_by_path( 'los-chavos-de-maria' ) ) ?>" class="btn btn-lang active">Español</a>
+                    <a href="<?php echo get_permalink( get_page_by_path( 'en-los-chavos-de-maria' ) ) ?>" class="btn btn-lang">English</a>
                 </li>
             </ul>
         </div>

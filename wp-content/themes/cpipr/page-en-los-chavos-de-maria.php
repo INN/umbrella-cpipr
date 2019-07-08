@@ -60,7 +60,7 @@
     </head>
 
     <body <?php body_class(); ?>>
-        <?php get_template_part('partials/los-chavos-de-maria/es/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/en/header'); ?>
 
 
         <!-- Main slider -->
@@ -96,7 +96,7 @@
                                         </div>
                                         <div class="span6">
                                             <div class="owl-hero-links">
-                                                <a href="<?php echo get_term_link('los-chavos-de-maria', 'series'); ?>" class="btn btn-white-blue">Ver más</a>
+                                                <a href="<?php echo get_term_link('los-chavos-de-maria', 'series'); ?>" class="btn btn-white-blue">Read More</a>
                                             </div>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@
         </div>
 
         <?php $lcdm_navbar_theme = 'dark'; ?>
-        <?php get_template_part('partials/los-chavos-de-maria/es/menu'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/en/menu'); ?>
 
         <!-- Emergency response embed -->
         <div>
@@ -129,7 +129,7 @@
         <div class="lcdm-section lcdm-section-map">
             <div class="lcdm-section-title">
                 <i class="lcdm-icon lcdm-icon-mapa"></i>
-                <div>MAPA DE LA<br/>RECUPERACIÓN</div>
+                <div>MAPS OF<br/>RECOVERY</div>
             </div>
             <div class="container-fluid">
                 <div class="row-fluid">
@@ -146,7 +146,7 @@
         <div class="lcdm-section lcdm-section-graficas">
             <div class="lcdm-section-title">
                 <i class="lcdm-icon lcdm-icon-graficas"></i>
-                <div>GRÁFICAS</div>
+                <div>INPHOGRAPHICS</div>
             </div>
 
             <div class="container-fluid">
@@ -185,7 +185,7 @@
                         <div class="owl-nav owl-nav-lcdm"></div>
                         <div class="owl-dots"></div>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo $cpipr_inphographic_link ?>" class="btn btn-blue">Ver más</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo $cpipr_inphographic_link ?>" class="btn btn-blue">Read More</a>
                 </div>
             </div>
         </div>
@@ -228,7 +228,7 @@
                                         </div>
                                         <div class="span6">
                                             <div class="owl-hero-links">
-                                                <a href="<?php echo $cpipr_video_link ?>" class="btn btn-white-blue">Ver más</a>
+                                                <a href="<?php echo $cpipr_video_link ?>" class="btn btn-white-blue">Read More</a>
                                             </div>
                                         </div>
                                     </div>
@@ -253,7 +253,7 @@
         <div class="lcdm-section lcdm-section-documentos">
             <div class="lcdm-section-title">
                 <i class="lcdm-icon lcdm-icon-documentos"></i>
-                <div>DOCUMENTOS</div>                
+                <div>DOCUMENTS</div>                
             </div>
             <div class="container-fluid">
                 <div class="row-fluid">
@@ -284,7 +284,7 @@
         <div class="lcdm-section lcdm-section-glosario">
             <div class="lcdm-section-title">
                 <i class="lcdm-icon lcdm-icon-glosario"></i>
-                <div>GLOSARIO</div>
+                <div>GLOSSARY</div>
             </div>
             <div class="container-fluid">
                 <br/>
@@ -323,7 +323,7 @@
                             <div class="owl-nav owl-nav-lcdm"></div>
                             <div class="owl-dots"></div>
                         </div>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_post_type_archive_link( 'glossary' ); ?>" class="btn btn-white-blue">VER TODOS</a>    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_post_type_archive_link( 'glossary' ); ?>" class="btn btn-white-blue">VIEW ALL</a>    
                     </div>
                 </div>                    
             </div>
@@ -357,7 +357,7 @@
             </div>
         </div>
 
-        <?php get_template_part('partials/los-chavos-de-maria/es/footer'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/en/footer'); ?>
 
         <script type="text/javascript">
             (function ($) {
