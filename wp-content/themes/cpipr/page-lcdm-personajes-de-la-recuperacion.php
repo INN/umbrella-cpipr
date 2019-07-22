@@ -49,9 +49,9 @@
     </head>
 
     <body <?php body_class(); ?>>
-        <?php $lcdm_active_menu = 'documentos'; ?>
-        <?php get_template_part('partials/los-chavos-de-maria/header'); ?>
-        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
+        <?php $lcdm_active_menu = 'personajes_de_la_recuperacion'; ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/menu'); ?>
 
 
         <!-- Hero Page Title  -->
@@ -59,42 +59,20 @@
             <div class="lcdm-hero-page-title-overlay">
                 <div class="lcdm-hero-page-title-media">
                     <div class="lcdm-hero-page-title-icon">
-                        <i class="lcdm-icon lcdm-icon-documentos"></i>
+                        <i class="lcdm-icon lcdm-icon-personajes"></i>
                     </div>
                     <div class="lcdm-hero-page-title">
-                        <h1>DOCUMENTOS</h1>
+                        <h1>PERSONAJES DE<br/>LA RECUPERACIÓN</h1>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Ingegration Documentos section -->
-        <div class="lcdm-section">
-            <div class="container-fluid">
-                <div class="row-fluid">
-                    <div class="span2"></div>
-                    <div class="span8">
-                        <div id="DC-search-projectid-43548-pruebas-para-los-chavos-de-mar-a" class="DC-embed DC-embed-search DC-search-container"></div>
-                        <script src="//assets.documentcloud.org/embed/loader.js"></script>
-                        <script>
-                            dc.embed.load('https://www.documentcloud.org/search/embed/', {
-                            q: "projectid: 43548-pruebas-para-los-chavos-de-mar-a ",
-                            container: "#DC-search-projectid-43548-pruebas-para-los-chavos-de-mar-a",
-                            title: "",
-                            order: "created_at",
-                            per_page: 8,
-                            search_bar: true,
-                            organization: 2426
-                            });
-                        </script>
-                        <noscript>
-                            <a href="https://www.documentcloud.org/public/search/projectid%3A%2043548-pruebas-para-los-chavos-de-mar-a%20">View/search document collection</a>
-                        </noscript>
-                    </div>
-                </div>
-            </div>
+        <!-- Emergency response embed -->
+        <div>
+            <iframe src="https://embed.kumu.io/1ef45532e322f0bc09ef906a778c662f#dummy-personajes" width="940" height="600" frameborder="0"></iframe>
         </div>
 
-        <?php get_template_part('partials/los-chavos-de-maria/footer'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/footer'); ?>        
     </body>
 </html>

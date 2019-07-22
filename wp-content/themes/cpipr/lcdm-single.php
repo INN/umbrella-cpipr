@@ -55,12 +55,17 @@
 
         <!-- ScrollTo -->
         <script src="<?php echo get_stylesheet_directory_uri(). '/lib/scrollTo/jquery.scrollTo.min.js' ?>" type="text/javascript"></script>
+
+        <!-- Simple Parallax -->
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/simpleParallax/dist/simpleParallax.min.js' ?>" type="text/javascript"></script>
+
     </head>
 
     <body <?php body_class(); ?>>
+        <?php $lang = has_tag('spanish') ? 'spanish' : 'english'; ?>
         <?php $lcdm_active_menu = 'historias'; ?>
-        <?php get_template_part('partials/los-chavos-de-maria/header'); ?>
-        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/' . ($lang == 'spanish' ? 'es' : 'en') .'/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/' . ($lang == 'spanish' ? 'es' : 'en') .'/menu'); ?>
 
         <div class="owl-hero-carousel">
             <div class="owl-theme">
@@ -122,6 +127,7 @@
 
                 <div class="row-fluid">
                     <?php
+                        $lang = has_tag('spanish') ? 'spanish' : 'english';
                         $args = array(
                             'post_type' => 'post',
                             'tax_query' => array(
@@ -129,6 +135,11 @@
                                     'taxonomy' => 'series',
                                     'field'    => 'slug',
                                     'terms'    => 'los-chavos-de-maria',
+                                ),
+                                array(
+                                    'taxonomy' => 'post_tag',
+                                    'field'    => 'slug',
+                                    'terms'    => $lang
                                 )
                             ),
                             'order' => 'DESC',
@@ -161,7 +172,18 @@
         </div>
 
 
-        <?php get_template_part('partials/los-chavos-de-maria/footer'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/' . ($lang == 'spanish' ? 'es' : 'en') . '/footer'); ?>
+
+        <script type="text/javascript">
+            (function ($) {
+                var images = document.querySelectorAll('.wp-caption-img-wrap img');
+                new simpleParallax(images, {
+                    orientation: 'down',
+                    delay: 0.2,
+                    scale: 1.4
+                });
+            })(jQuery);
+        </script>
 
     </body>
 </html>

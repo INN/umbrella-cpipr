@@ -3,12 +3,12 @@
     <div class="container-fluid clearfix">
         <div class="lcdm-top-banner">
             <a href="<?php echo get_permalink( get_page_by_path( 'los-chavos-de-maria' ) ) ?>">
-                <img alt="" src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/banner_ayudanos.jpg' ?>"/>
+                <img alt="" src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/banner_ayudanos.png' ?>" srcset="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/banner_ayudanos@2x.png 2x' ?>, <?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/banner_ayudanos@3x.png 3x' ?>"/>
             </a>
         </div>
         <div class="lcdm-logo-wrapper">
             <a class="lcdm-logo" href="<?php echo get_permalink( get_page_by_path( 'los-chavos-de-maria' ) ) ?>">
-                <img alt="" src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm.png' ?>"/>
+                <img alt="" src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm.png' ?>" srcset="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm@2x.png 2x' ?>, <?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm@3x.png 3x' ?>"/>
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="modal" data-target="#modalNavigation">
                 <i class="lcdm-icon lcdm-icon-menu"></i>

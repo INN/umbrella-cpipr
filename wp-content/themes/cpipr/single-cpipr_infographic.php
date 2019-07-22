@@ -1,8 +1,3 @@
-<?php
-/**
- * Landing page "Los chavos de maría"
- */
-?>
 <!DOCTYPE html>
     <!--[if lt IE 7]> <html <?php language_attributes(); ?> class="no-js ie6"> <![endif]-->
     <!--[if IE 7]>    <html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->
@@ -46,33 +41,42 @@
             wp_enqueue_script( 'comment-reply' );
             wp_head();
         ?>
+
+        <!-- ScrollTo -->
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/scrollTo/jquery.scrollTo.min.js' ?>" type="text/javascript"></script>
     </head>
 
     <body <?php body_class(); ?>>
-        <?php $lcdm_active_menu = 'personajes_de_la_recuperacion'; ?>
-        <?php get_template_part('partials/los-chavos-de-maria/header'); ?>
-        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
+        <?php $lang = has_tag('spanish') ? 'spanish' : 'english'; ?>
+        <?php $lcdm_active_menu = 'graficas'; ?>
+        <?php get_template_part('partials/los-chavos-de-maria/' . ($lang == 'spanish' ? 'es' : 'en') .'/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/' . ($lang == 'spanish' ? 'es' : 'en') .'/menu'); ?>
 
-
-        <!-- Hero Page Title  -->
-        <div class="lcdm-hero-page-title-wrapper">
-            <div class="lcdm-hero-page-title-overlay">
-                <div class="lcdm-hero-page-title-media">
-                    <div class="lcdm-hero-page-title-icon">
-                        <i class="lcdm-icon lcdm-icon-personajes"></i>
-                    </div>
-                    <div class="lcdm-hero-page-title">
-                        <h1>PERSONAJES DE<br/>LA RECUPERACIÓN</h1>
+        <div class="owl-hero-carousel">
+            <div class="owl-theme">
+                <div class="owl-hero-item" style="background-image: url('<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/hero.jpg' ?>')">
+                    <div class="owl-hero-caption">
+                        <div class="container-fluid">
+                            <div class="owl-hero-post">
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                        <h2 class="owl-hero-post-title"><?php the_title(); ?></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Emergency response embed -->
-        <div>
-            <iframe src="https://embed.kumu.io/1ef45532e322f0bc09ef906a778c662f#dummy-personajes" width="940" height="600" frameborder="0"></iframe>
+        <div class="lcdm-section lcdm-section-post">
+            <div class="container">
+                <?php the_content();?>    
+            </div>
         </div>
 
-        <?php get_template_part('partials/los-chavos-de-maria/footer'); ?>        
+        <?php get_template_part('partials/los-chavos-de-maria/' . ($lang == 'spanish' ? 'es' : 'en') . '/footer'); ?>
+
     </body>
 </html>

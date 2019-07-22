@@ -53,8 +53,8 @@
 
     <body <?php body_class(); ?>>
         <?php $lcdm_active_menu = 'graficas'; ?>
-        <?php get_template_part('partials/los-chavos-de-maria/header'); ?>
-        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/en/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/en/menu'); ?>
 
 
         <!-- Hero Page Title  -->
@@ -65,7 +65,7 @@
                         <i class="lcdm-icon lcdm-icon-graficas"></i>
                     </div>
                     <div class="lcdm-hero-page-title">
-                        <h1>Gráficas</h1>
+                        <h1>INFOGRAPHICS</h1>
                     </div>
                 </div>
             </div>
@@ -77,12 +77,12 @@
                 <div id="posts-container"></div></div>
                 <div class="text-center">
                     <div class="lcdm-spinner"></div>
-                    <a id="load-more" href="#" class="btn btn-lg btn-black">Cargar Más</a>
+                    <a id="load-more" href="#" class="btn btn-lg btn-black">Load More</a>
                 </div>
             </div>
         </div>
 
-        <?php get_template_part('partials/los-chavos-de-maria/footer'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/en/footer'); ?>
 
         <script type="text/javascript">
             (function ($) {
@@ -97,13 +97,18 @@
                                 loadMore.addClass('disabled');
                             },
                             type: 'get',
-                            url: url + '?action=lcdm_inphographics&page=' + currentPage,
+                            url: url + '?action=lcdm_infographics&lang=english&page=' + currentPage,
                             success: function (response) {
                                 $('.lcdm-spinner').html('');
                                 if (response) {
                                     currentPage++;
                                     $('#posts-container').append(response);                                    
                                     loadMore.removeClass('disabled');
+
+                                    // Remove load more button if there is not 3 posts.
+                                    if ($(response).find('.span4').length < 3) {
+                                        loadMore.remove();
+                                    }
                                 } else {
                                     loadMore.remove();
                                 }

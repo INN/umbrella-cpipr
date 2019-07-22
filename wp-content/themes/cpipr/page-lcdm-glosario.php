@@ -47,16 +47,18 @@
             wp_head();
         ?>
 
-        <!-- JsMaps -->
-        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/css/jsmaps.css' ?>">
+        <!-- Nice Select -->
+        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/lib/jquery-nice-select/css/nice-select.css' ?>">
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jquery-nice-select/js/jquery.nice-select.min.js' ?>" type="text/javascript"></script>
+
         <!-- ScrollTo -->
         <script src="<?php echo get_stylesheet_directory_uri(). '/lib/scrollTo/jquery.scrollTo.min.js' ?>" type="text/javascript"></script>
     </head>
 
     <body <?php body_class(); ?>>
         <?php $lcdm_active_menu = 'glosario'; ?>
-        <?php get_template_part('partials/los-chavos-de-maria/header'); ?>
-        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/menu'); ?>
 
 
         <!-- Hero Page Title  -->
@@ -67,7 +69,7 @@
                         <i class="lcdm-icon lcdm-icon-glosario"></i>
                     </div>
                     <div class="lcdm-hero-page-title">
-                        <h1>GLOSSARY</h1>
+                        <h1>GLOSARIO</h1>
                     </div>
                 </div>
             </div>
@@ -81,6 +83,13 @@
                         $alpha_index = $alpha_terms = array();
                         $args  = array(
                             'post_type'      => 'glossary',
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'glossary-cat',
+                                    'field'    => 'slug',
+                                    'terms'    => 'spanish',
+                                )
+                            ),
                             'posts_per_page' => -1,
                             'order'          => 'ASC',
                             'orderby'        => 'title',
@@ -161,14 +170,11 @@
                     ?>
 
                     <div class="glossary-term-bar clearfix">
-                        <div class="jsmaps-select mobile">
-                            <select id="glossary-select">
+                        <div class="lcdm-dropdown clearfix">
+                            <select class="nice-select">
                                 <option value="">Búsqueda según letra</option>
                                 <?php echo implode( "\n", $alpha_index ); ?>
                             </select>
-                            <div class="jsmaps-select-icon">
-                                <div class="jsmaps-icon jsmaps-icon-chevron jsmaps-icon-chevron-down jsmaps-theme-light"></div>
-                            </div>
                         </div>
                         
                     </div>
@@ -180,11 +186,11 @@
         </div>
             
 
-        <?php get_template_part('partials/los-chavos-de-maria/footer'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/footer'); ?>
 
         <script type="text/javascript">
             (function ($) {
-                $('#glossary-select').change(function (event) {
+                $('.nice-select').niceSelect().on('change', function (event) {
                     var letter = $(this).val();
                     if (letter) {
                         $.scrollTo($('#' + letter), 500);

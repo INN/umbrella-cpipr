@@ -46,15 +46,12 @@
             wp_enqueue_script( 'comment-reply' );
             wp_head();
         ?>
-
-        <!-- ScrollTo -->
-        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/scrollTo/jquery.scrollTo.min.js' ?>" type="text/javascript"></script>
     </head>
 
     <body <?php body_class(); ?>>
-        <?php $lcdm_active_menu = 'videos'; ?>
-        <?php get_template_part('partials/los-chavos-de-maria/header'); ?>
-        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
+        <?php $lcdm_active_menu = 'historias'; ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/menu'); ?>
 
 
         <!-- Hero Page Title  -->
@@ -62,26 +59,18 @@
             <div class="lcdm-hero-page-title-overlay">
                 <div class="lcdm-hero-page-title-media">
                     <div class="lcdm-hero-page-title-icon">
-                        <i class="lcdm-icon lcdm-icon-videos"></i>
+                        <i class="lcdm-icon lcdm-icon-historias"></i>
                     </div>
                     <div class="lcdm-hero-page-title">
-                        <h1>VIDEOS</h1>
+                        <h1>HISTORIAS</h1>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Videos section -->
+        <!-- Posts section -->
         <div class="lcdm-section">
             <div class="container-fluid">
-                <?php if (have_posts()) { the_post(); ?>
-                <div id="video-player-section" class="cpipr-video-player">
-                    <!-- 16:9 aspect ratio -->
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe id="video-player" class="embed-responsive-item" src="<?php echo get_the_excerpt(); ?>"></iframe>
-                    </div>
-                </div>
-                <?php } ?>
                 <div id="posts-container"></div>
                 <div class="text-center">
                     <div class="lcdm-spinner"></div>
@@ -90,7 +79,7 @@
             </div>
         </div>
 
-        <?php get_template_part('partials/los-chavos-de-maria/footer'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/footer'); ?>
 
         <script type="text/javascript">
             (function ($) {
@@ -105,13 +94,18 @@
                                 loadMore.addClass('disabled');
                             },
                             type: 'get',
-                            url: url + '?action=lcdm_videos&page=' + currentPage,
+                            url: url + '?action=lcdm_historias&page=' + currentPage,
                             success: function (response) {
                                 $('.lcdm-spinner').html('');
                                 if (response) {
                                     currentPage++;
                                     $('#posts-container').append(response);                                    
                                     loadMore.removeClass('disabled');
+
+                                    // Remove load more button if there is not 3 posts.
+                                    if ($(response).find('.span4').length < 3) {
+                                        loadMore.remove();
+                                    }
                                 } else {
                                     loadMore.remove();
                                 }
@@ -123,21 +117,6 @@
                         event.preventDefault();
                         loadPosts();
                     }).ready(loadPosts());
-                });
-            })(jQuery);
-        </script>
-
-        <script type="text/javascript">
-            (function ($) {
-                var videoPlayerSection = $('#video-player-section');
-                var videoPlayer = $('#video-player');
-                $(document).ready(function () {
-                    $('#posts-container').on('click', '.card-video-play', function (event) {
-                        event.preventDefault();
-                        var href = $(this).attr('href');
-                        videoPlayer.attr('src', href);
-                        $.scrollTo(videoPlayerSection, 500);
-                    });
                 });
             })(jQuery);
         </script>

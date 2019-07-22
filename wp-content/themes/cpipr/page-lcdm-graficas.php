@@ -46,12 +46,15 @@
             wp_enqueue_script( 'comment-reply' );
             wp_head();
         ?>
+
+        <!-- ScrollTo -->
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/scrollTo/jquery.scrollTo.min.js' ?>" type="text/javascript"></script>
     </head>
 
     <body <?php body_class(); ?>>
-        <?php $lcdm_active_menu = 'historias'; ?>
-        <?php get_template_part('partials/los-chavos-de-maria/header'); ?>
-        <?php get_template_part('partials/los-chavos-de-maria/menu'); ?>
+        <?php $lcdm_active_menu = 'graficas'; ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/header'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/menu'); ?>
 
 
         <!-- Hero Page Title  -->
@@ -59,10 +62,10 @@
             <div class="lcdm-hero-page-title-overlay">
                 <div class="lcdm-hero-page-title-media">
                     <div class="lcdm-hero-page-title-icon">
-                        <i class="lcdm-icon lcdm-icon-historias"></i>
+                        <i class="lcdm-icon lcdm-icon-graficas"></i>
                     </div>
                     <div class="lcdm-hero-page-title">
-                        <h1>HISTORIAS</h1>
+                        <h1>Gráficas</h1>
                     </div>
                 </div>
             </div>
@@ -71,7 +74,7 @@
         <!-- Posts section -->
         <div class="lcdm-section">
             <div class="container-fluid">
-                <div id="posts-container"></div>
+                <div id="posts-container"></div></div>
                 <div class="text-center">
                     <div class="lcdm-spinner"></div>
                     <a id="load-more" href="#" class="btn btn-lg btn-black">Cargar Más</a>
@@ -79,7 +82,7 @@
             </div>
         </div>
 
-        <?php get_template_part('partials/los-chavos-de-maria/footer'); ?>
+        <?php get_template_part('partials/los-chavos-de-maria/es/footer'); ?>
 
         <script type="text/javascript">
             (function ($) {
@@ -94,13 +97,18 @@
                                 loadMore.addClass('disabled');
                             },
                             type: 'get',
-                            url: url + '?action=lcdm_historias&page=' + currentPage,
+                            url: url + '?action=lcdm_infographics&page=' + currentPage,
                             success: function (response) {
                                 $('.lcdm-spinner').html('');
                                 if (response) {
                                     currentPage++;
                                     $('#posts-container').append(response);                                    
                                     loadMore.removeClass('disabled');
+
+                                    // Remove load more button if there is not 3 posts.
+                                    if ($(response).find('.span4').length < 3) {
+                                        loadMore.remove();
+                                    }
                                 } else {
                                     loadMore.remove();
                                 }

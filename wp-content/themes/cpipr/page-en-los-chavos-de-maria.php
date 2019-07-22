@@ -51,6 +51,10 @@
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/lib/fancybox/dist/jquery.fancybox.css' ?>">
         <script src="<?php echo get_stylesheet_directory_uri(). '/lib/fancybox/dist/jquery.fancybox.min.js' ?>" type="text/javascript"></script>
 
+        <!-- Nice Select -->
+        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/lib/jquery-nice-select/css/nice-select.css' ?>">
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jquery-nice-select/js/jquery.nice-select.min.js' ?>" type="text/javascript"></script>
+
         <!-- JsMaps -->
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/css/jsmaps.css' ?>">
         <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/js/jsmaps-libs.js' ?>" type="text/javascript"></script>
@@ -75,6 +79,11 @@
                                     'taxonomy' => 'series',
                                     'field'    => 'slug',
                                     'terms'    => 'los-chavos-de-maria',
+                                ),
+                                array(
+                                    'taxonomy' => 'post_tag',
+                                    'field'    => 'slug',
+                                    'terms'    => 'english',
                                 )
                             ),
                             'order' => 'DESC',
@@ -83,6 +92,7 @@
                         );
                         $chavos_category = get_category_by_slug('los-chavos-de-maria');
                         $chavos_query = new WP_Query($args);
+                        $has_history_posts = $chavos_query->have_posts();
                         while ($chavos_query->have_posts()) {
                             $chavos_query->the_post();
                     ?>
@@ -94,11 +104,6 @@
                                         <div class="span6">
                                             <h2 class="owl-hero-post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
                                         </div>
-                                        <div class="span6">
-                                            <div class="owl-hero-links">
-                                                <a href="<?php echo get_term_link('los-chavos-de-maria', 'series'); ?>" class="btn btn-white-blue">Read More</a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -106,14 +111,17 @@
                     </div>
                     <?php } wp_reset_postdata();?>
                 </div>
-                <div id="main-hero-controls" class="owl-carousel owl-loaded owl-theme owl-hero-controls">
+                <?php if ($has_history_posts): ?>
+                <div id="main-hero-controls" class="owl-carousel owl-loaded owl-theme owl-hero-controls owl-default-controls owl-inline-controls">
                     <div class="container-fluid">
                         <div class="owl-controls">
                             <div class="owl-nav owl-nav-lcdm"></div>
                             <div class="owl-dots"></div>
                         </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-historias' ) ) ?>" class="btn btn-white-blue">Ver Todo</a>
                     </div>
-                </div>
+                </div>  
+                <?php endif; ?>              
             </div>
         </div>
 
@@ -135,6 +143,88 @@
                 <div class="row-fluid">
                     <div class="span2"></div>
                     <div class="span8">
+                        <div class="lcdm-dropdown clearfix">
+                            <select class="nice-select">
+                                <option value="Adjuntas">Adjuntas</option>
+                                <option value="Aguada">Aguada</option>
+                                <option value="Aguadilla">Aguadilla</option>
+                                <option value="Aguas Buenas">Aguas Buenas</option>
+                                <option value="Aibonito">Aibonito</option>
+                                <option value="Arecibo">Arecibo</option>
+                                <option value="Arroyo">Arroyo</option>
+                                <option value="Añasco">Añasco</option>
+                                <option value="Barceloneta">Barceloneta</option>
+                                <option value="Barranquitas">Barranquitas</option>
+                                <option value="Bayamón">Bayamón</option>
+                                <option value="Cabo Rojo">Cabo Rojo</option>
+                                <option value="Caguas">Caguas</option>
+                                <option value="Camuy">Camuy</option>
+                                <option value="Canóvanas">Canóvanas</option>
+                                <option value="Carolina">Carolina</option>
+                                <option value="Cataño">Cataño</option>
+                                <option value="Cayey">Cayey</option>
+                                <option value="Ceiba">Ceiba</option>
+                                <option value="Ciales">Ciales</option>
+                                <option value="Cidra">Cidra</option>
+                                <option value="Coamo">Coamo</option>
+                                <option value="Comerío">Comerío</option>
+                                <option value="Corozal">Corozal</option>
+                                <option value="Culebra">Culebra</option>
+                                <option value="Dorado">Dorado</option>
+                                <option value="Fajardo">Fajardo</option>
+                                <option value="Florida">Florida</option>
+                                <option value="Guayama">Guayama</option>
+                                <option value="Guayanilla">Guayanilla</option>
+                                <option value="Guaynabo">Guaynabo</option>
+                                <option value="Gurabo">Gurabo</option>
+                                <option value="Guánica">Guánica</option>
+                                <option value="Hatillo">Hatillo</option>
+                                <option value="Hormigueros">Hormigueros</option>
+                                <option value="Humacao">Humacao</option>
+                                <option value="Isabela">Isabela</option>
+                                <option value="Jayuya">Jayuya</option>
+                                <option value="Juana Díaz">Juana Díaz</option>
+                                <option value="Juncos">Juncos</option>
+                                <option value="Lajas">Lajas</option>
+                                <option value="Lares">Lares</option>
+                                <option value="Las Marías">Las Marías</option>
+                                <option value="Las Piedras">Las Piedras</option>
+                                <option value="Loíza">Loíza</option>
+                                <option value="Luquillo">Luquillo</option>
+                                <option value="Manatí">Manatí</option>
+                                <option value="Maricao">Maricao</option>
+                                <option value="Maunabo">Maunabo</option>
+                                <option value="Mayagüez">Mayagüez</option>
+                                <option value="Moca">Moca</option>
+                                <option value="Morovis">Morovis</option>
+                                <option value="Naguabo">Naguabo</option>
+                                <option value="Naranjito">Naranjito</option>
+                                <option value="Orocovis">Orocovis</option>
+                                <option value="Patillas">Patillas</option>
+                                <option value="Peñuelas">Peñuelas</option>
+                                <option value="Ponce">Ponce</option>
+                                <option value="Quebradillas">Quebradillas</option>
+                                <option value="Rincón">Rincón</option>
+                                <option value="Río Grande">Río Grande</option>
+                                <option value="Sabana Grande">Sabana Grande</option>
+                                <option value="Salinas">Salinas</option>
+                                <option value="San Germán">San Germán</option>
+                                <option value="San Juan" selected>San Juan</option>
+                                <option value="San Lorenzo">San Lorenzo</option>
+                                <option value="San Sebastián">San Sebastián</option>
+                                <option value="Santa Isabel">Santa Isabel</option>
+                                <option value="Toa Alta">Toa Alta</option>
+                                <option value="Toa Baja">Toa Baja</option>
+                                <option value="Trujillo Alto">Trujillo Alto</option>
+                                <option value="Utuado">Utuado</option>
+                                <option value="Vega Alta">Vega Alta</option>
+                                <option value="Vega Baja">Vega Baja</option>
+                                <option value="Vieques">Vieques</option>
+                                <option value="Villalba">Villalba</option>
+                                <option value="Yabucoa">Yabucoa</option>
+                                <option value="Yauco">Yauco</option>
+                            </select>
+                        </div>
                         <div id="jsmap-puertorico" class="jsmaps-wrapper"></div>
                         <div id="jsmap-description" class="jsmaps-table-wrapper"></div>
                     </div>
@@ -146,7 +236,7 @@
         <div class="lcdm-section lcdm-section-graficas">
             <div class="lcdm-section-title">
                 <i class="lcdm-icon lcdm-icon-graficas"></i>
-                <div>INPHOGRAPHICS</div>
+                <div>INFOGRAPHICS</div>
             </div>
 
             <div class="container-fluid">
@@ -157,12 +247,17 @@
                     <div id="inphographic-hero-carousel" class="owl-carousel owl-theme">
                         <?php
                             $args = array(
-                                'post_type' => 'cpipr_inphographic',
+                                'post_type' => 'cpipr_infographic',
                                 'tax_query' => array(
                                     array(
                                         'taxonomy' => 'post_tag',
                                         'field'    => 'slug',
                                         'terms'    => 'featured',
+                                    ),
+                                    array(
+                                        'taxonomy' => 'post_tag',
+                                        'field'    => 'slug',
+                                        'terms'    => 'english',
                                     )
                                 ),
                                 'order' => 'DESC',
@@ -171,15 +266,19 @@
                             );
                             $cpipr_inphographic_link = get_post_type_archive_link('cpipr_inphographic');
                             $chavos_query = new WP_Query($args);
+                            $has_graficas_posts = $chavos_query->have_posts();
                             while ($chavos_query->have_posts()) {
                                 $chavos_query->the_post();
                         ?>
                         <div class="owl-hero-item">
-                            <?php echo the_post_thumbnail('full') ?>
+                            <a href="<?php the_permalink();?>">
+                                <?php echo the_post_thumbnail('full') ?>    
+                            </a>
                         </div>
                         <?php } wp_reset_postdata();?>
                     </div>
                 </div>
+                <?php if ($has_graficas_posts): ?>
                 <div id="inphographic-controls" class="owl-carousel owl-loaded owl-theme owl-theme-blue owl-default-controls owl-inline-controls">
                     <div class="owl-controls">
                         <div class="owl-nav owl-nav-lcdm"></div>
@@ -187,6 +286,7 @@
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo $cpipr_inphographic_link ?>" class="btn btn-blue">Read More</a>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -207,6 +307,11 @@
                                     'taxonomy' => 'post_tag',
                                     'field'    => 'slug',
                                     'terms'    => 'featured',
+                                ),
+                                array(
+                                    'taxonomy' => 'post_tag',
+                                    'field'    => 'slug',
+                                    'terms'    => 'english',
                                 )
                             ),
                             'order' => 'DESC',
@@ -214,6 +319,7 @@
                         );
                         $cpipr_video_link = get_post_type_archive_link('cpipr_video');
                         $chavos_query = new WP_Query($args);
+                        $has_video_posts = $chavos_query->have_posts();
                         while ($chavos_query->have_posts()) {
                             $chavos_query->the_post();
                     ?>
@@ -226,11 +332,6 @@
                                         <div class="span6">
                                             <h2 class="owl-hero-post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
                                         </div>
-                                        <div class="span6">
-                                            <div class="owl-hero-links">
-                                                <a href="<?php echo $cpipr_video_link ?>" class="btn btn-white-blue">Read More</a>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -238,14 +339,17 @@
                     </div>
                     <?php } wp_reset_postdata();?>
                 </div>
-                <div id="video-hero-controls" class="owl-carousel owl-loaded owl-theme owl-hero-controls">
+                <?php if ($has_video_posts): ?>
+                <div id="video-hero-controls" class="owl-carousel owl-loaded owl-theme owl-hero-controls owl-default-controls owl-inline-controls">
                     <div class="container-fluid">
                         <div class="owl-controls">
                             <div class="owl-nav owl-nav-lcdm"></div>
                             <div class="owl-dots"></div>
                         </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-videos' ) ) ?>" class="btn btn-white-blue">Ver Todo</a>
                     </div>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
 
@@ -296,11 +400,19 @@
                         <?php
                             $args = array(
                                 'post_type' => 'glossary',
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'glossary-cat',
+                                        'field'    => 'slug',
+                                        'terms'    => 'english',
+                                    )
+                                ),
                                 'order' => 'DESC',
                                 'posts_per_page' => 5,
                             );
                             $chavos_category = get_category_by_slug('los-chavos-de-maria');
                             $chavos_query = new WP_Query($args);
+                            $has_glosario_posts = $chavos_query->have_posts();
                             while ($chavos_query->have_posts()) {
                                 $chavos_query->the_post();
                         ?>
@@ -318,20 +430,27 @@
                         </div>
                         <?php } wp_reset_postdata();?>
                     </div>
+                    <?php if ($has_glosario_posts): ?>
                     <div id="glossary-controls" class="owl-carousel owl-loaded owl-theme owl-theme-white owl-default-controls owl-inline-controls">
                         <div class="owl-controls">
                             <div class="owl-nav owl-nav-lcdm"></div>
                             <div class="owl-dots"></div>
                         </div>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_post_type_archive_link( 'glossary' ); ?>" class="btn btn-white-blue">VIEW ALL</a>    
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-glosario' ) ) ?>" class="btn btn-white-blue">VIEW ALL</a>    
                     </div>
+                    <?php endif; ?>
                 </div>                    
             </div>
         </div>
 
         <!-- Twitter feed -->
         <div class="lcdm-section lcdm-section-twitter">
+            <div class="lcdm-section-title">
+                <i class="lcdm-icon lcdm-icon-help"></i>
+                <div>HELP US TO<br/>FISCALIZAR</div>
+            </div>
             <div class="container-fluid">
+                <br/>
                 <div class="lcdm-twitter-feed-wrapper">
                     <div class="lcdm-twitter-feed">
                         <div class="lcdm-hashtag">#LOSCHAVOSDEMARÍA</div>
@@ -342,14 +461,38 @@
                     </div>
                     <div class="lcdm-twitter-feed-body">
                         <div class="lcdm-twitter-feed-body-border">
-                            <div class="lcdm-twitter-box">
-                                <h2>¿SABES DE ALGÚN MAL MANEJO DE FONDOS DE RECUPERACIÓN?</h2>
-                                <br/>
-                                <br/>
-                                <h2 class="text-black">CUÉNTANOS.</h2>
+                            <div class="lcdm-twitter-form-info">
+                                <div class="lcdm-twitter-box">
+                                    <h2>¿SABES DE ALGÚN MAL MANEJO DE FONDOS DE RECUPERACIÓN?</h2>
+                                    <br/>
+                                    <br/>
+                                    <h2 class="text-black">TELL US.</h2>
+                                </div>
+                                <div class="lcdm-twitter-feed-info-box">
+                                    <a id="btnSendInfo" href="#" class="btn btn-white-blue btn-lg">SEND INFO</a>
+                                </div>    
                             </div>
-                            <div class="lcdm-twitter-feed-info-box">
-                                <a href="#" class="btn btn-white-blue">ENVIAR INFO</a>
+                            <div class="lcdm-twitter-form collapse">
+                                <div class="lcdm-tell-us-wrapper">
+                                    <h2>TELL US</h2>
+                                    <form>
+                                        <div class="form-group with-checkbox">
+                                            <input type="text" name="" class="form-control input-lg" placeholder="NAME"/>
+                                            <label class="checkbox">
+                                                <input type="checkbox" name=""/> ANÓNIMO
+                                            </label>
+                                        </div>
+                                        <div class="form-group with-checkbox">
+                                            <input type="email" name="" class="form-control input-lg" placeholder="EMAIL"/>    
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="8" placeholder="INFORMATION"></textarea>
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-blue btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -387,12 +530,16 @@
                     function buildContractRow(row) {
                         var template =
                             '<tr>' +
-                                '<td>' + row.agencia + '</td>' +
-                                '<td>' + row.fecha + '</td>' +
-                                '<td>' + row.fuente + '</td>' +
-                                '<td>' + row.uso_fondos + '</td>' +
-                                '<td>' + row.total_separado + '</td>' +
+                                '<td>' + row.tipo_asistencia + '</td>' +
+                                '<td>' + row.desastre + '</td>' +
+                                '<td>' + row.categoria + '</td>' +
+                                '<td>' + row.descripcion_categoria + '</td>' +
+                                '<td>' + row.total_obligado + '</td>' +
+                                '<td>' + row.fecha_obligacion + '</td>' +
                                 '<td>' + row.total_desembolsado + '</td>' +
+                                '<td>' + row.total_pareo_fondos + '</td>' +
+                                '<td>' + row.fecha_ultimo_pago + '</td>' +
+                                '<td>' + row.fecha_actualizacion + '</td>' +
                             '</tr>';
                         return template;
                     }
@@ -400,12 +547,16 @@
                     function buildContractsHeader() {
                         var template = '<thead>' +
                             '<tr>' +
-                                '<th>Agencia</th>' +
-                                '<th>Fecha</th>' +
-                                '<th>Fuente</th>' +
-                                '<th>Uso de Fondos</th>' +
-                                '<th>Total Separado</th>' +
-                                '<th>Total Desembolsado</th>' +
+                                '<th>Tipo de asistencia</th>' +
+                                '<th>Desastre</th>' +
+                                '<th>Programa</th>' +
+                                '<th>Descripción del programa</th>' +
+                                '<th>Total obligado</th>' +
+                                '<th>Fecha de obligación</th>' +
+                                '<th>Total desembolsado</th>' +
+                                '<th>Total pareo de fondos</th>' +
+                                '<th>Fecha del último pago</th>' +
+                                '<th>Fecha de actualización</th>' +
                             '</tr>'
                         '</thead>';
                         return template;
@@ -433,19 +584,20 @@
                             var url = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
                             $.ajax({
                                 beforeSend: function (qXHR) {
-                                    $('#jsmap-puertorico .jsmaps-text').html('Cargando...');
-                                    $('#jsmap-description').html('');
+                                    $('#jsmap-description').html('<i class="fa fa-spinner fa-spin"></i>');
                                 },
                                 type: 'get',
                                 url: url + '?action=pr_cities_contracts&city=' + data.name,
                                 success: function (response) {
-                                    var content = data.text;
                                     var table = buildContractsTable(response.data);
-                                    $('#jsmap-puertorico .jsmaps-text').html(content);
                                     $('#jsmap-description').html(table);
                                 }
                             });
                         }
+                    });
+
+                    $('.nice-select').niceSelect().on('change', function (event) {
+                        $('#jsmap-puertorico').trigger('stateClick', $(this).val());
                     });
 
                     $('#jsmap-puertorico').trigger('stateClick', 'San Juan');
@@ -514,6 +666,18 @@
                             '<span class="lcdm-icon lcdm-icon-arrow-left" aria-label="' + 'Previous' + '"></span>',
                             '<span class="lcdm-icon lcdm-icon-arrow-right" aria-label="' + 'Next' + '"></span>'
                         ],
+                    });
+                });
+            })(jQuery);
+        </script>
+
+        <script type="text/javascript">
+            (function ($) {
+                $(document).ready(function () {
+                    $('#btnSendInfo').click(function (event) {
+                        event.preventDefault();
+                        $('.lcdm-twitter-form-info').addClass('collapse');
+                        $('.lcdm-twitter-form').removeClass('collapse');
                     });
                 });
             })(jQuery);
