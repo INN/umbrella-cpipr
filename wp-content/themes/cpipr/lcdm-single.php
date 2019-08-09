@@ -69,7 +69,10 @@
 
         <div class="owl-hero-carousel">
             <div class="owl-theme">
-                <div class="owl-hero-item" style="background-image: url('<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/hero.jpg' ?>')">
+                <div class="owl-hero-item owl-hero-item-parallax">
+                    <div class="owl-hero-image">
+                        <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/hero.jpg' ?>" />
+                    </div>
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
                             <div class="owl-hero-post">
@@ -178,6 +181,13 @@
             (function ($) {
                 var images = document.querySelectorAll('.wp-caption-img-wrap img');
                 new simpleParallax(images, {
+                    orientation: 'down',
+                    delay: 0.2,
+                    scale: 1.4
+                });
+
+                var heros = document.querySelectorAll('.owl-hero-image img');
+                new simpleParallax(heros, {
                     orientation: 'down',
                     delay: 0.2,
                     scale: 1.4
