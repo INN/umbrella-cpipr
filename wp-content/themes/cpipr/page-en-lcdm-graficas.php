@@ -65,7 +65,7 @@
                         <i class="lcdm-icon lcdm-icon-graficas"></i>
                     </div>
                     <div class="lcdm-hero-page-title">
-                        <h1>INFOGRAPHICS</h1>
+                        <h1>GRAPHICS</h1>
                     </div>
                 </div>
             </div>

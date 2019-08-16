@@ -68,11 +68,57 @@
             </div>
         </div>
 
-        <!-- Emergency response embed -->
-        <div>
-            <iframe src="https://embed.kumu.io/1ef45532e322f0bc09ef906a778c662f#dummy-personajes" width="940" height="600" frameborder="0"></iframe>
+        <!-- Posts section -->
+        <div class="lcdm-section">
+            <div class="container-fluid">
+                <div id="posts-container"></div></div>
+                <div class="text-center">
+                    <div class="lcdm-spinner"></div>
+                    <a id="load-more" href="#" class="btn btn-lg btn-black">Cargar Más</a>
+                </div>
+            </div>
         </div>
 
-        <?php get_template_part('partials/los-chavos-de-maria/es/footer'); ?>        
+        <?php get_template_part('partials/los-chavos-de-maria/es/footer'); ?>
+
+        <script type="text/javascript">
+            (function ($) {
+                $(document).ready(function () {
+                    var currentPage = 1;
+                    function loadPosts() {
+                        var loadMore = $('#load-more');
+                        var url = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+                        $.ajax({
+                            beforeSend: function (qXHR) {
+                                $('.lcdm-spinner').html('<i class="fa fa-spinner fa-spin"></i>');
+                                loadMore.addClass('disabled');
+                            },
+                            type: 'get',
+                            url: url + '?action=lcdm_power_players&page=' + currentPage,
+                            success: function (response) {
+                                $('.lcdm-spinner').html('');
+                                if (response) {
+                                    currentPage++;
+                                    $('#posts-container').append(response);                                    
+                                    loadMore.removeClass('disabled');
+
+                                    // Remove load more button if there is not 3 posts.
+                                    if ($(response).find('.span4').length < 3) {
+                                        loadMore.remove();
+                                    }
+                                } else {
+                                    loadMore.remove();
+                                }
+                            }
+                        });
+                    }
+
+                    $('#load-more').on('click', function (event) {
+                        event.preventDefault();
+                        loadPosts();
+                    }).ready(loadPosts());
+                });
+            })(jQuery);
+        </script>
     </body>
 </html>

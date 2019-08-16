@@ -62,7 +62,7 @@
                         <i class="lcdm-icon lcdm-icon-historias"></i>
                     </div>
                     <div class="lcdm-hero-page-title">
-                        <h1>STORIES</h1>
+                        <h1>NEWS</h1>
                     </div>
                 </div>
             </div>

@@ -128,9 +128,61 @@
         <?php $lcdm_navbar_theme = 'dark'; ?>
         <?php get_template_part('partials/los-chavos-de-maria/es/menu'); ?>
 
-        <!-- Emergency response embed -->
-        <div>
-            <iframe src="https://embed.kumu.io/1ef45532e322f0bc09ef906a778c662f#dummy-personajes" width="940" height="600" frameborder="0"></iframe>
+        <!-- Power players section -->
+        <div class="lcdm-section lcdm-section-graficas">
+            <div class="lcdm-section-title">
+                <i class="lcdm-icon lcdm-icon-personajes"></i>
+                <div>PERSONAJES DE LA<br/>RECUPERACIÓN</div>
+            </div>
+
+            <div class="container-fluid">
+                <br/>
+                <br/>
+                <br/>
+                <div class="owl-hero-carousel">
+                    <div id="power-players-hero-carousel" class="owl-carousel owl-theme">
+                        <?php
+                            $args = array(
+                                'post_type' => 'cpipr_power_player',
+                                'tax_query' => array(
+                                    array(
+                                        'taxonomy' => 'post_tag',
+                                        'field'    => 'slug',
+                                        'terms'    => 'featured',
+                                    ),
+                                    array(
+                                        'taxonomy' => 'post_tag',
+                                        'field'    => 'slug',
+                                        'terms'    => 'spanish',
+                                    )
+                                ),
+                                'order' => 'DESC',
+                                'posts_per_page' => 5,
+                                'post_status' => 'publish'
+                            );
+                            $chavos_query = new WP_Query($args);
+                            $has_graficas_posts = $chavos_query->have_posts();
+                            while ($chavos_query->have_posts()) {
+                                $chavos_query->the_post();
+                        ?>
+                        <div class="owl-hero-item">
+                            <a href="<?php the_permalink();?>">
+                                <?php echo the_post_thumbnail('full') ?>    
+                            </a>
+                        </div>
+                        <?php } wp_reset_postdata();?>
+                    </div>
+                </div>
+                <?php if ($has_graficas_posts): ?>
+                <div id="power-player-controls" class="owl-carousel owl-loaded owl-theme owl-theme-blue owl-default-controls owl-inline-controls">
+                    <div class="owl-controls">
+                        <div class="owl-nav owl-nav-lcdm"></div>
+                        <div class="owl-dots"></div>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-personajes-de-la-recuperacion' ) ) ?>" class="btn btn-blue">Ver más</a>
+                </div>
+                <?php endif; ?>
+            </div>
         </div>
 
         <!-- Mapa de la recuepracion section -->
@@ -143,90 +195,92 @@
                 <div class="row-fluid">
                     <div class="span2"></div>
                     <div class="span8">
-                        <div class="lcdm-dropdown clearfix">
-                            <select class="nice-select">
-                                <option value="Adjuntas">Adjuntas</option>
-                                <option value="Aguada">Aguada</option>
-                                <option value="Aguadilla">Aguadilla</option>
-                                <option value="Aguas Buenas">Aguas Buenas</option>
-                                <option value="Aibonito">Aibonito</option>
-                                <option value="Arecibo">Arecibo</option>
-                                <option value="Arroyo">Arroyo</option>
-                                <option value="Añasco">Añasco</option>
-                                <option value="Barceloneta">Barceloneta</option>
-                                <option value="Barranquitas">Barranquitas</option>
-                                <option value="Bayamón">Bayamón</option>
-                                <option value="Cabo Rojo">Cabo Rojo</option>
-                                <option value="Caguas">Caguas</option>
-                                <option value="Camuy">Camuy</option>
-                                <option value="Canóvanas">Canóvanas</option>
-                                <option value="Carolina">Carolina</option>
-                                <option value="Cataño">Cataño</option>
-                                <option value="Cayey">Cayey</option>
-                                <option value="Ceiba">Ceiba</option>
-                                <option value="Ciales">Ciales</option>
-                                <option value="Cidra">Cidra</option>
-                                <option value="Coamo">Coamo</option>
-                                <option value="Comerío">Comerío</option>
-                                <option value="Corozal">Corozal</option>
-                                <option value="Culebra">Culebra</option>
-                                <option value="Dorado">Dorado</option>
-                                <option value="Fajardo">Fajardo</option>
-                                <option value="Florida">Florida</option>
-                                <option value="Guayama">Guayama</option>
-                                <option value="Guayanilla">Guayanilla</option>
-                                <option value="Guaynabo">Guaynabo</option>
-                                <option value="Gurabo">Gurabo</option>
-                                <option value="Guánica">Guánica</option>
-                                <option value="Hatillo">Hatillo</option>
-                                <option value="Hormigueros">Hormigueros</option>
-                                <option value="Humacao">Humacao</option>
-                                <option value="Isabela">Isabela</option>
-                                <option value="Jayuya">Jayuya</option>
-                                <option value="Juana Díaz">Juana Díaz</option>
-                                <option value="Juncos">Juncos</option>
-                                <option value="Lajas">Lajas</option>
-                                <option value="Lares">Lares</option>
-                                <option value="Las Marías">Las Marías</option>
-                                <option value="Las Piedras">Las Piedras</option>
-                                <option value="Loíza">Loíza</option>
-                                <option value="Luquillo">Luquillo</option>
-                                <option value="Manatí">Manatí</option>
-                                <option value="Maricao">Maricao</option>
-                                <option value="Maunabo">Maunabo</option>
-                                <option value="Mayagüez">Mayagüez</option>
-                                <option value="Moca">Moca</option>
-                                <option value="Morovis">Morovis</option>
-                                <option value="Naguabo">Naguabo</option>
-                                <option value="Naranjito">Naranjito</option>
-                                <option value="Orocovis">Orocovis</option>
-                                <option value="Patillas">Patillas</option>
-                                <option value="Peñuelas">Peñuelas</option>
-                                <option value="Ponce">Ponce</option>
-                                <option value="Quebradillas">Quebradillas</option>
-                                <option value="Rincón">Rincón</option>
-                                <option value="Río Grande">Río Grande</option>
-                                <option value="Sabana Grande">Sabana Grande</option>
-                                <option value="Salinas">Salinas</option>
-                                <option value="San Germán">San Germán</option>
-                                <option value="San Juan" selected>San Juan</option>
-                                <option value="San Lorenzo">San Lorenzo</option>
-                                <option value="San Sebastián">San Sebastián</option>
-                                <option value="Santa Isabel">Santa Isabel</option>
-                                <option value="Toa Alta">Toa Alta</option>
-                                <option value="Toa Baja">Toa Baja</option>
-                                <option value="Trujillo Alto">Trujillo Alto</option>
-                                <option value="Utuado">Utuado</option>
-                                <option value="Vega Alta">Vega Alta</option>
-                                <option value="Vega Baja">Vega Baja</option>
-                                <option value="Vieques">Vieques</option>
-                                <option value="Villalba">Villalba</option>
-                                <option value="Yabucoa">Yabucoa</option>
-                                <option value="Yauco">Yauco</option>
-                            </select>
+                        <div class="recovery-map">
+                            <div class="lcdm-dropdown clearfix">
+                                <select class="nice-select">
+                                    <option value="Adjuntas">Adjuntas</option>
+                                    <option value="Aguada">Aguada</option>
+                                    <option value="Aguadilla">Aguadilla</option>
+                                    <option value="Aguas Buenas">Aguas Buenas</option>
+                                    <option value="Aibonito">Aibonito</option>
+                                    <option value="Arecibo">Arecibo</option>
+                                    <option value="Arroyo">Arroyo</option>
+                                    <option value="Añasco">Añasco</option>
+                                    <option value="Barceloneta">Barceloneta</option>
+                                    <option value="Barranquitas">Barranquitas</option>
+                                    <option value="Bayamón">Bayamón</option>
+                                    <option value="Cabo Rojo">Cabo Rojo</option>
+                                    <option value="Caguas">Caguas</option>
+                                    <option value="Camuy">Camuy</option>
+                                    <option value="Canóvanas">Canóvanas</option>
+                                    <option value="Carolina">Carolina</option>
+                                    <option value="Cataño">Cataño</option>
+                                    <option value="Cayey">Cayey</option>
+                                    <option value="Ceiba">Ceiba</option>
+                                    <option value="Ciales">Ciales</option>
+                                    <option value="Cidra">Cidra</option>
+                                    <option value="Coamo">Coamo</option>
+                                    <option value="Comerío">Comerío</option>
+                                    <option value="Corozal">Corozal</option>
+                                    <option value="Culebra">Culebra</option>
+                                    <option value="Dorado">Dorado</option>
+                                    <option value="Fajardo">Fajardo</option>
+                                    <option value="Florida">Florida</option>
+                                    <option value="Guayama">Guayama</option>
+                                    <option value="Guayanilla">Guayanilla</option>
+                                    <option value="Guaynabo">Guaynabo</option>
+                                    <option value="Gurabo">Gurabo</option>
+                                    <option value="Guánica">Guánica</option>
+                                    <option value="Hatillo">Hatillo</option>
+                                    <option value="Hormigueros">Hormigueros</option>
+                                    <option value="Humacao">Humacao</option>
+                                    <option value="Isabela">Isabela</option>
+                                    <option value="Jayuya">Jayuya</option>
+                                    <option value="Juana Díaz">Juana Díaz</option>
+                                    <option value="Juncos">Juncos</option>
+                                    <option value="Lajas">Lajas</option>
+                                    <option value="Lares">Lares</option>
+                                    <option value="Las Marías">Las Marías</option>
+                                    <option value="Las Piedras">Las Piedras</option>
+                                    <option value="Loíza">Loíza</option>
+                                    <option value="Luquillo">Luquillo</option>
+                                    <option value="Manatí">Manatí</option>
+                                    <option value="Maricao">Maricao</option>
+                                    <option value="Maunabo">Maunabo</option>
+                                    <option value="Mayagüez">Mayagüez</option>
+                                    <option value="Moca">Moca</option>
+                                    <option value="Morovis">Morovis</option>
+                                    <option value="Naguabo">Naguabo</option>
+                                    <option value="Naranjito">Naranjito</option>
+                                    <option value="Orocovis">Orocovis</option>
+                                    <option value="Patillas">Patillas</option>
+                                    <option value="Peñuelas">Peñuelas</option>
+                                    <option value="Ponce">Ponce</option>
+                                    <option value="Quebradillas">Quebradillas</option>
+                                    <option value="Rincón">Rincón</option>
+                                    <option value="Río Grande">Río Grande</option>
+                                    <option value="Sabana Grande">Sabana Grande</option>
+                                    <option value="Salinas">Salinas</option>
+                                    <option value="San Germán">San Germán</option>
+                                    <option value="San Juan" selected>San Juan</option>
+                                    <option value="San Lorenzo">San Lorenzo</option>
+                                    <option value="San Sebastián">San Sebastián</option>
+                                    <option value="Santa Isabel">Santa Isabel</option>
+                                    <option value="Toa Alta">Toa Alta</option>
+                                    <option value="Toa Baja">Toa Baja</option>
+                                    <option value="Trujillo Alto">Trujillo Alto</option>
+                                    <option value="Utuado">Utuado</option>
+                                    <option value="Vega Alta">Vega Alta</option>
+                                    <option value="Vega Baja">Vega Baja</option>
+                                    <option value="Vieques">Vieques</option>
+                                    <option value="Villalba">Villalba</option>
+                                    <option value="Yabucoa">Yabucoa</option>
+                                    <option value="Yauco">Yauco</option>
+                                </select>
+                            </div>
+                            <div id="jsmap-puertorico" class="jsmaps-wrapper"></div>
+                            <div id="jsmap-description" class="jsmaps-table-wrapper"></div>
                         </div>
-                        <div id="jsmap-puertorico" class="jsmaps-wrapper"></div>
-                        <div id="jsmap-description" class="jsmaps-table-wrapper"></div>
                     </div>
                 </div>
             </div>
@@ -453,7 +507,6 @@
                     <div class="lcdm-twitter-feed">
                         <div class="lcdm-hashtag">#LOSCHAVOSDEMARÍA</div>
                         <div class="lcdm-twitter-box">
-                            <h4>LIVE TWITTER FEED</h4>
                             <div></div>
                         </div>
                     </div>
@@ -467,7 +520,7 @@
                                     <h2 class="text-black">CUÉNTANOS.</h2>
                                 </div>
                                 <div class="lcdm-twitter-feed-info-box">
-                                    <a id="btnSendInfo" href="#" class="btn btn-white-blue btn-lg">ENVIAR INFO</a>
+                                    <a id="btnSendInfo" href="https://docs.google.com/forms/d/1CIdhT4fn3uZ5nNCiR3z03K2yKkByR5eymRQqyq_Zcjg/viewform" target="_blank" class="btn btn-white-blue btn-lg">ENVIAR INFO</a>
                                 </div>    
                             </div>
                             <div class="lcdm-twitter-form collapse">
@@ -526,42 +579,49 @@
             (function ($) {
                 $(document).ready(function () {
                     function buildContractRow(row) {
+                        var tipo_asistencia_class = '';
+                        switch (row.tipo_asistencia) {
+                            case 'Asistencia pública':
+                                tipo_asistencia_class = 'bg-orange';
+                            break;
+                            case 'Asistencia individual':
+                                tipo_asistencia_class = 'bg-yellow';
+                            break;
+                        }
                         var template =
+                            '<tr class="' + tipo_asistencia_class + '">' +
+                                '<td></td>' +
+                                '<td></td>' +
+                                '<td></td>' +
+                                '<td></td>' +
+                                '<td></td>' +
+                            '</tr>' +
                             '<tr>' +
                                 '<td>' + row.tipo_asistencia + '</td>' +
-                                '<td>' + row.desastre + '</td>' +
                                 '<td>' + row.categoria + '</td>' +
-                                '<td>' + row.descripcion_categoria + '</td>' +
                                 '<td>' + row.total_obligado + '</td>' +
-                                '<td>' + row.fecha_obligacion + '</td>' +
                                 '<td>' + row.total_desembolsado + '</td>' +
-                                '<td>' + row.total_pareo_fondos + '</td>' +
                                 '<td>' + row.fecha_ultimo_pago + '</td>' +
-                                '<td>' + row.fecha_actualizacion + '</td>' +
                             '</tr>';
                         return template;
                     }
 
                     function buildContractsHeader() {
-                        var template = '<thead>' +
+                        var template =
+                        '<thead>' +
                             '<tr>' +
-                                '<th>Tipo de asistencia</th>' +
-                                '<th>Desastre</th>' +
-                                '<th>Programa</th>' +
-                                '<th>Descripción del programa</th>' +
-                                '<th>Total obligado</th>' +
-                                '<th>Fecha de obligación</th>' +
-                                '<th>Total desembolsado</th>' +
-                                '<th>Total pareo de fondos</th>' +
-                                '<th>Fecha del último pago</th>' +
-                                '<th>Fecha de actualización</th>' +
+                                '<th>TIPO DE ASISTENCIA</th>' +
+                                '<th>CATEGORÍA / PROGRAMA</th>' +
+                                '<th>TOTAL OBLIGADO / APROBADO</th>' +
+                                '<th>TOTAL DESEMBOLSADO</th>' +
+                                '<th>FECHA DE ÚLTIMO PAGO</th>' +
                             '</tr>'
                         '</thead>';
                         return template;
                     }
 
-                    function buildContractsTable (data) {
-                        var template = '<div class="table-responsive"><table>';
+                    function buildContractsTable (data, city) {
+                        var template = '<div class="table-scroll"><div class="table-responsive"><table>';
                         template += buildContractsHeader();
                         template += '<tbody>';
 
@@ -570,8 +630,25 @@
                             template += row;
                         }
                         template += '</tbody>';
-                        template += '</table></div>';
+                        template += '</table></div></div>';
 
+                        var download_link = '<?php echo esc_url( admin_url('admin-post.php') ); ?>?action=export_contracts&city=' + city + '&lang=es';
+
+                        template += '<div class="contracts-export">' + 
+                            '<div>Fecha Actualización: 15/08/2019' + 
+                                '<a href="' + download_link + '" class="btn btn-blue" target="_blank">DESCARGAR</a>' + 
+                            '</div>' +
+                        '</div>';
+                        return template;
+                    }
+
+                    function buildAssistanceLegend () {
+                        var template = 
+                        '<div class="assistance-type-legend">' +
+                            '<div class="assistance-type assistance-type-th">TIPO DE<br/>ASISTENCIA</div>' +
+                            '<div class="assistance-type assistance-type-icon orange"><i class="fa fa-circle"></i> Asistencia<br/>pública</div>' +
+                            '<div class="assistance-type assistance-type-icon yellow"><i class="fa fa-circle"></i> Asistencia<br/>individual</div>' +
+                        '</div>';
                         return template;
                     }
 
@@ -587,8 +664,9 @@
                                 type: 'get',
                                 url: url + '?action=pr_cities_contracts&city=' + data.name,
                                 success: function (response) {
-                                    var table = buildContractsTable(response.data);
+                                    var table = buildContractsTable(response.data, data.name);
                                     $('#jsmap-description').html(table);
+                                    $('.jsmaps-text').append(buildAssistanceLegend());
                                 }
                             });
                         }
@@ -599,6 +677,28 @@
                     });
 
                     $('#jsmap-puertorico').trigger('stateClick', 'San Juan');
+                });
+            })(jQuery);
+        </script>
+
+        <script type="text/javascript">
+            (function ($) {
+                $(document).ready(function () {
+                    $('#power-players-hero-carousel').owlCarousel({
+                        autoplay: false,
+                        loop: true,
+                        items: 1,
+                        nav: true,
+                        dots: true,
+                        mergeControls: true,
+                        autoHeight: true,
+                        navContainer: '#power-player-controls .owl-nav',
+                        dotsContainer: '#power-player-controls .owl-dots',
+                        navText: [
+                            '<span class="lcdm-icon lcdm-icon-arrow-left" aria-label="' + 'Previous' + '"></span>',
+                            '<span class="lcdm-icon lcdm-icon-arrow-right" aria-label="' + 'Next' + '"></span>'
+                        ],
+                    });
                 });
             })(jQuery);
         </script>
@@ -664,18 +764,6 @@
                             '<span class="lcdm-icon lcdm-icon-arrow-left" aria-label="' + 'Previous' + '"></span>',
                             '<span class="lcdm-icon lcdm-icon-arrow-right" aria-label="' + 'Next' + '"></span>'
                         ],
-                    });
-                });
-            })(jQuery);
-        </script>
-
-        <script type="text/javascript">
-            (function ($) {
-                $(document).ready(function () {
-                    $('#btnSendInfo').click(function (event) {
-                        event.preventDefault();
-                        $('.lcdm-twitter-form-info').addClass('collapse');
-                        $('.lcdm-twitter-form').removeClass('collapse');
                     });
                 });
             })(jQuery);

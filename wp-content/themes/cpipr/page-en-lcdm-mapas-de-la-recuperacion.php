@@ -73,7 +73,7 @@
                         <i class="lcdm-icon lcdm-icon-mapa"></i>
                     </div>
                     <div class="lcdm-hero-page-title">
-                        <h1>MAPS OF<br/>RECOVERY</h1>
+                        <h1>RECOVERY<br/>MAP</h1>
                     </div>
                 </div>
             </div>

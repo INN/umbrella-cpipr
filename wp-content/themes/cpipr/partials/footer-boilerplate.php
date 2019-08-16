@@ -31,7 +31,7 @@
 						<p class="no-margin-bottom">
 							<strong>Teléfono:</strong> 787-751-1912 ext. 3022<br/>
 							<strong>Email:</strong> info@periodismoinvestigativo.com<br/>
-							<strong>Facebook:</strong> Centro de Periodismo Invetigativo<br/>
+							<strong>Facebook:</strong> Centro de Periodismo Investigativo<br/>
 							<strong>Twitter:</strong> @cpipr<br/>
 							<strong>Direción postal:</strong> P.O. Box 6834 San Juan PR 00914-6834
 						</p>

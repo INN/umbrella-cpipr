@@ -9,25 +9,25 @@
                 <li class="<?php echo $lcdm_active_menu == 'historias' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-historias' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-historias"></i>
-                        <span>STORIES</span>
+                        <span>NEWS</span>
                     </a>
                 </li>
                 <li class="<?php echo $lcdm_active_menu == 'personajes_de_la_recuperacion' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-personajes-de-la-recuperacion' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-personajes"></i>
-                        <span>CHARACTERS OF<br/>RECOVERY</span>
+                        <span>POWER<br/>PLAYERS</span>
                     </a>
                 </li>
                 <li class="<?php echo $lcdm_active_menu == 'mapas_de_la_recuperacion' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-mapas-de-la-recuperacion' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-mapa"></i>
-                        <span>MAPS OF<br/>RECOVERY</span>
+                        <span>RECOVERY<br/>MAP</span>
                     </a>
                 </li>
                 <li class="<?php echo $lcdm_active_menu == 'graficas' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-graficas' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-graficas"></i>
-                        <span>INFOGRAPHICS</span>
+                        <span>GRAPHICS</span>
                     </a>
                 </li>
                 <li class="<?php echo $lcdm_active_menu == 'documentos' ? 'active' : '' ?>">
@@ -80,25 +80,25 @@
                 <li class="<?php echo $lcdm_active_menu == 'historias' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-historias' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-historias"></i>
-                        <span>STORIES<br/>&nbsp;</span>
+                        <span>NEWS<br/>&nbsp;</span>
                     </a>
                 </li>
                 <li class="<?php echo $lcdm_active_menu == 'personajes_de_la_recuperacion' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-personajes-de-la-recuperacion' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-personajes"></i>
-                        <span>CHARACTERS OF<br/>RECOVERY</span>
+                        <span>POWER<br/>PLAYERS</span>
                     </a>
                 </li>
                 <li class="<?php echo $lcdm_active_menu == 'mapas_de_la_recuperacion' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-mapas-de-la-recuperacion' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-mapa"></i>
-                        <span>MAPS OF<br/>RECOVERY</span>
+                        <span>RECOVERY<br/>MAP</span>
                     </a>
                 </li>
                 <li class="<?php echo $lcdm_active_menu == 'graficas' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-graficas' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-graficas"></i>
-                        <span>INFOGRAPHICS<br/>&nbsp;</span>
+                        <span>GRAPHICS<br/>&nbsp;</span>
                     </a>
                 </li>
                 <li class="<?php echo $lcdm_active_menu == 'documentos' ? 'active' : '' ?>">
