@@ -4,11 +4,7 @@
  * Template Post Type: post
  * Description: Shows the post with formatting for custom layout display?
  */
-
-    // Load up our meta data and whatnot
-    the_post();
 ?>
-
 <!DOCTYPE html>
     <!--[if lt IE 7]> <html <?php language_attributes(); ?> class="no-js ie6"> <![endif]-->
     <!--[if IE 7]>    <html <?php language_attributes(); ?> class="no-js ie7"> <![endif]-->

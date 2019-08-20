@@ -457,4 +457,80 @@ function ajax_lcdm_videos () {
     wp_reset_query();
     wp_die();
 }
+
+
+/* Enqueue scripts for lcdm landing pages */
+add_action('wp_enqueue_scripts', 'cpipr_lcdm_wp_enqueue_scripts');
+function cpipr_lcdm_wp_enqueue_scripts () {
+    $lcdm_pages = array(
+        'en-los-chavos-de-maria',
+        'en-lcdm-glosario',
+        'en-lcdm-mapas-de-la-recuperacion',
+        'en-lcdm-videos',
+        'los-chavos-de-maria',
+        'lcdm-glosario',
+        'lcdm-mapas-de-la-recuperacion',
+        'lcdm-videos'
+    );
+
+    if (is_page($lcdm_pages)) {
+        wp_enqueue_style(
+            'fancyBox',
+            get_stylesheet_directory_uri() . '/lib/fancybox/dist/jquery.fancybox.css'
+        );
+        wp_enqueue_script(
+            'fancyBox',
+            get_stylesheet_directory_uri() . '/lib/fancybox/dist/jquery.fancybox.min.js',
+            array('jquery'), '', false
+        );
+
+        wp_enqueue_style(
+            'niceSelect',
+            get_stylesheet_directory_uri() . '/lib/jquery-nice-select/css/nice-select.css'
+        );
+        wp_enqueue_script(
+            'niceSelect',
+            get_stylesheet_directory_uri() . '/lib/jquery-nice-select/js/jquery.nice-select.min.js',
+            array('jquery'), '', false
+        );
+
+        wp_enqueue_script(
+            'scrollTo',
+            get_stylesheet_directory_uri() . '/lib/scrollTo/jquery.scrollTo.min.js',
+            array('jquery'), '', false
+        );
+
+        wp_enqueue_style(
+            'jsMapsCore',
+            get_stylesheet_directory_uri() . '/lib/jsmaps/css/jsmaps.css'
+        );
+        wp_enqueue_script(
+            'jsMapsCore',
+            get_stylesheet_directory_uri() . '/lib/jsmaps/js/jsmaps-libs.js',
+            array('jquery'), '', false
+        );
+        wp_enqueue_script(
+            'jsMapsPanZoom',
+            get_stylesheet_directory_uri() . '/lib/jsmaps/js/jsmaps-panzoom.js',
+            array('jquery'), '', false
+        );
+        wp_enqueue_script(
+            'jsMaps',
+            get_stylesheet_directory_uri() . '/lib/jsmaps/js/jsmaps.min.js',
+            array('jquery'), '', false
+        );
+        wp_enqueue_script(
+            'jsMapsPuertoRico',
+            get_stylesheet_directory_uri() . '/lib/jsmaps/maps/puertoRico.js',
+            array('jquery'), '', false
+        );
+
+        wp_enqueue_script(
+            'numeral',
+            get_stylesheet_directory_uri() . '/lib/numeral/numeral.min.js',
+            array('jquery'), '', false
+        );
+    }
+}
+
 ?>
