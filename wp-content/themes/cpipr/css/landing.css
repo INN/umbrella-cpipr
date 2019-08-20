@@ -220,9 +220,11 @@
 }
 .navbar-lcdm-dark .navbar-nav-lcdm > li > a.btn-lang {
 	color: #000;
+	border-color: #fff;
 }
 .navbar-lcdm-dark .navbar-nav-lcdm > li > a.btn-lang.active {
 	color: #fff;
+	border-color: #5270af;
 }
 .navbar-lcdm-dark .navbar-nav-lcdm > li > a.btn-lang:hover,
 .navbar-lcdm-dark .navbar-nav-lcdm > li > a.btn-lang:focus {
@@ -995,6 +997,7 @@ textarea.form-control {
 	border: 1px solid #fafafa;
 	padding-bottom: 30px;
 	padding-top: 100px;
+	z-index: 10;
 }
 .jsmaps-select {
 	display: none !important;
@@ -1025,6 +1028,7 @@ textarea.form-control {
 }
 .jsmaps-wrapper .jsmaps-tooltip {
 	color: #000;
+	z-index: 20;
 }
 .jsmaps-table-wrapper {
 	clear: left;
@@ -1553,6 +1557,10 @@ textarea.form-control {
 .modal-lcdm-menu .lcdm-lang-switcher .btn-lang {
 	width: 80px;
 	margin: 0 auto 10px auto;
+	border-color: #000;
+}
+.modal-lcdm-menu .lcdm-lang-switcher .btn-lang.active {
+	border-color: #5270af;
 }
 .nav-lcdm-menu > li > a:hover,
 .nav-lcdm-menu > li > a:focus {

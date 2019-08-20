@@ -61,6 +61,9 @@
         <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/js/jsmaps-panzoom.js' ?>"></script>
         <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/js/jsmaps.min.js' ?>" type="text/javascript"></script>
         <script src="<?php echo get_stylesheet_directory_uri(). '/lib/jsmaps/maps/puertoRico.js' ?>" type="text/javascript"></script>
+
+        <!-- Numeral -->
+        <script src="<?php echo get_stylesheet_directory_uri(). '/lib/numeral/numeral.min.js' ?>" type="text/javascript"></script>
     </head>
 
     <body <?php body_class(); ?>>
@@ -582,10 +585,10 @@
                     function buildContractRow(row) {
                         var tipo_asistencia_class = '';
                         switch (row.tipo_asistencia) {
-                            case 'Asistencia pública':
+                            case 'Public Assistance':
                                 tipo_asistencia_class = 'bg-orange';
                             break;
-                            case 'Asistencia individual':
+                            case 'Individual Assistance':
                                 tipo_asistencia_class = 'bg-yellow';
                             break;
                         }
@@ -595,13 +598,11 @@
                                 '<td></td>' +
                                 '<td></td>' +
                                 '<td></td>' +
-                                '<td></td>' +
                             '</tr>' +
                             '<tr>' +
-                                '<td>' + row.tipo_asistencia + '</td>' +
                                 '<td>' + row.categoria + '</td>' +
-                                '<td>' + row.total_obligado + '</td>' +
-                                '<td>' + row.total_desembolsado + '</td>' +
+                                '<td>' + numeral(row.total_obligado).format('$0,0.00') + '</td>' +
+                                '<td>' + numeral(row.total_desembolsado).format('$0,0.00') + '</td>' +
                                 '<td>' + row.fecha_ultimo_pago + '</td>' +
                             '</tr>';
                         return template;
@@ -611,7 +612,6 @@
                         var template =
                         '<thead>' +
                             '<tr>' +
-                                '<th>TYPE OF ASSISTANCE</th>' +
                                 '<th>CATEGORY / PROGRAM</th>' +
                                 '<th>TOTAL OBLIGATED / APPROVED</th>' +
                                 '<th>TOTAL DISBURSED</th>' +
@@ -663,7 +663,7 @@
                                     $('#jsmap-description').html('<i class="fa fa-spinner fa-spin"></i>');
                                 },
                                 type: 'get',
-                                url: url + '?action=pr_cities_contracts&city=' + data.name,
+                                url: url + '?action=pr_cities_contracts&lang=en&city=' + data.name,
                                 success: function (response) {
                                     var table = buildContractsTable(response.data, data.name);
                                     $('#jsmap-description').html(table);

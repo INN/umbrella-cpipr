@@ -29,6 +29,7 @@ function lcdm_install_municipios_db_table () {
       total_pareo_fondos varchar(15) NULL,
       fecha_ultimo_pago date NULL,
       fecha_actualizacion date NULL,
+      lang varchar(8) NULL,
       PRIMARY KEY  (id)
     ) $charset_collate;";
 
@@ -212,9 +213,10 @@ function ajax_pr_cities_contracts () {
     global $wpdb;
 
     $municipio = isset($_GET['city']) ? $_GET['city'] : '-1';
+    $lang = isset($_GET['lang']) ? $_GET['lang'] : 'es';
 
     $table_name = $wpdb->prefix . 'municipios';
-    $query = $wpdb->prepare('SELECT * FROM ' . $table_name . ' WHERE municipio = %s', $municipio);
+    $query = $wpdb->prepare('SELECT * FROM ' . $table_name . ' WHERE municipio = %s AND lang = %s', $municipio, $lang);
     $data = $wpdb->get_results($query);
     wp_send_json( array('data' => $data) );
 }
