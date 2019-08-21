@@ -20,7 +20,7 @@ get_header();
 				);
 
 				$series = get_categories($tax_args);
-				shuffle($series);
+				// shuffle($series);
 				foreach ( $series as $out ) {
 					echo '<div class="item">';
 					echo '<h3><a href="'. get_term_link($out, $out->taxonomy) . '">' . $out->name . '</a></h3>';

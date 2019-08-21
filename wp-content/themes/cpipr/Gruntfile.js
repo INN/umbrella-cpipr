@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         less: {
             development: {
                 options: {
-                    paths: ['less', '../largo-dev/less/inc'], // this includes all of largo's /less/inc.
+                    paths: ['less', '../largo/less/inc'], // this includes all of largo's /less/inc.
                 },
                 files: CSS_LESS_FILES
             }
