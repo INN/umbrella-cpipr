@@ -33,6 +33,16 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
         <?php wp_head(); ?>
+
+        <?php
+            global $lcdm_lang;
+            $lcdm_lang = apply_filters('lcdm_language', 'es');
+        ?>
+        <script type="text/javascript">
+            var WP_ADMIN_AJAX_URL = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+            var WP_ADMIN_POST_URL = '<?php echo esc_url( admin_url('admin-post.php') ); ?>';
+            var LCDM_LANG = '<?php echo $lcdm_lang ?>';
+        </script>
     </head>
 
     <body <?php body_class(); ?>>

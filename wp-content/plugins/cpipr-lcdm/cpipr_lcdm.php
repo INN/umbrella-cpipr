@@ -306,7 +306,7 @@ function ajax_lcdm_historias () {
             array(
                 'taxonomy' => 'post_tag',
                 'field'    => 'slug',
-                'terms'    => $lang,
+                'terms'    => get_lcdm_language($lang),
             )
         ),
         's' => implode(' ', $query_terms),
@@ -335,12 +335,20 @@ function ajax_lcdm_historias () {
     wp_die();
 }
 
+/*
+ * Get full name of language
+ */
+function get_lcdm_language($lang) {
+    $languages = array('es' => 'spanish', 'en' => 'english');
+    return $languages[$lang];
+}
+
 add_action('wp_ajax_nopriv_lcdm_infographics', 'ajax_lcdm_infographics');
 add_action('wp_ajax_lcdm_infographics', 'ajax_lcdm_infographics');
 
 function ajax_lcdm_infographics () {
     $page = isset($_GET['page']) ? $_GET['page'] : '1';
-    $lang = isset($_GET['lang']) ? $_GET['lang'] : 'spanish';
+    $lang = isset($_GET['lang']) ? $_GET['lang'] : 'es';
 
     $conditions = array(
         'post_type' => 'cpipr_infographic',
@@ -348,7 +356,7 @@ function ajax_lcdm_infographics () {
             array(
                 'taxonomy' => 'post_tag',
                 'field'    => 'slug',
-                'terms'    => $lang,
+                'terms'    => get_lcdm_language($lang),
             )
         ),
         'order' => 'DESC',
@@ -389,7 +397,7 @@ function ajax_lcdm_power_players () {
             array(
                 'taxonomy' => 'post_tag',
                 'field'    => 'slug',
-                'terms'    => $lang,
+                'terms'    => get_lcdm_language($lang),
             )
         ),
         'order' => 'DESC',
@@ -430,7 +438,7 @@ function ajax_lcdm_videos () {
             array(
                 'taxonomy' => 'post_tag',
                 'field'    => 'slug',
-                'terms'    => $lang,
+                'terms'    => get_lcdm_language($lang),
             )
         ),
         'order' => 'DESC',
@@ -529,6 +537,173 @@ function cpipr_lcdm_wp_enqueue_scripts () {
             'numeral',
             get_stylesheet_directory_uri() . '/lib/numeral/numeral.min.js',
             array('jquery'), '', false
+        );
+    }
+}
+
+
+add_filter('lcdm_language', 'lcdm_language_custom');
+function lcdm_language_custom ($lang) {
+    $lcdm_pages = array(
+        'en-lcdm-documentos',
+        'en-lcdm-glosario',
+        'en-lcdm-graficas',
+        'en-lcdm-historias',
+        'en-lcdm-mapas-de-la-recuperacion',
+        'en-lcdm-personajes-de-la-recuperacion',
+        'en-lcdm-videos',
+        'en-los-chavos-de-maria' 
+    );
+
+    if (is_page($lcdm_pages)) {
+        return 'en';
+    }
+    return $lang;
+}
+
+/*
+ * Add glosario javascripts 
+ */
+add_action('wp_footer', 'lcdm_glosario_js');
+function lcdm_glosario_js () {
+    $glosario_pages = array(
+        'en-lcdm-glosario',
+        'lcdm-glosario'
+    );
+    if (is_page($glosario_pages)) {
+        wp_enqueue_script(
+            'lcdm-glosario',
+            get_stylesheet_directory_uri() . '/lib/lcdm/glosario.js',
+            array('jquery'),
+            false,
+            true
+        );
+    }
+}
+
+/*
+ * Add graficas javascripts 
+ */
+add_action('wp_footer', 'lcdm_graficas_js');
+function lcdm_graficas_js () {
+    $graficas_pages = array(
+        'en-lcdm-graficas',
+        'lcdm-graficas'
+    );
+    if (is_page($graficas_pages)) {
+        wp_enqueue_script(
+            'lcdm-graficas',
+            get_stylesheet_directory_uri() . '/lib/lcdm/graficas.js',
+            array('jquery'),
+            false,
+            true
+        );
+    }
+}
+
+/*
+ * Add historias javascripts 
+ */
+add_action('wp_footer', 'lcdm_historias_js');
+function lcdm_historias_js () {
+    $historias_pages = array(
+        'en-lcdm-historias',
+        'lcdm-historias'
+    );
+    if (is_page($historias_pages)) {
+        wp_enqueue_script(
+            'lcdm-historias',
+            get_stylesheet_directory_uri() . '/lib/lcdm/historias.js',
+            array('jquery'),
+            false,
+            true
+        );
+    }
+}
+
+/*
+ * Add mapas_de_la_recuperacion javascripts 
+ */
+add_action('wp_footer', 'lcdm_mapas_de_la_recuperacion_js');
+function lcdm_mapas_de_la_recuperacion_js () {
+    $mapas_de_la_recuperacion_pages = array(
+        'en-lcdm-mapas-de-la-recuperacion',
+        'lcdm-mapas-de-la-recuperacion'
+    );
+    if (is_page($mapas_de_la_recuperacion_pages)) {
+        wp_enqueue_script(
+            'lcdm-mapas-de-la-recuperacion',
+            get_stylesheet_directory_uri() . '/lib/lcdm/mapas_de_la_recuperacion.js',
+            array('jquery'),
+            false,
+            true
+        );
+    }
+}
+
+/*
+ * Add personajes_de_la_recuperacion javascripts 
+ */
+add_action('wp_footer', 'lcdm_personajes_de_la_recuperacion_js');
+function lcdm_personajes_de_la_recuperacion_js () {
+    $personajes_de_la_recuperacion_pages = array(
+        'en-lcdm-personajes-de-la-recuperacion',
+        'lcdm-personajes-de-la-recuperacion'
+    );
+    if (is_page($personajes_de_la_recuperacion_pages)) {
+        wp_enqueue_script(
+            'lcdm-mapas-de-la-recuperacion',
+            get_stylesheet_directory_uri() . '/lib/lcdm/personajes_de_la_recuperacion.js',
+            array('jquery'),
+            false,
+            true
+        );
+    }
+}
+
+/*
+ * Add videos javascripts 
+ */
+add_action('wp_footer', 'lcdm_videos_js');
+function lcdm_videos_js () {
+    $videos_pages = array(
+        'en-lcdm-videos',
+        'lcdm-videos'
+    );
+    if (is_page($videos_pages)) {
+        wp_enqueue_script(
+            'lcdm-videos',
+            get_stylesheet_directory_uri() . '/lib/lcdm/videos.js',
+            array('jquery'),
+            false,
+            true
+        );
+    }
+}
+
+/*
+ * Add landing javascripts 
+ */
+add_action('wp_footer', 'lcdm_home_js');
+function lcdm_home_js () {
+    $landing_pages = array(
+        'en-los-chavos-de-maria',
+        'los-chavos-de-maria'
+    );
+    if (is_page($landing_pages)) {
+        wp_enqueue_script(
+            'lcdm-home',
+            get_stylesheet_directory_uri() . '/lib/lcdm/home.js',
+            array('jquery'),
+            false,
+            true
+        );
+        wp_enqueue_script(
+            'lcdm-mapas-de-la-recuperacion',
+            get_stylesheet_directory_uri() . '/lib/lcdm/mapas_de_la_recuperacion.js',
+            array('jquery'),
+            false,
+            true
         );
     }
 }
