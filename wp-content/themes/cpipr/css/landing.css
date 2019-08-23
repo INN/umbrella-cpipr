@@ -112,12 +112,12 @@
 	padding: 6px 20px;
 	display: inline-block;
 }
-.form-search {
+.lcdm-form-search .form-search {
 	margin-bottom: 15px;
 	margin-top: 15px;
 	position: relative;
 }
-.form-search input[type=text] {
+.lcdm-form-search .form-search input[type=text] {
 	border: 2px solid #000;
 	border-radius: 20px;
 	color: #000;
@@ -126,7 +126,7 @@
 	padding-right: 40px;
 	box-sizing: border-box;
 }
-.form-search .btn {
+.lcdm-form-search .form-search .btn {
 	padding: 0;
 	position: absolute;
 	right: 10px;
