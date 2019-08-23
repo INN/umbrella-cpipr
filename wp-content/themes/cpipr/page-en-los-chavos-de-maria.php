@@ -53,7 +53,7 @@
                         <div class="owl-nav owl-nav-lcdm"></div>
                         <div class="owl-dots"></div>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-historias' ) ) ?>" class="btn btn-white-blue">View All</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-historias' ) ) ?>" class="btn btn-white-blue">View All</a>
                 </div>
             </div>  
             <?php endif; ?>              
@@ -114,7 +114,7 @@
                     <div class="owl-nav owl-nav-lcdm"></div>
                     <div class="owl-dots"></div>
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-personajes-de-la-recuperacion' ) ) ?>" class="btn btn-blue">Ver más</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-personajes-de-la-recuperacion' ) ) ?>" class="btn btn-blue">View All</a>
             </div>
             <?php endif; ?>
         </div>
