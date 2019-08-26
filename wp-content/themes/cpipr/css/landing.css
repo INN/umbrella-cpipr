@@ -484,11 +484,27 @@
 	font-size: 18px;
 	line-height: 20px;
 }
+.owl-glossary-carousel .glossary-description a {
+	color: #fff;
+	text-decoration: underline;
+}
 .owl-glossary-carousel .owl-dots .owl-dot span {
 	background: #ffffff;
 }
 .owl-glossary-carousel .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
 	background: #5170b0;
+}
+
+/* Lcdm carousel overlay */
+.lcdm-owl-overlay {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.lcdm-owl-overlay {
+	background-color: rgba(62, 111, 177, 0.6);
 }
 
 /* Hero page title */
@@ -984,6 +1000,10 @@ textarea.form-control {
 .glossary-term .glossary-description p {
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	font-weight: normal;
+}
+.glossary-term .glossary-description a {
+	color: #fff;
+	text-decoration: underline;
 }
 
 /* jsmaps */

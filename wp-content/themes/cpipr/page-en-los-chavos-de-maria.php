@@ -32,6 +32,7 @@
                         $chavos_query->the_post();
                 ?>
                 <div class="owl-hero-item" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
+                    <div class="lcdm-owl-overlay"></div>
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
                             <div class="owl-hero-post">
@@ -101,6 +102,7 @@
                             $chavos_query->the_post();
                     ?>
                     <div class="owl-hero-item">
+                        <div class="lcdm-owl-overlay"></div>
                         <a href="<?php the_permalink();?>">
                             <?php echo the_post_thumbnail('full') ?>    
                         </a>
@@ -259,6 +261,7 @@
                             $chavos_query->the_post();
                     ?>
                     <div class="owl-hero-item">
+                        <div class="lcdm-owl-overlay"></div>
                         <a href="<?php the_permalink();?>">
                             <?php echo the_post_thumbnail('full') ?>    
                         </a>
@@ -312,6 +315,7 @@
                         $chavos_query->the_post();
                 ?>
                 <div class="owl-hero-item" style="background-image: url('<?php echo the_post_thumbnail_url('full') ?>')">
+                    <div class="lcdm-owl-overlay"></div>
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
                             <div class="owl-hero-post owl-hero-video-post">
