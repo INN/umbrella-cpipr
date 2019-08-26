@@ -71,7 +71,7 @@
         </div>
 
         <div class="lcdm-section lcdm-section-post">
-            <div class="container">
+            <div class="container-fluid">
                 <?php the_content();?>    
             </div>
         </div>
