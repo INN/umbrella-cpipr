@@ -353,12 +353,6 @@
 .owl-hero-video-post {
 	margin-top: 60px;
 }
-.owl-theme .owl-nav button.owl-prev,
-.owl-theme .owl-nav button.owl-next {
-	background-color: #fff;
-	background-repeat: no-repeat;
-	background-position: center center;
-}
 .owl-hero-carousel .owl-dots .owl-dot span {
 	background: #ffffff;
 }
@@ -426,6 +420,9 @@
 /* Theme default controls */
 .owl-default-controls .owl-nav button.owl-prev,
 .owl-default-controls .owl-nav button.owl-next { 
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: center center;
 	color: #000;
 	/*font-size: 24px;
 	line-height: 52px;*/
