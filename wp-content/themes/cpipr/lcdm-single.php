@@ -67,7 +67,7 @@
             <div class="owl-theme">
                 <div class="owl-hero-item owl-hero-item-parallax">
                     <div class="owl-hero-image">
-                        <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/hero.jpg' ?>" />
+                        <img src="<?php the_post_thumbnail_url('full'); ?>" />
                     </div>
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
@@ -78,7 +78,7 @@
                                     </div>
                                 </div>
                                 <div class="owl-hero-journalist">
-                                    <em>POR</em> <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/jennifer-wiscovitch.jpg' ?>" class="owl-hero-journalist-avatar"/> <span class="owl-hero-journalist-name">Jennifer Wiscovich</span> | <span class="owl-hero-post-date">27 de Febrero, 2019</span>
+                                    <em><?php  echo $lang == 'spanish' ? 'POR' : 'BY' ?></em> <?php echo get_avatar( get_the_author_meta( 'ID' ), 68, '', '', array('class' => 'owl-hero-journalist-avatar') ); ?> <span class="owl-hero-journalist-name"><?php the_author(); ?></span> | <span class="owl-hero-post-date"><?php the_date("j F Y"); ?></span>
                                 </div>
                             </div>
                         </div>
@@ -100,17 +100,17 @@
                     <div class="span2"></div>
                     <div class="span8">
                         <div class="lcdm-journalist">
-                            <h3>Biografía del Periodista</h3>
+                            <h3><?php echo $lang == 'spanish' ? 'Biografía del Periodista' : 'Journalist Biography' ?></h3>
                             <div class="row-fluid">
                                 <div class="span5">
                                     <div class="lcdm-journalist-picture">
-                                        <img src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/jennifer-wiscovitch.jpg' ?>"/>
+                                        <?php echo get_avatar( get_the_author_meta( 'ID' ), 324 ); ?>
                                     </div>
                                 </div>
                                 <div class="span7">
                                     <div class="lcdm-journalist-personal-info">
-                                        <h4>Jennifer Wiscovitch</h4>
-                                        <p>Periodista con más de 10 años de experiencia, cubriendo temas de salud y medioambiente. Inició su labor periodística en la zona oeste de Puerto Rico, de donde es natal, luego de haber cursado estudios en periodismo en la Universidad del Sagrado Corazón. Ha trabajado en medios especializados en salud, como la revista de Medicina y Salud Pública. Su trabajo periodístico y su impacto a la comunidad ha sido reconocido por organizaciones comunitarias como el Club de Leones y la Unión de Mujeres de las Américas. Colabora en el CPI desde octubre de 2017.</p>
+                                        <h4><?php the_author(); ?></h4>
+                                        <p><?php the_author_meta('description') ?></p>
                                     </div>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
 
         <div class="lcdm-section">
             <div class="container-fluid">
-                <h3 class="lcdm-related-post-title">Historias Relacionadas</h3>
+                <h3 class="lcdm-related-post-title"><?php echo $lang == 'spanish' ? 'Historias Relacionadas' : 'Related Stories' ?></h3>
 
                 <div class="row-fluid">
                     <?php

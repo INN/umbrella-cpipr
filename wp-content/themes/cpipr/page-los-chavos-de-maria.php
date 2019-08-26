@@ -32,7 +32,7 @@
                     while ($chavos_query->have_posts()) {
                         $chavos_query->the_post();
                 ?>
-                <div class="owl-hero-item" style="background-image: url('<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/hero.jpg' ?>')">
+                <div class="owl-hero-item" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
                             <div class="owl-hero-post">

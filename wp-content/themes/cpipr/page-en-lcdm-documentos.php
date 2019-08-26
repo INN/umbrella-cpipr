@@ -7,7 +7,7 @@
 ?>
     
     <!-- Hero Page Title  -->
-    <div class="lcdm-hero-page-title-wrapper">
+    <div class="lcdm-hero-page-title-wrapper" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
         <div class="lcdm-hero-page-title-overlay">
             <div class="lcdm-hero-page-title-media">
                 <div class="lcdm-hero-page-title-icon">
