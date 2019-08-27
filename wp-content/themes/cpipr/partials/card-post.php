@@ -2,7 +2,8 @@
     <div class="card card-inphographic">
         <div class="card-image-top">
             <div class="lcdm-owl-overlay"></div>
-            <?php echo the_post_thumbnail('full') ?>
+            <?php echo get_the_post_thumbnail(null, $size = ('rect_thumb'), $attr = '') ?>
+      
         </div>
         <div class="card-body">
             <h5 class="card-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h5>

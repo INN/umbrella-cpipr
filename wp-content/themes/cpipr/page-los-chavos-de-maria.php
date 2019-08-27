@@ -19,6 +19,11 @@
                             array(
                                 'taxonomy' => 'post_tag',
                                 'field'    => 'slug',
+                                'terms'    => 'news',
+                            ),
+                            array(
+                                'taxonomy' => 'post_tag',
+                                'field'    => 'slug',
                                 'terms'    => 'spanish',
                             )
                         ),
@@ -80,8 +85,18 @@
                 <div id="power-players-hero-carousel" class="owl-carousel owl-theme">
                     <?php
                         $args = array(
-                            'post_type' => 'cpipr_power_player',
+                            'post_type' => 'post',
                             'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'series',
+                                    'field'    => 'slug',
+                                    'terms'    => 'los-chavos-de-maria',
+                                ),
+                                array(
+                                    'taxonomy' => 'post_tag',
+                                    'field'    => 'slug',
+                                    'terms'    => 'powerplayer',
+                                ),
                                 array(
                                     'taxonomy' => 'post_tag',
                                     'field'    => 'slug',
@@ -103,8 +118,8 @@
                             $chavos_query->the_post();
                     ?>
                     <div class="owl-hero-item">
-                        <div class="lcdm-owl-overlay"></div>
                         <a href="<?php the_permalink();?>">
+                            <div class="lcdm-owl-overlay"></div>
                             <?php echo the_post_thumbnail('full') ?>    
                         </a>
                     </div>
@@ -239,8 +254,18 @@
                 <div id="inphographic-hero-carousel" class="owl-carousel owl-theme">
                     <?php
                         $args = array(
-                            'post_type' => 'cpipr_infographic',
+                            'post_type' => 'post',
                             'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'series',
+                                    'field'    => 'slug',
+                                    'terms'    => 'los-chavos-de-maria',
+                                ),
+                                array(
+                                    'taxonomy' => 'post_tag',
+                                    'field'    => 'slug',
+                                    'terms'    => 'graphic',
+                                ),
                                 array(
                                     'taxonomy' => 'post_tag',
                                     'field'    => 'slug',
@@ -262,8 +287,8 @@
                             $chavos_query->the_post();
                     ?>
                     <div class="owl-hero-item">
-                        <div class="lcdm-owl-overlay"></div>
                         <a href="<?php the_permalink();?>">
+                            <div class="lcdm-owl-overlay"></div>
                             <?php echo the_post_thumbnail('full') ?>    
                         </a>
                     </div>
@@ -293,8 +318,18 @@
             <div id="video-hero-carousel" class="owl-carousel owl-theme">
                 <?php
                     $args = array(
-                        'post_type' => 'cpipr_video',
+                        'post_type' => 'post',
                         'tax_query' => array(
+                            array(
+                                'taxonomy' => 'series',
+                                'field'    => 'slug',
+                                'terms'    => 'los-chavos-de-maria',
+                            ),
+                            array(
+                                'taxonomy' => 'post_tag',
+                                'field'    => 'slug',
+                                'terms'    => 'video',
+                            ),
                             array(
                                 'taxonomy' => 'post_tag',
                                 'field'    => 'slug',
@@ -319,7 +354,7 @@
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
                             <div class="owl-hero-post owl-hero-video-post">
-                                <a data-fancybox href="<?php echo get_the_excerpt(); ?>" class="owl-play-icon"></a>
+                                <a data-fancybox href="<?php echo get_the_content(); ?>" class="owl-play-icon"></a>
                                 <div class="row-fluid">
                                     <div class="span6">
                                         <h2 class="owl-hero-post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>

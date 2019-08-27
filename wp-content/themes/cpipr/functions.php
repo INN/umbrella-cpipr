@@ -269,3 +269,26 @@ function cpipr_image_size_setup () {
 	add_image_size( 'featured-square-medium', 400, 400, true );
 }
 add_action( 'after_setup_theme', 'cpipr_image_size_setup', 11 );
+
+
+/* Add filter to select video, powerplayer and grafic template */
+function get_custom_post_type_template( $single_template ) {
+    global $post;
+
+    if( has_term( 'los-chavos-de-maria', 'series', $post ) ) {
+        if (has_tag('video', $post)) {
+            $single_template = dirname( __FILE__ ) . '/single-cpipr_video.php';
+        }
+
+        if (has_tag('powerplayer', $post)) {
+            $single_template = dirname( __FILE__ ) . '/single-cpipr_power_player.php';
+        }
+
+        if (has_tag('graphic', $post)) {
+            $single_template = dirname( __FILE__ ) . '/single-cpipr_infographic.php';
+        }
+    }   
+
+    return $single_template;
+}
+add_filter( 'single_template', 'get_custom_post_type_template' );

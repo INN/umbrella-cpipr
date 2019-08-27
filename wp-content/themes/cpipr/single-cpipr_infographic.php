@@ -54,14 +54,13 @@
 
         <div class="owl-hero-carousel">
             <div class="owl-theme">
-                <div class="owl-hero-item" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
-                    <div class="lcdm-owl-overlay"></div>
-                    <div class="owl-hero-caption">
+                <div class="owl-hero-item"> 
+                    <div class="owl-hero-caption" style="margin-top:0;padding-top: 2px;padding-bottom: 2px;">
                         <div class="container-fluid">
                             <div class="owl-hero-post">
                                 <div class="row-fluid">
                                     <div class="span6">
-                                        <h2 class="owl-hero-post-title"><?php the_title(); ?></h2>
+                                        <!-- <h2 class="owl-hero-post-title"><?php the_title(); ?></h2> -->
                                     </div>
                                 </div>
                             </div>
@@ -71,8 +70,8 @@
             </div>
         </div>
 
-        <div class="lcdm-section lcdm-section-post">
-            <div class="container-fluid">
+        <div class="lcdm-section lcdm-section-post" style="padding-bottom: 0px;padding-top: 10px;">
+            <div class="container-fluid" style="max-width: 2000px; ">
                 <?php the_content();?>    
             </div>
         </div>
