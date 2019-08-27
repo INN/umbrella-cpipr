@@ -1,6 +1,7 @@
 <div class="span4">
     <div class="card card-inphographic">
         <div class="card-image-top">
+            <div class="lcdm-owl-overlay"></div>
             <?php echo the_post_thumbnail('full') ?>
         </div>
         <div class="card-body">
