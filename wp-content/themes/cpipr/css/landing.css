@@ -20,6 +20,9 @@
   	}
 }
 
+.lcdm-secondary-slide {
+	height: 300px;
+}
 /* Landing Page: Los Chavos de María */
 @media (min-width: 768px) {
 	.header-chavos-maria .navbar {
@@ -58,6 +61,9 @@
 	}
 	.lcdm-twitter-feed-wrapper {
 		border-left: 1px solid #fff;
+	}
+	.lcdm-secondary-slide {
+		height: 600px;
 	}
 }
 
@@ -266,6 +272,7 @@
 	padding: 0;
 	overflow: hidden;
 }
+
 /*.owl-hero-carousel .owl-hero-item .owl-hero-image {
 	position: absolute;
 	top: 0;
@@ -364,17 +371,32 @@
 	font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 	color: #fff;
-	position: absolute;
-	bottom: 28px;
-	right: 0;
 }
-.owl-hero-journalist-avatar {
+.journalist-avatar {
 	border-radius: 50%;
 	border: 4px solid #5170ae;
 	height: 60px;
 	margin-left: 5px;
 	margin-right: 5px;
 	width: 60px;
+}
+.journalist-name {
+	margin-left: 4px;
+}
+/* Journalist byline */
+.journalists-byline {
+	padding: 0;
+	margin: 0;
+}
+.journalists-byline > li {
+	list-style: none;
+	display: inline-block;
+}
+.journalists-byline > li > a {
+	color: inherit;
+}
+.journalists-byline .post-date {
+	margin-left: 5px;
 }
 
 /* Owl default controls */
@@ -717,7 +739,8 @@ textarea.form-control {
 	background-color: #2b2d2d;
 	color: #fff;
 }
-.lcdm-section-videos {
+.lcdm-section-videos,
+.lcdm-section-powerplayers {
 	padding-bottom: 0;
 	padding-top: 0;
 }
@@ -786,6 +809,23 @@ textarea.form-control {
   	margin-right: auto;
   	margin-left: auto;
 }
+.lcdm-section-post .wp-media-credit,
+.lcdm-section-post .wp-caption-text {
+	text-align: left;
+}
+.lcdm-section-post .navis-slideshow {
+	margin-bottom: 60px;
+}
+.lcdm-section-post .navis-slideshow .slick-slide img {
+	max-height: none;
+}
+.lcdm-section-post .navis-slideshow .slick-slide .wp-media-credit,
+.lcdm-section-post .navis-slideshow .slick-slide .wp-caption-text,
+.lcdm-section-post .navis-slideshow .slick-slide .permalink,
+.lcdm-section-post .navis-slideshow .slick-dots {
+	display: none !important;
+}
+
 @media (min-width: 768px) {
   	.lcdm-section-post .wp-caption .wp-media-credit,
   	.lcdm-section-post .wp-caption .wp-caption-text {
@@ -822,6 +862,7 @@ textarea.form-control {
 }
 .lcdm-journalist h4 {
 	color: #5170ae;
+	text-transform: capitalize;
 }
 .lcdm-journalist p {
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -839,6 +880,9 @@ textarea.form-control {
 }
 .lcdm-journalist-personal-info {
 	padding: 0px 40px;
+}
+.lcdm-journalist-personal-info a {
+	color: inherit;
 }
 
 /* Lcdm dropdown */
@@ -1755,6 +1799,13 @@ textarea.form-control {
 	.lcdm-twitter-feed-wrapper {
 		margin-top: 80px;
 	}
+	.owl-hero-item-parallax .owl-hero-image {
+		min-height: auto;
+	}
+	.owl-hero-item-parallax .owl-hero-caption {
+		margin-top: 0 !important;
+		position: relative;
+	}
 }
 
 @media (max-width: 991px) {
@@ -1762,13 +1813,22 @@ textarea.form-control {
 	.glossary-term .glossary-description {
 		padding-left: 0px;
 	}
+	.owl-hero-post .owl-hero-post-title {
+		font-size: 48px;
+		line-height: 46px;
+	}
 	.owl-hero-journalist {
 		position: initial;
-		margin-top: 20px;
 	}
-	.owl-hero-journalist-avatar {
+	.journalists-byline > li {
+		display: block;
+	}
+	.journalist-avatar {
 		height: 40px;
 		width: 40px;
+	}
+	.owl-hero-post.pb60 {
+		padding-bottom: 0px;
 	}
 }
 
@@ -1784,4 +1844,7 @@ textarea.form-control {
 /* Utils */
 .text-black {
 	color: #000;
+}
+.pb60 {
+	padding-bottom: 60px;
 }

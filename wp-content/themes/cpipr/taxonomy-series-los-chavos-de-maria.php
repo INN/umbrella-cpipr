@@ -1,7 +1,8 @@
 <?php
     get_template_part('partials/los-chavos-de-maria/header');
-    get_template_part('partials/los-chavos-de-maria/en/header');
+    get_template_part('partials/los-chavos-de-maria/es/header');
 ?>
+
     <!-- Main slider -->
     <div>
         <div class="owl-hero-carousel">
@@ -23,7 +24,7 @@
                             array(
                                 'taxonomy' => 'post_tag',
                                 'field'    => 'slug',
-                                'terms'    => 'english',
+                                'terms'    => 'spanish',
                             )
                         ),
                         'order' => 'DESC',
@@ -59,21 +60,21 @@
                         <div class="owl-nav owl-nav-lcdm"></div>
                         <div class="owl-dots"></div>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-historias' ) ) ?>" class="btn btn-white-blue">View All</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-historias' ) ) ?>" class="btn btn-white-blue">Ver Todo</a>
                 </div>
-            </div>  
-            <?php endif; ?>              
+            </div>                
+            <?php endif; ?>
         </div>
     </div>
 
     <?php $lcdm_navbar_theme = 'dark'; ?>
-    <?php get_template_part('partials/los-chavos-de-maria/en/menu'); ?>
+    <?php get_template_part('partials/los-chavos-de-maria/es/menu'); ?>
 
     <!-- Power players section -->
     <div class="lcdm-section lcdm-section-graficas">
         <div class="lcdm-section-title">
             <i class="lcdm-icon lcdm-icon-personajes"></i>
-            <div>POWER<br/>PLAYERS</div>
+            <div>PERSONAJES DE LA<br/>RECUPERACIÓN</div>
         </div>
 
         <div class="container-fluid">
@@ -104,7 +105,7 @@
                                 array(
                                     'taxonomy' => 'post_tag',
                                     'field'    => 'slug',
-                                    'terms'    => 'english',
+                                    'terms'    => 'spanish',
                                 )
                             ),
                             'order' => 'DESC',
@@ -130,7 +131,7 @@
                     <div class="owl-nav owl-nav-lcdm"></div>
                     <div class="owl-dots"></div>
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-personajes-de-la-recuperacion' ) ) ?>" class="btn btn-blue">View All</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-personajes-de-la-recuperacion' ) ) ?>" class="btn btn-blue">Ver más</a>
             </div>
             <?php endif; ?>
         </div>
@@ -140,7 +141,7 @@
     <div class="lcdm-section lcdm-section-map">
         <div class="lcdm-section-title">
             <i class="lcdm-icon lcdm-icon-mapa"></i>
-            <div>RECOVERY<br/>MAP</div>
+            <div>MAPA DE LA<br/>RECUPERACIÓN</div>
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
@@ -241,7 +242,7 @@
     <div class="lcdm-section lcdm-section-graficas">
         <div class="lcdm-section-title">
             <i class="lcdm-icon lcdm-icon-graficas"></i>
-            <div>GRAPHICS</div>
+            <div>GRÁFICAS</div>
         </div>
 
         <div class="container-fluid">
@@ -272,7 +273,7 @@
                                 array(
                                     'taxonomy' => 'post_tag',
                                     'field'    => 'slug',
-                                    'terms'    => 'english',
+                                    'terms'    => 'spanish',
                                 )
                             ),
                             'order' => 'DESC',
@@ -286,7 +287,7 @@
                     ?>
                     <div class="owl-hero-item lcdm-secondary-slide" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
                         <a href="<?php the_permalink();?>">
-                            <div class="lcdm-owl-overlay"></div>
+                            <div class="lcdm-owl-overlay"></div>   
                         </a>
                     </div>
                     <?php } wp_reset_postdata();?>
@@ -298,7 +299,7 @@
                     <div class="owl-nav owl-nav-lcdm"></div>
                     <div class="owl-dots"></div>
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-graficas' ) ) ?>" class="btn btn-blue">Read More</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-graficas' ) ) ?>" class="btn btn-blue">Ver más</a>
             </div>
             <?php endif; ?>
         </div>
@@ -335,13 +336,12 @@
                             array(
                                 'taxonomy' => 'post_tag',
                                 'field'    => 'slug',
-                                'terms'    => 'english',
+                                'terms'    => 'spanish',
                             )
                         ),
                         'order' => 'DESC',
                         'posts_per_page' => 5,
                     );
-                    $cpipr_video_link = get_post_type_archive_link('cpipr_video');
                     $chavos_query = new WP_Query($args);
                     $has_video_posts = $chavos_query->have_posts();
                     while ($chavos_query->have_posts()) {
@@ -356,7 +356,7 @@
                                 <div class="row-fluid">
                                     <div class="span6">
                                         <h2 class="owl-hero-post-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
-                                    </div>
+                                    </div>                                        
                                 </div>
                             </div>
                         </div>
@@ -371,7 +371,7 @@
                         <div class="owl-nav owl-nav-lcdm"></div>
                         <div class="owl-dots"></div>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-videos' ) ) ?>" class="btn btn-white-blue">View All</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-videos' ) ) ?>" class="btn btn-white-blue">Ver Todo</a>
                 </div>
             </div>
             <?php endif; ?>
@@ -382,7 +382,7 @@
     <div class="lcdm-section lcdm-section-documentos">
         <div class="lcdm-section-title">
             <i class="lcdm-icon lcdm-icon-documentos"></i>
-            <div>DOCUMENTS</div>                
+            <div>DOCUMENTOS</div>                
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
@@ -413,7 +413,7 @@
     <div class="lcdm-section lcdm-section-glosario">
         <div class="lcdm-section-title">
             <i class="lcdm-icon lcdm-icon-glosario"></i>
-            <div>GLOSSARY</div>
+            <div>GLOSARIO</div>
         </div>
         <div class="container-fluid">
             <br/>
@@ -429,7 +429,7 @@
                                 array(
                                     'taxonomy' => 'glossary-cat',
                                     'field'    => 'slug',
-                                    'terms'    => 'english',
+                                    'terms'    => 'spanish',
                                 )
                             ),
                             'order' => 'DESC',
@@ -461,7 +461,7 @@
                         <div class="owl-nav owl-nav-lcdm"></div>
                         <div class="owl-dots"></div>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-glosario' ) ) ?>" class="btn btn-white-blue">VIEW ALL</a>    
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-glosario' ) ) ?>" class="btn btn-white-blue">VER TODOS</a>    
                 </div>
                 <?php endif; ?>
             </div>                    
@@ -472,7 +472,7 @@
     <div id="help-us-section" class="lcdm-section lcdm-section-twitter">
         <div class="lcdm-section-title">
             <i class="lcdm-icon lcdm-icon-help"></i>
-            <div>HELP US</div>
+            <div>AYÚDANOS A<br/>FISCALIZAR</div>
         </div>
         <div class="container-fluid">
             <br/>
@@ -487,21 +487,21 @@
                     <div class="lcdm-twitter-feed-body-border">
                         <div class="lcdm-twitter-form-info">
                             <div class="lcdm-twitter-box">
-                                <h2>DO YOU KNOW ABOUT MISMANAGEMENT IN THE RECOVERY FUNDING PROCESS?</h2>
+                                <h2>¿SABES DE ALGÚN MAL MANEJO DE FONDOS DE RECUPERACIÓN?</h2>
                                 <br/>
                                 <br/>
-                                <h2 class="text-black">SEND US YOUR TIP.</h2>
+                                <h2 class="text-black">CUÉNTANOS.</h2>
                             </div>
                             <div class="lcdm-twitter-feed-info-box">
-                                <a id="btnSendInfo" href="https://docs.google.com/forms/d/e/1FAIpQLSepSTEr2BqCDXYjXHOHDBoVs73g5HyS6LdYjH6s5fyE6ewrNA/viewform" target="_blank" class="btn btn-white-blue btn-lg">SEND INFO</a>
+                                <a id="btnSendInfo" href="https://docs.google.com/forms/d/1CIdhT4fn3uZ5nNCiR3z03K2yKkByR5eymRQqyq_Zcjg/viewform" target="_blank" class="btn btn-white-blue btn-lg">ENVIAR INFO</a>
                             </div>    
                         </div>
                         <div class="lcdm-twitter-form collapse">
                             <div class="lcdm-tell-us-wrapper">
-                                <h2>TELL US</h2>
+                                <h2>CUÉNTANOS</h2>
                                 <form>
                                     <div class="form-group with-checkbox">
-                                        <input type="text" name="" class="form-control input-lg" placeholder="NAME"/>
+                                        <input type="text" name="" class="form-control input-lg" placeholder="NOMBRE"/>
                                         <label class="checkbox">
                                             <input type="checkbox" name=""/> ANÓNIMO
                                         </label>
@@ -510,10 +510,10 @@
                                         <input type="email" name="" class="form-control input-lg" placeholder="EMAIL"/>    
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control" rows="8" placeholder="INFORMATION"></textarea>
+                                        <textarea class="form-control" rows="8" placeholder="INFORMACIÓN"></textarea>
                                     </div>
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-blue btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SEND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                                        <button type="submit" class="btn btn-blue btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ENVIAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
                                     </div>
                                 </form>
                             </div>

@@ -101,3 +101,12 @@
         });
     });
 })(jQuery);
+
+(function ($) {
+    $(document).ready(function () {
+        $('.lcdm-top-banner a').click(function (event) {
+          event.preventDefault();
+          $.scrollTo($('#help-us-section'), 800);
+        });
+    });
+})(jQuery);

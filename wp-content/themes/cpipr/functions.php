@@ -27,6 +27,8 @@ require_once( get_template_directory() . '/largo-apis.php' );
  * Includes
  */
 $includes = array(
+    '/inc/byline_class.php',
+    '/inc/post-tags.php',
 	'/inc/tax-landing-customizations.php'
 );
 // Perform load
