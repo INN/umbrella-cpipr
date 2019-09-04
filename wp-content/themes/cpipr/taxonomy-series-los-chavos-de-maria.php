@@ -71,18 +71,14 @@
     <?php get_template_part('partials/los-chavos-de-maria/es/menu'); ?>
 
     <!-- Power players section -->
-    <div class="lcdm-section lcdm-section-graficas">
+    <div class="lcdm-section lcdm-section-powerplayers">
         <div class="lcdm-section-title">
             <i class="lcdm-icon lcdm-icon-personajes"></i>
             <div>PERSONAJES DE LA<br/>RECUPERACIÓN</div>
         </div>
 
-        <div class="container-fluid">
-            <br/>
-            <br/>
-            <br/>
-            <div class="owl-hero-carousel">
-                <div id="power-players-hero-carousel" class="owl-carousel owl-theme">
+        <div class="owl-hero-carousel">
+            <div id="power-players-hero-carousel" class="owl-carousel owl-theme">
                     <?php
                         $args = array(
                             'post_type' => 'post',
@@ -122,16 +118,18 @@
                             <div class="lcdm-owl-overlay"></div>
                         </a>
                     </div>
-                    <?php } wp_reset_postdata();?>
                 </div>
+                <?php } wp_reset_postdata();?>
             </div>
-            <?php if ($has_graficas_posts): ?>
-            <div id="power-player-controls" class="owl-carousel owl-loaded owl-theme owl-theme-blue owl-default-controls owl-inline-controls">
-                <div class="owl-controls">
-                    <div class="owl-nav owl-nav-lcdm"></div>
-                    <div class="owl-dots"></div>
+            <?php if ($has_powerplayers_posts): ?>
+            <div id="power-player-controls" class="owl-carousel owl-loaded owl-theme owl-hero-controls owl-default-controls owl-inline-controls">
+                <div class="container-fluid">
+                    <div class="owl-controls">
+                        <div class="owl-nav owl-nav-lcdm"></div>
+                        <div class="owl-dots"></div>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-personajes-de-la-recuperacion' ) ) ?>" class="btn btn-white-blue">Ver Todo</a>
                 </div>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-personajes-de-la-recuperacion' ) ) ?>" class="btn btn-blue">Ver más</a>
             </div>
             <?php endif; ?>
         </div>

@@ -2,7 +2,7 @@
 <header class="header-chavos-maria">
     <div class="container-fluid clearfix">
         <div class="lcdm-top-banner">
-            <a href="<?php echo get_permalink( get_page_by_path( 'en-los-chavos-de-maria' ) ) ?>">
+            <a href="#help-us-section">
                 <img alt="" src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/banner-helpus.png' ?>" srcset="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/banner-helpus@2x.png 2x' ?>, <?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/banner-helpus@3x.png 3x' ?>"/>
             </a>
         </div>

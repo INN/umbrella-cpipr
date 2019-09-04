@@ -16,6 +16,11 @@ class Lcdm_CoAuthors_Byline extends Largo_Byline {
      */
     public $author_id;
 
+    function populate_variables( $args ) {
+        parent::populate_variables($args);
+        $this->lang = $args['lang'];
+    }
+
     function generate_byline() {
         // get the coauthors for this post
         $coauthors = get_coauthors( $this->post_id );
@@ -40,8 +45,11 @@ class Lcdm_CoAuthors_Byline extends Largo_Byline {
 
         // Now assemble the One True Byline
         ob_start();
+        $by = $this->lang == 'spanish' ? 'Por' : 'By';
+
+
         echo '<ul class="journalists-byline" style="display: flex;
-        flex-flow: column;"><li class="by"><em>' . __( 'By', 'largo' ) . '</em></li>' . $authors;
+        flex-flow: column;"><li class="by"><em>' . $by . '</em></li>' . $authors;
         // $this->maybe_published_date();
         //$this->edit_link();
         echo '</ul>';
@@ -80,8 +88,15 @@ class Lcdm_CoAuthors_Byline extends Largo_Byline {
 }
 
 
-class Lcdm_CoAuthors_Biograpphy_Byline extends Largo_Byline {
+class Lcdm_CoAuthors_Biography_Byline extends Largo_Byline {
+    
+    function populate_variables( $args ) {
+        parent::populate_variables($args);
+        $this->lang = $args['lang'];
+    }
+
     function generate_byline() {
+        get_defined_vars();
         // get the coauthors for this post
         $coauthors = get_coauthors( $this->post_id );
         $out = array();
@@ -102,21 +117,37 @@ class Lcdm_CoAuthors_Biograpphy_Byline extends Largo_Byline {
         }
 
         $authors = implode('', $out);
+        $byline_header = '';
+        $lang = $this->lang;
+   
+        if ($lang == "spanish") {
+            
+            if ( count($coauthors) > 1) {
+                $byline_header = '<h3>Biografías de los Periodistas</h3>';
+            } else {
+                $byline_header = '<h3>Biografía del Periodista</h3>';
+            }
+        } else {
+            if ( count($coauthors) > 1) {
+                $byline_header = "<h3>Journalists' Biographies</h3>";
+            } else {
+                $byline_header = "<h3>Journalist's Biography</h3>";
+            } 
+        }
 
         // Now assemble the One True Byline
         ob_start();
-        echo '<div>' . $authors . '</div>';
+       
+        echo $byline_header . '<div>' . $authors . '</div>'; 
         $this->output = ob_get_clean();
     }
 
     /**
      * A coauthors avatar
-     */    
-    
+     */        
     function avatar() {
         $avatar = largo_get_avatar_src( $this->author_id, 500, '', get_the_author_meta( 'display_name', $this->author_id ) );
         $output = '<div class="span5"><div class="lcdm-journalist-picture" style="background-image:url(' . $avatar[0] . ');height: 300px;width: 300px;border-radius: 50%;background-size: cover;border: 8px solid #5170ae;"></div></div>';
-     
         echo $output;
     }
 
@@ -136,6 +167,4 @@ class Lcdm_CoAuthors_Biograpphy_Byline extends Largo_Byline {
         $output = '<div class="span7"><div class="lcdm-journalist-personal-info">' . $author_link . $author_biography . '</div></div>';
         echo $output;
     }
- 
-    
 }

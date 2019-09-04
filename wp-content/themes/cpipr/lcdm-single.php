@@ -74,8 +74,7 @@
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
                             <div class="owl-hero-post">
-                                <div style="display: flex;flex-flow: row wrap;justify-content: space-between;
-    align-items: flex-start;">
+                                <div style="display: flex;flex-flow: row wrap;justify-content: space-between;align-items: flex-start;">
                                     <div style="max-width: 800px;">
                                         <h2 class="owl-hero-post-title"><?php the_title(); ?></h2>
                                         <span class="post-date owl-hero-journalist"><?php the_date()?></span>
@@ -104,9 +103,7 @@
                     <div class="span2"></div>
                     <div class="span8">
                         <div class="lcdm-journalist">
-                            <h3><?php echo $lang == 'spanish' ? 'Biografía del Periodista' : 'Journalist Biography' ?></h3>
-
-                            <?php lcdm_byline(true, true); ?>
+                            <?php $lang == 'spanish' ? lcdm_byline(true, true) : lcdm_byline(true, true, english) ?>
                         </div>
                     </div>
                 </div>
