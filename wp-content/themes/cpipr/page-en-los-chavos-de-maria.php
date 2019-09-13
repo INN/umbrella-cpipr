@@ -428,8 +428,7 @@
                 <div class="lcdm-twitter-feed">
                     <div class="lcdm-hashtag">#LOSCHAVOSDEMARÍA</div>
                     <div class="lcdm-twitter-box">
-                        <div></div>
-                    </div>
+                        <a class="twitter-timeline" data-width="400" data-height="385" data-link-color="#5170AE" href="https://twitter.com/cpipr/timelines/1172581146447757312?ref_src=twsrc%5Etfw">Los Chavos de María - Curated tweets by cpipr</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>                    </div>
                 </div>
                 <div class="lcdm-twitter-feed-body">
                     <div class="lcdm-twitter-feed-body-border">
