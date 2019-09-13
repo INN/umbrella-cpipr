@@ -65,12 +65,10 @@
 
         <div class="owl-hero-carousel">
             <div class="owl-theme">
-                <div class="owl-hero-item owl-hero-item-parallax">
+                <div class="owl-hero-item" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
                     
-                    <div class="owl-hero-image">
-                        <img src="<?php the_post_thumbnail_url('full'); ?>" />
-                    </div>
-                    <div class="lcdm-owl-overlay"></div>
+                    
+                    <!-- <div class="lcdm-owl-overlay"></div> -->
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
                             <div class="owl-hero-post">
@@ -143,8 +141,8 @@
                     <div class="span4">
                         <div class="card card-inphographic">
                             <div class="card-image-top">
-                                <div class="lcdm-owl-overlay"></div>
-                                <?php echo the_post_thumbnail('rect_thumb') ?>
+                                <!-- <div class="lcdm-owl-overlay"></div> -->
+                                <?php echo the_post_thumbnail('horizontal_thumb') ?>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h5>

@@ -120,7 +120,7 @@
                     </a>
                 </li>
                 <li class="lcdm-lang-switcher">
-                    <a href="<?php get_term_link( 'los-chavos-de-maria', 'series' ) ?>" class="btn btn-lang" class="btn btn-lang">Spanish</a>
+                    <a href="<?php echo get_term_link( 'los-chavos-de-maria', 'series' ) ?>" class="btn btn-lang" class="btn btn-lang">Spanish</a>
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-los-chavos-de-maria' ) ) ?>" class="btn btn-lang active">English</a>
                 </li>
             </ul>

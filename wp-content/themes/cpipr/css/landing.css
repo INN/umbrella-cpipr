@@ -341,7 +341,8 @@
 
 /* Theme top hero carousel */
 .owl-hero-carousel .owl-hero-item .owl-hero-caption {
-	background-color: rgba(62, 111, 177, 0.9);
+	/* background-color: rgba(62, 111, 177, 0.9); */
+	background-color: rgba(39, 71, 112, 0.3);
 }
 .owl-hero-post {
 	position: relative;
@@ -710,15 +711,24 @@ textarea.form-control {
 	text-align: center;
 	z-index: 10;
 }
-.lcdm-section-title > i {
+.lcdm-section-title > a > i, .lcdm-section-title >  i {
 	font-size: 70px;
+}
+.lcdm-section-title > a > .lcdm-icon-mapa, .lcdm-section-title > a > .lcdm-icon-personajes, .lcdm-section-title > a > .lcdm-icon-videos {
+	color: #fff;
+}
+.lcdm-section-title > a > .lcdm-icon-graficas, .lcdm-section-title > a >.lcdm-icon-documentos{
+	color: #5170b0;
 }
 .lcdm-section-title > div {
 	margin-top: 10px;
 }
+.lcdm-section-title > a > div {
+	margin-top: 10px;
+}
 
 /* Sections theme */
-.lcdm-section-title {
+.lcdm-section-title > a > div, .lcdm-section-title{
 	color: #fff;
 	font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
 	font-weight: bold;
@@ -729,8 +739,8 @@ textarea.form-control {
 	background-color: #5170b0;
 	color: #fff;
 }
-.lcdm-section-graficas .lcdm-section-title,
-.lcdm-section-documentos .lcdm-section-title {
+.lcdm-section-graficas .lcdm-section-title > a > div,
+.lcdm-section-documentos .lcdm-section-title > a > div {
 	color: #5170b0;
 }
 
@@ -878,9 +888,9 @@ textarea.form-control {
 	border-radius: 50%;
 	box-sizing: border-box;
 }
-.lcdm-journalist-personal-info {
+/* .lcdm-journalist-personal-info {
 	padding: 0px 40px;
-}
+} */
 .lcdm-journalist-personal-info a {
 	color: inherit;
 }
@@ -1143,6 +1153,7 @@ textarea.form-control {
 	font-weight: bold;
 	margin-bottom: 10px;
 	text-transform: uppercase;
+	margin-left: 4px;
 }
 .jsmaps-text p {
 	color: #fff;
@@ -1170,7 +1181,7 @@ textarea.form-control {
 	font-size: 14px;
 	line-height: 18px;
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
-	width: 102px;
+	width: 110px;
 }
 .assistance-type i {
 	font-size: 26px;
@@ -1735,7 +1746,7 @@ textarea.form-control {
 		position: relative;
 		right: 0;
 		top: 0;
-	}
+	} > 
 	.jsmaps-wrapper .jsmaps {
 		padding-top: 20px;
 	}
@@ -1746,15 +1757,15 @@ textarea.form-control {
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
-	.lcdm-section-title {
+	.lcdm-section-title > a > div, .lcdm-section-title {
 		font-size: 12px;
 		line-height: 14px;
-		padding: 20px 15px;
+		/* padding: 20px 15px; */
 	}
-	.lcdm-section-title > i {
+	.lcdm-section-title > a > i, .lcdm-section-title > i {
 		font-size: 50px;
 	}
-	.lcdm-section-title > div {
+	.lcdm-section-title  {
 		margin-top: 5px;
 	}
 	.owl-carousel .owl-play-icon {
@@ -1774,7 +1785,7 @@ textarea.form-control {
 	.owl-glossary-carousel .glossary-title,
 	.glossary-term .glossary-title,
 	.lcdm-twitter-box h2 {
-		font-size: 34px;
+		font-size: 24px;
 	}
 	.owl-glossary-carousel .glossary-description, .owl-glossary-carousel .glossary-description p {
 		font-size: 16px;
@@ -1786,7 +1797,7 @@ textarea.form-control {
 
 /* Landscape phone and down */
 @media (max-width: 768px) {
-	.lcdm-hero-page-title-icon i {
+	.lcdm-hero-page-title-icon > a > i {
 		font-size: 70px;
 	}
 	.lcdm-hero-page-title {
@@ -1814,8 +1825,8 @@ textarea.form-control {
 		padding-left: 0px;
 	}
 	.owl-hero-post .owl-hero-post-title {
-		font-size: 48px;
-		line-height: 48px;
+		font-size: 32px;
+    line-height: 32px;
 	}
 	.owl-hero-journalist {
 		position: initial;

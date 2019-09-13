@@ -5,15 +5,11 @@
             case 'Public Assistance':
                 tipo_asistencia_class = 'bg-orange';
             break;
-            case 'Asistencia pública':
-                tipo_asistencia_class = 'bg-orange';
-            break;
             case 'Individual Assistance':
                 tipo_asistencia_class = 'bg-yellow';
             break;
-            case 'Asistencia individual':
+            default:
                 tipo_asistencia_class = 'bg-yellow';
-            break;
         }
         var template =
             '<tr class="' + tipo_asistencia_class + '">' +
@@ -72,18 +68,28 @@
         template += '</tbody>';
         template += '</table></div></div>';
 
-        var download_link = WP_ADMIN_POST_URL + '?action=export_contracts&city=' + city + '&lang=' + LCDM_LANG;
+        var download_municipality_link = WP_ADMIN_POST_URL + '?action=export_contracts_municipality&city=' + city + '&lang=' + LCDM_LANG;
 
-        var downloadTxt = 'DESCARGAR';
+        var download_municipality_Txt = 'Descargar por municipio';
         var updatedTxt = 'Fecha Actualización';
         if (LCDM_LANG == 'en') {
-          downloadTxt = 'DOWNLOAD';
+          download_municipality_Txt = 'Download municipality';
+          updatedTxt = 'Updated at';
+        }
+
+        var download_all_link = WP_ADMIN_POST_URL + '?action=export_all_contracts&lang=' + LCDM_LANG;
+
+        var download_all_Txt = 'Descargar todo';
+        var updatedTxt = 'Fecha Actualización';
+        if (LCDM_LANG == 'en') {
+          download_all_Txt = 'Download all';
           updatedTxt = 'Updated at';
         }
 
         template += '<div class="contracts-export">' + 
             '<div>' + updatedTxt + ': 15/08/2019' + 
-                '<a href="' + download_link + '" class="btn btn-blue" target="_blank">' + downloadTxt + '</a>' + 
+                '<a href="' + download_all_link + '" class="btn btn-blue" target="_blank">' + download_all_Txt + '</a>' + 
+                '<a href="' + download_municipality_link + '" class="btn btn-blue" style="margin-right: 4px" target="_blank">' + download_municipality_Txt + '</a>' +
             '</div>' +
         '</div>';
         return template;
@@ -105,7 +111,7 @@
               '<div class="assistance-type-legend">' +
                   '<div class="assistance-type assistance-type-th">TIPO DE<br/>ASISTENCIA</div>' +
                   '<div class="assistance-type assistance-type-icon orange"><i class="fa fa-circle"></i> Asistencia<br/>pública</div>' +
-                  '<div class="assistance-type assistance-type-icon yellow"><i class="fa fa-circle"></i> Asistencia<br/>individual</div>' +
+                  '<div class="assistance-type assistance-type-icon yellow"><i class="fa fa-circle"></i> Asistencia<br/>al individuo</div>' +
               '</div>';
           break;
         }

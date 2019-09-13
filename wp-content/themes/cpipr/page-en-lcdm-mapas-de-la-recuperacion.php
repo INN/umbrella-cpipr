@@ -6,19 +6,6 @@
     get_template_part('partials/los-chavos-de-maria/en/menu');
 ?>
 
-    <!-- Hero Page Title  -->
-    <div class="lcdm-hero-page-title-wrapper" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
-        <div class="lcdm-hero-page-title-overlay">
-            <div class="lcdm-hero-page-title-media">
-                <div class="lcdm-hero-page-title-icon">
-                    <i class="lcdm-icon lcdm-icon-mapa"></i>
-                </div>
-                <div class="lcdm-hero-page-title">
-                    <h1>RECOVERY<br/>MAP</h1>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Mapa de la recuepracion section -->
     <div class="lcdm-section lcdm-section-map">            

@@ -37,7 +37,7 @@
                         $chavos_query->the_post();
                 ?>
                 <div class="owl-hero-item" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
-                    <div class="lcdm-owl-overlay"></div>
+                    <!-- <div class="lcdm-owl-overlay"></div> -->
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
                             <div class="owl-hero-post">
@@ -72,8 +72,10 @@
     <!-- Power players section -->
     <div class="lcdm-section lcdm-section-powerplayers">
         <div class="lcdm-section-title">
-            <i class="lcdm-icon lcdm-icon-personajes"></i>
-            <div>POWER<br/>PLAYERS</div>
+            <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-personajes-de-la-recuperacion' ) ) ?>">
+                <i class="lcdm-icon lcdm-icon-personajes"></i>
+                <div>POWER<br/>PLAYERS</div>
+            </a>
         </div>
 
         <div class="owl-hero-carousel">
@@ -112,11 +114,9 @@
                         while ($chavos_query->have_posts()) {
                             $chavos_query->the_post();
                     ?>
-                    <div class="owl-hero-item lcdm-secondary-slide" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
-                        <a href="<?php the_permalink();?>">
-                            <div class="lcdm-owl-overlay"></div>
-                        </a>
-                    </div>
+                    <a href="<?php the_permalink();?>">
+                        <div class="owl-hero-item lcdm-secondary-slide" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')"></div>
+                    </a>
                 </div>
                 <?php } wp_reset_postdata();?>
             </div>
@@ -127,7 +127,7 @@
                         <div class="owl-nav owl-nav-lcdm"></div>
                         <div class="owl-dots"></div>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-personajes-de-la-recuperacion' ) ) ?>" class="btn btn-white-blue">Ver Todo</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-personajes-de-la-recuperacion' ) ) ?>" class="btn btn-white-blue">Ver Todo</a>
                 </div>
             </div>
             <?php endif; ?>
@@ -137,8 +137,10 @@
     <!-- Mapa de la recuepracion section -->
     <div class="lcdm-section lcdm-section-map">
         <div class="lcdm-section-title">
-            <i class="lcdm-icon lcdm-icon-mapa"></i>
-            <div>RECOVERY<br/>MAP</div>
+            <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-mapas-de-la-recuperacion' ) ) ?>">
+                <i class="lcdm-icon lcdm-icon-mapa"></i>
+                <div>RECOVERY<br/>MAP</div>
+            </a>
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
@@ -238,8 +240,10 @@
     <!-- Infografias section -->
     <div class="lcdm-section lcdm-section-graficas">
         <div class="lcdm-section-title">
-            <i class="lcdm-icon lcdm-icon-graficas"></i>
-            <div>GRAPHICS</div>
+            <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-graficas' ) ) ?>">
+                <i class="lcdm-icon lcdm-icon-graficas"></i>
+                <div>GRAPHICS</div>
+            </a>
         </div>
 
         <div class="container-fluid">
@@ -282,11 +286,9 @@
                         while ($chavos_query->have_posts()) {
                             $chavos_query->the_post();
                     ?>
-                    <div class="owl-hero-item lcdm-secondary-slide" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
-                        <a href="<?php the_permalink();?>">
-                            <div class="lcdm-owl-overlay"></div>
-                        </a>
-                    </div>
+                    <a href="<?php the_permalink();?>">
+                        <div class="owl-hero-item lcdm-secondary-slide" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')"></div>
+                    </a>
                     <?php } wp_reset_postdata();?>
                 </div>
             </div>
@@ -305,8 +307,11 @@
     <!-- Video slider -->
     <div class="lcdm-section lcdm-section-videos">
         <div class="lcdm-section-title">
-            <i class="lcdm-icon lcdm-icon-videos"></i>
-            <div>VIDEOS</div>
+            <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-videos' ) ) ?>">
+                <i class="lcdm-icon lcdm-icon-videos"></i>
+                <div>VIDEOS</div>
+            </a>
+            
         </div>
 
         <div class="owl-hero-carousel">
@@ -346,7 +351,7 @@
                         $chavos_query->the_post();
                 ?>
                 <div class="owl-hero-item" style="background-image: url('<?php echo the_post_thumbnail_url('full') ?>')">
-                    <div class="lcdm-owl-overlay"></div>
+                    <!-- <div class="lcdm-owl-overlay"></div> -->
                     <div class="owl-hero-caption">
                         <div class="container-fluid">
                             <div class="owl-hero-post owl-hero-video-post">
@@ -369,7 +374,7 @@
                         <div class="owl-nav owl-nav-lcdm"></div>
                         <div class="owl-dots"></div>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'lcdm-videos' ) ) ?>" class="btn btn-white-blue">View All</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-videos' ) ) ?>" class="btn btn-white-blue">View All</a>
                 </div>
             </div>
             <?php endif; ?>
@@ -379,92 +384,37 @@
     <!-- Ingegration Documentos section -->
     <div class="lcdm-section lcdm-section-documentos">
         <div class="lcdm-section-title">
-            <i class="lcdm-icon lcdm-icon-documentos"></i>
-            <div>DOCUMENTS</div>                
+            <a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-documentos' ) ) ?>">
+                <i class="lcdm-icon lcdm-icon-documentos"></i>
+                <div>DOCUMENTS</div> 
+            </a>
+                           
         </div>
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span2"></div>
                 <div class="span8">
-                    <div id="DC-search-projectid-43264-los-chavos-de-mar-a" class="DC-embed DC-embed-search DC-search-container"></div>
+                    <div id="DC-search-projectid-45731-los-chavos-de-mar-a" class="DC-embed DC-embed-search DC-search-container"></div>
                     <script src="//assets.documentcloud.org/embed/loader.js"></script>
                     <script>
                     dc.embed.load('https://www.documentcloud.org/search/embed/', {
-                        q: "projectid: 43264-los-chavos-de-mar-a ",
-                        container: "#DC-search-projectid-43264-los-chavos-de-mar-a",
+                        q: "projectid: \"45731-Los-chavos-de-María\"",
+                        container: "#DC-search-projectid-45731-los-chavos-de-mar-a",
                         title: "",
-                        order: "created_at",
-                        per_page: 8,
+                        order: "title",
+                        per_page: 12,
                         search_bar: true,
                         organization: 2426
                     });
                     </script>
                     <noscript>
-                    <a href="https://www.documentcloud.org/public/search/projectid%3A%2043264-los-chavos-de-mar-a%20">View/search document collection</a>
+                    <a href="https://www.documentcloud.org/public/search/projectid%3A%20%5C%2245731-Los-chavos-de-Mar%C3%ADa%5C%22">View/search document collection</a>
                     </noscript>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Glosario section -->
-    <div class="lcdm-section lcdm-section-glosario">
-        <div class="lcdm-section-title">
-            <i class="lcdm-icon lcdm-icon-glosario"></i>
-            <div>GLOSSARY</div>
-        </div>
-        <div class="container-fluid">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <div class="owl-glossary-carousel">
-                <div id="glossary-carousel" class="owl-carousel owl-theme">
-                    <?php
-                        $args = array(
-                            'post_type' => 'glossary',
-                            'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'glossary-cat',
-                                    'field'    => 'slug',
-                                    'terms'    => 'english',
-                                )
-                            ),
-                            'order' => 'DESC',
-                            'posts_per_page' => 5,
-                        );
-                        $chavos_category = get_category_by_slug('los-chavos-de-maria');
-                        $chavos_query = new WP_Query($args);
-                        $has_glosario_posts = $chavos_query->have_posts();
-                        while ($chavos_query->have_posts()) {
-                            $chavos_query->the_post();
-                    ?>
-                    <div class="owl-glossary-item">
-                        <div class="row-fluid">
-                            <div class="span6">
-                                <h2 class="glossary-title"><?php the_title(); ?></h2>
-                            </div>
-                            <div class="span6">
-                                <div class="glossary-description">
-                                    <?php the_content(); ?>    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php } wp_reset_postdata();?>
-                </div>
-                <?php if ($has_glosario_posts): ?>
-                <div id="glossary-controls" class="owl-carousel owl-loaded owl-theme owl-theme-white owl-default-controls owl-inline-controls">
-                    <div class="owl-controls">
-                        <div class="owl-nav owl-nav-lcdm"></div>
-                        <div class="owl-dots"></div>
-                    </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo get_permalink( get_page_by_path( 'en-lcdm-glosario' ) ) ?>" class="btn btn-white-blue">VIEW ALL</a>    
-                </div>
-                <?php endif; ?>
-            </div>                    
-        </div>
-    </div>
 
     <!-- Twitter feed -->
     <div id="help-us-section" class="lcdm-section lcdm-section-twitter">

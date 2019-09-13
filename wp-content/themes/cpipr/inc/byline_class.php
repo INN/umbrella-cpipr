@@ -35,7 +35,7 @@ class Lcdm_CoAuthors_Byline extends Largo_Byline {
             $this->avatar();
             $this->author_link();
 
-            $byline_temp = '<li>' . ob_get_clean() . '</li>';
+            $byline_temp = '<li style="display: flex;justify-content: flex-start;align-items: center;">' . ob_get_clean() . '</li>';
 
             // array of byline html strings
             $out[] = $byline_temp;
@@ -48,10 +48,7 @@ class Lcdm_CoAuthors_Byline extends Largo_Byline {
         $by = $this->lang == 'spanish' ? 'Por' : 'By';
 
 
-        echo '<ul class="journalists-byline" style="display: flex;
-        flex-flow: column;"><li class="by"><em>' . $by . '</em></li>' . $authors;
-        // $this->maybe_published_date();
-        //$this->edit_link();
+        echo '<ul style="display: flex; margin-left: 0;"><div class="journalists-byline" style="margin-top: 12px;margin-right: 10px;"><li class="by"><em>' . $by . '</em></li></div><div class="journalists-byline" style="display: flex;flex-flow: column;">' . $authors . '</div>';
         echo '</ul>';
 
         $this->output = ob_get_clean();
@@ -61,9 +58,13 @@ class Lcdm_CoAuthors_Byline extends Largo_Byline {
      * A coauthors avatar
      */    
     function avatar() {
-        $output = get_avatar( $this->author_id, 68, '', get_the_author_meta( 'display_name', $this->author_id ), array('class' => 'journalist-avatar') );
+        // $output = get_avatar( $this->author_id, 68, '', get_the_author_meta( 'display_name', $this->author_id ), array('class' => 'journalist-avatar') );
+        $avatar = largo_get_avatar_src( $this->author_id, 68, '', get_the_author_meta( 'display_name', $this->author_id ) );
+        $output = '<div style="background-image:url(' . $avatar[0] . ');height: 50px;width: 50px;border-radius: 50%;background-size: cover;border: 2px solid #5170ae;"></div>';
         echo $output;
     }
+
+   
 
     /**
      * A coauthors-specific byline link method
@@ -147,7 +148,7 @@ class Lcdm_CoAuthors_Biography_Byline extends Largo_Byline {
      */        
     function avatar() {
         $avatar = largo_get_avatar_src( $this->author_id, 500, '', get_the_author_meta( 'display_name', $this->author_id ) );
-        $output = '<div class="span5"><div class="lcdm-journalist-picture" style="background-image:url(' . $avatar[0] . ');height: 300px;width: 300px;border-radius: 50%;background-size: cover;border: 8px solid #5170ae;"></div></div>';
+        $output = '<div class="span4" style="display:flex;justify-content:center"><div class="lcdm-journalist-picture" style="background-image:url(' . $avatar[0] . ');height: 220px;width: 220px;border-radius: 50%;background-size: cover;border: 6px solid #5170ae;margin-top: 20px;"></div></div>';
         echo $output;
     }
 
@@ -164,7 +165,7 @@ class Lcdm_CoAuthors_Biography_Byline extends Largo_Byline {
     function author_detail() {
         $author_link = $this->author_link();
         $author_biography = '<p>' . get_the_author_meta('description', $this->author_id) . '</p>';
-        $output = '<div class="span7"><div class="lcdm-journalist-personal-info">' . $author_link . $author_biography . '</div></div>';
+        $output = '<div class="span8"><div class="lcdm-journalist-personal-info">' . $author_link . $author_biography . '</div></div>';
         echo $output;
     }
 }

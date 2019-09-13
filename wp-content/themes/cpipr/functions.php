@@ -269,6 +269,7 @@ if ( ! function_exists( 'cpipr_owl_carousel_enqueue' ) ) {
  */
 function cpipr_image_size_setup () {
 	add_image_size( 'featured-square-medium', 400, 400, true );
+	add_image_size( 'horizontal_thumb', 800, 500, true );
 }
 add_action( 'after_setup_theme', 'cpipr_image_size_setup', 11 );
 

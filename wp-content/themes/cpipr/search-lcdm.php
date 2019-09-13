@@ -57,32 +57,12 @@
 
     <body <?php body_class(); ?>>
         <?php
-            $lang = isset($_GET['lang']) ? $_GET['lang'] : 'spanish';
-            switch ($lang) {
-                case 'en':
-                    $lang = 'english';
-                break;
-                default:
-                    $lang = 'spanish';
-            }
+            $lang = isset($_GET['lang']) ? $_GET['lang'] : 'es';
         ?>
         <?php $lcdm_active_menu = 'historias'; ?>
         <?php get_template_part('partials/los-chavos-de-maria/' . ($lang == 'spanish' ? 'es' : 'en') .'/header'); ?>
         <?php get_template_part('partials/los-chavos-de-maria/' . ($lang == 'spanish' ? 'es' : 'en') .'/menu'); ?>
 
-        <!-- Hero Page Title  -->
-        <div class="lcdm-hero-page-title-wrapper">
-            <div class="lcdm-hero-page-title-overlay">
-                <div class="lcdm-hero-page-title-media">
-                    <div class="lcdm-hero-page-title-icon">
-                        <i class="lcdm-icon lcdm-icon-search"></i>
-                    </div>
-                    <div class="lcdm-hero-page-title">
-                        <h1><?php echo $lang == 'english' ? 'SEARCH' : 'BÚSQUEDAS' ?></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="lcdm-search-tags">
             <div class="container-fluid">
@@ -145,7 +125,7 @@
                                     }
                                 } else {
                                     loadMore.remove();
-                                    $('#posts-container').append('No more posts.');
+                                    $('#posts-container').append('Su búsqueda no arrojó resultados.');
                                 }
                             }
                         });
@@ -169,7 +149,6 @@
                     // init Tagify script on the above inputs
                     tagify = new Tagify(input, {
                         transformTag: function (a) {
-                            console.log(a.value);
                             return a.value;
                         }
                     });

@@ -1,8 +1,8 @@
 <div class="span4">
     <div class="card card-video">
         <div class="card-image-top">
-            <?php echo the_post_thumbnail('full') ?>
-            <div class="card-image-overlay"></div>
+            <?php echo the_post_thumbnail('horizontal_thumb') ?>
+            <!-- <div class="card-image-overlay"></div> -->
             <a href="<?php echo get_the_content(); ?>" class="card-video-play"></a>
         </div>
         <div class="card-body">

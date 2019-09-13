@@ -6,20 +6,6 @@
     get_template_part('partials/los-chavos-de-maria/es/menu');
 ?>
 
-    <!-- Hero Page Title  -->
-    <div class="lcdm-hero-page-title-wrapper" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')">
-        <div class="lcdm-hero-page-title-overlay">
-            <div class="lcdm-hero-page-title-media">
-                <div class="lcdm-hero-page-title-icon">
-                    <i class="lcdm-icon lcdm-icon-documentos"></i>
-                </div>
-                <div class="lcdm-hero-page-title">
-                    <h1>DOCUMENTOS</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Ingegration Documentos section -->
     <div class="lcdm-section">
         <div class="container-fluid">
