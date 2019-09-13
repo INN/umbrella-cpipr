@@ -396,17 +396,17 @@
                     <script src="//assets.documentcloud.org/embed/loader.js"></script>
                     <script>
                     dc.embed.load('https://www.documentcloud.org/search/embed/', {
-                        q: "projectid: \"45731-Los-chavos-de-María\"",
+                        q: "projectid: 45731-los-chavos-de-mar-a ",
                         container: "#DC-search-projectid-45731-los-chavos-de-mar-a",
                         title: "",
-                        order: "title",
-                        per_page: 12,
+                        order: "created_at",
+                        per_page: 15,
                         search_bar: true,
-                        organization: 2426
+                        organization: 1726
                     });
                     </script>
                     <noscript>
-                    <a href="https://www.documentcloud.org/public/search/projectid%3A%20%5C%2245731-Los-chavos-de-Mar%C3%ADa%5C%22">View/search document collection</a>
+                    <a href="https://www.documentcloud.org/public/search/projectid%3A%2045731-los-chavos-de-mar-a%20">View/search document collection</a>
                     </noscript>
                 </div>
             </div>
