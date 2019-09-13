@@ -1793,6 +1793,13 @@ textarea.form-control {
 	.lcdm-twitter-feed-wrapper {
 		margin-top: 50px !important;
 	}
+	.jsmaps-wrapper .jsmaps {
+    padding-top: 40px;
+	}
+	.jsmaps-wrapper .jsmaps svg {
+		width: 96%;
+		margin-left: 2%;
+	}
 }
 
 /* Landscape phone and down */
