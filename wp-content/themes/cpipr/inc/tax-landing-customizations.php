@@ -54,19 +54,6 @@ function cftl_tax_landing_abstract_callback ( $post ) {
 		</div>
 	</div>
 
-	<div class="form-field">
-		<h4>Hero text color <span class="howto">Hex (RGB)</span></h4>
-		<div>
-			<input type="text" name="hero_text_color" value="<?php if ( isset ( $values['hero_text_color'] ) ) { echo $values['hero_text_color'][0]; } ?>" />
-		</div>
-	</div>
-	<div class="form-field">
-		<h4>Hero background color <span class="howto">Hex (RGB)</span></h4>
-		<div>
-			<input type="text" name="hero_background_color" value="<?php if ( isset ( $values['hero_background_color'] ) ) { echo $values['hero_background_color'][0]; } ?>" />
-		</div>
-	</div>
-
 	<?php
 }
 
@@ -91,8 +78,6 @@ function cftl_tax_landing_save_abstract( $post_id ) {
 		'abstract_video' => 'sanitize_text_field',
 		'abstract_body'  => 'wp_filter_post_kses',
 		'hero_video'     => 'esc_url',
-		'hero_text_color' => 'sanitize_text_field',
-		'hero_background_color' => 'sanitize_text_field'
 	);
 
 	foreach ($abstract_fields as $field_name => $sanitize ) {

@@ -3,7 +3,7 @@
 include_once get_template_directory() . '/homepages/homepage-class.php';
 
 class CustomLayout extends Homepage {
-  function __construct($options=array()) {
+  public function __construct($options=array()) {
     $defaults = array(
       'name'            => __('Custom Homepage Layout', 'cpipr'),
       'description'     => __('Lorem ipsum dolor sit amet.', 'cpipr'),
