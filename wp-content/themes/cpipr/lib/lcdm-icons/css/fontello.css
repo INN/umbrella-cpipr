@@ -1,0 +1,102 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?59229282');
+  src: url('../font/fontello.eot?59229282#iefix') format('embedded-opentype'),
+       url('../font/fontello.woff2?59229282') format('woff2'),
+       url('../font/fontello.woff?59229282') format('woff'),
+       url('../font/fontello.ttf?59229282') format('truetype'),
+       url('../font/fontello.svg?59229282#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?59229282#fontello') format('svg');
+  }
+}
+*/
+ 
+ /*[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;*/
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  /*font-variant: normal;
+  text-transform: none;*/
+ 
+  /* fix buttons height, for twitter bootstrap */
+  /*line-height: 1em;*/
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  /*margin-left: .2em;*/
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  /*-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;*/
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+/*}*/
+
+.lcdm-icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 fontello;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* makes the font 33% larger relative to the icon container */
+.lcdm-icon-lg {
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.lcdm-icon-2x {
+  font-size: 2em;
+}
+.lcdm-icon-3x {
+  font-size: 3em;
+}
+.lcdm-icon-4x {
+  font-size: 4em;
+}
+.lcdm-icon-5x {
+  font-size: 5em;
+}
+.lcdm-icon-fw {
+  width: 1.28571429em;
+  text-align: center;
+}
+ 
+.lcdm-icon-help:before { content: '\e800'; } /* '' */
+.lcdm-icon-personajes:before { content: '\e801'; } /* '' */
+.lcdm-icon-documentos:before { content: '\e802'; } /* '' */
+.lcdm-icon-glosario:before { content: '\e803'; } /* '' */
+.lcdm-icon-graficas:before { content: '\e804'; } /* '' */
+.lcdm-icon-historias:before { content: '\e805'; } /* '' */
+.lcdm-icon-mapa:before { content: '\e806'; } /* '' */
+.lcdm-icon-videos:before { content: '\e807'; } /* '' */
+.lcdm-icon-search:before { content: '\e808'; } /* '' */
+.lcdm-icon-arrow-left:before { content: '\e809'; } /* '' */
+.lcdm-icon-arrow-right:before { content: '\e80a'; } /* '' */
+.lcdm-icon-close:before { content: '\e80b'; } /* '' */
+.lcdm-icon-menu:before { content: '\e80c'; } /* '' */
