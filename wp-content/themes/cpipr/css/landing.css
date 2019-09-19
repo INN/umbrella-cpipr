@@ -23,6 +23,12 @@
 .lcdm-secondary-slide {
 	height: 300px;
 }
+
+.lcdm-section-post a {
+	color: #000;
+	text-decoration: underline;
+}
+
 /* Landing Page: Los Chavos de María */
 @media (min-width: 768px) {
 	.header-chavos-maria .navbar {
