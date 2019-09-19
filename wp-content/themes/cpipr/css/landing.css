@@ -720,10 +720,10 @@ textarea.form-control {
 .lcdm-section-title > a > i, .lcdm-section-title >  i {
 	font-size: 70px;
 }
-.lcdm-section-title > a > .lcdm-icon-mapa, .lcdm-section-title > a > .lcdm-icon-personajes, .lcdm-section-title > a > .lcdm-icon-videos {
+.lcdm-section-title > a > .lcdm-icon-mapa, .lcdm-section-title > a > .lcdm-icon-videos {
 	color: #fff;
 }
-.lcdm-section-title > a > .lcdm-icon-graficas, .lcdm-section-title > a >.lcdm-icon-documentos{
+.lcdm-section-title > a > .lcdm-icon-graficas, .lcdm-section-title > a > .lcdm-icon-personajes, .lcdm-section-title > a >.lcdm-icon-documentos{
 	color: #5170b0;
 }
 .lcdm-section-title > div {
@@ -746,7 +746,8 @@ textarea.form-control {
 	color: #fff;
 }
 .lcdm-section-graficas .lcdm-section-title > a > div,
-.lcdm-section-documentos .lcdm-section-title > a > div {
+.lcdm-section-documentos .lcdm-section-title > a > div,
+.lcdm-section-powerplayers .lcdm-section-title > a > div {
 	color: #5170b0;
 }
 
