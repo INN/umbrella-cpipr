@@ -13,7 +13,7 @@
                                 <h5>SOBRE EL PROYECTO</h5>
                             </div>
                             <div class="media-body">
-                                <p>#LosChavosDeMaría es un proyecto informativo del Centro de Periodismo Investigativo enfocado en fiscalizar el proceso de recuperación en Puerto Rico luego de los huracanes Irma y María en el 2017. En este espacio, abogamos por la transparencia y la rendición de cuentas de los fondos públicos y privados de la reconstrucción del país.</p>
+                                <p>#LosChavosDeMaría es un proyecto del Centro de Periodismo Investigativo enfocado en fiscalizar el proceso de recuperación en Puerto Rico luego de los huracanes Irma y María en el 2017. Esta iniciativa es posible con el apoyo de la Red de Fundaciones de Puerto Rico, Oxfam y Report for America.</p>
                             </div>
                         </div>
 

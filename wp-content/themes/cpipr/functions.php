@@ -334,3 +334,23 @@ function add_series_slug_class_to_series_body( $classes ){
  * Filter that will fire our add_series_class_to_series_landing_body function
  */
 add_filter( 'body_class', 'add_series_slug_class_to_series_body' );	
+
+/* Add LCDM custom widget areas */
+function lcdm_widgets_init() {
+
+    register_sidebar( array(
+        'id'            => 'top_bar_lcdm_spanish',
+        'name'          => 'Top Bar Sponsors Spanish',
+        'before_widget' => '<div class="lcdm-top-banner">',
+        'after_widget'  => '</div>'
+    ) );
+
+    register_sidebar( array(
+        'id'            => 'top_bar_lcdm_english',
+        'name'          => 'Top Bar Sponsors English',
+        'before_widget' => '<div class="lcdm-top-banner">',
+        'after_widget'  => '</div>'
+    ) );
+
+}
+add_action( 'widgets_init', 'lcdm_widgets_init' );

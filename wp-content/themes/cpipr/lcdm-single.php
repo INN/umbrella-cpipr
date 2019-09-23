@@ -126,6 +126,12 @@
                                 array(
                                     'taxonomy' => 'post_tag',
                                     'field'    => 'slug',
+                                    'terms'    => array('news', 'graphic', 'powerplayer', 'video'),
+                                    'operator' => 'IN'
+                                ),
+                                array(
+                                    'taxonomy' => 'post_tag',
+                                    'field'    => 'slug',
                                     'terms'    => $lang
                                 )
                             ),
