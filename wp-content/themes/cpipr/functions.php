@@ -439,3 +439,22 @@ function cpipr_get_featured_posts_in_category( $category_name, $number = 5 ) {
 
 	return $featured_posts;
 }
+/* Add LCDM custom widget areas */
+function lcdm_widgets_init() {
+
+    register_sidebar( array(
+        'id'            => 'top_bar_lcdm_spanish',
+        'name'          => 'Top Bar Sponsors Spanish',
+        'before_widget' => '<div class="lcdm-top-banner">',
+        'after_widget'  => '</div>'
+    ) );
+
+    register_sidebar( array(
+        'id'            => 'top_bar_lcdm_english',
+        'name'          => 'Top Bar Sponsors English',
+        'before_widget' => '<div class="lcdm-top-banner">',
+        'after_widget'  => '</div>'
+    ) );
+
+}
+add_action( 'widgets_init', 'lcdm_widgets_init' );
