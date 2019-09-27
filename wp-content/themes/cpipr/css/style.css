@@ -183,7 +183,7 @@
 }
 @font-face {
   font-family: 'GT America Compressed';
-  src: url('../fonts/gt-america-compressed-regular.woff2') format('woff2'), url('../fonts/gt-america-compressed-regular.woff') format('woff'), url('../fonts/gt-america-compressed-regular.ttf') format('truetype'), url('../fonts/gt-america-compressed-regular.svg') format('svg');
+  src: url('../fonts/GT-America-Compressed-Medium.woff2') format('woff2'), url('../fonts/GT-America-Compressed-Medium.woff') format('woff'), url('../fonts/GT-America-Compressed-Medium.ttf') format('truetype'), url('../fonts/GT-America-Compressed-Medium.svg') format('svg');
   font-weight: 400;
   font-style: normal;
 }
@@ -191,12 +191,6 @@
   font-family: 'GT America Compressed';
   src: url('../fonts/GT-America-Compressed-Bold.woff2') format('woff2'), url('../fonts/GT-America-Compressed-Bold.woff') format('woff'), url('../fonts/GT-America-Compressed-Bold.ttf') format('truetype'), url('../fonts/GT-America-Compressed-Bold.svg') format('svg');
   font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'GT America Compressed';
-  src: url('../fonts/gt-america-compressed-black-webfont.woff2') format('woff2'), url('../fonts/gt-america-compressed-black-webfont.woff') format('woff'), url('../fonts/gt-america-compressed-black-webfont.ttf') format('truetype'), url('../fonts/gt-america-compressed-black-webfont.svg') format('svg');
-  font-weight: 900;
   font-style: normal;
 }
 @font-face {
@@ -2516,12 +2510,6 @@ body.normal.single-post .hero p.wp-media-credit {
   -o-transform: scale(1.1);
   transform: scale(1.1);
 }
-.series-drying-caribbean .text--important,
-.series-se-seca-el-caribe .text--important,
-.series-drying-caribbean .hero-main .wrapper-text,
-.series-se-seca-el-caribe .hero-main .wrapper-text {
-  background: #a0531b;
-}
 .item-author {
   padding: 10px 0 45px;
 }
@@ -3218,6 +3206,22 @@ footer #boilerplate li .caret {
 #cpi-footer .footer-copyright {
   background-color: #fff;
   padding: 20px 0;
+}
+#cpi-footer .social-links {
+  background-color: #fff;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  color: #000;
+  display: inline-block;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 30px;
+}
+#cpi-footer .social-links + .social-links {
+  margin-left: 10px;
 }
 #cpi-footer .copyright {
   color: #000;

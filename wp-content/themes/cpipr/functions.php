@@ -58,12 +58,7 @@ function cpipr_styles() {
 	$suffix = (LARGO_DEBUG)? '' : '.min';
 
 	wp_dequeue_style( 'largo-child-styles' );
-	wp_enqueue_style(
-		'cpipr-styles',
-		get_stylesheet_directory_uri().'/css/style' . $suffix . '.css',
-		null,
-		'2018-04-10'
-	);
+	wp_enqueue_style( 'cpipr-styles', get_stylesheet_directory_uri().'/css/style' . $suffix . '.css' );
 	wp_enqueue_style( 'cpipr-fontawesome', get_stylesheet_directory_uri().'/lib/font-awesome/css/font-awesome' . $suffix . '.css' );
     wp_enqueue_style( 'cpipr-lcdm-icons', get_stylesheet_directory_uri().'/lib/lcdm-icons/css/fontello.css' );
 	wp_enqueue_style( 'cpipr-landing', get_stylesheet_directory_uri().'/css/landing.css' );
@@ -278,6 +273,7 @@ function cpipr_image_size_setup () {
 }
 add_action( 'after_setup_theme', 'cpipr_image_size_setup', 11 );
 
+
 /* Add filter to select video, powerplayer and grafic template */
 function get_custom_post_type_template( $single_template ) {
     global $post;
@@ -300,40 +296,6 @@ function get_custom_post_type_template( $single_template ) {
 }
 add_filter( 'single_template', 'get_custom_post_type_template' );
 
-/**
- * Function to hook into 'body_class' filter and add specific
- * 'series-post-slug' class to body when page template 
- * 'series-landing.php' is being used.
- */
-function add_series_slug_class_to_series_body( $classes ){
-
-	// make sure the current template is 'series-landing.php'
-	// or 'series-single.php'
-	if( is_page_template('series-landing.php') || is_page_template('series-single.php') ){
-
-		// grab our post data and slug
-		global $post;
-
-		// grab 'series' taxonomy from post
-		$post_terms = array_shift(get_the_terms($post, 'series'));
-		
-		// get the slug of the series this post is in
-		$series_slug = $post_terms->slug;
-
-		// create new index in $classes arr and add our new 'series-post-slug' class
-		$classes[] = 'series-'.$series_slug;
-
-	}
-
-	// return $classes arr, regardless if we updated it or not
-	return $classes;
-
-}
-
-/**
- * Filter that will fire our add_series_class_to_series_landing_body function
- */
-add_filter( 'body_class', 'add_series_slug_class_to_series_body' );	
 
 /* Add LCDM custom widget areas */
 function lcdm_widgets_init() {

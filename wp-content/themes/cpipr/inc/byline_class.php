@@ -164,7 +164,13 @@ class Lcdm_CoAuthors_Biography_Byline extends Largo_Byline {
 
     function author_detail() {
         $author_link = $this->author_link();
-        $author_biography = '<p>' . get_the_author_meta('description', $this->author_id) . '</p>';
+        $lang = $this->lang;
+        if ($lang == "spanish") {
+            $author_biography = '<p>' . get_the_author_meta('description', $this->author_id) . '</p>';
+        } else {
+            $author_biography = '<p>' . get_the_author_meta('biographical_info_english', $this->author_id) . '</p>';
+        }
+        
         $output = '<div class="span8"><div class="lcdm-journalist-personal-info">' . $author_link . $author_biography . '</div></div>';
         echo $output;
     }

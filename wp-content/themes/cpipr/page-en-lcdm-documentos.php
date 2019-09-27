@@ -20,7 +20,7 @@
                         container: "#DC-search-projectid-45731-los-chavos-de-mar-a",
                         title: "",
                         order: "created_at",
-                        per_page: 15,
+                        per_page: 10,
                         search_bar: true,
                         organization: 1726
                     });
