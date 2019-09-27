@@ -80,7 +80,7 @@
                                         </span>
                                     </div>
                                     <div class="owl-hero-journalist">
-                                        <?php lcdm_byline(); ?>
+                                        <?php lcdm_byline(true, false, $lang); ?>
                                     </div>
                                 </div>
                             </div>
