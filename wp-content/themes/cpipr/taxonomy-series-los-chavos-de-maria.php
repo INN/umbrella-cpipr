@@ -5,7 +5,7 @@
 
     <!-- Main slider -->
     <div>
-        <div class="owl-hero-carousel">
+        <div class="owl-hero-carousel owl-hero-fixed-height">
             <div id="top-hero-carousel" class="owl-carousel owl-theme">
                 <?php
                     $args = array(
@@ -79,46 +79,45 @@
             </a>
         </div>
 
-        <div class="owl-hero-carousel">
+        <div class="owl-hero-carousel owl-hero-fixed-height">
             <div id="power-players-hero-carousel" class="owl-carousel owl-theme">
-                    <?php
-                        $args = array(
-                            'post_type' => 'post',
-                            'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'series',
-                                    'field'    => 'slug',
-                                    'terms'    => 'los-chavos-de-maria',
-                                ),
-                                array(
-                                    'taxonomy' => 'post_tag',
-                                    'field'    => 'slug',
-                                    'terms'    => 'powerplayer',
-                                ),
-                                array(
-                                    'taxonomy' => 'post_tag',
-                                    'field'    => 'slug',
-                                    'terms'    => 'featured',
-                                ),
-                                array(
-                                    'taxonomy' => 'post_tag',
-                                    'field'    => 'slug',
-                                    'terms'    => 'spanish',
-                                )
+                <?php
+                    $args = array(
+                        'post_type' => 'post',
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'series',
+                                'field'    => 'slug',
+                                'terms'    => 'los-chavos-de-maria',
                             ),
-                            'order' => 'DESC',
-                            'posts_per_page' => 5,
-                            'post_status' => 'publish'
-                        );
-                        $chavos_query = new WP_Query($args);
-                        $has_graficas_posts = $chavos_query->have_posts();
-                        while ($chavos_query->have_posts()) {
-                            $chavos_query->the_post();
-                    ?>
-                    <a href="<?php the_permalink();?>">
-                        <div class="owl-hero-item lcdm-secondary-slide" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')"></div>
-                    </a>
-                </div>
+                            array(
+                                'taxonomy' => 'post_tag',
+                                'field'    => 'slug',
+                                'terms'    => 'powerplayer',
+                            ),
+                            array(
+                                'taxonomy' => 'post_tag',
+                                'field'    => 'slug',
+                                'terms'    => 'featured',
+                            ),
+                            array(
+                                'taxonomy' => 'post_tag',
+                                'field'    => 'slug',
+                                'terms'    => 'spanish',
+                            )
+                        ),
+                        'order' => 'DESC',
+                        'posts_per_page' => 5,
+                        'post_status' => 'publish'
+                    );
+                    $chavos_query = new WP_Query($args);
+                    $has_powerplayers_posts = $chavos_query->have_posts();
+                    while ($chavos_query->have_posts()) {
+                        $chavos_query->the_post();
+                ?>
+                <a href="<?php the_permalink();?>">
+                    <div class="owl-hero-item lcdm-secondary-slide" style="background-image: url('<?php the_post_thumbnail_url('full'); ?>')"></div>
+                </a>                
                 <?php } wp_reset_postdata();?>
             </div>
             <?php if ($has_powerplayers_posts): ?>
@@ -251,7 +250,7 @@
             <br/>
             <br/>
             <br/>
-            <div class="owl-hero-carousel">
+            <div class="owl-hero-carousel owl-hero-fixed-height">
                 <div id="inphographic-hero-carousel" class="owl-carousel owl-theme">
                     <?php
                         $args = array(
@@ -314,7 +313,7 @@
             </a>
         </div>
 
-        <div class="owl-hero-carousel">
+        <div class="owl-hero-carousel owl-hero-fixed-height">
             <div id="video-hero-carousel" class="owl-carousel owl-theme">
                 <?php
                     $args = array(
@@ -400,7 +399,7 @@
                         container: "#DC-search-projectid-45731-los-chavos-de-mar-a",
                         title: "",
                         order: "created_at",
-                        per_page: 15,
+                        per_page: 10,
                         search_bar: true,
                         organization: 1726
                     });
