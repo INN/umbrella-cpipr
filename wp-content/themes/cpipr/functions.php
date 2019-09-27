@@ -417,5 +417,19 @@ function lcdm_widgets_init() {
         'after_widget'  => '</div>'
     ) );
 
+    register_sidebar( array(
+        'id'            => 'footer_lcdm_spanish',
+        'name'          => 'Footer LCDM Spanish',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>'
+    ) );
+
+    register_sidebar( array(
+        'id'            => 'footer_lcdm_english',
+        'name'          => 'Footer LCDM English',
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>'
+    ) );
+
 }
 add_action( 'widgets_init', 'lcdm_widgets_init' );
