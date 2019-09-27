@@ -8,45 +8,9 @@
                         <a href="/"><img src="<?php echo get_stylesheet_directory_uri() . '/images/footer-logo.png' ?>"/></a>
                     </div>
                     <div class="span8">
-                        <div class="media">
-                            <div class="media-left">
-                                <h5>ABOUT THE PROJECT</h5>
-                            </div>
-                            <div class="media-body">
-                                <p>Maria: The Money Trail is a project of the Center for Investigative Journalism focused on putting the spotlight on the recovery process in Puerto Rico after Hurricanes Irma and María in 2017. This initiative is possible with the support of the Puerto Rico Foundations Network, Oxfam America and Report for America.</p>
-                            </div>
-                        </div>
-
-                        <div class="media">
-                            <div class="media-left">
-                                <h5>CONTACT US</h5>
-                            </div>
-                            <div class="media-body">
-                                <p>Si tiene una solicitud de investigación, queja, aclaración, ‘orejita’, prueba, inquietud, u observación sobre alguna información publicada por el Centro de Periodismo Investigativo, escriba al correo electrónico info@periodismoinvestigativo.com.</p>
-
-                                <p>
-                                    <strong>Phone:</strong> 787-751-1912 ext. 3022<br/>
-                                    <strong>Email:</strong> info@periodismoinvestigativo.com<br/>
-                                    <strong>Facebook:</strong> Centro de Periodismo Investigativo<br/>
-                                    <strong>Twitter:</strong> @cpipr<br/>
-                                    <strong>Direción postal:</strong> P.O. Box 6834 San Juan PR 00914-6834
-                                </p>
-                                <p class="no-margin-bottom">
-                                    <a href="#" class="social-links"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="social-links"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="social-links"><i class="fa fa-rss"></i></a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="media last-media">
-                            <div class="media-left">
-                                <h5>ABOUT CPI</h5>
-                            </div>
-                            <div class="media-body">
-                                <p>El CPI reconoce que el requisito fundamental para una verdadera democracia es que la ciudadanía esté bien informada y que existan entidades independientes con la capacidad de fiscalizar los poderes que accionan en la sociedad, sean públicos o privados.</p>
-                            </div>
-                        </div>
+                        <?php if ( is_active_sidebar( 'footer_lcdm_english' ) ) : ?>
+                        <?php dynamic_sidebar( 'footer_lcdm_english' ); ?>
+                        <?php endif; ?> 
                     </div>
                 </div>
 
