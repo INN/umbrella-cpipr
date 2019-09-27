@@ -75,10 +75,10 @@
                                 <div style="display: flex;flex-flow: row wrap;justify-content: space-between;align-items: flex-start;">
                                     <div style="max-width: 800px;">
                                         <h2 class="owl-hero-post-title"><?php the_title(); ?></h2>
-                                        <span class="post-date owl-hero-journalist"><?php the_date()?></span>
+                                        <span class="post-date owl-hero-journalist"><?php lcdm_the_date(true, ($lang == 'spanish' ? 'es' : 'en')) ?></span>
                                     </div>
                                     <div class="owl-hero-journalist">
-                                        <?php lcdm_byline(); ?>
+                                        <?php lcdm_byline(true, false, $lang); ?>
                                     </div>
                                 </div>
                             </div>

@@ -35,3 +35,31 @@ if ( ! function_exists( 'lcdm_byline' ) ) {
         return $byline;
     }
 }
+
+if ( ! function_exists( 'lcdm_the_date' ) ) {
+    function lcdm_the_date($echo=true, $lang='es') {
+        $locale = array(
+            'en_US' => array(
+                'months' => array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December')
+            ),
+            'es_ES' => array(
+                'months' => array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre')
+            )
+        );
+
+        $day = get_the_date('d');
+        $month = get_the_date('F');
+        $year = get_the_date('Y');
+
+        switch ($lang) {
+            case 'es':
+                $month = $locale['es_ES']['months'][get_the_date('n') - 1];
+            break;
+        }
+
+        if ( $echo ) {
+            echo $day . ' ' . $month . ' ' . $year;
+        }
+        return $day . ' ' . $month . ' ' . $year;
+    }
+}
