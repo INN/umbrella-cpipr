@@ -11,6 +11,7 @@
             default:
                 tipo_asistencia_class = 'bg-yellow';
         }
+      
         var template =
             '<tr class="' + tipo_asistencia_class + '">' +
                 '<td></td>' +
@@ -21,7 +22,7 @@
             '<tr>' +
                 '<td>' + row.categoria + '</td>' +
                 '<td>' + numeral(row.total_obligado).format('$0,0.00') + '</td>' +
-                '<td>' + numeral(row.total_desembolsado).format('$0,0.00') + '</td>' +
+                '<td>' + row.total_desembolsado + '</td>' +
                 '<td>' + row.fecha_ultimo_pago + '</td>' +
             '</tr>';
         return template;
