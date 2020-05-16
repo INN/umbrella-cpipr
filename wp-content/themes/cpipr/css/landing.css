@@ -843,6 +843,39 @@ textarea.form-control {
 	display: none !important;
 }
 
+.lcdm-section-post-subtitle {
+	box-sizing: border-box;
+	padding-right: 15px;
+}
+.lcdm-section-post-subtitle .lcdm-post-subtitle {
+	border-bottom: 1px solid #000;
+	margin-top: 30px;
+	padding-bottom: 20px;
+}
+
+.lcdm-post-subtitle h4 {
+	font-family: "GT America Compressed", Helvetica, Arial, sans-serif;
+	margin-bottom: 15px;
+	padding-right: 20px;
+}
+
+.lcdm-post-subtitle .wp-caption {
+	margin-bottom: 15px;
+}
+
+.lcdm-post-subtitle .wp-caption .wp-media-credit {
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.lcdm-post-subtitle .wp-caption .wp-caption-text {
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	color: #7e7f7f;
+	font-style: normal;
+	margin-top: 0;
+}
+
 @media (min-width: 768px) {
   	.lcdm-section-post .wp-caption .wp-media-credit,
   	.lcdm-section-post .wp-caption .wp-caption-text {
