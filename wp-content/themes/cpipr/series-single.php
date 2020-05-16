@@ -88,7 +88,15 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 								);
 							}
 						?>
-						<p class="date-text"><?php the_time('j F, Y')?></p>
+						<p class="date-text">
+							<?php
+								if (has_category('english', $post->ID)) {
+									echo date('j F Y', get_the_time( 'U', $post->ID ));
+								} else {
+									the_time('j F Y');
+								}
+							?>
+						</p>
 					</div>
 				</div>
 			</div>
@@ -168,7 +176,15 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 										<h2>
 											<a href="<?php echo esc_attr( get_permalink($next_post->ID) ); ?>"><?php echo wp_kses_post( $next_post->post_title ); ?></a>
 										</h2>
-										<p class="date-text"><?php the_time('j F, Y')?></p>
+										<p class="date-text">
+											<?php
+												if (has_category('english', $next_post->ID)) {
+													echo date('j F Y', get_the_time( 'U', $next_post->ID ));
+												} else {
+													the_time('j F Y');
+												}
+											?>
+										</p>
 									</div>
 								</div>
 							</div>	
