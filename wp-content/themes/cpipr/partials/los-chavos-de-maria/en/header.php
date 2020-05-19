@@ -7,6 +7,15 @@
             </a>
         </div>
         <div class="lcdm-logo-wrapper">
+            <a href="/" class="lcdm-cpi">
+                <span>
+                    <i class="fa fa-home"></i><br/>
+                </span>
+                <div class="hidden-xs">
+                    Go to<br/>
+                    CPI Home
+                </div>
+            </a>
             <a class="lcdm-logo" href="<?php echo get_permalink( get_page_by_path( 'en-los-chavos-de-maria' ) ) ?>">
                 <img alt="" src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm-en.png' ?>" srcset="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm-en@2x.png 2x' ?>, <?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm-en@3x.png 3x' ?>"/>
             </a>
