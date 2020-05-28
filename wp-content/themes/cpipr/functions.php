@@ -364,3 +364,69 @@ function add_series_slug_class_to_series_body( $classes ){
  * Filter that will fire our add_series_class_to_series_landing_body function
  */
 add_filter( 'body_class', 'add_series_slug_class_to_series_body' );	
+
+
+/**
+ * Exclude english posts on category landing pages
+ */
+function exclude_english_posts_category($query) {
+	if (!is_category('english')) {
+		$english_cat = get_category_by_slug('english');
+		if ( $english_cat ) {
+			$query->set('category__not_in', array($english_cat->term_id));
+		}
+		
+	}
+}
+add_filter('pre_get_posts', 'exclude_english_posts_category');
+
+
+/**
+ * Get posts marked as "Featured in category" for a given category name.
+ * (CUSTOMIZED)
+ *
+ * @param string $category_name the category to retrieve featured posts for.
+ * @param integer $number total number of posts to return, backfilling with regular posts as necessary.
+ * @since 0.5
+ */
+function cpipr_get_featured_posts_in_category( $category_name, $number = 5 ) {
+	$args = array(
+		'category_name' => $category_name,
+		'numberposts' => $number,
+		'post_status' => 'publish',
+	);
+
+	// Exclude english posts when user enters whatever category except english
+	$category = get_term_by( 'name', $category_name, 'category' );
+	if ($category && $category->slug != 'english') {
+		$english_cat = get_category_by_slug('english');
+		if ($english_cat) {
+			$args['category__not_in'] = array($english_cat->term_id);
+		}
+	}
+
+	$tax_query = array(
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'prominence',
+				'field' => 'slug',
+				'terms' => 'category-featured',
+			)
+		)
+	);
+
+	// Get the featured posts
+	$featured_posts = get_posts( array_merge( $args, $tax_query ) );
+
+	// Backfill with regular posts if necessary
+	if ( count( $featured_posts ) < (int) $number ) {
+		$needed = (int) $number - count( $featured_posts );
+		$regular_posts = get_posts( array_merge( $args, array(
+			'numberposts' => $needed,
+			'post__not_in' => array_map( function( $x ) { return $x->ID; }, $featured_posts )
+		)));
+		$featured_posts = array_merge( $featured_posts, $regular_posts );
+	}
+
+	return $featured_posts;
+}
