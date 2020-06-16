@@ -20,10 +20,10 @@ get_header();
         <div class="material-switch-lang pull-right">
             <span class="lbl-lang">Language</span>
             <div class="material-switch">
-                <input id="switchlang" type="checkbox" data-href="<?php echo get_permalink(get_page_by_path('donate'))?>"/>
+                <input id="switchlang" type="checkbox" checked="checked" data-href="<?php echo get_permalink(get_page_by_path('donaciones'))?>"/>
                 <label for="switchlang" class="label-default"></label>
             </div>
-            <span class="lbl-curr-lang">English</span>
+            <span class="lbl-curr-lang">Spanish</span>
         </div>
         <script type="text/javascript">
             jQuery(document).ready(function () {
