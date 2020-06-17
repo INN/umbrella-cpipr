@@ -39,7 +39,7 @@ get_header();
         <div class="span8">
             <div class="cpi-widget">
                 <div class="cpi-widget-header">
-                    <h4 class="cpi-widget-title cpi-widget-title-lg">HAZ TU DONACIÓN, <strong>POR MÁS CPI</strong></h4>
+                    <h4 class="cpi-widget-title cpi-widget-title-lg">PLEASE DONATE, <strong>KEEP CPI GOING STRONG</strong></h4>
                 </div>
             </div>
             <?php while ( have_posts() ) : the_post(); ?>
@@ -49,15 +49,15 @@ get_header();
             <?php endwhile; ?>
             <div class="cpi-widget">
                 <div class="cpi-widget-header">
-                    <h4 class="cpi-widget-title">OTRAS MANERAS DE DONAR</h4>
+                    <h4 class="cpi-widget-title">MORE WAYS TO SUPPORT CPI</h4>
                 </div>
                 <div class="cpi-widget-body">
                     <ul class="other-gateway-radio-list">
                         <li>
-                            <a href="#">DONAR VIA PAYPAL</a>
+                            <a href="#">DONATE VIA PAYPAL</a>
                         </li>
                         <li>
-                            <a href="#">DONAR VIA NETWORK FOR GOOD</a>
+                            <a href="#">DONATE VIA NETWORK FOR GOOD</a>
                         </li>
                     </ul>
                     <p>
@@ -93,7 +93,7 @@ get_header();
         <div class="span3">
             <div class="cpi-widget">
                 <div class="cpi-widget-header">
-                    <h4 class="cpi-widget-title">OTRAS MANERAS DE DONAR</h4>
+                    <h4 class="cpi-widget-title">MORE WAYS TO SUPPORT CPI</h4>
                 </div>
                 <div class="cpi-widget-body">
                     <p>Envio de cheque por correo:</p>

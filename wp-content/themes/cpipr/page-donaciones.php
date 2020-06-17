@@ -18,7 +18,7 @@ get_header();
 <div id="content" role="main">
     <div class="clearfix">
         <div class="material-switch-lang pull-right">
-            <span class="lbl-lang">Language</span>
+            <span class="lbl-lang">Idioma</span>
             <div class="material-switch">
                 <input id="switchlang" type="checkbox" data-href="<?php echo get_permalink(get_page_by_path('donate'))?>"/>
                 <label for="switchlang" class="label-default"></label>
