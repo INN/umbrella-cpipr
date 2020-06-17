@@ -8,7 +8,7 @@
         <div class="card-body">
             <h5 class="card-title"><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h5>
             <p class="card-text card-post-date clearfix">
-                <?php echo get_the_date(); ?>
+                <?php largo_time(true, null, true); ?>
                 <a href="<?php the_permalink();?>" class="btn btn-white-black pull-right"><?php echo has_tag('english') ? 'READ MORE' : 'LEER MÁS' ?></a>        
             </p>
         </div>

@@ -71,13 +71,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 					<div class="span8 offset2 mobile-no-offset text--big">
 						<?php echo apply_filters('the_content', $post->post_excerpt); ?>
 						<p class="date-text">
-							<?php
-								if (has_term('english', 'glossary-cat', $post->ID)) {
-									echo date('j F Y', get_the_time( 'U', $post->ID ));
-								} else {
-									the_time('j F Y');
-								}
-							?>
+							<?php largo_time(true, null, true); ?>
 						</p>
 					</div>
 				</div>

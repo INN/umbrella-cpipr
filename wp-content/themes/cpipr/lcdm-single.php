@@ -75,7 +75,9 @@
                                 <div style="display: flex;flex-flow: row wrap;justify-content: space-between;align-items: flex-start;">
                                     <div style="max-width: 800px;">
                                         <h2 class="owl-hero-post-title"><?php the_title(); ?></h2>
-                                        <span class="post-date owl-hero-journalist"><?php the_date()?></span>
+                                        <span class="post-date owl-hero-journalist">
+                                            <?php largo_time(true, null, true); ?>
+                                        </span>
                                     </div>
                                     <div class="owl-hero-journalist">
                                         <?php lcdm_byline(); ?>

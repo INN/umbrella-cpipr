@@ -53,13 +53,7 @@ if ( has_term('series-featured', 'prominence') ) {
 			<div class="title-article">
 				<h2><?php the_title(); ?></h2>
 				<p class="date-text">
-					<?php
-						if (has_category('english', get_the_ID())) {
-							echo date('j F Y', get_the_time( 'U', get_the_ID() ));
-						} else {
-							the_time('j F Y');
-						}
-					?>
+					<?php largo_time(true, get_the_ID(), true); ?>
 				</p>
 			</div>
 		</div>

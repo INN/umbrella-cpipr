@@ -89,13 +89,7 @@ $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5
 							}
 						?>
 						<p class="date-text">
-							<?php
-								if (has_category('english', $post->ID)) {
-									echo date('j F Y', get_the_time( 'U', $post->ID ));
-								} else {
-									the_time('j F Y');
-								}
-							?>
+							<?php largo_time(true, $post->ID, true); ?>
 						</p>
 					</div>
 				</div>

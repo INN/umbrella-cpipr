@@ -83,11 +83,11 @@ add_filter( 'wpmu_signup_user_notification', '__return_false' );
 
 // spanish date format is different, we should fix this in Largo at some point
 // https://github.com/INN/largo/issues/1480
-function largo_time( $echo = true, $post = null ) {
+function largo_time( $echo = true, $post = null, $short_time = false ) {
 	$post = get_post( $post );
 	$the_time = get_the_time( 'U', $post );
 	$time_difference = current_time( 'timestamp' ) - $the_time;
-	$is_english_post = has_category('english', $post);
+	$is_english_post = has_category('english', $post) || has_term('english', 'post_tag');
 
 	if ( $time_difference < 86400 ) {
 		$output = sprintf(
@@ -97,14 +97,22 @@ function largo_time( $echo = true, $post = null ) {
 		);
 	} else {
 		if ($is_english_post) {
-			$output = 'Published: ' . date('F j, Y \a\t h:i A', $the_time);
+			if ($short_time) {
+				$output = date('F j, Y', $the_time);
+			} else {
+				$output = 'Published: ' . date('F j, Y \a\t h:i A', $the_time);
+			}
 		} else {
-			$output = __('Published') . ': ' . get_the_date( 'j \d\e F Y \a \l\a\s h:i A', $post->ID );
+			if ($short_time) {
+				$output = get_the_date( 'j \d\e F Y', $post->ID );
+			} else {
+				$output = __('Published') . ': ' . get_the_date( 'j \d\e F Y \a \l\a\s h:i A', $post->ID );
+			}
 		}
 	}
 
 	// Add last_updated time only for single posts.
-	if (is_single()) {
+	if (is_single() && !$short_time) {
 		$updated_time = get_the_modified_time( 'U', $post );
 		$time_difference = $updated_time - $the_time;
 		if ( $time_difference > 86400 ) {
