@@ -1,8 +1,7 @@
 <?php
 /**
- * Single Post Template: One Column (Standard Layout)
- * Template Name: One Column (Standard Layout)
- * Description: Shows the post with a small right sidebar 
+ * Template Name: Donations page
+ * Description: Based on Single Post Template: One Column (Standard Layout) 
  */
 
 global $shown_ids;
