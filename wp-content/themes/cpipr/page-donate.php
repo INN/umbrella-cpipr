@@ -2,15 +2,15 @@
 /**
  * Single Post Template: One Column (Standard Layout)
  * Template Name: One Column (Standard Layout)
- * Description: Shows the post with a small right sidebar 
+ * Description: Shows the post with a small right sidebar
  */
 
 global $shown_ids;
 
-add_filter( 'body_class', function( $classes ) {
+add_filter('body_class', function ($classes) {
     $classes[] = 'normal';
     return $classes;
-} );
+});
 
 // Disable Give plugin language
 unload_textdomain('give');
@@ -22,12 +22,12 @@ get_header();
 <div id="content" role="main">
     <div class="clearfix">
         <div class="material-switch-lang pull-right">
-            <span class="lbl-lang">Language</span>
+            <span class="lbl-lang">Idioma</span>
             <div class="material-switch">
-                <input id="switchlang" type="checkbox" checked="checked" data-href="<?php echo get_permalink(get_page_by_path('donaciones'))?>"/>
+                <input id="switchlang" type="checkbox" checked="checked" data-href="<?php echo get_permalink(get_page_by_path('donaciones')) ?>"/>
                 <label for="switchlang" class="label-default"></label>
             </div>
-            <span class="lbl-curr-lang">Spanish</span>
+            <span class="lbl-curr-lang">Español</span>
         </div>
         <script type="text/javascript">
             jQuery(document).ready(function () {
@@ -46,11 +46,11 @@ get_header();
                     <h4 class="cpi-widget-title cpi-widget-title-lg">PLEASE DONATE, <strong>KEEP CPI GOING STRONG</strong></h4>
                 </div>
             </div>
-            <?php while ( have_posts() ) : the_post(); ?>
-                <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
-                    <?php the_content(); ?>
-                </article><!-- #post-<?php the_ID(); ?> -->
-            <?php endwhile; ?>
+            <?php while (have_posts()): the_post();?>
+	                <article id="post-<?php the_ID();?>" <?php post_class('clearfix');?>>
+	                    <?php the_content();?>
+	                </article><!-- #post-<?php the_ID();?> -->
+	            <?php endwhile;?>
             <div class="cpi-widget">
                 <div class="cpi-widget-header">
                     <h4 class="cpi-widget-title">MORE WAYS TO SUPPORT CPI</h4>
@@ -58,36 +58,47 @@ get_header();
                 <div class="cpi-widget-body">
                     <ul class="other-gateway-radio-list">
                         <li>
-                            <a href="#">DONATE VIA PAYPAL</a>
+                        <a target="_blank" href="https://www.paypal.com/donate/?token=pvGTri2GX_4FzPW4qAz3zV4VHx7sml5oPEjLsy2GjobTeHjOgmF2cEHdAFo_t6-V1pdSI0&country.x=US&locale.x=US">DONATE VIA PAYPAL</a>
                         </li>
                         <li>
-                            <a href="#">DONATE VIA NETWORK FOR GOOD</a>
+                        <a target="_blank" href="https://www.networkforgood.org/donation/ExpressDonation.aspx?ORGID2=660705065&vlrStratCode=k%2faPABkV7YzpiRc3p4Hx%2bjTsN8tqKDZzbFYVpDHSXOMWa2vRcIAvmA%2fJCkuQjte1">DONATE VIA NETWORK FOR GOOD</a>
                         </li>
                     </ul>
                     <p>
-                        Los donativos que recibe el Centro de Periodismo Investigativo
-                        están exentos de contribuciones en Puerto Rico y Estados
-                        Unidos. Nuestra organización recibe donativos y apoyo de
-                        fundaciones, instituciones y ciudadanos que comparten su visión
-                        de apoderamiento cívico y valoran la verticalidad y calidad del
-                        ejercicio periodístico.
+                    Centro de Periodismo Investigativo (Center for Investigative Journalism) is
+                        an independent, 501(c)(3) tax-exempt non-profit media organization
+                        that does not accept any kind of government support.
+                        Our organization receives donations and support from foundations,
+                        institutions, and citizens who share
+                        our vision of civic empowerment and value the quality of good and ethical journalism.
+                        Donations received are tax-deductible in Puerto Rico and the United States.
                     </p>
                     <p>
-                        <a href="#">Lea nuestra Política sobre auspicios y donativos al CPI</a>
+                    <a href="https://periodismoinvestigativo.com/wp-content/uploads/2013/11/Pol%C3%ADtica-sobre-auspicios-y-donativos-CPI-REV.docx">Read our sponsorship and donation policy</a>
+
                     </p>
-                    <p>
-                        Las principales fuentes de ingresos del Centro de Periodismo
-                        Investigativo son los donativos de fundaciones, corporaciones
-                        y los auspicios a eventos. Además de otros donantes
-                        individuales que prefieren mantener su identidad anónima o no
-                        han sido consultados sobre la divulgación de sus nombres.
-                    </p>
-                    <h5 class="text-third font-normal">
-                        <a href="#">
-                            CONOCE NUESTRA LISTA DE DONANTES Y NUESTRA POLÍTICA SOBRE
-                            AUSPICIOS Y DONATIVOS AL CPI
-                        </a>
-                    </h5>
+
+                    <H5 class="cpi-widget-title">DONOR LIST:</H5>
+                        <ul class="cpi-donations-list">
+                            <li>Open Society Foundations</li>
+                            <li>IEEFA- Rockefeller Brothers Fund</li>
+                            <li>Maria Fund</li>
+                            <li>Espacios Abiertos</li>
+                            <li>Red de Fundaciones de Puerto Rico</li>
+                            <li>Miranda Foundation</li>
+                            <li>Para la Naturaleza</li>
+                            <li>Fundación Ángel Ramos</li>
+                            <li>Universidad Interamericana</li>
+                            <li>Fundación Puertorriqueña de las Humanidades</li>
+                            <li>CUNY Graduate School of Journalism – Ravitch Fiscal Reporting Program</li>
+                            <li>Lourdes Miranda</li>
+                            <li>Oscar Serrano</li>
+                            <li>Adam Schweigert</li>
+                            <li>Matty García y Rubén Carbonell</li>
+                            <li>Osvaldo Burgos</li>
+                            <li>Efrén Rivera Ramos</li>
+                            <li>Michel Godreau</li>
+                        </ul>
                     <br/>
                     <br/>
                 </div>
@@ -100,7 +111,7 @@ get_header();
                     <h4 class="cpi-widget-title">MORE WAYS TO SUPPORT CPI</h4>
                 </div>
                 <div class="cpi-widget-body">
-                    <p>Envio de cheque por correo:</p>
+                <p>Send a check by mail to:</p>
                     <p>
                         P.O. Box 6834<br/>
                         San Juan PR<br/>
@@ -108,11 +119,12 @@ get_header();
                     </p>
                     <p class="text-center">
                         <a href="#">
-                            <img src="https://dummyimage.com/200x200/ccc/fff" class="img-responsive img-circle" />
+                        <a href="https://quiosco.periodismoinvestigativo.com/">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/kiosk.jpeg" class="img-responsive img-circle" />
                         </a>
                     </p>
                     <div class="form-group text-center">
-                        <a href="#" class="btn btn-lg btn-round btn-white-orange">TIENDA CPI</a>
+                    <a href="https://quiosco.periodismoinvestigativo.com/" class="btn btn-lg btn-round btn-white-orange">CPI KIOSK</a>
                     </div>
                 </div>
             </div>
@@ -120,6 +132,6 @@ get_header();
     </div>
 </div>
 
-<?php do_action( 'largo_after_content' ); ?>
+<?php do_action('largo_after_content');?>
 
 <?php get_footer();
