@@ -52,9 +52,9 @@ get_header();
                 </div>
                 <div class="cpi-widget-body">
                     <ul class="other-gateway-radio-list">
-                        <li>
+                        <!-- <li>
                             <a target="_blank" href="https://www.paypal.com/donate/?token=pvGTri2GX_4FzPW4qAz3zV4VHx7sml5oPEjLsy2GjobTeHjOgmF2cEHdAFo_t6-V1pdSI0&country.x=US&locale.x=US">DONAR VIA PAYPAL</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a target="_blank" href="https://www.networkforgood.org/donation/ExpressDonation.aspx?ORGID2=660705065&vlrStratCode=k%2faPABkV7YzpiRc3p4Hx%2bjTsN8tqKDZzbFYVpDHSXOMWa2vRcIAvmA%2fJCkuQjte1">DONAR VIA NETWORK FOR GOOD</a>
                         </li>
@@ -122,7 +122,7 @@ get_header();
                         </a>
                     </p>
                     <div class="form-group text-center">
-                        <a href="https://quiosco.periodismoinvestigativo.com/" class="btn btn-lg btn-round btn-white-orange">KIOSKO CPI</a>
+                        <a href="https://quiosco.periodismoinvestigativo.com/" class="btn btn-lg btn-round btn-white-orange">QUIOSCO CPI</a>
                     </div>
                 </div>
             </div>
