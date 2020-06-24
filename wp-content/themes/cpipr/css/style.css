@@ -3800,8 +3800,15 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
   color: #ef5125;
   display: block;
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
   padding: 8px 12px;
   text-decoration: none;
+  width: 100%;
+}
+.cpi-paypal-button:hover,
+.cpi-paypal-button:focus {
+  background-color: #ef5125;
+  color: #fff;
 }
 .cpi-donations-list {
   list-style-type: none;

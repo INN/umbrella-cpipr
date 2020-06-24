@@ -58,16 +58,18 @@ get_header();
                 <div class="cpi-widget-body">
                     <ul class="other-gateway-radio-list">
                         <li>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                        <input name="cmd" type="hidden" value="_donations" />
-                        <input name="business" type="hidden" value="info@periodismoinvestigativo.com" />
-                        <input name="lc" type="hidden" value="US" />
-                        <input name="item_name" type="hidden" value="Centro de Periodismo Investigativo" />
-                        <input name="no_note" type="hidden" value="0" />
-                        <input name="currency_code" type="hidden" value="USD" />
-                        <input name="bn" type="hidden" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest" />
-                        <input class="cpi-paypal-button" alt="PayPal, la forma más segura y rápida de pagar en línea." name="submit" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donate_LG.gif" type="submit" value="DONATE VIA PAYPAL" />
-                        <img src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" alt="" width="1" height="1" border="0" /></form>
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                                <input name="cmd" type="hidden" value="_donations" />
+                                <input name="business" type="hidden" value="info@periodismoinvestigativo.com" />
+                                <input name="lc" type="hidden" value="US" />
+                                <input name="item_name" type="hidden" value="Centro de Periodismo Investigativo" />
+                                <input name="no_note" type="hidden" value="0" />
+                                <input name="currency_code" type="hidden" value="USD" />
+                                <input name="bn" type="hidden" value="PP-DonationsBF:btn_donate_LG.gif:NonHostedGuest" />
+                                <button class="cpi-paypal-button" alt="PayPal, la forma más segura y rápida de pagar en línea." name="submit" type="submit">
+                                    DONATE VIA PAYPAL
+                                </button>
+                            </form>
                         </li>
                         <li>
                         <a target="_blank" href="https://www.networkforgood.org/donation/ExpressDonation.aspx?ORGID2=660705065&vlrStratCode=k%2faPABkV7YzpiRc3p4Hx%2bjTsN8tqKDZzbFYVpDHSXOMWa2vRcIAvmA%2fJCkuQjte1">DONATE VIA NETWORK FOR GOOD</a>
