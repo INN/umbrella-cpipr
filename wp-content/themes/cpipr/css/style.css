@@ -3794,7 +3794,7 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
   text-decoration: underline;
 }
 .cpi-donations-list {
-  list-style-type: none; 
+  list-style-type: none;
   margin: 0;
 }
 .cpi-donations-list li {
