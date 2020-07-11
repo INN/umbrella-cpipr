@@ -3600,6 +3600,9 @@ form[id*=give-form] .give-donation-amount .give-currency-symbol {
   height: 52px;
   line-height: 52px;
   padding: 0 16px;
+  font-weight: bold;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 24px;
 }
 form[id*=give-form] .give-donation-amount #give-amount,
 form[id*=give-form] .give-donation-amount #give-amount-text {
@@ -3607,6 +3610,10 @@ form[id*=give-form] .give-donation-amount #give-amount-text {
   border-top-right-radius: 6px;
   height: 52px;
   padding: 14px;
+  font-weight: bold;
+  color: black;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 24px;
 }
 #give-donation-level-button-wrap > li {
   margin: 0 0 5px 0;
@@ -3756,14 +3763,15 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
   text-align: center;
 }
 .other-gateway-radio-list > li > a {
-  background: #fff;
-  border: 1px solid #ef5125;
-  border-radius: 24px;
-  color: #ef5125;
-  display: block;
+  background-color: #000;
+  border-color: #000;
+  border-radius: 4px;
+  color: #fff;
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
   padding: 8px 12px;
+  display: block;
   text-decoration: none;
+  font-size: 24px;
 }
 .other-gateway-radio-list > li > a:hover,
 .other-gateway-radio-list > li > a:focus {
@@ -3772,8 +3780,11 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
 }
 /* Cpi widgets */
 .cpi-widget-header {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 15px;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 8px;
+}
+.cpi-widget-spacer {
+  height: 20px;
 }
 .cpi-widget-title {
   font-family: "GT America Compressed", Helvetica, Arial, sans-serif;
@@ -3792,18 +3803,20 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
 .cpi-widget-body a {
   color: #ef5125;
   text-decoration: underline;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 20px;
 }
 .cpi-paypal-button {
-  background: #fff;
-  border: 1px solid #ef5125;
-  border-radius: 24px;
-  color: #ef5125;
-  display: block;
-  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
-  font-size: 2rem;
-  padding: 8px 12px;
-  text-decoration: none;
+  font-size: 24px;
   width: 100%;
+  background: #000;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  padding: 8px 12px;
+  display: block;
+  text-decoration: none;
 }
 .cpi-paypal-button:hover,
 .cpi-paypal-button:focus {

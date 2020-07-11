@@ -519,6 +519,9 @@ form[id*=give-form] .give-donation-amount .give-currency-symbol {
   height: 52px;
   line-height: 52px;
   padding: 0 16px;
+  font-weight: bold;
+  font-family: @font-family-secondary-condensed;
+  font-size: 24px;
 }
 
 form[id*=give-form] .give-donation-amount #give-amount,
@@ -527,6 +530,10 @@ form[id*=give-form] .give-donation-amount #give-amount-text {
   border-top-right-radius: 6px;
   height: 52px;
   padding: 14px;
+  font-weight: bold;
+  color: black;
+  font-family: @font-family-secondary-condensed;
+  font-size: 24px;
 }
 
 #give-donation-level-button-wrap > li {
@@ -703,14 +710,15 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
 }
 
 .other-gateway-radio-list > li > a {
-  background: #fff;
-  border: 1px solid #ef5125;
-  border-radius: 24px;
-  color: #ef5125;
-  display: block;
+  background-color: #000;
+  border-color: #000;
+  border-radius: 4px;
+  color: #fff;
   font-family: @font-family-secondary-condensed;
   padding: 8px 12px;
+  display: block;
   text-decoration: none;
+  font-size: 24px;
 }
 
 .other-gateway-radio-list > li > a:hover,
@@ -721,8 +729,12 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
 
 /* Cpi widgets */
 .cpi-widget-header {
-  border-bottom: 1px solid #ccc;
-  margin-bottom: 15px;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 8px;
+}
+
+.cpi-widget-spacer {
+  height: 20px;
 }
 
 .cpi-widget-title {
@@ -745,19 +757,21 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
 .cpi-widget-body a {
   color: #ef5125;
   text-decoration: underline;
+  font-family: @font-family-secondary-condensed;
+  font-size: 20px;
 }
 
 .cpi-paypal-button {
-  background: #fff;
-  border: 1px solid #ef5125;
-  border-radius: 24px;
-  color: #ef5125;
-  display: block;
-  font-family: @font-family-secondary-condensed;
-  font-size: 2rem;
-  padding: 8px 12px;
-  text-decoration: none;
+  font-size: 24px;
   width: 100%;
+  background: #000;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-family: @font-family-secondary-condensed;
+  padding: 8px 12px;
+  display: block;
+  text-decoration: none;
 }
 .cpi-paypal-button:hover,
 .cpi-paypal-button:focus {
