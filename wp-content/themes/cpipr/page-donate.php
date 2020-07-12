@@ -1,8 +1,7 @@
 <?php
 /**
- * Single Post Template: One Column (Standard Layout)
- * Template Name: One Column (Standard Layout)
- * Description: Shows the post with a small right sidebar
+ * Template Name: English language Donations page
+ * Description: Based on Single Post Template: One Column (Standard Layout)
  */
 
 global $shown_ids;
@@ -95,6 +94,20 @@ get_header();
           </p>
         </div>
       </div>
+      <div class="cpi-widget hidden-desktop">
+        <div class="cpi-widget-body">
+          <p class="text-center">
+            <a href="https://quiosco.periodismoinvestigativo.com/">
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/kiosk.jpeg"
+                class="img-responsive img-circle" />
+            </a>
+          </p>
+          <div class="form-group text-center">
+            <a href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">CPI
+              KIOSK</a>
+          </div>
+        </div>
+      </div>
       <div class="cpi-widget">
         <div class="cpi-widget-body">
           <p>
@@ -103,7 +116,7 @@ get_header();
             share our vision of civic empowerment and value the ethics and quality of our journalistic work.
             <p><a
                 href="<?php echo get_site_url(); ?>/center-for-investigative-journalisms-sponsorships-and-donations-policy">READ
-                OUR SPONSORSHIPS AND DONATIONS POLICY</a></p>
+                OUR SPONSORSHIPS AND DONATIONS POLICY.</a></p>
           </p>
           <p>
             The main sources of income for the Center for Investigative Journalism are donations from foundations, event
@@ -114,7 +127,7 @@ get_header();
       </div>
       <div class="cpi-widget-spacer"></div>
     </div>
-    <div class="span3">
+    <div class="span3 hidden-phone">
       <div class="cpi-widget-body">
         <p class="text-center">
           <a href="https://quiosco.periodismoinvestigativo.com/">
@@ -123,7 +136,7 @@ get_header();
           </a>
         </p>
         <div class="form-group text-center">
-          <a href="https://quiosco.periodismoinvestigativo.com/" class="btn btn-lg btn-round btn-white-orange">CPI
+          <a href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">CPI
             KIOSK</a>
         </div>
       </div>

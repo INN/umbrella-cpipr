@@ -3583,11 +3583,6 @@ footer #boilerplate li .caret {
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
   padding: 14px;
 }
-.give-btn:hover,
-.give-btn:focus {
-  background-color: #ef5125;
-  border-color: #ef5125;
-}
 .give-btn.give-default-level {
   background-color: #ef5125;
   border-color: #ef5125;
@@ -3663,8 +3658,7 @@ form[id*=give-form] .give-donation-amount #give-amount-text {
   }
 }
 form[id*=give-form] #give-gateway-radio-list > li label.give-gateway-option {
-  display: block;
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  display: none;
 }
 form[id*=give-form] #give-gateway-radio-list > li input[type=radio] {
   left: -9999px;
@@ -3709,6 +3703,7 @@ form[id*=give-form] #give-final-total-wrap .give-donation-total-label {
   height: 52px;
   line-height: 52px;
   padding: 0 16px;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 form[id*=give-form] #give-final-total-wrap {
   float: right;
@@ -3718,6 +3713,7 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
   border-top-right-radius: 6px;
   height: 52px;
   line-height: 50px;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 @media (max-width: 768px) {
   form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
@@ -3731,9 +3727,8 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
 }
 .give-submit-button-wrap .give-submit,
 [id^=give-user-login-submit] .give-submit {
-  background-color: #ef5125;
-  border: 1px solid #ef5125;
-  border-radius: 24px;
+  background-color: #000;
+  border-radius: 4px;
   color: #fff;
   min-width: 140px;
   padding: 8px 12px;
@@ -3747,6 +3742,16 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
 #give_offline_payment_info ol,
 #give_offline_payment_info ul {
   font-size: 14px;
+}
+#give-recurring-modal-period-wrap {
+  line-height: 52px;
+}
+.give-btn:hover,
+.give-btn:focus {
+  background-color: #ef5125;
+  border-color: #ef5125;
+  text-decoration: none;
+  color: #fff;
 }
 /* End Give form */
 /* Other gateway */
@@ -3800,7 +3805,7 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
 .cpi-widget-body p {
   font-size: 16px;
 }
-.cpi-widget-body a {
+.cpi-widget-body p a {
   color: #ef5125;
   text-decoration: underline;
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
