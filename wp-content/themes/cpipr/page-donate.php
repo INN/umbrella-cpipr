@@ -21,13 +21,12 @@ get_header();
 <div id="content" role="main">
   <div class="clearfix">
     <div class="material-switch-lang pull-right">
-      <span class="lbl-lang">Idioma</span>
+      <span class="lbl-lang">Language</span>
       <div class="material-switch">
-        <input id="switchlang" type="checkbox" checked="checked"
-          data-href="<?php echo get_permalink(get_page_by_path('donaciones')) ?>" />
+        <input id="switchlang" type="checkbox" checked="checked" data-href="<?php echo get_permalink(get_page_by_path('donaciones')) ?>"/>
         <label for="switchlang" class="label-default"></label>
       </div>
-      <span class="lbl-curr-lang">Español</span>
+      <span class="lbl-curr-lang">English</span>
     </div>
     <script type="text/javascript">
     jQuery(document).ready(function() {
@@ -115,13 +114,13 @@ get_header();
             States. Our organization receives donations and support from foundations, institutions and citizens who
             share our vision of civic empowerment and value the ethics and quality of our journalistic work.
             <p><a
-                href="<?php echo get_site_url(); ?>/center-for-investigative-journalisms-sponsorships-and-donations-policy">READ
+                href="<?php echo get_stylesheet_directory_uri(); ?>/images/legal-donations-english.pdf">READ
                 OUR SPONSORSHIPS AND DONATIONS POLICY.</a></p>
           </p>
           <p>
             The main sources of income for the Center for Investigative Journalism are donations from foundations, event
             sponsorships, and individual donors. Donations for more than $500.00 are listed here.
-            <p><a href="<?php echo get_site_url(); ?>/2019-donors-list">2019 DONORS LIST</a></p>
+            <p><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/donor-list-07-20-2020.pdf">2019 DONORS LIST</a></p>
           </p>
         </div>
       </div>

@@ -19,8 +19,7 @@ get_header();
     <div class="material-switch-lang pull-right">
       <span class="lbl-lang">Idioma</span>
       <div class="material-switch">
-        <input id="switchlang" type="checkbox" checked="checked"
-          data-href="<?php echo get_permalink(get_page_by_path('donaciones')) ?>" />
+        <input id="switchlang" type="checkbox" data-href="<?php echo get_permalink(get_page_by_path('donate')) ?>"/>
         <label for="switchlang" class="label-default"></label>
       </div>
       <span class="lbl-curr-lang">Español</span>
@@ -108,11 +107,11 @@ get_header();
           <p>
           Los donativos que recibe el Centro de Periodismo Investigativo están exentos de contribuciones en Puerto Rico y Estados Unidos. Nuestra organización recibe donativos y apoyo de fundaciones, instituciones y ciudadanos que comparten su visión de apoderamiento cívico y valoran la verticalidad y calidad del ejercicio periodístico.
             <p><a
-                href="<?php echo get_site_url(); ?>/politica-sobre-auspicios-y-donativos-al-cpi">LEA NUESTRA POLÍTICA SOBRE AUSPICIOS Y DONATIVOS AL CPI.</a></p>
+                href="<?php echo get_stylesheet_directory_uri(); ?>/images/legal-donations-espanol.pdf">LEA NUESTRA POLÍTICA SOBRE AUSPICIOS Y DONATIVOS AL CPI.</a></p>
           </p>
           <p>
           Las principales fuentes de ingresos del Centro de Periodismo Investigativo son los donativos de fundaciones, los auspicios a eventos y los donantes individuales. Aquí divulgamos los donativos mayores de $500.00.
-            <p><a href="<?php echo get_site_url(); ?>/lista-de-donantes-de-2019">LISTA DE DONANTES DE 2019</a></p>
+            <p><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/donor-list-07-20-2020.pdf">LISTA DE DONANTES DE 2019</a></p>
           </p>
         </div>
       </div>
