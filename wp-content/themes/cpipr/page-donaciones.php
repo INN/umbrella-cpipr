@@ -69,8 +69,7 @@ get_header();
               </form>
             </li>
             <li>
-              <a target="_blank"
-                href="https://www.networkforgood.org/donation/ExpressDonation.aspx?ORGID2=660705065&vlrStratCode=k%2faPABkV7YzpiRc3p4Hx%2bjTsN8tqKDZzbFYVpDHSXOMWa2vRcIAvmA%2fJCkuQjte1">
+              <a target="_blank" href="https://www.networkforgood.org/donation/ExpressDonation.aspx?ORGID2=660705065&vlrStratCode=k%2faPABkV7YzpiRc3p4Hx%2bjTsN8tqKDZzbFYVpDHSXOMWa2vRcIAvmA%2fJCkuQjte1">
                 DONAR VÍA NETWORK FOR GOOD</a>
             </li>
           </ul>
@@ -92,13 +91,13 @@ get_header();
       <div class="cpi-widget hidden-desktop">
         <div class="cpi-widget-body">
           <p class="text-center">
-            <a href="https://quiosco.periodismoinvestigativo.com/">
+            <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/kiosk.jpeg"
                 class="img-responsive img-circle" />
             </a>
           </p>
           <div class="form-group text-center">
-            <a href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">QUIOSCO CPI</a>
+            <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">QUIOSCO CPI</a>
           </div>
         </div>
       </div>
@@ -106,12 +105,11 @@ get_header();
         <div class="cpi-widget-body">
           <p>
           Los donativos que recibe el Centro de Periodismo Investigativo están exentos de contribuciones en Puerto Rico y Estados Unidos. Nuestra organización recibe donativos y apoyo de fundaciones, instituciones y ciudadanos que comparten su visión de apoderamiento cívico y valoran la verticalidad y calidad del ejercicio periodístico.
-            <p><a
-                href="<?php echo get_stylesheet_directory_uri(); ?>/images/legal-donations-espanol.pdf">LEA NUESTRA POLÍTICA SOBRE AUSPICIOS Y DONATIVOS AL CPI.</a></p>
+            <p><a target="_blank" href="<?php echo get_stylesheet_directory_uri(); ?>/images/legal-donations-espanol.pdf">LEA NUESTRA POLÍTICA SOBRE AUSPICIOS Y DONATIVOS AL CPI.</a></p>
           </p>
           <p>
           Las principales fuentes de ingresos del Centro de Periodismo Investigativo son los donativos de fundaciones, los auspicios a eventos y los donantes individuales. Aquí divulgamos los donativos mayores de $500.00.
-            <p><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/donor-list-07-20-2020.pdf">LISTA DE DONANTES DE 2019</a></p>
+            <p><a target="_blank" href="<?php echo get_stylesheet_directory_uri(); ?>/images/donor-list-07-20-2020.pdf">LISTA DE DONANTES DE 2019</a></p>
           </p>
         </div>
       </div>
@@ -120,13 +118,13 @@ get_header();
     <div class="span3 hidden-phone">
       <div class="cpi-widget-body">
         <p class="text-center">
-          <a href="https://quiosco.periodismoinvestigativo.com/">
+          <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/kiosk.jpeg"
               class="img-responsive img-circle" />
           </a>
         </p>
         <div class="form-group text-center">
-          <a href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">QUIOSCO CPI</a>
+          <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">QUIOSCO CPI</a>
         </div>
       </div>
     </div>

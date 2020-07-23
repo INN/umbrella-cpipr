@@ -73,8 +73,7 @@ get_header();
               </form>
             </li>
             <li>
-              <a target="_blank"
-                href="https://www.networkforgood.org/donation/ExpressDonation.aspx?ORGID2=660705065&vlrStratCode=k%2faPABkV7YzpiRc3p4Hx%2bjTsN8tqKDZzbFYVpDHSXOMWa2vRcIAvmA%2fJCkuQjte1">DONATE
+              <a target="_blank" href="https://www.networkforgood.org/donation/ExpressDonation.aspx?ORGID2=660705065&vlrStratCode=k%2faPABkV7YzpiRc3p4Hx%2bjTsN8tqKDZzbFYVpDHSXOMWa2vRcIAvmA%2fJCkuQjte1">DONATE
                 THROUGH NETWORK FOR GOOD</a>
             </li>
           </ul>
@@ -96,13 +95,13 @@ get_header();
       <div class="cpi-widget hidden-desktop">
         <div class="cpi-widget-body">
           <p class="text-center">
-            <a href="https://quiosco.periodismoinvestigativo.com/">
+            <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/">
               <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/kiosk.jpeg"
                 class="img-responsive img-circle" />
             </a>
           </p>
           <div class="form-group text-center">
-            <a href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">CPI
+            <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">CPI
               KIOSK</a>
           </div>
         </div>
@@ -113,14 +112,13 @@ get_header();
             Donations received by the Center for Investigative Journalism are tax-exempt in Puerto Rico and the United
             States. Our organization receives donations and support from foundations, institutions and citizens who
             share our vision of civic empowerment and value the ethics and quality of our journalistic work.
-            <p><a
-                href="<?php echo get_stylesheet_directory_uri(); ?>/images/legal-donations-english.pdf">READ
+            <p><a target="_blank" href="<?php echo get_stylesheet_directory_uri(); ?>/images/legal-donations-english.pdf">READ
                 OUR SPONSORSHIPS AND DONATIONS POLICY.</a></p>
           </p>
           <p>
             The main sources of income for the Center for Investigative Journalism are donations from foundations, event
             sponsorships, and individual donors. Donations for more than $500.00 are listed here.
-            <p><a href="<?php echo get_stylesheet_directory_uri(); ?>/images/donor-list-07-20-2020.pdf">2019 DONORS LIST</a></p>
+            <p><a target="_blank" href="<?php echo get_stylesheet_directory_uri(); ?>/images/donor-list-07-20-2020.pdf">2019 DONORS LIST</a></p>
           </p>
         </div>
       </div>
@@ -129,13 +127,13 @@ get_header();
     <div class="span3 hidden-phone">
       <div class="cpi-widget-body">
         <p class="text-center">
-          <a href="https://quiosco.periodismoinvestigativo.com/">
+          <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/">
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/kiosk.jpeg"
               class="img-responsive img-circle" />
           </a>
         </p>
         <div class="form-group text-center">
-          <a href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">CPI
+          <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/" class="give-btn">CPI
             KIOSK</a>
         </div>
       </div>
