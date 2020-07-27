@@ -92,7 +92,7 @@ get_header();
         <div class="cpi-widget-body">
           <p class="text-center">
             <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/kiosk.jpeg"
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/quiosco.gif"
                 class="img-responsive img-circle" />
             </a>
           </p>
@@ -119,7 +119,7 @@ get_header();
       <div class="cpi-widget-body">
         <p class="text-center">
           <a target="_blank" href="https://quiosco.periodismoinvestigativo.com/">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/kiosk.jpeg"
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/quiosco.gif"
               class="img-responsive img-circle" />
           </a>
         </p>
