@@ -76,15 +76,34 @@
 .header-chavos-maria {
 	padding: 20px 0;
 }
-
 .header-chavos-maria .lcdm-top-banner {
 	float: none;
 	text-align: center;
 	margin-bottom: 20px;
 }
+.header-chavos-maria .lcdm-cpi {
+	color: #fff;
+	display: inline-block;
+	font-size: 10px;
+	font-style: italic;
+	margin-right: 30px;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+}
+.header-chavos-maria .lcdm-cpi span {
+	border: 2px solid #fff;
+	border-radius: 28px;
+	display: block;
+	font-size: 28px;
+	padding: 4px 22px;
+}
+.header-chavos-maria .lcdm-cpi span + div {
+	margin-top: 5px;
+}
 .lcdm-logo-wrapper {
 	position: relative;
-	overflow: auto;
+	/*overflow: auto;*/
 }
 .header-chavos-maria .navbar {
 	margin-bottom: 0;
@@ -841,6 +860,39 @@ textarea.form-control {
 .lcdm-section-post .navis-slideshow .slick-slide .permalink,
 .lcdm-section-post .navis-slideshow .slick-dots {
 	display: none !important;
+}
+
+.lcdm-section-post-subtitle {
+	box-sizing: border-box;
+	padding-right: 15px;
+}
+.lcdm-section-post-subtitle .lcdm-post-subtitle {
+	border-bottom: 1px solid #000;
+	margin-top: 30px;
+	padding-bottom: 20px;
+}
+
+.lcdm-post-subtitle h4 {
+	font-family: "GT America Compressed", Helvetica, Arial, sans-serif;
+	margin-bottom: 15px;
+	padding-right: 20px;
+}
+
+.lcdm-post-subtitle .wp-caption {
+	margin-bottom: 15px;
+}
+
+.lcdm-post-subtitle .wp-caption .wp-media-credit {
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+	font-style: italic;
+}
+
+.lcdm-post-subtitle .wp-caption .wp-caption-text {
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	color: #7e7f7f;
+	font-style: normal;
+	margin-top: 0;
 }
 
 @media (min-width: 768px) {
@@ -1683,8 +1735,16 @@ textarea.form-control {
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
+	.header-chavos-maria .lcdm-cpi {
+		margin-right: 5px;
+	}
+	.header-chavos-maria .lcdm-cpi span {
+		border-radius: 28px;
+		font-size: 18px;
+		padding: 2px 12px;
+	}
 	.lcdm-logo img {
-		width: 74%;
+		width: 64%;
 	}
 	.owl-hero-post .owl-hero-post-title {
 		font-size: 28px;

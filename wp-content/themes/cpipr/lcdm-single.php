@@ -75,7 +75,9 @@
                                 <div style="display: flex;flex-flow: row wrap;justify-content: space-between;align-items: flex-start;">
                                     <div style="max-width: 800px;">
                                         <h2 class="owl-hero-post-title"><?php the_title(); ?></h2>
-                                        <span class="post-date owl-hero-journalist"><?php the_date()?></span>
+                                        <span class="post-date owl-hero-journalist">
+                                            <?php largo_time(true, null, true); ?>
+                                        </span>
                                     </div>
                                     <div class="owl-hero-journalist">
                                         <?php lcdm_byline(); ?>
@@ -87,6 +89,34 @@
                 </div>
             </div>
         </div>
+
+        <?php $subtitle = get_post_meta($post->ID, 'subtitle', true); ?>
+        <?php if ($subtitle): ?>
+        <div class="container lcdm-section-post-subtitle">
+            <div class="lcdm-post-subtitle">
+                <div class="row-fluid">
+                    <div class="span8">
+                        <h4>
+                            <?php echo $subtitle; ?>
+                        </h4>
+                    </div>
+                    <?php $media_credit = navis_get_media_credit(get_post_thumbnail_id(get_the_ID())); ?>
+                    <?php if (isset($media_credit)): ?>
+                    <div class="span4">
+                        <div class="wp-caption">
+                            <p class="wp-media-credit">
+                                <?php echo $media_credit->credit; ?>
+                            </p>
+                            <p class="wp-caption-text">
+                                <?php the_post_thumbnail_caption(); ?>
+                            </p>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
 
         <div class="lcdm-section lcdm-section-post">
             <div class="container">

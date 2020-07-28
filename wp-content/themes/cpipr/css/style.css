@@ -1375,6 +1375,9 @@ h3.title-post {
   padding: 2px 18px 2px 18px;
   text-transform: uppercase;
 }
+.btn-lg {
+  padding: 10px 28px;
+}
 .btn-white {
   background: #fff;
   color: #000;
@@ -1397,6 +1400,17 @@ h3.title-post {
 .btn-black:focus {
   background: #000;
   color: #ef5125;
+}
+.btn-white-orange {
+  background-color: #fff;
+  border: 1px solid #ef5125;
+  color: #ef5125;
+  text-decoration: none !important;
+}
+.btn-white-orange:hover,
+.btn-white-orange:focus {
+  background-color: #ef5125;
+  color: #fff;
 }
 .hero-main {
   margin-top: -18px;
@@ -3470,6 +3484,9 @@ footer #boilerplate li .caret {
 .pull-right {
   float: right;
 }
+.img-circle {
+  border-radius: 50%;
+}
 /* Section blocks */
 .section-block {
   border-top: 16px solid #000;
@@ -3537,6 +3554,405 @@ footer #boilerplate li .caret {
 }
 ::placeholder {
   color: #000;
+}
+/* Load more nav */
+#nav-below.post-nav {
+  margin-bottom: 20px;
+  text-align: center;
+}
+#nav-below.post-nav .load-more a {
+  background-color: #000;
+  border-radius: 20px;
+  color: #fff;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* Give form */
+.give-form-title {
+  border-bottom: 1px solid #e5e5e5;
+  text-transform: uppercase;
+  display: none;
+}
+.give-btn {
+  background-color: #000;
+  border-color: #000;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  padding: 14px;
+}
+.give-btn.give-default-level {
+  background-color: #ef5125;
+  border-color: #ef5125;
+}
+form[id*=give-form] .give-donation-amount .give-currency-symbol {
+  background-color: #000;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  color: #fff;
+  height: 52px;
+  line-height: 52px;
+  padding: 0 16px;
+  font-weight: bold;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+form[id*=give-form] .give-donation-amount #give-amount,
+form[id*=give-form] .give-donation-amount #give-amount-text {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 52px;
+  padding: 14px;
+  font-weight: bold;
+  color: black;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+}
+#give-donation-level-button-wrap > li {
+  margin: 0 0 5px 0;
+}
+#give-donation-level-button-wrap,
+#give-gateway-radio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+#give-donation-level-button-wrap > li,
+#give-gateway-radio-list > li {
+  flex: 1 1 auto;
+  text-align: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+#give-donation-level-button-wrap > li .give-btn {
+  display: block;
+  font-size: 24px;
+  padding: 12px 14px;
+  width: 100%;
+}
+#give-donation-level-button-wrap li:last-child {
+  display: none;
+}
+#give-gateway-radio-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px 0 -5px !important;
+}
+#give-gateway-radio-list > li label {
+  background-color: #fff;
+  border: 1px solid #ef5125;
+  border-radius: 24px;
+  color: #ef5125;
+  padding: 8px 12px;
+}
+#give-gateway-radio-list > li.give-gateway-option-selected label {
+  background-color: #ef5125;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  #give-donation-level-button-wrap > li {
+    flex: 1 1 25%;
+  }
+}
+form[id*=give-form] #give-gateway-radio-list > li label.give-gateway-option {
+  display: none;
+}
+form[id*=give-form] #give-gateway-radio-list > li input[type=radio] {
+  left: -9999px;
+  position: absolute;
+}
+form[id*=give-form] #give-gateway-radio-list > li {
+  margin: 0 0 15px 0;
+  padding: 0 5px;
+}
+form[id*=give-form] #give_checkout_user_info legend,
+form[id*=give-form] #give_cc_address legend {
+  color: #a8a8a8;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 2;
+  padding-top: 5px;
+}
+form[id*=give-form] #give-payment-mode-select .give-payment-mode-label {
+  display: none;
+}
+form[id*=give-form] .form-row label {
+  color: #a8a8a8;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+form[id*=give-form] .give-required-indicator {
+  color: #a8a8a8;
+}
+form[id*=give-form] .form-row input[type=text],
+form[id*=give-form] .form-row input[type=email],
+form[id*=give-form] .form-row select {
+  border-radius: 6px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  height: 54px;
+}
+form[id*=give-form] #give-final-total-wrap .give-donation-total-label {
+  background-color: #000;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
+  color: #fff;
+  height: 52px;
+  line-height: 52px;
+  padding: 0 16px;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+form[id*=give-form] #give-final-total-wrap {
+  float: right;
+}
+form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
+  height: 52px;
+  line-height: 50px;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
+@media (max-width: 768px) {
+  form[id*=give-form] #give-final-total-wrap .give-donation-total-label,
+  form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
+    border-radius: 0;
+  }
+}
+.give-submit-button-wrap {
+  clear: both;
+  text-align: right;
+}
+.give-submit-button-wrap .give-submit,
+[id^=give-user-login-submit] .give-submit {
+  background-color: #000;
+  border-radius: 4px;
+  color: #fff;
+  min-width: 140px;
+  padding: 8px 12px;
+  float: none;
+}
+#give_offline_payment_info {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+#give_offline_payment_info p,
+#give_offline_payment_info ol,
+#give_offline_payment_info ul {
+  font-size: 14px;
+}
+#give-recurring-modal-period-wrap {
+  line-height: 52px;
+}
+.give-btn:hover,
+.give-btn:focus {
+  background-color: #ef5125;
+  border-color: #ef5125;
+  text-decoration: none;
+  color: #fff;
+}
+/* End Give form */
+/* Other gateway */
+.other-gateway-radio-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 -5px 15px -5px;
+  padding: 0;
+}
+.other-gateway-radio-list > li {
+  flex: 1 1 auto;
+  padding: 0 5px;
+  text-align: center;
+}
+.other-gateway-radio-list > li > a {
+  background-color: #000;
+  border-color: #000;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  padding: 8px 12px;
+  display: block;
+  text-decoration: none;
+  font-size: 24px;
+}
+.other-gateway-radio-list > li > a:hover,
+.other-gateway-radio-list > li > a:focus {
+  background-color: #ef5125;
+  color: #fff;
+}
+/* Cpi widgets */
+.cpi-widget-header {
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 8px;
+}
+.cpi-widget-spacer {
+  height: 20px;
+}
+.cpi-widget-title {
+  font-family: "GT America Compressed", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.cpi-widget-title-lg {
+  font-size: 32px;
+  line-height: 32px;
+}
+.cpi-widget-body p {
+  font-size: 16px;
+}
+.cpi-widget-body p a {
+  color: #ef5125;
+  text-decoration: underline;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+.cpi-paypal-button {
+  font-size: 24px;
+  width: 100%;
+  background: #000;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+  padding: 8px 12px;
+  display: block;
+  text-decoration: none;
+}
+.cpi-paypal-button:hover,
+.cpi-paypal-button:focus {
+  background-color: #ef5125;
+  color: #fff;
+}
+.cpi-donations-list {
+  list-style-type: none;
+  margin: 0;
+}
+.cpi-donations-list li {
+  margin-bottom: 0px;
+  font-size: 16px;
+}
+/* Text */
+.font-normal {
+  font-weight: 400;
+}
+.text-third {
+  font-family: "GT America Compressed", Helvetica, Arial, sans-serif;
+}
+/* Give recurring donors choice */
+.give-recurring-donors-choice input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+.give-recurring-donors-choice label {
+  position: relative;
+  cursor: pointer;
+}
+.give-recurring-donors-choice label:before {
+  content: '';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #000;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.give-recurring-donors-choice input:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 9px;
+  width: 6px;
+  height: 12px;
+  border: 2px solid #000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+/* Material switch */
+.material-switch {
+  height: 24px;
+}
+.material-switch > input[type="checkbox"] {
+  display: none;
+}
+.material-switch > label {
+  cursor: pointer;
+  height: 0px;
+  position: relative;
+  width: 40px;
+}
+.material-switch > label::before {
+  /*background: rgb(0, 0, 0);*/
+  background: #ef5125;
+  /*box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);*/
+  /*border-radius: 8px;*/
+  border-radius: 12px;
+  content: '';
+  /*height: 16px;*/
+  height: 24px;
+  /*margin-top: -8px;*/
+  position: absolute;
+  /*opacity: 0.3;*/
+  transition: all 0.4s ease-in-out;
+  width: 50px;
+}
+.material-switch > label::after {
+  background: #ffffff;
+  border: 1px solid #ef5125;
+  border-radius: 16px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  content: '';
+  height: 24px;
+  /*left: -4px;*/
+  /*margin-top: -8px;*/
+  position: absolute;
+  top: -1px;
+  /*top: -4px;*/
+  transition: all 0.3s ease-in-out;
+  width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+  background: #ef5125;
+  opacity: 1;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+  background: #ffffff;
+  border-color: #8e8383;
+  left: 25px;
+}
+/* Language switch */
+.material-switch-lang {
+  width: 74px;
+}
+.material-switch-lang .lbl-lang,
+.material-switch-lang .lbl-curr-lang {
+  display: block;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  text-align: center;
+}
+.material-switch-lang .lbl-lang {
+  font-weight: bold;
+}
+.material-switch-lang .lbl-curr-lang {
+  color: #ef5125;
+}
+.material-switch-lang .material-switch {
+  margin: 0 auto 7px auto;
+  width: 52px;
 }
 .visible-xs,
 .visible-sm,

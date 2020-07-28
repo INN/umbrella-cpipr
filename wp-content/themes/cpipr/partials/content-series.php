@@ -36,6 +36,11 @@ if ( $featured ) {
 	$show_thumbnail = FALSE;
 }
 
+// Force to display thumbnail
+if ( has_term('series-featured', 'prominence') ) {
+	$show_thumbnail = TRUE;
+}
+
 ?>
 
 <div class="mobile-no-offset item-article" id="post-<?php the_ID(); ?>">
@@ -47,7 +52,9 @@ if ( $featured ) {
 
 			<div class="title-article">
 				<h2><?php the_title(); ?></h2>
-				<p class="date-text"><?php the_time('j F, Y') ?></p>
+				<p class="date-text">
+					<?php largo_time(true, get_the_ID(), true); ?>
+				</p>
 			</div>
 		</div>
 	</a>

@@ -83,10 +83,11 @@ add_filter( 'wpmu_signup_user_notification', '__return_false' );
 
 // spanish date format is different, we should fix this in Largo at some point
 // https://github.com/INN/largo/issues/1480
-function largo_time( $echo = true, $post = null ) {
+function largo_time( $echo = true, $post = null, $short_time = false ) {
 	$post = get_post( $post );
 	$the_time = get_the_time( 'U', $post );
 	$time_difference = current_time( 'timestamp' ) - $the_time;
+	$is_english_post = has_category('english', $post) || has_term('english', 'post_tag');
 
 	if ( $time_difference < 86400 ) {
 		$output = sprintf(
@@ -95,14 +96,51 @@ function largo_time( $echo = true, $post = null ) {
 			human_time_diff( $the_time, current_time( 'timestamp' ) )
 		);
 	} else {
-		$output = get_the_date( 'j \d\e F Y', $post->ID );
+		if ($is_english_post) {
+			if ($short_time) {
+				$output = date('F j, Y', $the_time);
+			} else {
+				$output = 'Published: ' . date('F j, Y \a\t h:i A', $the_time);
+			}
+		} else {
+			if ($short_time) {
+				$output = get_the_date( 'j \d\e F Y', $post->ID );
+			} else {
+				$output = __('Published') . ': ' . get_the_date( 'j \d\e F Y \a \l\a\s h:i A', $post->ID );
+			}
+		}
 	}
+
+	// Add last_updated time only for single posts.
+	if (is_single() && !$short_time) {
+		$updated_time = get_the_modified_time( 'U', $post );
+		$time_difference = $updated_time - $the_time;
+		if ( $time_difference > 86400 ) {
+			if ($is_english_post) {
+				$output .= '<span class="sep"> | </span> Updated: ' . date('F j, Y \a\t h:i A', $updated_time);
+			} else {
+				$output .= '<span class="sep"> | </span> Actualizada: ' . get_the_modified_time( 'j \d\e F Y \a \l\a\s h:i A', $post->ID );
+			}
+		}
+	}	
 
 	if ( $echo ) {
 		echo $output;
 	}
 	return $output;
 }
+
+// Customize largo byline
+function get_custom_largo_byline($byline) {
+	$is_english_post = has_category('english');
+	if ($is_english_post) {
+		$output_translated = str_replace('<span class="by">por</span>', '<span class="by">by</span>', $byline->output);
+		$byline->output = $output_translated;
+	}
+	return $byline;
+}
+add_filter( 'largo_byline', 'get_custom_largo_byline' );
+
 
 //add a meta box for a subtitle on posts
 largo_add_meta_box(
@@ -334,3 +372,69 @@ function add_series_slug_class_to_series_body( $classes ){
  * Filter that will fire our add_series_class_to_series_landing_body function
  */
 add_filter( 'body_class', 'add_series_slug_class_to_series_body' );	
+
+
+/**
+ * Exclude english posts on category landing pages
+ */
+function exclude_english_posts_category($query) {
+	if (!is_category('english')) {
+		$english_cat = get_category_by_slug('english');
+		if ( $english_cat ) {
+			$query->set('category__not_in', array($english_cat->term_id));
+		}
+		
+	}
+}
+add_filter('pre_get_posts', 'exclude_english_posts_category');
+
+
+/**
+ * Get posts marked as "Featured in category" for a given category name.
+ * (CUSTOMIZED)
+ *
+ * @param string $category_name the category to retrieve featured posts for.
+ * @param integer $number total number of posts to return, backfilling with regular posts as necessary.
+ * @since 0.5
+ */
+function cpipr_get_featured_posts_in_category( $category_name, $number = 5 ) {
+	$args = array(
+		'category_name' => $category_name,
+		'numberposts' => $number,
+		'post_status' => 'publish',
+	);
+
+	// Exclude english posts when user enters whatever category except english
+	$category = get_term_by( 'name', $category_name, 'category' );
+	if ($category && $category->slug != 'english') {
+		$english_cat = get_category_by_slug('english');
+		if ($english_cat) {
+			$args['category__not_in'] = array($english_cat->term_id);
+		}
+	}
+
+	$tax_query = array(
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'prominence',
+				'field' => 'slug',
+				'terms' => 'category-featured',
+			)
+		)
+	);
+
+	// Get the featured posts
+	$featured_posts = get_posts( array_merge( $args, $tax_query ) );
+
+	// Backfill with regular posts if necessary
+	if ( count( $featured_posts ) < (int) $number ) {
+		$needed = (int) $number - count( $featured_posts );
+		$regular_posts = get_posts( array_merge( $args, array(
+			'numberposts' => $needed,
+			'post__not_in' => array_map( function( $x ) { return $x->ID; }, $featured_posts )
+		)));
+		$featured_posts = array_merge( $featured_posts, $regular_posts );
+	}
+
+	return $featured_posts;
+}
