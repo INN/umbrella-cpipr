@@ -100,14 +100,16 @@
   clear: both;
 }
 .visuallyhidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
   border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
 }
 .hide-text {
   font: 0/0 a;
@@ -1772,6 +1774,11 @@ h3.title-post {
 }
 .social-media-list.social-media-list-icons .post-social > span > a > span {
   display: none;
+}
+.social-media-list.social-media-list-icons .post-social > .more-social-links,
+.social-media-list.social-media-list-icons .post-social > .more-social-links:hover {
+  opacity: 1;
+  z-index: 99;
 }
 .social-media-list.social-media-list-icons .post-social > span:hover,
 .social-media-list.social-media-list-icons .post-social > span:focus {

@@ -353,7 +353,8 @@ function add_series_slug_class_to_series_body( $classes ){
 		global $post;
 
 		// grab 'series' taxonomy from post
-		$post_terms = array_shift(get_the_terms($post, 'series'));
+		$terms = get_the_terms($post, 'series');
+		$post_terms = array_shift($terms);
 		
 		// get the slug of the series this post is in
 		$series_slug = $post_terms->slug;

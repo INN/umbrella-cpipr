@@ -213,7 +213,7 @@ if( !empty( $abstract_body ) ) {
 
 							// Enqueue the LMP data
 							$posts_term = of_get_option('posts_term_plural');
-							largo_render_template('partials/load-more-posts', array(
+							largo_render_template('partials', 'load-more-posts', array(
 								'nav_id' => 'nav-below',
 								'the_query' => $series_query,
 								'posts_term' => ($posts_term) ? $posts_term : 'Posts',

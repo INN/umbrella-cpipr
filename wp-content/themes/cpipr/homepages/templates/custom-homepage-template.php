@@ -56,7 +56,7 @@ $topstory_classes = (largo_get_active_homepage_layout() === 'LegacyThreeColumn')
 										<div class="post-body bottom-gradient white-gradient">
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
+											<h5 class="post-byline byline"><?php largo_byline(true, false, get_the_ID()); ?></h5>
 											<div class="post-excerpt">
 												<?php largo_excerpt(); ?>
 											</div>
@@ -159,7 +159,7 @@ $topstory_classes = (largo_get_active_homepage_layout() === 'LegacyThreeColumn')
 										}
 
 										if ( has_post_thumbnail() ) {
-											echo '<div class="has-thumbnail '.$hero_class.'"><a href="' . get_permalink() . '">' . get_the_post_thumbnail() . '</a></div>';
+											echo '<div class="has-thumbnail"><a href="' . get_permalink() . '">' . get_the_post_thumbnail() . '</a></div>';
 										}
 									?>
 									<h2 class="entry-title">
@@ -258,7 +258,7 @@ $topstory_classes = (largo_get_active_homepage_layout() === 'LegacyThreeColumn')
 										<div class="post-body bottom-gradient gray-gradient">
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
+											<h5 class="post-byline byline"><?php largo_byline(true, false, get_the_ID()); ?></h5>
 											<div class="post-excerpt">
 												<?php largo_excerpt(); ?>
 											</div>
@@ -327,7 +327,7 @@ $topstory_classes = (largo_get_active_homepage_layout() === 'LegacyThreeColumn')
 										<div class="post-body bottom-gradient red-gradient">
 											<?php the_category();?>
 											<h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-											<h5 class="post-byline byline"><?php largo_byline(); ?></h5>
+											<h5 class="post-byline byline"><?php largo_byline(true, false, get_the_ID()); ?></h5>
 											<div class="post-excerpt">
 												<?php largo_excerpt(); ?>
 											</div>
