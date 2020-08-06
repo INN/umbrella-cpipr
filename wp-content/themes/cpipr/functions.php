@@ -106,7 +106,7 @@ function largo_time( $echo = true, $post = null, $short_time = false ) {
 			if ($short_time) {
 				$output = get_the_date( 'j \d\e F Y', $post->ID );
 			} else {
-				$output = __('Published') . ': ' . get_the_date( 'j \d\e F Y \a \l\a\s h:i A', $post->ID );
+				$output = 'Publicado: ' . get_the_date( 'j \d\e F Y \a \l\a\s h:i A', $post->ID );
 			}
 		}
 	}
@@ -379,7 +379,7 @@ add_filter( 'body_class', 'add_series_slug_class_to_series_body' );
  * Exclude english posts on category landing pages
  */
 function exclude_english_posts_category($query) {
-	if (!is_category('english')) {
+	if (!is_admin() && !is_category('english')) {
 		$english_cat = get_category_by_slug('english');
 		if ( $english_cat ) {
 			$query->set('category__not_in', array($english_cat->term_id));
