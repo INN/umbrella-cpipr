@@ -37,7 +37,7 @@ $topstory_classes = (largo_get_active_homepage_layout() === 'LegacyThreeColumn')
 										'terms' 	=> array('homepage-featured')
 									)
 								),
-								'posts_per_page' => 6,
+								'posts_per_page' => 8,
 								'post__not_in'   => $home_post_ids
 							) );
 							if ( $topstory->have_posts() ) {
