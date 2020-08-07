@@ -468,7 +468,6 @@ function lcdm_widgets_init() {
 }
 add_action( 'widgets_init', 'lcdm_widgets_init' );
 
-
 /* Display single series full width hero  */
 function single_series_hero() {
 	if (is_single() && has_term('', 'series') && is_singular('post')){
@@ -477,7 +476,6 @@ function single_series_hero() {
 }
 add_action('cpipr_before_main_slideshow', 'single_series_hero');
 
-
 /* Display series landing full width hero  */
 function series_landing_hero() {
 	if (is_single() && has_term('', 'series') && is_singular('cftl-tax-landing')){
@@ -485,3 +483,10 @@ function series_landing_hero() {
 	}
 }
 add_action('cpipr_before_main_slideshow', 'series_landing_hero');
+
+/* Add filter to exclude "Donate" row into Donation Receipt */
+add_filter('give_donation_receipt_args', 'exclude_donate_row_from_receipt');
+function exclude_donate_row_from_receipt($give_receipt_args) {
+	unset($give_receipt_args['donation']);
+	return $give_receipt_args;
+}
