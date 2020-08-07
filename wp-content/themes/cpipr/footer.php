@@ -25,7 +25,7 @@
 	do_action( 'largo_before_footer' );
 ?>
 
-<div class="clearfix nocontent">
+<div id="site-footer" class="clearfix nocontent">
 	<footer id="cpi-footer">
 
 		<?php

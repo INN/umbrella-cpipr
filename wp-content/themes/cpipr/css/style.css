@@ -3136,6 +3136,10 @@ body.normal.single-post .hero p.wp-media-credit {
   padding-left: 0;
   list-style: none;
 }
+#site-footer {
+  max-width: none;
+  padding: 0;
+}
 .before-footer-wrapper {
   background-color: #fff;
   border-top: 1px solid #ccc;

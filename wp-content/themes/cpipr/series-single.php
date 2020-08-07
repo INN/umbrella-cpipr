@@ -63,6 +63,11 @@ if (($current_post_position + 1) < count($series_map)) {
 $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5);
 ?>
 	<?php $heroImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');?>
+	<?php // We need the following html for flotable social ?>
+	<div class="hero"></div>
+	<header>
+		<div class="entry-title"></div>
+	</header>
 	<div class="hero-main">
 		<div class="wrapper-image" style="background: url('<?php echo esc_attr( $heroImage['0'] ); ?>') no-repeat center/cover;">
 			<div class="container-fluid">

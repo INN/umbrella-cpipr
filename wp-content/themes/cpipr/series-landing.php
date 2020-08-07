@@ -43,6 +43,11 @@ if ('cftl-tax-landing' == $post->post_type) {
 $content_span = array('one-column' => 12, 'two-column' => 8, 'three-column' => 5);
 ?>
 <?php $heroImage = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');?>
+<?php // We need the following html for flotable social ?>
+<div class="hero"></div>
+<header>
+	<div class="entry-title"></div>
+</header>
 <?php if ($opt['header_enabled']): ?>
 	<div class="hero-main">
 		<div class="wrapper-image" style="background: url('<?php echo $heroImage['0']; ?>') no-repeat center/cover;">
