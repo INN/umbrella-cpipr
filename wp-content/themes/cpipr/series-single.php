@@ -4,6 +4,7 @@
  * Template Post Type: post
  * Description: Shows the post with formatting for custom layout display?
  */
+global $opt;
 
 get_header();
 
