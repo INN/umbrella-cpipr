@@ -44,7 +44,7 @@
 ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body id="content" <?php body_class(); ?>>
 
 	<div id="top"></div>
 
@@ -138,7 +138,7 @@
 		$home_template = largo_get_active_homepage_layout();
 		$container_class = is_front_page() && $home_template == 'CustomLayout' ? '' : 'container-fluid';
 	?> 
-	<div id="content" class="<?php echo $container_class ?>">
+	<div class="<?php echo $container_class ?>">
 
 		<div id="main" class="<?php echo $container_class == 'container-fluid' ? 'row-fluid' : ''; ?> clearfix">
 

@@ -467,3 +467,21 @@ function lcdm_widgets_init() {
 
 }
 add_action( 'widgets_init', 'lcdm_widgets_init' );
+
+
+/* Display single series full width hero  */
+function single_series_hero() {
+	if (is_single() && has_term('', 'series') && is_singular('post')){
+		largo_render_template('partials/hero', 'series');
+	}
+}
+add_action('cpipr_before_main_slideshow', 'single_series_hero');
+
+
+/* Display series landing full width hero  */
+function series_landing_hero() {
+	if (is_single() && has_term('', 'series') && is_singular('cftl-tax-landing')){
+		largo_render_template('partials/hero-series', 'landing');
+	}
+}
+add_action('cpipr_before_main_slideshow', 'series_landing_hero');

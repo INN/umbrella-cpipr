@@ -1,6 +1,9 @@
 /* Largo essentials */
 @import "variables.less";
 @import "mixins.less";
+* {
+  box-sizing: border-box;
+}
 .clearfix {
   *zoom: 1;
   &:before,
@@ -83,7 +86,6 @@ p {
 }
 
 .container-fluid {
-  width: 98%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -204,7 +206,6 @@ h3.title-post {
 
 @media (max-width: 991px) {
   .container-fluid {
-    width: calc(~"100% - 40px");
     padding: 0 20px;
   }
   .row-fluid .span1,
@@ -373,7 +374,7 @@ h3.title-post {
 
   .input-append {
     input[type=text] {
-      height: 20px;
+      height: 30px;
       font-family: @font-family-sans-serif-condensed;
       font-style: italic;
       font-size: 14px;

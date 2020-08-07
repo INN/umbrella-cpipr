@@ -127,6 +127,9 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
+* {
+  box-sizing: border-box;
+}
 .clearfix {
   *zoom: 1;
 }
@@ -185,7 +188,7 @@
 }
 @font-face {
   font-family: 'GT America Compressed';
-  src: url('../fonts/GT-America-Compressed-Medium.woff2') format('woff2'), url('../fonts/GT-America-Compressed-Medium.woff') format('woff'), url('../fonts/GT-America-Compressed-Medium.ttf') format('truetype'), url('../fonts/GT-America-Compressed-Medium.svg') format('svg');
+  src: url('../fonts/gt-america-compressed-regular.woff2') format('woff2'), url('../fonts/gt-america-compressed-regular.woff') format('woff'), url('../fonts/gt-america-compressed-regular.ttf') format('truetype'), url('../fonts/gt-america-compressed-regular.svg') format('svg');
   font-weight: 400;
   font-style: normal;
 }
@@ -193,6 +196,12 @@
   font-family: 'GT America Compressed';
   src: url('../fonts/GT-America-Compressed-Bold.woff2') format('woff2'), url('../fonts/GT-America-Compressed-Bold.woff') format('woff'), url('../fonts/GT-America-Compressed-Bold.ttf') format('truetype'), url('../fonts/GT-America-Compressed-Bold.svg') format('svg');
   font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GT America Compressed';
+  src: url('../fonts/gt-america-compressed-black-webfont.woff2') format('woff2'), url('../fonts/gt-america-compressed-black-webfont.woff') format('woff'), url('../fonts/gt-america-compressed-black-webfont.ttf') format('truetype'), url('../fonts/gt-america-compressed-black-webfont.svg') format('svg');
+  font-weight: 900;
   font-style: normal;
 }
 @font-face {
@@ -1308,7 +1317,6 @@ p {
   padding: 0 15px;
 }
 .container-fluid {
-  width: 98%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -1410,8 +1418,6 @@ h3.title-post {
 }
 .hero-main {
   margin-top: -18px;
-  margin-left: -20px;
-  margin-right: -20px;
 }
 .hero-main .wrapper-image {
   height: 630px;
@@ -2114,7 +2120,6 @@ blockquote p {
 }
 .wrapper-main-gray .wrapper-information {
   background: #000;
-  width: calc(100% - 40px);
   padding: 20px 20px;
   display: flex;
   justify-content: flex-start;
@@ -2530,6 +2535,12 @@ body.normal.single-post .hero p.wp-media-credit {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
+}
+.series-drying-caribbean .text--important,
+.series-se-seca-el-caribe .text--important,
+.series-drying-caribbean .hero-main .wrapper-text,
+.series-se-seca-el-caribe .hero-main .wrapper-text {
+  background: #a0531b;
 }
 .item-author {
   padding: 10px 0 45px;
@@ -3189,7 +3200,7 @@ footer #boilerplate li .caret {
   color: #fff;
 }
 #cpi-footer .media-left {
-  min-width: 94px;
+  min-width: 112px;
   padding-right: 25px;
   text-align: right;
 }
@@ -3231,22 +3242,6 @@ footer #boilerplate li .caret {
 #cpi-footer .footer-copyright {
   background-color: #fff;
   padding: 20px 0;
-}
-#cpi-footer .social-links {
-  background-color: #fff;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  color: #000;
-  display: inline-block;
-  font-size: 16px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  width: 30px;
-}
-#cpi-footer .social-links + .social-links {
-  margin-left: 10px;
 }
 #cpi-footer .copyright {
   color: #000;
@@ -3325,7 +3320,6 @@ footer #boilerplate li .caret {
 }
 @media (max-width: 991px) {
   .container-fluid {
-    width: calc(100% - 40px);
     padding: 0 20px;
   }
   .row-fluid .span1,
@@ -3484,7 +3478,7 @@ footer #boilerplate li .caret {
   margin-bottom: 5px;
 }
 .form-search .input-append input[type=text] {
-  height: 20px;
+  height: 30px;
   font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
   font-style: italic;
   font-size: 14px;
