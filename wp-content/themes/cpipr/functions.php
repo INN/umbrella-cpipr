@@ -373,16 +373,16 @@ add_filter( 'body_class', 'add_series_slug_class_to_series_body' );
 /**
  * Exclude english posts on category landing pages
  */
-function exclude_english_posts_category($query) {
-	if (!is_admin() && !is_category('english')) {
-		$english_cat = get_category_by_slug('english');
-		if ( $english_cat ) {
-			$query->set('category__not_in', array($english_cat->term_id));
-		}
+// function exclude_english_posts_category($query) {
+// 	if (!is_admin() && !is_category('english')) {
+// 		$english_cat = get_category_by_slug('english');
+// 		if ( $english_cat ) {
+// 			$query->set('category__not_in', array($english_cat->term_id));
+// 		}
 		
-	}
-}
-add_filter('pre_get_posts', 'exclude_english_posts_category');
+// 	}
+// }
+// add_filter('pre_get_posts', 'exclude_english_posts_category');
 
 
 /**
