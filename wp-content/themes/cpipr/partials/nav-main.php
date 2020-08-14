@@ -15,6 +15,13 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 <header class="header-cpi">
 	<div class="top-header">
 		<div class="container-fluid">
+			<div class="top-search-wrapper visible-xs">
+				<form class="form-search" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<div class="input-append">
+						<input type="text" class="input-medium" placeholder="<?php _e('Search', 'largo'); ?>" name="s"><button class="btn" type="submit">&nbsp;</button>
+					</div>
+				</form>
+			</div>
 			<div class="row-fluid">
 				<div class="span3">
 					<a href="/" class="logo-main">
