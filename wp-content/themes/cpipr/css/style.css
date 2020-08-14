@@ -3978,6 +3978,25 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
   margin: 0 auto 7px auto;
   width: 52px;
 }
+/* Custom Single post entry content */
+body.normal.single-post .entry-content {
+  padding: 0 17%;
+}
+@media (max-width: 767px) {
+  body.normal.single-post .entry-content {
+    padding: 0;
+  }
+}
+/* Navis slideshow */
+.slick-slide img {
+  width: 100%;
+}
+.navis-slideshow .wp-media-credit {
+  text-align: left;
+}
+.navis-slideshow .wp-caption-text {
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
+}
 .visible-xs,
 .visible-sm,
 .visible-md,
