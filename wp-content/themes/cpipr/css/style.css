@@ -1434,6 +1434,7 @@ h3.title-post {
 .hero-main .wrapper-image .container-fluid {
   position: relative;
   z-index: 3;
+  width: 100%;
 }
 .hero-main h2 {
   font-family: 'GT america compressed black', sans-serif;
@@ -1872,7 +1873,8 @@ h3.title-post {
   padding: 10px 50px;
   margin-top: -6px;
 }
-.wrapper-video .iframe-youtube {
+.wrapper-video .iframe-youtube,
+iframe {
   width: 100%;
   margin-top: 9px;
   height: 560px;
@@ -1958,22 +1960,26 @@ blockquote p {
   }
 }
 @media (max-width: 810px) {
-  .wrapper-video .iframe-youtube {
+  .wrapper-video .iframe-youtube,
+  iframe {
     height: 390px;
   }
 }
 @media (max-width: 755px) {
-  .wrapper-video .iframe-youtube {
+  .wrapper-video .iframe-youtube,
+  iframe {
     height: 350px;
   }
 }
 @media (max-width: 660px) {
-  .wrapper-video .iframe-youtube {
+  .wrapper-video .iframe-youtube,
+  iframe {
     height: 300px;
   }
 }
 @media (max-width: 575px) {
-  .wrapper-video .iframe-youtube {
+  .wrapper-video .iframe-youtube,
+  iframe {
     height: 250px;
   }
 }
