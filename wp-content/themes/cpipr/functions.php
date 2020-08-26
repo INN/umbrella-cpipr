@@ -107,17 +107,17 @@ function largo_time( $echo = true, $post = null, $short_time = false ) {
 	}
 
 	// Add last_updated time only for single posts.
-	if (is_single() && !$short_time) {
-		$updated_time = get_the_modified_time( 'U', $post );
-		$time_difference = $updated_time - $the_time;
-		if ( $time_difference > 86400 ) {
-			if ($is_english_post) {
-				$output .= '<span class="sep"> | </span> Updated: ' . date('F j, Y \a\t h:i A', $updated_time);
-			} else {
-				$output .= '<span class="sep"> | </span> Actualizada: ' . get_the_modified_time( 'j \d\e F Y \a \l\a\s h:i A', $post->ID );
-			}
-		}
-	}	
+	// if (is_single() && !$short_time) {
+	// 	$updated_time = get_the_modified_time( 'U', $post );
+	// 	$time_difference = $updated_time - $the_time;
+	// 	if ( $time_difference > 86400 ) {
+	// 		if ($is_english_post) {
+	// 			$output .= '<span class="sep"> | </span> Updated: ' . date('F j, Y \a\t h:i A', $updated_time);
+	// 		} else {
+	// 			$output .= '<span class="sep"> | </span> Actualizada: ' . get_the_modified_time( 'j \d\e F Y \a \l\a\s h:i A', $post->ID );
+	// 		}
+	// 	}
+	// }
 
 	if ( $echo ) {
 		echo $output;
