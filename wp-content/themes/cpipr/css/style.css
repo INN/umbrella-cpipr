@@ -307,6 +307,10 @@
 #header-search {
   margin-top: 2px;
 }
+.top-search-wrapper {
+  margin-top: 10px;
+}
+.top-search-wrapper,
 .header-search-wrapper {
   float: right;
 }
@@ -1434,6 +1438,7 @@ h3.title-post {
 .hero-main .wrapper-image .container-fluid {
   position: relative;
   z-index: 3;
+  width: 100%;
 }
 .hero-main h2 {
   font-family: 'GT america compressed black', sans-serif;
@@ -1872,7 +1877,8 @@ h3.title-post {
   padding: 10px 50px;
   margin-top: -6px;
 }
-.wrapper-video .iframe-youtube {
+.wrapper-video .iframe-youtube,
+iframe {
   width: 100%;
   margin-top: 9px;
   height: 560px;
@@ -1958,22 +1964,26 @@ blockquote p {
   }
 }
 @media (max-width: 810px) {
-  .wrapper-video .iframe-youtube {
+  .wrapper-video .iframe-youtube,
+  iframe {
     height: 390px;
   }
 }
 @media (max-width: 755px) {
-  .wrapper-video .iframe-youtube {
+  .wrapper-video .iframe-youtube,
+  iframe {
     height: 350px;
   }
 }
 @media (max-width: 660px) {
-  .wrapper-video .iframe-youtube {
+  .wrapper-video .iframe-youtube,
+  iframe {
     height: 300px;
   }
 }
 @media (max-width: 575px) {
-  .wrapper-video .iframe-youtube {
+  .wrapper-video .iframe-youtube,
+  iframe {
     height: 250px;
   }
 }
@@ -3971,6 +3981,32 @@ form[id*=give-form] #give-final-total-wrap .give-final-total-amount {
 .material-switch-lang .material-switch {
   margin: 0 auto 7px auto;
   width: 52px;
+}
+/* Custom Single post entry content */
+body.normal.single-post .entry-content {
+  padding: 0 17%;
+}
+@media (max-width: 767px) {
+  body.normal.single-post .entry-content {
+    padding: 0;
+  }
+  .wp-caption.alignfull .wp-caption-img-wrap {
+    margin-bottom: 10px;
+  }
+  .wp-caption.alignfull .wp-media-credit,
+  .wp-caption.alignfull .wp-caption-text {
+    padding: 0 20px;
+  }
+}
+/* Navis slideshow */
+.slick-slide img {
+  width: 100%;
+}
+.navis-slideshow .wp-media-credit {
+  text-align: left;
+}
+.navis-slideshow .wp-caption-text {
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 .visible-xs,
 .visible-sm,

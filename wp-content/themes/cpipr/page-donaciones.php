@@ -14,7 +14,7 @@ add_filter('body_class', function ($classes) {
 get_header();
 ?>
 
-<div id="content" role="main">
+<div id="content" role="main" class="container-fluid">
   <div class="clearfix">
     <div class="material-switch-lang pull-right">
       <span class="lbl-lang">Idioma</span>
@@ -129,7 +129,6 @@ get_header();
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <?php do_action('largo_after_content');?>

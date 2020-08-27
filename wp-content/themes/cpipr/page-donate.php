@@ -18,7 +18,7 @@ unload_textdomain('give-recurring');
 get_header();
 ?>
 
-<div id="content" role="main">
+<div id="content" role="main" class="container-fluid">
   <div class="clearfix">
     <div class="material-switch-lang pull-right">
       <span class="lbl-lang">Language</span>
@@ -139,7 +139,6 @@ get_header();
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <?php do_action('largo_after_content');?>
