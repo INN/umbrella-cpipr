@@ -973,4 +973,31 @@ body.normal.single-post .entry-content {
   font-family: @font-family-sans-serif-condensed;
 }
 
+/* Input groups */
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+.input-group .form-control {
+  display: table-cell;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
+}
+.input-group-btn {
+  display: table-cell;
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+  width: 1%;
+  vertical-align: middle;
+}
+.input-group-btn:last-child>.btn {
+  z-index: 2;
+  margin-left: -1px;
+}
+
 @import "_responsive.less";
