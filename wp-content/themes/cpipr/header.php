@@ -135,12 +135,13 @@
 	?>
 
 	<?php
-		$home_template = largo_get_active_homepage_layout();
-		$container_class = is_front_page() && $home_template == 'CustomLayout' ? '' : 'container-fluid';
+		// $home_template = largo_get_active_homepage_layout();
+		// $container_class = is_front_page() && $home_template == 'CustomLayout' ? '' : 'container-fluid';
 	?> 
-	<div class="<?php echo $container_class ?>">
-
-		<div id="main" class="<?php echo $container_class == 'container-fluid' ? 'row-fluid' : ''; ?> clearfix">
+	<!-- Page -->
+	<div class="<?php // echo $container_class ?>">
+		<!-- Main -->
+		<div id="main" class="<?php // echo $container_class == 'container-fluid' ? 'row-fluid' : ''; ?> clearfix">
 
 		<?php
 

@@ -12,8 +12,22 @@
 #header-search {
   margin-top: 2px;
 }
+.top-search-wrapper {
+  margin-top: 10px;
+}
+.top-search-wrapper,
 .header-search-wrapper {
   float: right;
+}
+#cpipr-menu .top-search-wrapper {
+  float: none;
+}
+.top-search-wrapper .form-control {
+  font-family: @font-family-sans-serif-condensed;
+}
+.top-search-wrapper .input-group-btn button {
+  background: #ef5125 url(../images/search-icon.png) center center no-repeat;
+  border-color: #ef5125;  
 }
 
 .header-search-wrapper .input-medium {
@@ -722,10 +736,10 @@ fieldset[disabled] .navbar-cpipr .btn-link:focus {
     min-height: 50px;
   }
   #cpipr-menu > .navbar-nav > li > a {
-    padding: 15px 28px 15px 0;
+    padding: 15px 22px 15px 0;
   }
   #cpipr-menu > .navbar-nav > li + li > a {
-    padding-left: 28px;
+    padding-left: 22px;
   }
 }
 

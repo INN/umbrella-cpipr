@@ -76,6 +76,18 @@ if ( ! is_single() && ! is_singular() || ! of_get_option( 'main_nav_hide_article
 		<div class="container-fluid">
 			<div id="cpipr-menu" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
+					<li>
+						<div class="top-search-wrapper visible-xs">
+							<form class="form-search" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="<?php _e('Search', 'largo'); ?>" name="s">
+									<span class="input-group-btn">
+										<button class="btn" type="submit">&nbsp;</button>
+									</span>
+								</div>								
+							</form>
+						</div>
+					</li>
 					<?php
 						$args = array(
 							'theme_location' => 'global-nav',
