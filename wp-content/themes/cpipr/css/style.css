@@ -1887,8 +1887,7 @@ h3.title-post {
   padding: 10px 50px;
   margin-top: -6px;
 }
-.wrapper-video .iframe-youtube,
-iframe {
+.wrapper-video .iframe-youtube {
   width: 100%;
   margin-top: 9px;
   height: 560px;
@@ -1974,26 +1973,22 @@ blockquote p {
   }
 }
 @media (max-width: 810px) {
-  .wrapper-video .iframe-youtube,
-  iframe {
+  .wrapper-video .iframe-youtube {
     height: 390px;
   }
 }
 @media (max-width: 755px) {
-  .wrapper-video .iframe-youtube,
-  iframe {
+  .wrapper-video .iframe-youtube {
     height: 350px;
   }
 }
 @media (max-width: 660px) {
-  .wrapper-video .iframe-youtube,
-  iframe {
+  .wrapper-video .iframe-youtube {
     height: 300px;
   }
 }
 @media (max-width: 575px) {
-  .wrapper-video .iframe-youtube,
-  iframe {
+  .wrapper-video .iframe-youtube {
     height: 250px;
   }
 }
