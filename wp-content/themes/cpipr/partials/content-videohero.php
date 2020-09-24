@@ -75,15 +75,18 @@
 					object-position: <?php echo($custom_options["video_position"][0]); ?>;
 				}
 				h1.video-hero-headline {
-					font-size: 8rem;
+					font-size: 5.5rem;
 					color: <?php echo($custom_options["title_color"][0]); ?>;
 					filter: drop-shadow(0px 0px 0.1em <?php echo($custom_options["title_dropshadow"][0]); ?>);
-					line-height: 0.9;
-					max-width: 800px;
+					line-height: 1;
+					max-width: 900px;
+					width: 90%;
+					text-shadow: 3px 0 0 rgba(255, 255, 255, 0.45), -3px 0 0 rgba(255, 255, 255, 0.45), 0 3px 0 rgba(255, 255, 255, 0.45), 0 -2.4px 0 rgba(255, 255, 255, 0.45), 1.6px 1.6px rgba(255, 255, 255, 0.45), -1.6px -1.6px 0 rgba(255, 255, 255, 0.45), 1.6px -1.6px 0 rgba(255, 255, 255, 0.45), -1.6px 1.6px 0 rgba(255, 255, 255, 0.45);
 				}
 				@media (max-width: <?php echo($custom_options["tablet_breakpoint"][0]); ?>) {
 					h1.video-hero-headline {
-						font-size: 5rem;
+						font-size: 3.5rem;
+						line-height: 1.2;
 					}
 
 				}
@@ -139,12 +142,6 @@
 						<?php if ( $subtitle = get_post_meta( $post->ID, 'subtitle', true ) ) : ?>
 							<h2 class="subtitle"><?php echo $subtitle ?></h2>
 						<?php endif; ?>
-						<h5 class="byline">
-							<?php largo_byline(true, false, $post->ID); ?>
-							<!--<time class="entry-date updated dtstamp pubdate">
-								<?php largo_time(true, $post->ID,true); ?>
-							</time>-->
-						</h5>
 
 						<!-- <?php if ( ! of_get_option( 'single_social_icons' ) == false ) {
 							largo_post_social_links();
