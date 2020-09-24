@@ -15,8 +15,8 @@ add_filter( 'body_class', function( $classes ) {
 
 get_header();
 ?>
-
 <div id="content" role="main">
+<div class="container-fluid">
 	<?php
 		while ( have_posts() ) : the_post();
 
@@ -43,6 +43,7 @@ get_header();
 
 		endwhile;
 	?>
+</div>
 </div>
 
 <?php do_action( 'largo_after_content' ); ?>
