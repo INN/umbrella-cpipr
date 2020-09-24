@@ -16,7 +16,7 @@ add_filter( 'body_class', function( $classes ) {
 get_header();
 ?>
 
-<div id="content" role="main">
+<div id="content" role="main" class="container-fluid">
 	<?php
 		while ( have_posts() ) : the_post();
 
