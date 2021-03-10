@@ -490,3 +490,30 @@ function exclude_donate_row_from_receipt($give_receipt_args) {
 	unset($give_receipt_args['donation']);
 	return $give_receipt_args;
 }
+
+
+/**
+ * Enable custom template for archives
+ * 
+ */
+
+ function cpipr_custom_archive_template(){
+
+	function filter_category_template( $template ) {
+
+		$replace_archive = get_term_meta( get_queried_object_id(), 'replace_default_template', true);
+		if ($replace_archive) {
+			$new_template = locate_template( array( 'template-custom-category.php' ) );
+			if ( '' != $new_template ) {
+				return $new_template;
+			}
+		}
+	
+		return $template;
+	}
+
+	add_filter( 'category_template', 'filter_category_template', 99 );
+      
+ }
+
+ add_action('init', 'cpipr_custom_archive_template');
