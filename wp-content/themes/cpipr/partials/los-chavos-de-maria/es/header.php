@@ -5,15 +5,6 @@
         <?php dynamic_sidebar( 'top_bar_lcdm_spanish' ); ?>
         <?php endif; ?>
         <div class="lcdm-logo-wrapper">
-            <a href="/" class="lcdm-cpi">
-                <span>
-                    <i class="fa fa-home"></i><br/>
-                </span>
-                <div class="hidden-xs">
-                    Volver a<br/>
-                    página CPI
-                </div>
-            </a>
             <a class="lcdm-logo" href="<?php echo get_term_link( 'los-chavos-de-maria', 'series' ) ?>">
                 <img alt="" src="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm.png' ?>" srcset="<?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm@2x.png 2x' ?>, <?php echo get_stylesheet_directory_uri(). '/images/los-chavos-de-maria/logo-lcdm@3x.png 3x' ?>"/>
             </a>
@@ -23,3 +14,110 @@
         </div>
     </div>
 </header>
+
+<div class="header-top-bar hidden-xs">
+        <a href="/" class="lcdm-cpi">
+            <span>
+                <i class="fa fa-home"></i><br/>
+            </span>
+               Volver a página CPI
+        </a> 
+        <form action="<?php echo get_permalink( get_page_by_path( 'los-chavos-de-maria-busqueda' ) ) ?>" class="form-search">
+            <input type="text" class="input-medium search-query" name="q"/>
+            <input type="hidden" name="lang" value="es"/>
+            <button type="submit" class="btn"><i class="icon-search"></i></button>
+        </form>
+        <a href="<?php echo get_term_link( 'los-chavos-de-maria', 'series' ) ?>" class="btn btn-lang active">Español</a>
+        <a href="<?php echo get_permalink( get_page_by_path( 'en-los-chavos-de-maria' ) ) ?>" class="btn btn-lang">English</a>
+    </div>
+    <style>
+
+    .lcdm-cpi{
+        border: 2px solid white;
+        display: inline-block;
+        border-radius: 15px;
+        color: white;
+        font-family: "Roboto Condensed",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 3px 20px;
+        font-weight: bold;
+        font-style: italic;
+        display: flex;
+        align-items: center;
+    }
+
+    .lcdm-cpi:hover{
+        color:#000;
+        text-decoration:none;
+    }
+
+    .lcdm-cpi > span{
+        display:inline-block;
+        font-size:26px;
+        line-height:1;
+        vertical-align:center;
+        margin-right:7px;
+    }
+
+    .header-top-bar{
+        background:#5270AF;
+        display:flex;
+        flex-direction: row;
+        align-items: center;
+        padding:20px 15px;
+    }
+
+    .header-top-bar .form-search{
+        margin-left: auto;
+        background: #FFF;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-right:12px;
+        margin-bottom:0;
+        width:25%;
+        display: flex;
+        align-items: center;
+    }
+
+    .header-top-bar .form-search + a{
+        margin-right:12px;
+    }
+
+    .header-top-bar .form-search .btn{
+        font-size: 16px;
+        padding: 2px 8px;
+        width:55px;
+    }
+
+    .header-top-bar .form-search .search-query{
+        border:none;
+        outline:0;
+        width:calc(100% - 55px);
+    }
+
+    .navbar-lcdm .navbar-nav{
+        text-align:center;
+    }
+
+    .navbar-lcdm .navbar-nav > li {
+        float: none;
+        display: inline-block;
+    }
+
+    .header-top-bar .btn-lang.active{
+        background:#FFF;
+        color:#000;
+    }
+
+    .btn-lang {
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
+    }
+
+    #modalNavigation .nav-lcdm-menu > li > a.btn-lang{
+        color:#FFF;
+    }
+
+    </style>

@@ -48,7 +48,7 @@
                         <span>GLOSARIO</span>
                     </a>
                 </li>
-                <li class="lcdm-form-search">
+                <!--<li class="lcdm-form-search">
                     <form action="<?php echo get_permalink( get_page_by_path( 'los-chavos-de-maria-busqueda' ) ) ?>" class="form-search">
                         <input type="text" class="input-medium search-query" name="q"/>
                         <input type="hidden" name="lang" value="es"/>
@@ -56,7 +56,7 @@
                     </form>
                     <a href="<?php echo get_term_link( 'los-chavos-de-maria', 'series' ) ?>" class="btn btn-lang active">Español</a>
                     <a href="<?php echo get_permalink( get_page_by_path( 'en-los-chavos-de-maria' ) ) ?>" class="btn btn-lang">English</a>
-                </li>
+                </li>-->
             </ul>
         </div>
     </div>
