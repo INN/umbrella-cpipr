@@ -76,7 +76,7 @@ $hero_video = wp_get_attachment_url($hero_video);
 				<div class="span10 mobile-no-offset">
 					<div class="boxes-columns">
 					<?php $catID = get_queried_object_id(); ?>
-					<?php query_posts('posts_per_page=6&cat='. $catID .'&orderby=date&order=ASC'); ?>
+					<?php query_posts('posts_per_page=6&cat='. $catID .'&orderby=date&order=DESC'); ?>
 					<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 
 						<?php get_template_part('partials/content', 'series-cat'); ?>

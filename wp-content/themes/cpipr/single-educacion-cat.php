@@ -3,7 +3,7 @@
 global $shown_ids;
 
 add_filter( 'body_class', function( $classes ) {
-	$classes[] = 'normal';
+	$classes[] = 'normal category-educacion-single';
 	return $classes;
 } );
 
@@ -107,6 +107,12 @@ $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full');
     .hero-main .yellow-wrapper{
         background:#EAC135;
     }
+	.category-educacion-single .hero-main h2{
+		text-transform:none;
+	}
+	.text--big p {
+		font-size: 24px;
+	}
 </style>
 <?php do_action( 'largo_after_content' ); ?>
 
