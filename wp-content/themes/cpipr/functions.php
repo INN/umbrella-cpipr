@@ -517,3 +517,74 @@ function exclude_donate_row_from_receipt($give_receipt_args) {
  }
 
  add_action('init', 'cpipr_custom_archive_template');
+
+/**
+ * Add AJAX scripts 
+ */ 
+ function cpi_ajax_enqueue() {
+
+	// Enqueue javascript on the frontend.
+	wp_enqueue_script(
+		'cpi_status-script',
+		get_stylesheet_directory_uri() . '/js/cpi-ajax.js',
+		array('jquery'), time()
+	);
+
+	// The wp_localize_script allows us to output the ajax_url path for our script to use.
+	wp_localize_script(
+		'cpi_status-script',
+		'cpi_status_ajax_obj',
+		array(
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		)
+	);
+
+}
+
+add_action( 'wp_enqueue_scripts', 'cpi_ajax_enqueue' );
+
+ /**
+ * AJAX call get posts
+ *
+ */
+
+function cpi_get_post() {
+	
+	// basic args
+	$args = array(
+		'post_type'      => 'post',
+		'posts_per_page' => 10,
+		'paged'          => isset( $_POST['paged'] ) ? $_POST['paged'] : 1,
+		'post_status'    => 'publish',
+        'order'          => 'ASC'
+	);
+
+	//if( isset( $_POST['cat'] ) && $_POST['cat'] )
+	$args['tax_query'][] = array(
+		'taxonomy' => 'category',
+		'field'    => 'slug',
+		'terms'    => array('educacion'),
+	);
+
+	$results = array();
+	$query = new WP_Query($args);
+	$posts = $query->posts;
+	$currentPage = isset( $_POST['paged'] ) ? $_POST['paged'] : 1;
+
+	if ( empty( $query->posts ) ) {
+		return  0;
+	}
+
+
+	while ( $query->have_posts() ) : $query->the_post();
+		
+		get_template_part('partials/content', 'series-cat'); 
+
+    endwhile;
+	
+	return $results;
+	
+}
+
+add_action( 'wp_ajax_cpi_get_posts', 'cpi_get_post' );
+add_action( 'wp_ajax_nopriv_cpi_get_posts', 'cpi_get_post' );

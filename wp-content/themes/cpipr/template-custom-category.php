@@ -67,24 +67,14 @@ $hero_video = wp_get_attachment_url($hero_video);
 		</div>
 	</div>
 
-	<div class="wrapper-main-gray">
+	<div id="target" class="wrapper-main-gray">
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
 					<h3 class="title-post"><?php _e('Historias', 'largo'); ?></h3>
 				</div>
 				<div class="span10 mobile-no-offset">
-					<div class="boxes-columns">
-					<?php $catID = get_queried_object_id(); ?>
-					<?php query_posts('posts_per_page=6&cat='. $catID .'&orderby=date&order=DESC'); ?>
-					<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
-
-						<?php get_template_part('partials/content', 'series-cat'); ?>
-
-					<?php endwhile; endif; ?>
-					<?php wp_reset_query(); ?>
-
-					</div>
+					<div class="boxes-columns postList"></div>
 				</div>
 			</div>
 		</div>
@@ -99,7 +89,7 @@ $series_posts = get_term_meta( get_queried_object_id(), 'series_posts', true);
 ?>
 
 <?php if($add_series_section): ?>
-	<div class="wrapper-main-white wrapper-special">
+	<div id="series-section" class="wrapper-main-white wrapper-special">
 		<div class="container-fluid">
 			<div class="row-fluid wrapper-post">
 				<div class="span2">
@@ -197,5 +187,14 @@ $series_posts = get_term_meta( get_queried_object_id(), 'series_posts', true);
 	}
 }
 
+.wrapper-image .title-article h2{
+    text-transform: lowercase;
+  
+	
+}
+
+.wrapper-image .title-article h2:first-letter {
+	text-transform: capitalize;
+}
 </style>
 <?php get_footer();
