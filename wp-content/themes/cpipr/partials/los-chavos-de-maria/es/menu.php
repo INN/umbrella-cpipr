@@ -12,6 +12,12 @@
                         <span>HISTORIAS</span>
                     </a>
                 </li>
+                <li class="<?php echo $lcdm_active_menu == 'informe' ? 'active' : '' ?>">
+                <a href="<?php echo get_permalink( get_page_by_path( 'lcdm-informe' ) ) ?>">
+                        <img class="lcdm-icon lcmd-img-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/los-chavos-de-maria/icon-informe.svg">
+                        <span>INFORME</span>
+                    </a>
+                </li>
                 <li class="<?php echo $lcdm_active_menu == 'personajes_de_la_recuperacion' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'lcdm-personajes-de-la-recuperacion' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-personajes"></i>
@@ -83,6 +89,12 @@
                         <span>HISTORIAS<br/>&nbsp;</span>
                     </a>
                 </li>
+                <li class="<?php echo $lcdm_active_menu == 'informe' ? 'active' : '' ?>">
+                    <a href="<?php echo get_permalink( get_page_by_path( 'lcdm-informe' ) ) ?>">
+                        <img class="lcdm-icon lcmd-img-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/los-chavos-de-maria/icon-informe.svg">
+                        <span>INFORME</span>
+                    </a>
+                </li>
                 <li class="<?php echo $lcdm_active_menu == 'personajes_de_la_recuperacion' ? 'active' : '' ?>">
                     <a href="<?php echo get_permalink( get_page_by_path( 'lcdm-personajes-de-la-recuperacion' ) ) ?>">
                         <i class="lcdm-icon lcdm-icon-personajes"></i>
@@ -128,3 +140,33 @@
     </div>
   </div>
 </div>
+<style>
+     img.lcmd-img-icon{
+        width:72px;
+        height:auto;
+    }
+
+    li:hover img.lcmd-img-icon{
+        filter: invert(0.4) sepia(1) saturate(20) hue-rotate(198deg) brightness(0.5);
+    }
+
+    .nav-lcdm-menu > li {
+        min-height: 145px;
+    }
+
+    .nav-lcdm-menu li img.lcmd-img-icon{
+        filter: invert(1);
+        height:75px;
+    }
+
+    .navbar-lcdm-light li img.lcmd-img-icon{
+        filter: invert(1);
+        height:75px;
+    }
+    
+    .navbar-lcdm-light li.active img.lcmd-img-icon,
+    .navbar-lcdm-light li:hover img.lcmd-img-icon{
+        filter: invert(0.4) sepia(1) saturate(20) hue-rotate(198deg) brightness(0.5);
+    }
+
+</style>

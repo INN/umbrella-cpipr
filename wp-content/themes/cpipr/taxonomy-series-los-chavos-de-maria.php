@@ -70,6 +70,89 @@
     <?php $lcdm_navbar_theme = 'dark'; ?>
     <?php get_template_part('partials/los-chavos-de-maria/es/menu'); ?>
 
+    <!-- seccion informe -->
+    <div class="lcdm-section lcdm-section-informe" id="seccion-informe">
+        <div class="lcdm-section-title">
+            <a href="<?php echo get_permalink( get_page_by_path( 'lcdm-informe' ) ) ?>">
+                <img class="lcdm-icon lcmd-img-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/images/los-chavos-de-maria/icon-informe.svg">
+                <div>INFORME</div>
+            </a>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="text-wrap">
+                    <h2>SIN INFORMACIÓN
+                    <span>ANTE EL DESASTRE:</span></h2>
+                    <h4>GESTIÓN DE LA INFORMACIÓN PARA EL MANEJO
+                    DE RIESGOS SOCIOAMBIENTALES EN PUERTO RICO</h4>
+                    <a class="btn btn-blue" href="<?php echo get_permalink( get_page_by_path( 'lcdm-informe' ) ) ?>">Accesa a la investigación</a>
+                </div>
+            </div>  
+        </div>  
+    </div>
+    <style>
+
+    .lcdm-section-informe{
+        background:#000 url('<?php echo get_stylesheet_directory_uri(); ?>/images/los-chavos-de-maria/reporte-bg-lcdm.jpg') no-repeat bottom left;
+        background-size:cover;
+    }
+
+    .text-wrap{
+        width:100%;
+        max-width:550px;
+        padding:10% 0;
+    }
+
+    .lcdm-section-informe h2{
+        font-family: "GT America", Helvetica, Arial, sans-serif;
+        font-weight: bolder;
+        font-style: italic;
+        color: #FFF;
+        font-size: 62px;
+        letter-spacing: -4px;
+        line-height: 1;
+    }
+
+    .lcdm-section-informe h2 span{
+        color:#496FA4;
+        display:block;
+    }
+
+    .lcdm-section-informe h4{
+        color: #fff;
+        font-family: "GT America Compressed", Helvetica, Arial, sans-serif;
+        font-weight: bold;
+    }
+
+    @media (min-width:768px) {
+        .lcdm-section-informe a.btn{
+            font-size: 20px;
+            padding: 12px 25px;
+        }
+    }
+
+    @media (max-width:767px) {
+        .lcdm-section-informe{
+            background-position: bottom center;
+        }
+
+        .lcdm-section-informe h2{
+            font-size: 7vw;
+            letter-spacing:-2px;
+        }
+
+        .lcdm-section-informe h4{
+            font-size: 4vw;
+        }
+
+        .text-wrap {
+            padding: 25% 0 0;
+        }
+    }
+
+    </style>
+
+
     <!-- Power players section -->
     <div class="lcdm-section lcdm-section-powerplayers">
         <div class="lcdm-section-title">
@@ -411,7 +494,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- Twitter feed -->
     <div id="help-us-section" class="lcdm-section lcdm-section-twitter">

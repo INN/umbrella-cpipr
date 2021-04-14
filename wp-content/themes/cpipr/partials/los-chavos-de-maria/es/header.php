@@ -16,6 +16,7 @@
 </header>
 
 <div class="header-top-bar hidden-xs">
+<div class="container-fluid">
         <a href="/" class="lcdm-cpi">
             <span>
                 <i class="fa fa-home"></i><br/>
@@ -30,6 +31,7 @@
         <a href="<?php echo get_term_link( 'los-chavos-de-maria', 'series' ) ?>" class="btn btn-lang active">Español</a>
         <a href="<?php echo get_permalink( get_page_by_path( 'en-los-chavos-de-maria' ) ) ?>" class="btn btn-lang">English</a>
     </div>
+</div>
     <style>
 
     .lcdm-cpi{
@@ -62,10 +64,13 @@
 
     .header-top-bar{
         background:#5270AF;
-        display:flex;
+        padding:20px 15px;
+    }
+
+    .header-top-bar .container-fluid{
+        display: flex;
         flex-direction: row;
         align-items: center;
-        padding:20px 15px;
     }
 
     .header-top-bar .form-search{
